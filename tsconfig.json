@@ -21,6 +21,10 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src",
+    "__tests__"
+  ],
+  "exclude": [
+    "src/reportWebVitals.ts"
   ]
 }
