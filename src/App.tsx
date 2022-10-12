@@ -1,12 +1,10 @@
-import React from 'react';
+import React from 'react'
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          Luiz Daniel no back
-        </p>
+        <p>Luiz Daniel no back</p>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -17,7 +15,7 @@ function App() {
         </a>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
