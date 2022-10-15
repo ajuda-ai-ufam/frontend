@@ -2,31 +2,23 @@
   "env": {
     "browser": true,
     "es2021": true,
-    "jest/globals": true
+    "es6": true
   },
   "extends": [
-    "plugin:react/recommended",
-    "standard-with-typescript",
-    "eslint:recommended",
-    "plugin:prettier/recommended"
-  ],
-  "overrides": [
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
   ],
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": "./tsconfig.json",
+    "ecmaVersion": 12
   },
   "plugins": [
-    "react",
+    "@typescript-eslint",
     "prettier"
   ],
   "rules": {
-    "import/no-unresolved": "error",
-    "quotes": ["error", "single"],
-    "indent": ["error", 2],
-    "no-multi-spaces": "error",
-    "semi": ["error", "never"],
-    "@typescript-eslint/semi": "off",
-    "no-unexpected-multiline": "error"
+    "prettier/prettier": "error"
   },
   "settings": {
     "import/resolver": {
