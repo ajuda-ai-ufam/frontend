@@ -24,9 +24,9 @@
     "build": "react-scripts build",
     "test": "jest --verbose --passWithNoTests",
     "eject": "react-scripts eject",
-    "lint": "yarn lint:src && yarn lint:commit",
-    "lint:src": "npx eslint ./src",
-    "lint:commit": "npx --no-install commitlint --edit"
+    "lint": "npx eslint ./src && echo \"> No lint errors found in src/.\"",
+    "lint:commit": "npx --no-install commitlint --edit && echo \"> No errors found in commit messages.\"",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -61,6 +61,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.31.10",
+    "husky": "^8.0.0",
     "jest": "^29.1.2",
     "jest-environment-jsdom": "^29.1.2",
     "prettier": "^2.7.1",
