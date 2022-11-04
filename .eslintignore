@@ -3,6 +3,7 @@ dist
 types
 .eslintrc.json
 .babelrc
-jest.config.json
+jest.config.js
 react-app-env.d.ts
 reportWebVitals.ts
+fileTransformer.js
