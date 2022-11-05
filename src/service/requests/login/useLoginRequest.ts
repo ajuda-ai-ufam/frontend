@@ -1,7 +1,7 @@
 import React from 'react';
 
-const useLogin = () => {
+const useLoginRequest = () => {
   console.log('Olá Request');
 };
 
-export default useLogin;
+export default useLoginRequest;
