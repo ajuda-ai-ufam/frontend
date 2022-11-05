@@ -65,6 +65,7 @@ export const ContainerBottom = styled(Box).attrs({
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
+  marginTop: '10px',
 })``;
 
 export const TypographyLogin: TypographyPLogin = styledMUI(Typography)({

@@ -1,6 +1,8 @@
+import { Shadows } from '@material-ui/core/styles/shadows';
 import { createTheme } from '@mui/material';
 
 const theme = createTheme({
+  shadows: Array(25).fill('none') as Shadows,
   palette: {
     primary: {
       light: '#70D268',

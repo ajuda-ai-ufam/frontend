@@ -2,13 +2,9 @@ import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
-import {
-  IconButton,
-  InputAdornment,
-  OutlinedInput,
-  Typography,
-} from '@mui/material';
+import { IconButton, InputAdornment, Typography } from '@mui/material';
 import { NavLink } from 'react-router-dom';
+import { TextField } from '../../../../components/textField';
 import useLogin from '../../hooks/useLogin';
 import {
   Container,
@@ -40,7 +36,7 @@ const FormLogin = () => {
           Insira suas credenciais abaixo para continuar
         </TypographyCredentials>
 
-        <OutlinedInput
+        <TextField
           value={email}
           id="email"
           name="email"
@@ -54,7 +50,7 @@ const FormLogin = () => {
           sx={{ mt: 4, width: '100%' }}
         />
 
-        <OutlinedInput
+        <TextField
           type={showPassword ? 'text' : 'password'}
           value={password}
           id="password"
@@ -87,7 +83,7 @@ const FormLogin = () => {
         </ContainerLogin>
       </ContainerUp>
 
-      <ContainerBottom sx={{ mt: 10 }}>
+      <ContainerBottom>
         <Typography align="center">
           Ainda não tem uma conta?
           <NavLink to="/register"> Cadastre-se</NavLink>
