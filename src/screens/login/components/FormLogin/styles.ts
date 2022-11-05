@@ -4,6 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import { Button as MUIButton } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import styled from 'styled-components';
 import { Button } from '../../../../components/button';
@@ -61,6 +62,8 @@ export const ForgotPasswordButton = styled(MUIButton).attrs({
   variant: 'text',
   color: 'primary',
 })`
+  padding: 0px 16px 0px 16px !important;
+  border-radius: 100px;
   @media (max-width: ${theme.breakpoints.values.sm}px) {
     align-self: flex-end;
   }
@@ -68,7 +71,7 @@ export const ForgotPasswordButton = styled(MUIButton).attrs({
 
 export const ContainerBottom = styled(Box).attrs({
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: 'row',
   justifyContent: 'center',
   alignItems: 'center',
   marginTop: '10px',
