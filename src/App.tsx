@@ -1,20 +1,20 @@
+import { ThemeProvider } from '@mui/system';
 import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from './screens/login';
+import Register from './screens/register';
+import theme from './utils/theme';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Luiz Daniel no back</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 };
 
