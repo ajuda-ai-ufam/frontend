@@ -9,7 +9,7 @@ import {
   Typography,
 } from '@mui/material';
 import { NavLink } from 'react-router-dom';
-import { ButtonPrimary } from '../../../../components/button';
+import { Button } from '../../../../components/button';
 import useLogin from '../../hooks/useLogin';
 import {
   Container,
@@ -101,7 +101,7 @@ const FormLogin = () => {
           <Typography color="primary" align="center">
             Esqueci minha senha
           </Typography>
-          <ButtonPrimary variant="contained">Entrar</ButtonPrimary>
+          <Button color="primary">Entrar</Button>
         </ContainerLogin>
       </ContainerUp>
 

@@ -1,5 +1,5 @@
 import { Typography } from '@mui/material';
-import { ButtonSecondary } from '../../../../components/button';
+import { Button } from '../../../../components/button';
 import Copyright from '../../../../components/copyright';
 import useLogin from '../../hooks/useLogin';
 import FormLogin from '../FormLogin';
@@ -17,9 +17,13 @@ const WelcomeArea = () => {
     <Container>
       <ContainerUp>
         <Typography sx={{ mt: 4, mr: 3 }}>Não é cadastrado?</Typography>
-        <ButtonSecondary sx={{ mt: 4, mr: 5 }} onClick={handleRegisterClick}>
+        <Button
+          color="secondary"
+          sx={{ mt: 4, mr: 5 }}
+          onClick={handleRegisterClick}
+        >
           Cadastre-se
-        </ButtonSecondary>
+        </Button>
       </ContainerUp>
 
       <ContainerMiddle>
