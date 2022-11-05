@@ -2,22 +2,19 @@ import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
-import {
-  IconButton,
-  InputAdornment,
-  OutlinedInput,
-  Typography,
-} from '@mui/material';
+import { IconButton, InputAdornment, Typography } from '@mui/material';
 import { NavLink } from 'react-router-dom';
-import { Button } from '../../../../components/button';
+import { TextField } from '../../../../components/textField';
 import useLogin from '../../hooks/useLogin';
 import {
   Container,
   ContainerBottom,
   ContainerLogin,
   ContainerUp,
-  TypographyLogin,
+  ForgotPasswordButton,
+  LoginButton,
   TypographyCredentials,
+  TypographyLogin,
 } from './styles';
 
 const FormLogin = () => {
@@ -39,7 +36,7 @@ const FormLogin = () => {
           Insira suas credenciais abaixo para continuar
         </TypographyCredentials>
 
-        <OutlinedInput
+        <TextField
           value={email}
           id="email"
           name="email"
@@ -50,10 +47,10 @@ const FormLogin = () => {
               <PermIdentityOutlinedIcon />
             </InputAdornment>
           }
-          sx={{ mt: 4, width: '60ch' }}
+          sx={{ mt: 4, width: '100%' }}
         />
 
-        <OutlinedInput
+        <TextField
           type={showPassword ? 'text' : 'password'}
           value={password}
           id="password"
@@ -77,18 +74,16 @@ const FormLogin = () => {
               </IconButton>
             </InputAdornment>
           }
-          sx={{ mt: 2, width: '60ch' }}
+          sx={{ mt: 2, width: '100%' }}
         />
 
         <ContainerLogin sx={{ m: 4 }}>
-          <Typography color="primary" align="center">
-            Esqueci minha senha
-          </Typography>
-          <Button color="primary">Entrar</Button>
+          <ForgotPasswordButton>Esqueci minha senha</ForgotPasswordButton>
+          <LoginButton>Entrar</LoginButton>
         </ContainerLogin>
       </ContainerUp>
 
-      <ContainerBottom sx={{ mt: 10 }}>
+      <ContainerBottom>
         <Typography align="center">
           Ainda não tem uma conta?
           <NavLink to="/register"> Cadastre-se</NavLink>

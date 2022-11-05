@@ -1,10 +1,13 @@
-import { Box } from '@mui/system';
 import type { TypographyProps } from '@material-ui/core';
 import { styled as styledMUI } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import { Button as MUIButton } from '@mui/material';
+import { Box } from '@mui/system';
 import React from 'react';
 
 import styled from 'styled-components';
+import { Button } from '../../../../components/button';
+import theme from '../../../../utils/theme';
 
 type TypographyPLogin = React.ComponentType<
   TypographyProps<'h1', { component: 'h1' }>
@@ -30,16 +33,39 @@ export const ContainerUp = styled(Box).attrs({
 export const ContainerLogin = styled(Box).attrs({
   display: 'flex',
   flexDirection: 'row',
-  justifyContent: 'space-around',
+  justifyContent: 'space-between',
   alignItems: 'center',
   width: '100%',
-})``;
+})`
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    flex-direction: column !important;
+  }
+`;
+
+export const LoginButton = styled(Button).attrs({
+  color: 'primary',
+})`
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    width: 100% !important;
+    margin-top: 22px !important;
+  }
+`;
+
+export const ForgotPasswordButton = styled(MUIButton).attrs({
+  variant: 'text',
+  color: 'primary',
+})`
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    align-self: flex-end;
+  }
+`;
 
 export const ContainerBottom = styled(Box).attrs({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
+  marginTop: '10px',
 })``;
 
 export const TypographyLogin: TypographyPLogin = styledMUI(Typography)({

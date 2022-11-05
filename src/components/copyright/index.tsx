@@ -9,7 +9,7 @@ type CopyrightProps = {
 const Copyright = ({ mt, mb }: CopyrightProps) => {
   return (
     <Typography
-      variant="body2"
+      variant="caption"
       color="text.secondary"
       align="center"
       sx={{ mt: mt, mb: mb }}
