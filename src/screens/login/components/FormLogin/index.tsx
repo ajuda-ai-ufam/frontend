@@ -1,13 +1,16 @@
-import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
+import PersonIcon from '@mui/icons-material/Person';
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
+import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import {
   Box,
   FormHelperText,
   IconButton,
   InputAdornment,
   Typography,
+  Link,
 } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import { TextField } from '../../../../components/textField';
@@ -17,7 +20,6 @@ import {
   ContainerBottom,
   ContainerLogin,
   ContainerUp,
-  ForgotPasswordButton,
   LoginButton,
   StyledForm,
   TypographyCredentials,
@@ -80,7 +82,7 @@ const FormLogin = () => {
               placeholder="E-mail IComp"
               startAdornment={
                 <InputAdornment position="start">
-                  <PermIdentityOutlinedIcon />
+                  {!email ? <PersonOutlineOutlinedIcon /> : <PersonIcon />}
                 </InputAdornment>
               }
               sx={{ mt: 4, width: '100%' }}
@@ -99,7 +101,7 @@ const FormLogin = () => {
               onChange={handlePasswordChange}
               startAdornment={
                 <InputAdornment position="start">
-                  <VpnKeyOutlinedIcon />
+                  {!password ? <VpnKeyOutlinedIcon /> : <VpnKeyIcon />}
                 </InputAdornment>
               }
               endAdornment={
@@ -120,7 +122,14 @@ const FormLogin = () => {
           </Box>
 
           <ContainerLogin sx={{ m: 4 }}>
-            <ForgotPasswordButton>Esqueci minha senha</ForgotPasswordButton>
+            <Link
+              variant="body2"
+              underline="hover"
+              color={'primary'}
+              href="/register"
+            >
+              Esqueci minha senha
+            </Link>
             <LoginButton type="submit" loading={isLoading}>
               Entrar
             </LoginButton>
@@ -129,10 +138,10 @@ const FormLogin = () => {
       </ContainerUp>
 
       <ContainerBottom>
-        <Typography align="center">
-          Ainda não tem uma conta?
-          <NavLink to="/register"> Cadastre-se</NavLink>
-        </Typography>
+        <Typography align="center">Ainda não tem uma conta?&nbsp;</Typography>
+        <NavLink to="/register">
+          <Typography color={'secondary'}>Cadastre-se</Typography>
+        </NavLink>
       </ContainerBottom>
     </Container>
   );
