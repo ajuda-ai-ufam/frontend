@@ -1,4 +1,7 @@
 import { Typography } from '@mui/material';
+import HeaderLogo from '../../../../assets/header-logo.svg';
+import LoginPatternBottomEnd from '../../../../assets/login-pattern-be-small.svg';
+import LoginPatternBottomStart from '../../../../assets/login-pattern-bs-small.svg';
 import { Button } from '../../../../components/button';
 import Copyright from '../../../../components/copyright';
 import useLogin from '../../hooks/useLogin';
@@ -6,8 +9,11 @@ import FormLogin from '../FormLogin';
 import {
   Container,
   ContainerBottom,
+  ContainerLogo,
   ContainerMiddle,
+  ContainerRegister,
   ContainerUp,
+  PatternBox,
 } from './styles';
 
 const WelcomeArea = () => {
@@ -16,14 +22,20 @@ const WelcomeArea = () => {
   return (
     <Container>
       <ContainerUp>
-        <Typography sx={{ mt: 4, mr: 3 }}>Não é cadastrado?</Typography>
-        <Button
-          color="secondary"
-          sx={{ mt: 4, mr: 5 }}
-          onClick={handleRegisterClick}
-        >
-          Cadastre-se
-        </Button>
+        <ContainerLogo>
+          <img src={HeaderLogo} />
+        </ContainerLogo>
+
+        <ContainerRegister>
+          <Typography>Não é cadastrado?</Typography>
+          <Button
+            color="secondary"
+            sx={{ ml: 2 }}
+            onClick={handleRegisterClick}
+          >
+            Cadastre-se
+          </Button>
+        </ContainerRegister>
       </ContainerUp>
 
       <ContainerMiddle>
@@ -31,7 +43,15 @@ const WelcomeArea = () => {
       </ContainerMiddle>
 
       <ContainerBottom>
+        <PatternBox>
+          <img src={LoginPatternBottomEnd} />
+        </PatternBox>
+
         <Copyright mb={3} />
+
+        <PatternBox>
+          <img src={LoginPatternBottomStart} />
+        </PatternBox>
       </ContainerBottom>
     </Container>
   );
