@@ -12,6 +12,10 @@ export const Container = styled(Box).attrs({
   @media (max-width: ${theme.breakpoints.values.lg}px) {
     width: 100vw !important;
   }
+
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    margin: 0 16px 0 16px !important;
+  }
 `;
 
 export const ContainerUp = styled(Box).attrs({
@@ -24,6 +28,10 @@ export const ContainerUp = styled(Box).attrs({
   @media (max-width: ${theme.breakpoints.values.lg}px) {
     justify-content: space-between !important;
   }
+
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    margin: 16px 0 0 0 !important;
+  }
 `;
 
 export const ContainerRegister = styled(Box).attrs({
@@ -31,6 +39,14 @@ export const ContainerRegister = styled(Box).attrs({
   flexDirection: 'row',
   alignItems: 'center',
 })``;
+
+export const ContainerRegisterText = styled(Box).attrs({
+  marginRight: '16px',
+})`
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    display: none !important;
+  }
+`;
 
 export const ContainerLogo = styled(Box)`
   @media (min-width: ${theme.breakpoints.values.lg}px) {

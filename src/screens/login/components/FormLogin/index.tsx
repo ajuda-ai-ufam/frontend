@@ -9,15 +9,16 @@ import {
   Typography,
 } from '@mui/material';
 import { NavLink } from 'react-router-dom';
-import { Button } from '../../../../components/button';
 import useLogin from '../../hooks/useLogin';
 import {
   Container,
   ContainerBottom,
   ContainerLogin,
   ContainerUp,
-  TypographyLogin,
+  ForgotPasswordButton,
+  LoginButton,
   TypographyCredentials,
+  TypographyLogin,
 } from './styles';
 
 const FormLogin = () => {
@@ -50,7 +51,7 @@ const FormLogin = () => {
               <PermIdentityOutlinedIcon />
             </InputAdornment>
           }
-          sx={{ mt: 4, width: '60ch' }}
+          sx={{ mt: 4, width: '100%' }}
         />
 
         <OutlinedInput
@@ -77,14 +78,12 @@ const FormLogin = () => {
               </IconButton>
             </InputAdornment>
           }
-          sx={{ mt: 2, width: '60ch' }}
+          sx={{ mt: 2, width: '100%' }}
         />
 
         <ContainerLogin sx={{ m: 4 }}>
-          <Typography color="primary" align="center">
-            Esqueci minha senha
-          </Typography>
-          <Button color="primary">Entrar</Button>
+          <ForgotPasswordButton>Esqueci minha senha</ForgotPasswordButton>
+          <LoginButton>Entrar</LoginButton>
         </ContainerLogin>
       </ContainerUp>
 

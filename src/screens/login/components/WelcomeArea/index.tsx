@@ -13,6 +13,7 @@ import {
   ContainerMiddle,
   ContainerRegister,
   ContainerUp,
+  ContainerRegisterText,
   PatternBox,
 } from './styles';
 
@@ -27,12 +28,10 @@ const WelcomeArea = () => {
         </ContainerLogo>
 
         <ContainerRegister>
-          <Typography>Não é cadastrado?</Typography>
-          <Button
-            color="secondary"
-            sx={{ ml: 2 }}
-            onClick={handleRegisterClick}
-          >
+          <ContainerRegisterText>
+            <Typography>Não é cadastrado?</Typography>
+          </ContainerRegisterText>
+          <Button color="secondary" onClick={handleRegisterClick}>
             Cadastre-se
           </Button>
         </ContainerRegister>
