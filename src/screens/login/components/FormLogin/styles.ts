@@ -30,6 +30,12 @@ export const ContainerUp = styled(Box).attrs({
   alignItems: 'center',
 })``;
 
+export const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const ContainerLogin = styled(Box).attrs({
   display: 'flex',
   flexDirection: 'row',
