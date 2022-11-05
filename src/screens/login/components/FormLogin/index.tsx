@@ -16,6 +16,8 @@ import {
   ContainerBottom,
   ContainerLogin,
   ContainerUp,
+  TypographyLogin,
+  TypographyCredentials,
 } from './styles';
 
 const FormLogin = () => {
@@ -32,29 +34,10 @@ const FormLogin = () => {
   return (
     <Container>
       <ContainerUp>
-        <Typography
-          component="h1"
-          variant="h5"
-          fontWeight={600}
-          fontSize="36px"
-          lineHeight="52px"
-          align="center"
-          color="#2D2D2C"
-          sx={{ m: 2 }}
-        >
-          Faça seu login
-        </Typography>
-        <Typography
-          component="h5"
-          variant="h5"
-          fontWeight={400}
-          fontSize="16px"
-          lineHeight="19.36px"
-          align="center"
-          color="#2D2D2C"
-        >
+        <TypographyLogin component="h1">Faça seu login</TypographyLogin>
+        <TypographyCredentials component="h5">
           Insira suas credenciais abaixo para continuar
-        </Typography>
+        </TypographyCredentials>
 
         <OutlinedInput
           value={email}
