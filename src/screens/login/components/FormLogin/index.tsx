@@ -19,6 +19,7 @@ import {
   ContainerUp,
   ForgotPasswordButton,
   LoginButton,
+  StyledForm,
   TypographyCredentials,
   TypographyLogin,
 } from './styles';
@@ -32,10 +33,33 @@ const FormLogin = () => {
     handleLoginClick,
     email,
     isLoading,
+    isInvalidEmail,
+    isInvalidPassword,
     error,
     password,
     showPassword,
   } = useLogin();
+
+  const EmailError = () => {
+    if (isInvalidEmail)
+      return <FormHelperText error>E-mail inválido.</FormHelperText>;
+
+    return <></>;
+  };
+
+  const PasswordError = () => {
+    if (isInvalidPassword)
+      return <FormHelperText error>Informe uma senha.</FormHelperText>;
+
+    if (error)
+      return (
+        <FormHelperText error>
+          E-mail ou senha incorreto. Tente novamente.
+        </FormHelperText>
+      );
+
+    return <></>;
+  };
 
   return (
     <Container>
@@ -45,64 +69,63 @@ const FormLogin = () => {
           Insira suas credenciais abaixo para continuar
         </TypographyCredentials>
 
-        <TextField
-          error={!!error}
-          value={email}
-          id="email"
-          name="email"
-          onChange={handleEmailChange}
-          placeholder="E-mail IComp"
-          startAdornment={
-            <InputAdornment position="start">
-              <PermIdentityOutlinedIcon />
-            </InputAdornment>
-          }
-          sx={{ mt: 4, width: '100%' }}
-        />
+        <StyledForm onSubmit={handleLoginClick}>
+          <Box sx={{ width: '100%' }}>
+            <TextField
+              error={!!error || isInvalidEmail}
+              value={email}
+              id="email"
+              name="email"
+              onChange={handleEmailChange}
+              placeholder="E-mail IComp"
+              startAdornment={
+                <InputAdornment position="start">
+                  <PermIdentityOutlinedIcon />
+                </InputAdornment>
+              }
+              sx={{ mt: 4, width: '100%' }}
+            />
+            <EmailError />
+          </Box>
 
-        <Box sx={{ mt: '16px', width: '100%' }}>
-          <TextField
-            error={!!error}
-            type={showPassword ? 'text' : 'password'}
-            value={password}
-            id="password"
-            name="password"
-            placeholder="Senha"
-            onChange={handlePasswordChange}
-            startAdornment={
-              <InputAdornment position="start">
-                <VpnKeyOutlinedIcon />
-              </InputAdornment>
-            }
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
-            sx={{ width: '100%' }}
-          />
-          {error ? (
-            <FormHelperText error>
-              E-mail ou senha incorreto. Tente novamente.
-            </FormHelperText>
-          ) : (
-            <></>
-          )}
-        </Box>
+          <Box sx={{ mt: '16px', width: '100%' }}>
+            <TextField
+              error={!!error || isInvalidPassword}
+              type={showPassword ? 'text' : 'password'}
+              value={password}
+              id="password"
+              name="password"
+              placeholder="Senha"
+              onChange={handlePasswordChange}
+              startAdornment={
+                <InputAdornment position="start">
+                  <VpnKeyOutlinedIcon />
+                </InputAdornment>
+              }
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              }
+              sx={{ width: '100%' }}
+            />
+            <PasswordError />
+          </Box>
 
-        <ContainerLogin sx={{ m: 4 }}>
-          <ForgotPasswordButton>Esqueci minha senha</ForgotPasswordButton>
-          <LoginButton loading={isLoading} onClick={handleLoginClick}>
-            Entrar
-          </LoginButton>
-        </ContainerLogin>
+          <ContainerLogin sx={{ m: 4 }}>
+            <ForgotPasswordButton>Esqueci minha senha</ForgotPasswordButton>
+            <LoginButton type="submit" loading={isLoading}>
+              Entrar
+            </LoginButton>
+          </ContainerLogin>
+        </StyledForm>
       </ContainerUp>
 
       <ContainerBottom>
