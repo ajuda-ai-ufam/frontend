@@ -27,6 +27,10 @@ const theme = createTheme({
     background: {
       default: '#ECEDEA',
     },
+    action: {
+      disabled: '#fff',
+      disabledBackground: '#70D26866',
+    },
   },
   typography: {
     fontFamily: 'Inter',
