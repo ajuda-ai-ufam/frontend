@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useLoginRequest from '../../../service/requests/login';
 import { SCREENS } from '../../../utils/screens';
+import { TLoginHook } from './types';
 
-const useLogin = () => {
+const useLogin = (): TLoginHook => {
   const navigate = useNavigate();
   const { error, isLoading, isSuccess, login } = useLoginRequest();
 

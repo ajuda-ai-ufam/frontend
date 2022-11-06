@@ -14,6 +14,7 @@ import {
 import { NavLink } from 'react-router-dom';
 import { TextField } from '../../../../components/textField';
 import { SCREENS } from '../../../../utils/screens';
+import testId from '../../../../utils/testId';
 import useLogin from '../../hooks/useLogin';
 import {
   Container,
@@ -72,7 +73,7 @@ const FormLogin = () => {
           Insira suas credenciais abaixo para continuar
         </TypographyCredentials>
 
-        <StyledForm onSubmit={handleLoginClick}>
+        <StyledForm id={testId.login.form} onSubmit={handleLoginClick}>
           <Box sx={{ width: '100%' }}>
             <TextField
               error={!!error || isInvalidEmail}
@@ -108,6 +109,7 @@ const FormLogin = () => {
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton
+                    id={testId.login.showPasswordButton}
                     aria-label="toggle password visibility"
                     onClick={handleClickShowPassword}
                     onMouseDown={handleMouseDownPassword}
