@@ -2,30 +2,30 @@ import PersonIcon from '@mui/icons-material/Person';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
+import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
 import {
   Box,
   FormHelperText,
   IconButton,
   InputAdornment,
   Typography,
-  Link,
 } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import { TextField } from '../../../../components/textField';
+import { SCREENS } from '../../../../utils/screens';
 import useLogin from '../../hooks/useLogin';
 import {
   Container,
   ContainerBottom,
   ContainerLogin,
   ContainerUp,
+  ForgotPasswordLink,
   LoginButton,
   StyledForm,
   TypographyCredentials,
   TypographyLogin,
 } from './styles';
-import { SCREENS } from '../../../../utils/screens';
 
 const FormLogin = () => {
   const {
@@ -123,14 +123,9 @@ const FormLogin = () => {
           </Box>
 
           <ContainerLogin sx={{ m: 4 }}>
-            <Link
-              variant="body2"
-              underline="hover"
-              color={'primary'}
-              href={SCREENS.REGISTER}
-            >
+            <ForgotPasswordLink href={SCREENS.REGISTER}>
               Esqueci minha senha
-            </Link>
+            </ForgotPasswordLink>
             <LoginButton type="submit" loading={isLoading}>
               Entrar
             </LoginButton>

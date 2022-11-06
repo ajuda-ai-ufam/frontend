@@ -1,7 +1,7 @@
 import type { TypographyProps } from '@material-ui/core';
 import { styled as styledMUI } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import { Button as MUIButton } from '@mui/material';
+import { Link } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 
@@ -57,16 +57,11 @@ export const LoginButton = styled(Button).attrs({
   }
 `;
 
-export const ForgotPasswordButton = styled(MUIButton).attrs({
-  variant: 'text',
+export const ForgotPasswordLink = styled(Link).attrs({
+  variant: 'body2',
+  underline: 'hover',
   color: 'primary',
-})`
-  padding: 0px 16px 0px 16px !important;
-  border-radius: 100px;
-  @media (max-width: ${theme.breakpoints.values.sm}px) {
-    align-self: flex-end;
-  }
-`;
+})``;
 
 export const ContainerBottom = styled(Box).attrs({
   display: 'flex',
