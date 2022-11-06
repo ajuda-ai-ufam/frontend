@@ -1,3 +1,10 @@
+export type TLoginRequestHook = {
+  isLoading: boolean;
+  isSuccess: boolean;
+  error?: string;
+  login(email: string, password: string): void;
+};
+
 export type TLoginRequest = {
   email: string;
   password: string;

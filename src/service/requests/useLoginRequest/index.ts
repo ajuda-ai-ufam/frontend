@@ -2,9 +2,14 @@ import { useState } from 'react';
 import { AxiosError } from 'axios';
 import api from '../../api';
 import useSaveToken from '../../storage/saveToken';
-import { TLoginErrorResponse, TLoginRequest, TLoginResponse } from './types';
+import {
+  TLoginErrorResponse,
+  TLoginRequest,
+  TLoginRequestHook,
+  TLoginResponse,
+} from './types';
 
-const useLoginRequest = () => {
+const useLoginRequest = (): TLoginRequestHook => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string>();
   const [isSuccess, setIsSuccess] = useState(false);

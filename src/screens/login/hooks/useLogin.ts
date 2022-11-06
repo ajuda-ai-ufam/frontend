@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import useLoginRequest from '../../../service/requests/login';
+import useLoginRequest from '../../../service/requests/useLoginRequest';
 import { SCREENS } from '../../../utils/screens';
 import { TLoginHook } from './types';
 
