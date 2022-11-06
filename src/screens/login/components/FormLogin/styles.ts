@@ -4,7 +4,6 @@ import Typography from '@material-ui/core/Typography';
 import { Button as MUIButton } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 
 import styled from 'styled-components';
 import { Button } from '../../../../components/button';

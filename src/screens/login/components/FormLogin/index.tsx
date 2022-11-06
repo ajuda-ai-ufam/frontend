@@ -25,6 +25,7 @@ import {
   TypographyCredentials,
   TypographyLogin,
 } from './styles';
+import { SCREENS } from '../../../../utils/screens';
 
 const FormLogin = () => {
   const {
@@ -126,7 +127,7 @@ const FormLogin = () => {
               variant="body2"
               underline="hover"
               color={'primary'}
-              href="/register"
+              href={SCREENS.REGISTER}
             >
               Esqueci minha senha
             </Link>
@@ -139,7 +140,7 @@ const FormLogin = () => {
 
       <ContainerBottom>
         <Typography align="center">Ainda não tem uma conta?&nbsp;</Typography>
-        <NavLink to="/register">
+        <NavLink to={SCREENS.REGISTER}>
           <Typography color={'secondary'}>Cadastre-se</Typography>
         </NavLink>
       </ContainerBottom>

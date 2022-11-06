@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useLoginRequest from '../../../service/requests/login';
+import { SCREENS } from '../../../utils/screens';
 
 const useLogin = () => {
   const navigate = useNavigate();
@@ -39,7 +40,7 @@ const useLogin = () => {
   };
 
   const handleRegisterClick = () => {
-    navigate('/register');
+    navigate(SCREENS.REGISTER);
   };
 
   const handleLoginClick = (e: React.SyntheticEvent<EventTarget>) => {
