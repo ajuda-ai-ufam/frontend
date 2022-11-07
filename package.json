@@ -20,6 +20,7 @@
     "@types/react-dom": "^18.0.0",
     "axios": "^1.1.3",
     "jest-dom": "^4.0.0",
+    "jest-mock-axios": "^4.7.0-beta",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.2",
@@ -31,7 +32,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --verbose --passWithNoTests",
+    "test": "jest --verbose --passWithNoTests --silent",
     "eject": "react-scripts eject",
     "lint": "npx eslint ./src && echo \"> No lint errors found in src/.\"",
     "lint:commit": "npx --no-install commitlint --edit && echo \"> No errors found in commit messages.\"",
