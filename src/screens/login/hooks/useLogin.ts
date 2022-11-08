@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import useLoginRequest from '../../../service/requests/login';
+import useLoginRequest from '../../../service/requests/useLoginRequest';
+import { SCREENS } from '../../../utils/screens';
+import { TLoginHook } from './types';
 
-const useLogin = () => {
+const useLogin = (): TLoginHook => {
   const navigate = useNavigate();
   const { error, isLoading, isSuccess, login } = useLoginRequest();
 
@@ -39,7 +41,7 @@ const useLogin = () => {
   };
 
   const handleRegisterClick = () => {
-    navigate('/register');
+    navigate(SCREENS.REGISTER);
   };
 
   const handleLoginClick = (e: React.SyntheticEvent<EventTarget>) => {
