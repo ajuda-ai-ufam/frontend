@@ -1,5 +1,5 @@
 import Container from '../../components/container';
-import LogoImage from './components/LogoImage';
+import LogoImage from '../../components/logoImage';
 import WelcomeArea from './components/WelcomeArea';
 
 const Login = () => {

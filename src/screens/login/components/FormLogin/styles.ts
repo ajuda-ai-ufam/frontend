@@ -1,21 +1,13 @@
 import type { TypographyProps } from '@material-ui/core';
 import { styled as styledMUI } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 import { Link } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
+import Typography from '@mui/material/Typography';
 
 import styled from 'styled-components';
 import { Button } from '../../../../components/button';
 import theme from '../../../../utils/theme';
-
-type TypographyPLogin = React.ComponentType<
-  TypographyProps<'h1', { component: 'h1' }>
->;
-
-type TypographyPCredentials = React.ComponentType<
-  TypographyProps<'h5', { component: 'h5' }>
->;
 
 export const Container = styled(Box).attrs({
   display: 'flex',
@@ -71,28 +63,16 @@ export const ContainerBottom = styled(Box).attrs({
   marginTop: '10px',
 })``;
 
-export const TypographyLogin: TypographyPLogin = styledMUI(Typography)({
-  component: 'h1',
-  variant: 'h5',
-  fontWeight: 600,
-  fontSize: '36px',
+export const TypographyLogin = styledMUI(Typography)({
   lineHeight: '52px',
   align: 'center',
-  color: '#2D2D2C',
+  color: theme.palette.secondary.main,
   margin: 2,
-  fontFamily: 'Inter',
 });
 
-export const TypographyCredentials: TypographyPCredentials = styledMUI(
-  Typography
-)({
-  component: 'h5',
-  variant: 'h5',
-  fontWeight: 400,
-  fontSize: '16px',
+export const TypographyCredentials = styledMUI(Typography)({
   lineHeight: '19.36px',
   align: 'center',
-  color: '#2D2D2C',
+  color: theme.palette.secondary.main,
   margin: 2,
-  fontFamily: 'Inter',
 });
