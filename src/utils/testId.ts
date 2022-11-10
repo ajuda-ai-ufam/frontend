@@ -10,4 +10,9 @@ export default {
     codeForm: 'code-verification-code-form',
     loginButton: 'code-verification-login-button',
   },
+  typeRegister: {
+    loginButton: 'register-login-button',
+    iAmProfessorButton: 'register-professor-button',
+    iAmStudentButton: 'register-student-button',
+  },
 };
