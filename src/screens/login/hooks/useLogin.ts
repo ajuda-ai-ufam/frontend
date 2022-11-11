@@ -1,24 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import useLoginRequest from '../../../service/requests/login';
+import useLoginRequest from '../../../service/requests/useLoginRequest';
+import { SCREENS } from '../../../utils/screens';
+import { TLoginHook } from './types';
 
-const useLogin = () => {
+const useLogin = (): TLoginHook => {
   const navigate = useNavigate();
-  const { error, isLoading, isSuccess, login } = useLoginRequest();
+  const { error, isLoading, isSuccess, login, resetError } = useLoginRequest();
 
-  const [isInvalidEmail, setIsInvalidEmail] = useState(false);
-  const [isInvalidPassword, setIsInvalidPassword] = useState(false);
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-
-  useEffect(() => {
-    document.title = 'Entrar';
-  }, []);
-
-  useEffect(() => {
-    if (isSuccess) alert('Parabéns! Você está logado.');
-  }, [isSuccess]);
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -39,23 +33,48 @@ const useLogin = () => {
   };
 
   const handleRegisterClick = () => {
-    navigate('/register');
+    navigate(SCREENS.REGISTER);
   };
 
   const handleLoginClick = (e: React.SyntheticEvent<EventTarget>) => {
     e.preventDefault();
-    if (!email || email.indexOf('@') === -1) {
-      return setIsInvalidEmail(true);
+    setPasswordError('');
+    setEmailError('');
+    resetError();
+
+    if (!email) {
+      return setEmailError('Informe um e-mail.');
     }
-    setIsInvalidEmail(false);
+
+    if (email.indexOf('@') === -1) {
+      return setEmailError('E-mail inválido.');
+    }
 
     if (!password) {
-      return setIsInvalidPassword(true);
+      return setPasswordError('Informe uma senha.');
     }
-    setIsInvalidPassword(false);
 
     void login(email, password);
   };
+
+  useEffect(() => {
+    if (error) {
+      if (error === 'Usuário não verificado.') {
+        navigate(SCREENS.CODE_VERIFICATION, { state: { email } });
+        return;
+      }
+
+      setPasswordError('E-mail ou senha incorreto. Tente novamente.');
+    }
+  }, [error]);
+
+  useEffect(() => {
+    document.title = 'Entrar';
+  }, []);
+
+  useEffect(() => {
+    if (isSuccess) alert('Parabéns! Você está logado.');
+  }, [isSuccess]);
 
   return {
     handlePasswordChange,
@@ -69,8 +88,8 @@ const useLogin = () => {
     showPassword,
     error,
     isLoading,
-    isInvalidEmail,
-    isInvalidPassword,
+    emailError,
+    passwordError,
   };
 };
 

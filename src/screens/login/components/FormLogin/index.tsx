@@ -2,24 +2,26 @@ import PersonIcon from '@mui/icons-material/Person';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
+import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
 import {
   Box,
   FormHelperText,
   IconButton,
   InputAdornment,
   Typography,
-  Link,
 } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import { TextField } from '../../../../components/textField';
+import { SCREENS } from '../../../../utils/screens';
+import testId from '../../../../utils/testId';
 import useLogin from '../../hooks/useLogin';
 import {
   Container,
   ContainerBottom,
   ContainerLogin,
   ContainerUp,
+  ForgotPasswordLink,
   LoginButton,
   StyledForm,
   TypographyCredentials,
@@ -35,30 +37,23 @@ const FormLogin = () => {
     handleLoginClick,
     email,
     isLoading,
-    isInvalidEmail,
-    isInvalidPassword,
     error,
+    emailError,
+    passwordError,
     password,
     showPassword,
   } = useLogin();
 
   const EmailError = () => {
-    if (isInvalidEmail)
-      return <FormHelperText error>E-mail inválido.</FormHelperText>;
+    if (!!emailError)
+      return <FormHelperText error>{emailError}</FormHelperText>;
 
     return <></>;
   };
 
   const PasswordError = () => {
-    if (isInvalidPassword)
-      return <FormHelperText error>Informe uma senha.</FormHelperText>;
-
-    if (error)
-      return (
-        <FormHelperText error>
-          E-mail ou senha incorreto. Tente novamente.
-        </FormHelperText>
-      );
+    if (!!passwordError)
+      return <FormHelperText error>{passwordError}</FormHelperText>;
 
     return <></>;
   };
@@ -71,10 +66,10 @@ const FormLogin = () => {
           Insira suas credenciais abaixo para continuar
         </TypographyCredentials>
 
-        <StyledForm onSubmit={handleLoginClick}>
+        <StyledForm id={testId.login.form} onSubmit={handleLoginClick}>
           <Box sx={{ width: '100%' }}>
             <TextField
-              error={!!error || isInvalidEmail}
+              error={!!emailError || !!error}
               value={email}
               id="email"
               name="email"
@@ -92,7 +87,7 @@ const FormLogin = () => {
 
           <Box sx={{ mt: '16px', width: '100%' }}>
             <TextField
-              error={!!error || isInvalidPassword}
+              error={!!passwordError || !!error}
               type={showPassword ? 'text' : 'password'}
               value={password}
               id="password"
@@ -107,6 +102,7 @@ const FormLogin = () => {
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton
+                    id={testId.login.showPasswordButton}
                     aria-label="toggle password visibility"
                     onClick={handleClickShowPassword}
                     onMouseDown={handleMouseDownPassword}
@@ -122,14 +118,9 @@ const FormLogin = () => {
           </Box>
 
           <ContainerLogin sx={{ m: 4 }}>
-            <Link
-              variant="body2"
-              underline="hover"
-              color={'primary'}
-              href="/register"
-            >
+            <ForgotPasswordLink href={SCREENS.REGISTER}>
               Esqueci minha senha
-            </Link>
+            </ForgotPasswordLink>
             <LoginButton type="submit" loading={isLoading}>
               Entrar
             </LoginButton>
@@ -139,7 +130,7 @@ const FormLogin = () => {
 
       <ContainerBottom>
         <Typography align="center">Ainda não tem uma conta?&nbsp;</Typography>
-        <NavLink to="/register">
+        <NavLink to={SCREENS.REGISTER}>
           <Typography color={'secondary'}>Cadastre-se</Typography>
         </NavLink>
       </ContainerBottom>

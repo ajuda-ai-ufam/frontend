@@ -4,6 +4,7 @@ import LoginPatternBottomEnd from '../../../../assets/login-pattern-be-small.svg
 import LoginPatternBottomStart from '../../../../assets/login-pattern-bs-small.svg';
 import { Button } from '../../../../components/button';
 import Copyright from '../../../../components/copyright';
+import testId from '../../../../utils/testId';
 import useLogin from '../../hooks/useLogin';
 import FormLogin from '../FormLogin';
 import {
@@ -31,7 +32,11 @@ const WelcomeArea = () => {
           <ContainerRegisterText>
             <Typography>Não é cadastrado?</Typography>
           </ContainerRegisterText>
-          <Button color="secondary" onClick={handleRegisterClick}>
+          <Button
+            id={testId.login.registerButton}
+            color="secondary"
+            onClick={handleRegisterClick}
+          >
             Cadastre-se
           </Button>
         </ContainerRegister>
