@@ -28,7 +28,7 @@ const theme = createTheme({
       default: '#ECEDEA',
     },
     action: {
-      disabled: '#fff',
+      disabled: '#65B95E66',
       disabledBackground: '#70D26866',
     },
   },
