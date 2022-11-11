@@ -37,30 +37,23 @@ const FormLogin = () => {
     handleLoginClick,
     email,
     isLoading,
-    isInvalidEmail,
-    isInvalidPassword,
     error,
+    emailError,
+    passwordError,
     password,
     showPassword,
   } = useLogin();
 
   const EmailError = () => {
-    if (isInvalidEmail)
-      return <FormHelperText error>E-mail inválido.</FormHelperText>;
+    if (!!emailError)
+      return <FormHelperText error>{emailError}</FormHelperText>;
 
     return <></>;
   };
 
   const PasswordError = () => {
-    if (isInvalidPassword)
-      return <FormHelperText error>Informe uma senha.</FormHelperText>;
-
-    if (error)
-      return (
-        <FormHelperText error>
-          E-mail ou senha incorreto. Tente novamente.
-        </FormHelperText>
-      );
+    if (!!passwordError)
+      return <FormHelperText error>{passwordError}</FormHelperText>;
 
     return <></>;
   };
@@ -76,7 +69,7 @@ const FormLogin = () => {
         <StyledForm id={testId.login.form} onSubmit={handleLoginClick}>
           <Box sx={{ width: '100%' }}>
             <TextField
-              error={!!error || isInvalidEmail}
+              error={!!emailError || !!error}
               value={email}
               id="email"
               name="email"
@@ -94,7 +87,7 @@ const FormLogin = () => {
 
           <Box sx={{ mt: '16px', width: '100%' }}>
             <TextField
-              error={!!error || isInvalidPassword}
+              error={!!passwordError || !!error}
               type={showPassword ? 'text' : 'password'}
               value={password}
               id="password"

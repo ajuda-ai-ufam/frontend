@@ -10,6 +10,6 @@ export type TLoginHook = {
   showPassword: boolean;
   error?: string;
   isLoading: boolean;
-  isInvalidEmail: boolean;
-  isInvalidPassword: boolean;
+  emailError: string;
+  passwordError: string;
 };

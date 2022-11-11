@@ -5,7 +5,10 @@ import { act } from 'react-test-renderer';
 import useLogin from '../../../../screens/login/hooks/useLogin';
 import * as useLoginRequest from '../../../../service/requests/useLoginRequest';
 import { SCREENS } from '../../../../utils/screens';
-import { useLoginRequestDefaultMockReturn } from '../../../service/requests/__mocks__/useLoginRequest.mock';
+import {
+  useLoginRequestDefaultMockReturn,
+  useLoginRequestErrorMockReturn,
+} from '../../../service/requests/__mocks__/useLoginRequest.mock';
 
 jest.mock('react-router-dom');
 const NavigationMock = Navigation as jest.Mocked<typeof Navigation>;
@@ -34,8 +37,8 @@ describe('Test login hook', () => {
     expect(result.current.password).toBe('');
     expect(result.current.isLoading).toBeFalsy();
     expect(result.current.showPassword).toBeFalsy();
-    expect(result.current.isInvalidEmail).toBeFalsy();
-    expect(result.current.isInvalidPassword).toBeFalsy();
+    expect(result.current.emailError).toBe('');
+    expect(result.current.passwordError).toBe('');
     expect(result.current.error).toBeUndefined();
   });
 
@@ -146,9 +149,10 @@ describe('Test login hook', () => {
       );
     });
 
-    expect(result.current.isInvalidEmail).toBeFalsy();
-    expect(result.current.isInvalidPassword).toBeFalsy();
+    expect(result.current.emailError).toBe('');
+    expect(result.current.passwordError).toBe('');
     expect(event.preventDefault).toBeCalled();
+    expect(useLoginRequestDefaultMockReturn.resetError).toBeCalled();
     expect(useLoginRequestDefaultMockReturn.login).toBeCalledWith(
       email,
       password
@@ -176,9 +180,10 @@ describe('Test login hook', () => {
       );
     });
 
-    expect(result.current.isInvalidEmail).toBeTruthy();
-    expect(result.current.isInvalidPassword).toBeFalsy();
+    expect(result.current.emailError).toBe('E-mail inválido.');
+    expect(result.current.passwordError).toBe('');
     expect(event.preventDefault).toBeCalled();
+    expect(useLoginRequestDefaultMockReturn.resetError).toBeCalled();
     expect(useLoginRequestDefaultMockReturn.login).not.toBeCalled();
   });
 
@@ -194,9 +199,10 @@ describe('Test login hook', () => {
       );
     });
 
-    expect(result.current.isInvalidEmail).toBeTruthy();
-    expect(result.current.isInvalidPassword).toBeFalsy();
+    expect(result.current.emailError).toBe('Informe um e-mail.');
+    expect(result.current.passwordError).toBe('');
     expect(event.preventDefault).toBeCalled();
+    expect(useLoginRequestDefaultMockReturn.resetError).toBeCalled();
     expect(useLoginRequestDefaultMockReturn.login).not.toBeCalled();
   });
 
@@ -221,9 +227,21 @@ describe('Test login hook', () => {
       );
     });
 
-    expect(result.current.isInvalidEmail).toBeFalsy();
-    expect(result.current.isInvalidPassword).toBeTruthy();
+    expect(result.current.emailError).toBe('');
+    expect(result.current.passwordError).toBe('Informe uma senha.');
     expect(event.preventDefault).toBeCalled();
+    expect(useLoginRequestDefaultMockReturn.resetError).toBeCalled();
     expect(useLoginRequestDefaultMockReturn.login).not.toBeCalled();
+  });
+
+  it('should navigate to code verification when error is not verified', () => {
+    useLoginRequestMock.default.mockReturnValue(useLoginRequestErrorMockReturn);
+
+    const { result } = renderHook(() => useLogin());
+
+    expect(result.current.error).toBe('Usuário não verificado.');
+    expect(navigateMock).toBeCalledWith(SCREENS.CODE_VERIFICATION, {
+      state: { email: '' },
+    });
   });
 });

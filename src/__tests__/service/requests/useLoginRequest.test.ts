@@ -79,4 +79,25 @@ describe('Test login request hook', () => {
     expect(mockAxios.post).toBeCalledWith(LOGIN_URL, { email, password });
     expect(useSaveTokenMock.default).not.toBeCalled();
   });
+
+  it('should reset error', async () => {
+    const { result } = renderHook(() => useLoginRequest());
+    mockAxios.post.mockRejectedValue(useLoginRequestErrorResponseMock);
+    const email = 'usuario@icomp.ufam.edu.br';
+    const password = '123456789';
+
+    await act(() => {
+      result.current.login(email, password);
+    });
+
+    expect(result.current.error).toBe(
+      useLoginRequestErrorResponseMock.response.data.message
+    );
+
+    await act(() => {
+      result.current.resetError();
+    });
+
+    expect(result.current.error).toBeUndefined();
+  });
 });
