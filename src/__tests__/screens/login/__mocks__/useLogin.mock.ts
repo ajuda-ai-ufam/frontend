@@ -4,8 +4,8 @@ export const useLoginDefaultMockReturn: TLoginHook = {
   email: '',
   password: '',
   isLoading: false,
-  isInvalidEmail: false,
-  isInvalidPassword: false,
+  emailError: '',
+  passwordError: '',
   showPassword: false,
   handleClickShowPassword: jest.fn(),
   handleEmailChange: jest.fn(),
@@ -18,13 +18,13 @@ export const useLoginDefaultMockReturn: TLoginHook = {
 export const useLoginInvalidEmailMockReturn: TLoginHook = {
   ...useLoginDefaultMockReturn,
   email: 'invalid',
-  isInvalidEmail: true,
+  emailError: 'E-mail inválido.',
 };
 
 export const useLoginInvalidPasswordMockReturn: TLoginHook = {
   ...useLoginDefaultMockReturn,
   password: '',
-  isInvalidPassword: true,
+  passwordError: 'Informe uma senha.',
 };
 
 export const useLoginShowPasswordMockReturn: TLoginHook = {

@@ -4,6 +4,7 @@ export const useLoginRequestDefaultMockReturn: TLoginRequestHook = {
   isLoading: false,
   isSuccess: false,
   login: jest.fn(),
+  resetError: jest.fn(),
 };
 
 export const useLoginRequestSuccessResponseMock = {
@@ -20,4 +21,12 @@ export const useLoginRequestErrorResponseMock = {
       statusCode: 403,
     },
   },
+};
+
+export const useLoginRequestErrorMockReturn: TLoginRequestHook = {
+  isLoading: false,
+  isSuccess: false,
+  login: jest.fn(),
+  resetError: jest.fn(),
+  error: 'Usuário não verificado.',
 };

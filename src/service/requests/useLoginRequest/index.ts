@@ -41,11 +41,14 @@ const useLoginRequest = (): TLoginRequestHook => {
     }
   };
 
+  const resetError = () => setError(undefined);
+
   return {
     isLoading,
     isSuccess,
     error,
     login,
+    resetError,
   };
 };
 

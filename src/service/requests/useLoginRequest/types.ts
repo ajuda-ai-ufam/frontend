@@ -3,6 +3,7 @@ export type TLoginRequestHook = {
   isSuccess: boolean;
   error?: string;
   login(email: string, password: string): void;
+  resetError(): void;
 };
 
 export type TLoginRequest = {
