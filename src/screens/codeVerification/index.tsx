@@ -14,6 +14,7 @@ import {
   CopyRigthContainer,
 } from './styles';
 import ConfirmedEmail from './components/ConfirmedEmail';
+import testId from '../../utils/testId';
 
 const CodeVerificationScreen = () => {
   const {
@@ -52,12 +53,16 @@ const CodeVerificationScreen = () => {
           cadastro, digite o código recebido abaixo.
         </Typography>
 
-        <form style={{ width: '100%' }} onSubmit={handleSubmit}>
+        <form
+          style={{ width: '100%' }}
+          onSubmit={handleSubmit}
+          id={testId.codeVerification.codeForm}
+        >
           <CodeTextField
-            key="code"
             error={!!errorMessage}
             value={code}
             onChange={handleCodeChange}
+            id={testId.codeVerification.codeInput}
           />
           <InvalidCodeError />
 
@@ -68,6 +73,7 @@ const CodeVerificationScreen = () => {
               loading={isGenerateCodeLoading}
               variant={'outlined'}
               onClick={handleResendCodeClick}
+              id={testId.codeVerification.resendCodeButton}
             >
               Enviar código novamente{' '}
               {timeToResendCode ? `(${timeToResendCode}s)` : ''}

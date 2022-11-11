@@ -1,3 +1,5 @@
+import { TGenerateCodeRequestHook } from '../../../../service/requests/useGenerateCodeRequest/types';
+
 export const useGenerateCodeRequestErrorResponseMock = {
   response: {
     data: {
@@ -7,3 +9,10 @@ export const useGenerateCodeRequestErrorResponseMock = {
     },
   },
 };
+
+export const useGenerateCodeRequestDefaultMockReturn: TGenerateCodeRequestHook =
+  {
+    isLoading: false,
+    isSuccess: false,
+    generateCode: jest.fn(),
+  };

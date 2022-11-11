@@ -1,0 +1,1155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Code Verification screen snapshot tests should load code generation 1`] = `
+<div
+  className="sc-pyfCe kmlkFr MuiBox-root css-b1jl43"
+>
+  <div
+    background="#fff"
+    className="sc-gswNZR bMISOL MuiBox-root css-jiqqrr"
+  >
+    <div
+      className="sc-dkrFOg MuiBox-root css-70qvj9"
+    >
+      <a
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1x5nolm-MuiTypography-root-MuiLink-root"
+        href="/"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        <img
+          alt="Super Monitoria"
+          src="header-logo.svg"
+        />
+      </a>
+    </div>
+    <div
+      className="sc-jSUZER MuiBox-root css-v2wsrc"
+    >
+      <div
+        className="sc-eDvSVe bISOCY MuiBox-root css-70qvj9"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        >
+          Já possui cadastro?
+        </p>
+      </div>
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-hLBbgP eSRjKV gRhBOZ css-19ged5u-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        disabled={false}
+        id=":r7:"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Faça seu login
+        <span
+          className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+  </div>
+  <div
+    className="sc-eDWCr MuiBox-root css-1pxgmwj"
+  >
+    <div
+      className="sc-bqWxrE efrXJm MuiBox-root css-163r4u2"
+    >
+      <div
+        className="sc-gKPRtg ipuJaR MuiBox-root css-0"
+      >
+        <div
+          aria-label="animation"
+          onClick={[Function]}
+          role="button"
+          style={
+            {
+              "height": "100%",
+              "margin": "0 auto",
+              "outline": "none",
+              "overflow": "hidden",
+              "width": "100%",
+            }
+          }
+          tabIndex="0"
+          title=""
+        />
+      </div>
+      <h3
+        className="MuiTypography-root MuiTypography-h3 css-1xv9tyd-MuiTypography-root"
+      >
+        Quase lá!
+      </h3>
+      <p
+        className="MuiTypography-root MuiTypography-body1 css-1toz7ve-MuiTypography-root"
+      >
+        Te enviamos um código de confirmação de e-mail. Para concluir seu cadastro, digite o código recebido abaixo.
+      </p>
+      <form
+        id="code-verification-code-form"
+        onSubmit={[MockFunction]}
+        style={
+          {
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary sc-ftTHYK sc-jrcTuL beuLgP hWFQHY css-dh2gpg-MuiInputBase-root-MuiOutlinedInput-root"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+            id="code-verification-code-input"
+            maxLength={6}
+            name="code"
+            onAnimationStart={[Function]}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Código de confirmação"
+            type="text"
+            value=""
+          />
+          <fieldset
+            aria-hidden={true}
+            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="css-ihdtdm"
+            >
+              <span
+                className="notranslate"
+              >
+                ​
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+        <div
+          className="sc-kDvujY MuiBox-root css-ef4drl"
+        >
+          <button
+            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-oha5iv-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+            disabled={false}
+            id=":r8:"
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="submit"
+          >
+            Concluir o cadastro
+            <span
+              className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+          <button
+            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiLoadingButton-loading MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium Mui-disabled MuiButton-root MuiLoadingButton-root MuiLoadingButton-loading MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-1331roj-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+            disabled={true}
+            id="code-verification-resend-code-button"
+            onBlur={[Function]}
+            onClick={[MockFunction]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={-1}
+            type="button"
+          >
+            <div
+              className="MuiLoadingButton-loadingIndicator MuiLoadingButton-loadingIndicatorCenter css-likury-MuiLoadingButton-loadingIndicator"
+            >
+              <span
+                aria-labelledby="code-verification-resend-code-button"
+                className="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorInherit css-62e83j-MuiCircularProgress-root"
+                role="progressbar"
+                style={
+                  {
+                    "height": 16,
+                    "width": 16,
+                  }
+                }
+              >
+                <svg
+                  className="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                  viewBox="22 22 44 44"
+                >
+                  <circle
+                    className="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
+                    cx={44}
+                    cy={44}
+                    fill="none"
+                    r={20.2}
+                    strokeWidth={3.6}
+                    style={{}}
+                  />
+                </svg>
+              </span>
+            </div>
+            Enviar código novamente
+             
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div
+    className="sc-csuSiG MuiBox-root css-11uvpxd"
+  >
+    <span
+      className="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter css-1bbanaz-MuiTypography-root"
+    >
+      Super Monitoria©. 
+      <a
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1cghntr-MuiTypography-root-MuiLink-root"
+        href="https://mui.com/"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        Todos os Direitos Reservados
+      </a>
+       
+      2022
+      .
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Test Code Verification screen snapshot tests should render code generate button enabled 1`] = `
+<div
+  className="sc-pyfCe kmlkFr MuiBox-root css-b1jl43"
+>
+  <div
+    background="#fff"
+    className="sc-gswNZR bMISOL MuiBox-root css-jiqqrr"
+  >
+    <div
+      className="sc-dkrFOg MuiBox-root css-70qvj9"
+    >
+      <a
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1x5nolm-MuiTypography-root-MuiLink-root"
+        href="/"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        <img
+          alt="Super Monitoria"
+          src="header-logo.svg"
+        />
+      </a>
+    </div>
+    <div
+      className="sc-jSUZER MuiBox-root css-v2wsrc"
+    >
+      <div
+        className="sc-eDvSVe bISOCY MuiBox-root css-70qvj9"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        >
+          Já possui cadastro?
+        </p>
+      </div>
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-hLBbgP eSRjKV gRhBOZ css-19ged5u-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        disabled={false}
+        id=":rc:"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Faça seu login
+        <span
+          className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+  </div>
+  <div
+    className="sc-eDWCr MuiBox-root css-1pxgmwj"
+  >
+    <div
+      className="sc-bqWxrE efrXJm MuiBox-root css-163r4u2"
+    >
+      <div
+        className="sc-gKPRtg ipuJaR MuiBox-root css-0"
+      >
+        <div
+          aria-label="animation"
+          onClick={[Function]}
+          role="button"
+          style={
+            {
+              "height": "100%",
+              "margin": "0 auto",
+              "outline": "none",
+              "overflow": "hidden",
+              "width": "100%",
+            }
+          }
+          tabIndex="0"
+          title=""
+        />
+      </div>
+      <h3
+        className="MuiTypography-root MuiTypography-h3 css-1xv9tyd-MuiTypography-root"
+      >
+        Quase lá!
+      </h3>
+      <p
+        className="MuiTypography-root MuiTypography-body1 css-1toz7ve-MuiTypography-root"
+      >
+        Te enviamos um código de confirmação de e-mail. Para concluir seu cadastro, digite o código recebido abaixo.
+      </p>
+      <form
+        id="code-verification-code-form"
+        onSubmit={[MockFunction]}
+        style={
+          {
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary sc-ftTHYK sc-jrcTuL beuLgP hWFQHY css-dh2gpg-MuiInputBase-root-MuiOutlinedInput-root"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+            id="code-verification-code-input"
+            maxLength={6}
+            name="code"
+            onAnimationStart={[Function]}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Código de confirmação"
+            type="text"
+            value=""
+          />
+          <fieldset
+            aria-hidden={true}
+            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="css-ihdtdm"
+            >
+              <span
+                className="notranslate"
+              >
+                ​
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+        <div
+          className="sc-kDvujY MuiBox-root css-ef4drl"
+        >
+          <button
+            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-oha5iv-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+            disabled={false}
+            id=":rd:"
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="submit"
+          >
+            Concluir o cadastro
+            <span
+              className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+          <button
+            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-1331roj-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+            disabled={false}
+            id="code-verification-resend-code-button"
+            onBlur={[Function]}
+            onClick={[MockFunction]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Enviar código novamente
+             
+            <span
+              className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div
+    className="sc-csuSiG MuiBox-root css-11uvpxd"
+  >
+    <span
+      className="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter css-1bbanaz-MuiTypography-root"
+    >
+      Super Monitoria©. 
+      <a
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1cghntr-MuiTypography-root-MuiLink-root"
+        href="https://mui.com/"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        Todos os Direitos Reservados
+      </a>
+       
+      2022
+      .
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Test Code Verification screen snapshot tests should render code verified screen 1`] = `
+<div
+  className="sc-pyfCe kmlkFr MuiBox-root css-b1jl43"
+>
+  <div
+    background="#fff"
+    className="sc-gswNZR bMISOL MuiBox-root css-jiqqrr"
+  >
+    <div
+      className="sc-dkrFOg MuiBox-root css-70qvj9"
+    >
+      <a
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1x5nolm-MuiTypography-root-MuiLink-root"
+        href="/"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        <img
+          alt="Super Monitoria"
+          src="header-logo.svg"
+        />
+      </a>
+    </div>
+    <div
+      className="sc-jSUZER MuiBox-root css-v2wsrc"
+    >
+      <div
+        className="sc-eDvSVe bISOCY MuiBox-root css-70qvj9"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        >
+          Já possui cadastro?
+        </p>
+      </div>
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-hLBbgP eSRjKV gRhBOZ css-19ged5u-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        disabled={false}
+        id=":ra:"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Faça seu login
+      </button>
+    </div>
+  </div>
+  <div
+    className="sc-eDWCr MuiBox-root css-1pxgmwj"
+  >
+    <div
+      className="sc-bqWxrE efrXJm MuiBox-root css-163r4u2"
+    >
+      <div
+        className="sc-ksBlkl iBhyns MuiBox-root css-0"
+      >
+        <div
+          aria-label="animation"
+          onClick={[Function]}
+          role="button"
+          style={
+            {
+              "height": "100%",
+              "margin": "0 auto",
+              "outline": "none",
+              "overflow": "hidden",
+              "width": "100%",
+            }
+          }
+          tabIndex="0"
+          title=""
+        />
+      </div>
+      <h3
+        className="MuiTypography-root MuiTypography-h3 css-1xv9tyd-MuiTypography-root"
+      >
+        Muito bem!
+      </h3>
+      <p
+        className="MuiTypography-root MuiTypography-body1 css-1toz7ve-MuiTypography-root"
+      >
+        Agora que seu cadastro foi concluído você poderá aproveitar para solicitar ajuda dos monitores sempre que precisar.
+      </p>
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe gBODOj css-b12mx9-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        disabled={false}
+        id="code-verification-login-button"
+        onBlur={[Function]}
+        onClick={[MockFunction]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Voltar ao login
+      </button>
+    </div>
+  </div>
+  <div
+    className="sc-csuSiG MuiBox-root css-11uvpxd"
+  >
+    <span
+      className="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter css-1bbanaz-MuiTypography-root"
+    >
+      Super Monitoria©. 
+      <a
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1cghntr-MuiTypography-root-MuiLink-root"
+        href="https://mui.com/"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        Todos os Direitos Reservados
+      </a>
+       
+      2022
+      .
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Test Code Verification screen snapshot tests should render invalid code error 1`] = `
+<div
+  className="sc-pyfCe kmlkFr MuiBox-root css-b1jl43"
+>
+  <div
+    background="#fff"
+    className="sc-gswNZR bMISOL MuiBox-root css-jiqqrr"
+  >
+    <div
+      className="sc-dkrFOg MuiBox-root css-70qvj9"
+    >
+      <a
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1x5nolm-MuiTypography-root-MuiLink-root"
+        href="/"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        <img
+          alt="Super Monitoria"
+          src="header-logo.svg"
+        />
+      </a>
+    </div>
+    <div
+      className="sc-jSUZER MuiBox-root css-v2wsrc"
+    >
+      <div
+        className="sc-eDvSVe bISOCY MuiBox-root css-70qvj9"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        >
+          Já possui cadastro?
+        </p>
+      </div>
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-hLBbgP eSRjKV gRhBOZ css-19ged5u-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        disabled={false}
+        id=":r3:"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Faça seu login
+        <span
+          className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+  </div>
+  <div
+    className="sc-eDWCr MuiBox-root css-1pxgmwj"
+  >
+    <div
+      className="sc-bqWxrE efrXJm MuiBox-root css-163r4u2"
+    >
+      <div
+        className="sc-gKPRtg ipuJaR MuiBox-root css-0"
+      >
+        <div
+          aria-label="animation"
+          onClick={[Function]}
+          role="button"
+          style={
+            {
+              "height": "100%",
+              "margin": "0 auto",
+              "outline": "none",
+              "overflow": "hidden",
+              "width": "100%",
+            }
+          }
+          tabIndex="0"
+          title=""
+        />
+      </div>
+      <h3
+        className="MuiTypography-root MuiTypography-h3 css-1xv9tyd-MuiTypography-root"
+      >
+        Quase lá!
+      </h3>
+      <p
+        className="MuiTypography-root MuiTypography-body1 css-1toz7ve-MuiTypography-root"
+      >
+        Te enviamos um código de confirmação de e-mail. Para concluir seu cadastro, digite o código recebido abaixo.
+      </p>
+      <form
+        id="code-verification-code-form"
+        onSubmit={[MockFunction]}
+        style={
+          {
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error sc-ftTHYK sc-jrcTuL beuLgP hWFQHY css-dh2gpg-MuiInputBase-root-MuiOutlinedInput-root"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={true}
+            className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+            id="code-verification-code-input"
+            maxLength={6}
+            name="code"
+            onAnimationStart={[Function]}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Código de confirmação"
+            type="text"
+            value="123456"
+          />
+          <fieldset
+            aria-hidden={true}
+            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="css-ihdtdm"
+            >
+              <span
+                className="notranslate"
+              >
+                ​
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+        <p
+          className="MuiFormHelperText-root Mui-error css-k31o6e-MuiFormHelperText-root"
+        >
+          Código inválido.
+        </p>
+        <div
+          className="sc-kDvujY MuiBox-root css-ef4drl"
+        >
+          <button
+            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-oha5iv-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+            disabled={false}
+            id=":r4:"
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="submit"
+          >
+            Concluir o cadastro
+            <span
+              className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+          <button
+            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium Mui-disabled MuiButton-root MuiLoadingButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-1331roj-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+            disabled={true}
+            id="code-verification-resend-code-button"
+            onBlur={[Function]}
+            onClick={[MockFunction]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={-1}
+            type="button"
+          >
+            Enviar código novamente
+             
+            (60s)
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div
+    className="sc-csuSiG MuiBox-root css-11uvpxd"
+  >
+    <span
+      className="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter css-1bbanaz-MuiTypography-root"
+    >
+      Super Monitoria©. 
+      <a
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1cghntr-MuiTypography-root-MuiLink-root"
+        href="https://mui.com/"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        Todos os Direitos Reservados
+      </a>
+       
+      2022
+      .
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Test Code Verification screen snapshot tests should render loading verify 1`] = `
+<div
+  className="sc-pyfCe kmlkFr MuiBox-root css-b1jl43"
+>
+  <div
+    background="#fff"
+    className="sc-gswNZR bMISOL MuiBox-root css-jiqqrr"
+  >
+    <div
+      className="sc-dkrFOg MuiBox-root css-70qvj9"
+    >
+      <a
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1x5nolm-MuiTypography-root-MuiLink-root"
+        href="/"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        <img
+          alt="Super Monitoria"
+          src="header-logo.svg"
+        />
+      </a>
+    </div>
+    <div
+      className="sc-jSUZER MuiBox-root css-v2wsrc"
+    >
+      <div
+        className="sc-eDvSVe bISOCY MuiBox-root css-70qvj9"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        >
+          Já possui cadastro?
+        </p>
+      </div>
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-hLBbgP eSRjKV gRhBOZ css-19ged5u-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        disabled={false}
+        id=":r6:"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Faça seu login
+      </button>
+    </div>
+  </div>
+  <div
+    className="sc-eDWCr MuiBox-root css-1pxgmwj"
+  >
+    <div
+      className="sc-bqWxrE efrXJm MuiBox-root css-163r4u2"
+    >
+      <div
+        className="sc-iBYQkv hwjQOB MuiBox-root css-0"
+      >
+        <div
+          aria-label="animation"
+          onClick={[Function]}
+          role="button"
+          style={
+            {
+              "height": "100%",
+              "margin": "0 auto",
+              "outline": "none",
+              "overflow": "hidden",
+              "width": "100%",
+            }
+          }
+          tabIndex="0"
+          title=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-csuSiG MuiBox-root css-11uvpxd"
+  >
+    <span
+      className="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter css-1bbanaz-MuiTypography-root"
+    >
+      Super Monitoria©. 
+      <a
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1cghntr-MuiTypography-root-MuiLink-root"
+        href="https://mui.com/"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        Todos os Direitos Reservados
+      </a>
+       
+      2022
+      .
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Test Code Verification screen snapshot tests should render screen 1`] = `
+<div
+  className="sc-pyfCe kmlkFr MuiBox-root css-b1jl43"
+>
+  <div
+    background="#fff"
+    className="sc-gswNZR bMISOL MuiBox-root css-jiqqrr"
+  >
+    <div
+      className="sc-dkrFOg MuiBox-root css-70qvj9"
+    >
+      <a
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1x5nolm-MuiTypography-root-MuiLink-root"
+        href="/"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        <img
+          alt="Super Monitoria"
+          src="header-logo.svg"
+        />
+      </a>
+    </div>
+    <div
+      className="sc-jSUZER MuiBox-root css-v2wsrc"
+    >
+      <div
+        className="sc-eDvSVe bISOCY MuiBox-root css-70qvj9"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1"
+        >
+          Já possui cadastro?
+        </p>
+      </div>
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-hLBbgP eSRjKV gRhBOZ css-19ged5u-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        disabled={false}
+        id=":r0:"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        Faça seu login
+      </button>
+    </div>
+  </div>
+  <div
+    className="sc-eDWCr MuiBox-root css-1pxgmwj"
+  >
+    <div
+      className="sc-bqWxrE efrXJm MuiBox-root css-163r4u2"
+    >
+      <div
+        className="sc-gKPRtg ipuJaR MuiBox-root css-0"
+      >
+        <div
+          aria-label="animation"
+          onClick={[Function]}
+          role="button"
+          style={
+            {
+              "height": "100%",
+              "margin": "0 auto",
+              "outline": "none",
+              "overflow": "hidden",
+              "width": "100%",
+            }
+          }
+          tabIndex="0"
+          title=""
+        />
+      </div>
+      <h3
+        className="MuiTypography-root MuiTypography-h3 css-1xv9tyd-MuiTypography-root"
+      >
+        Quase lá!
+      </h3>
+      <p
+        className="MuiTypography-root MuiTypography-body1 css-1toz7ve-MuiTypography-root"
+      >
+        Te enviamos um código de confirmação de e-mail. Para concluir seu cadastro, digite o código recebido abaixo.
+      </p>
+      <form
+        id="code-verification-code-form"
+        onSubmit={[MockFunction]}
+        style={
+          {
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary sc-ftTHYK sc-jrcTuL beuLgP hWFQHY css-dh2gpg-MuiInputBase-root-MuiOutlinedInput-root"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+            id="code-verification-code-input"
+            maxLength={6}
+            name="code"
+            onAnimationStart={[Function]}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Código de confirmação"
+            type="text"
+            value=""
+          />
+          <fieldset
+            aria-hidden={true}
+            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="css-ihdtdm"
+            >
+              <span
+                className="notranslate"
+              >
+                ​
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+        <div
+          className="sc-kDvujY MuiBox-root css-ef4drl"
+        >
+          <button
+            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-oha5iv-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+            disabled={false}
+            id=":r1:"
+            onBlur={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="submit"
+          >
+            Concluir o cadastro
+          </button>
+          <button
+            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium Mui-disabled MuiButton-root MuiLoadingButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-1331roj-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+            disabled={true}
+            id="code-verification-resend-code-button"
+            onBlur={[Function]}
+            onClick={[MockFunction]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={-1}
+            type="button"
+          >
+            Enviar código novamente
+             
+            (60s)
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div
+    className="sc-csuSiG MuiBox-root css-11uvpxd"
+  >
+    <span
+      className="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter css-1bbanaz-MuiTypography-root"
+    >
+      Super Monitoria©. 
+      <a
+        className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1cghntr-MuiTypography-root-MuiLink-root"
+        href="https://mui.com/"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        Todos os Direitos Reservados
+      </a>
+       
+      2022
+      .
+    </span>
+  </div>
+</div>
+`;

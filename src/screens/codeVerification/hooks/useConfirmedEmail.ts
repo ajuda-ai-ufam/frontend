@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import { SCREENS } from '../../../utils/screens';
+import { TConfirmedEmailHook } from './types';
 
-const useConfirmedEmail = () => {
+const useConfirmedEmail = (): TConfirmedEmailHook => {
   const navigate = useNavigate();
 
   const handleGoToLoginClick = () => {

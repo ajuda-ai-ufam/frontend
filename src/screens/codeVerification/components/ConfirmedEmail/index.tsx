@@ -2,6 +2,7 @@ import { Typography } from '@mui/material';
 import React from 'react';
 import { Button } from '../../../../components/button';
 import CheckedAnimation from '../../../../components/checkedAnimation';
+import testId from '../../../../utils/testId';
 import useConfirmedEmail from '../../hooks/useConfirmedEmail';
 
 const ConfirmedEmail = () => {
@@ -23,6 +24,7 @@ const ConfirmedEmail = () => {
         sx={{ marginTop: '32px', width: '100%' }}
         color="primary"
         onClick={handleGoToLoginClick}
+        id={testId.codeVerification.loginButton}
       >
         Voltar ao login
       </Button>

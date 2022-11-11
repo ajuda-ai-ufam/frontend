@@ -3,8 +3,9 @@ import { useLocation } from 'react-router-dom';
 import useGenerateCodeRequest from '../../../service/requests/useGenerateCodeRequest';
 import useVerifyCodeRequest from '../../../service/requests/useVerifyCodeRequest';
 import { CodeTypeEnum } from '../../../utils/constants';
+import { TCodeVerificationHook } from './types';
 
-const useCodeVerification = () => {
+const useCodeVerification = (): TCodeVerificationHook => {
   const {
     isLoading: isVerifyCodeLoading,
     error: verifyCodeError,
