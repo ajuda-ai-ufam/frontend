@@ -36,7 +36,7 @@ exports[`Test Code Verification screen snapshot tests should load code generatio
         </p>
       </div>
       <button
-        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-hLBbgP eSRjKV gRhBOZ css-19ged5u-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-hLBbgP eSRjKV gRhBOZ css-18fs5t5-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
         disabled={false}
         id=":r7:"
         onBlur={[Function]}
@@ -89,12 +89,12 @@ exports[`Test Code Verification screen snapshot tests should load code generatio
         />
       </div>
       <h3
-        className="MuiTypography-root MuiTypography-h3 css-1xv9tyd-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-h3 css-1w7645j-MuiTypography-root"
       >
         Quase lá!
       </h3>
       <p
-        className="MuiTypography-root MuiTypography-body1 css-1toz7ve-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-body1 css-5fhr9f-MuiTypography-root"
       >
         Te enviamos um código de confirmação de e-mail. Para concluir seu cadastro, digite o código recebido abaixo.
       </p>
@@ -108,7 +108,7 @@ exports[`Test Code Verification screen snapshot tests should load code generatio
         }
       >
         <div
-          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary sc-ftTHYK sc-jrcTuL beuLgP hWFQHY css-dh2gpg-MuiInputBase-root-MuiOutlinedInput-root"
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary sc-ftTHYK sc-jrcTuL beuLgP hWFQHY css-v9i4p-MuiInputBase-root-MuiOutlinedInput-root"
           onClick={[Function]}
         >
           <input
@@ -144,7 +144,7 @@ exports[`Test Code Verification screen snapshot tests should load code generatio
           className="sc-kDvujY MuiBox-root css-ef4drl"
         >
           <button
-            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-oha5iv-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-105755-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
             disabled={false}
             id=":r8:"
             onBlur={[Function]}
@@ -168,7 +168,7 @@ exports[`Test Code Verification screen snapshot tests should load code generatio
             />
           </button>
           <button
-            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiLoadingButton-loading MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium Mui-disabled MuiButton-root MuiLoadingButton-root MuiLoadingButton-loading MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-1331roj-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiLoadingButton-loading MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium Mui-disabled MuiButton-root MuiLoadingButton-root MuiLoadingButton-loading MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-dqnh4x-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
             disabled={true}
             id="code-verification-resend-code-button"
             onBlur={[Function]}
@@ -228,7 +228,7 @@ exports[`Test Code Verification screen snapshot tests should load code generatio
     className="sc-csuSiG MuiBox-root css-11uvpxd"
   >
     <span
-      className="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter css-1bbanaz-MuiTypography-root"
+      className="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter css-cvcw95-MuiTypography-root"
     >
       Super Monitoria©. 
       <a
@@ -283,7 +283,7 @@ exports[`Test Code Verification screen snapshot tests should render code generat
         </p>
       </div>
       <button
-        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-hLBbgP eSRjKV gRhBOZ css-19ged5u-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-hLBbgP eSRjKV gRhBOZ css-18fs5t5-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
         disabled={false}
         id=":rc:"
         onBlur={[Function]}
@@ -336,12 +336,12 @@ exports[`Test Code Verification screen snapshot tests should render code generat
         />
       </div>
       <h3
-        className="MuiTypography-root MuiTypography-h3 css-1xv9tyd-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-h3 css-1w7645j-MuiTypography-root"
       >
         Quase lá!
       </h3>
       <p
-        className="MuiTypography-root MuiTypography-body1 css-1toz7ve-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-body1 css-5fhr9f-MuiTypography-root"
       >
         Te enviamos um código de confirmação de e-mail. Para concluir seu cadastro, digite o código recebido abaixo.
       </p>
@@ -355,7 +355,7 @@ exports[`Test Code Verification screen snapshot tests should render code generat
         }
       >
         <div
-          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary sc-ftTHYK sc-jrcTuL beuLgP hWFQHY css-dh2gpg-MuiInputBase-root-MuiOutlinedInput-root"
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary sc-ftTHYK sc-jrcTuL beuLgP hWFQHY css-v9i4p-MuiInputBase-root-MuiOutlinedInput-root"
           onClick={[Function]}
         >
           <input
@@ -391,7 +391,7 @@ exports[`Test Code Verification screen snapshot tests should render code generat
           className="sc-kDvujY MuiBox-root css-ef4drl"
         >
           <button
-            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-oha5iv-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-105755-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
             disabled={false}
             id=":rd:"
             onBlur={[Function]}
@@ -415,7 +415,7 @@ exports[`Test Code Verification screen snapshot tests should render code generat
             />
           </button>
           <button
-            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-1331roj-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-dqnh4x-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
             disabled={false}
             id="code-verification-resend-code-button"
             onBlur={[Function]}
@@ -448,7 +448,7 @@ exports[`Test Code Verification screen snapshot tests should render code generat
     className="sc-csuSiG MuiBox-root css-11uvpxd"
   >
     <span
-      className="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter css-1bbanaz-MuiTypography-root"
+      className="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter css-cvcw95-MuiTypography-root"
     >
       Super Monitoria©. 
       <a
@@ -503,7 +503,7 @@ exports[`Test Code Verification screen snapshot tests should render code verifie
         </p>
       </div>
       <button
-        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-hLBbgP eSRjKV gRhBOZ css-19ged5u-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-hLBbgP eSRjKV gRhBOZ css-18fs5t5-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
         disabled={false}
         id=":ra:"
         onBlur={[Function]}
@@ -553,17 +553,17 @@ exports[`Test Code Verification screen snapshot tests should render code verifie
         />
       </div>
       <h3
-        className="MuiTypography-root MuiTypography-h3 css-1xv9tyd-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-h3 css-1w7645j-MuiTypography-root"
       >
         Muito bem!
       </h3>
       <p
-        className="MuiTypography-root MuiTypography-body1 css-1toz7ve-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-body1 css-5fhr9f-MuiTypography-root"
       >
         Agora que seu cadastro foi concluído você poderá aproveitar para solicitar ajuda dos monitores sempre que precisar.
       </p>
       <button
-        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe gBODOj css-b12mx9-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe gBODOj css-1h7wy6h-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
         disabled={false}
         id="code-verification-login-button"
         onBlur={[Function]}
@@ -590,7 +590,7 @@ exports[`Test Code Verification screen snapshot tests should render code verifie
     className="sc-csuSiG MuiBox-root css-11uvpxd"
   >
     <span
-      className="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter css-1bbanaz-MuiTypography-root"
+      className="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter css-cvcw95-MuiTypography-root"
     >
       Super Monitoria©. 
       <a
@@ -645,7 +645,7 @@ exports[`Test Code Verification screen snapshot tests should render invalid code
         </p>
       </div>
       <button
-        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-hLBbgP eSRjKV gRhBOZ css-19ged5u-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-hLBbgP eSRjKV gRhBOZ css-18fs5t5-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
         disabled={false}
         id=":r3:"
         onBlur={[Function]}
@@ -698,12 +698,12 @@ exports[`Test Code Verification screen snapshot tests should render invalid code
         />
       </div>
       <h3
-        className="MuiTypography-root MuiTypography-h3 css-1xv9tyd-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-h3 css-1w7645j-MuiTypography-root"
       >
         Quase lá!
       </h3>
       <p
-        className="MuiTypography-root MuiTypography-body1 css-1toz7ve-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-body1 css-5fhr9f-MuiTypography-root"
       >
         Te enviamos um código de confirmação de e-mail. Para concluir seu cadastro, digite o código recebido abaixo.
       </p>
@@ -717,7 +717,7 @@ exports[`Test Code Verification screen snapshot tests should render invalid code
         }
       >
         <div
-          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error sc-ftTHYK sc-jrcTuL beuLgP hWFQHY css-dh2gpg-MuiInputBase-root-MuiOutlinedInput-root"
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error sc-ftTHYK sc-jrcTuL beuLgP hWFQHY css-v9i4p-MuiInputBase-root-MuiOutlinedInput-root"
           onClick={[Function]}
         >
           <input
@@ -750,7 +750,7 @@ exports[`Test Code Verification screen snapshot tests should render invalid code
           </fieldset>
         </div>
         <p
-          className="MuiFormHelperText-root Mui-error css-k31o6e-MuiFormHelperText-root"
+          className="MuiFormHelperText-root Mui-error css-9loanp-MuiFormHelperText-root"
         >
           Código inválido.
         </p>
@@ -758,7 +758,7 @@ exports[`Test Code Verification screen snapshot tests should render invalid code
           className="sc-kDvujY MuiBox-root css-ef4drl"
         >
           <button
-            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-oha5iv-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-105755-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
             disabled={false}
             id=":r4:"
             onBlur={[Function]}
@@ -782,7 +782,7 @@ exports[`Test Code Verification screen snapshot tests should render invalid code
             />
           </button>
           <button
-            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium Mui-disabled MuiButton-root MuiLoadingButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-1331roj-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium Mui-disabled MuiButton-root MuiLoadingButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-dqnh4x-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
             disabled={true}
             id="code-verification-resend-code-button"
             onBlur={[Function]}
@@ -813,7 +813,7 @@ exports[`Test Code Verification screen snapshot tests should render invalid code
     className="sc-csuSiG MuiBox-root css-11uvpxd"
   >
     <span
-      className="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter css-1bbanaz-MuiTypography-root"
+      className="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter css-cvcw95-MuiTypography-root"
     >
       Super Monitoria©. 
       <a
@@ -868,7 +868,7 @@ exports[`Test Code Verification screen snapshot tests should render loading veri
         </p>
       </div>
       <button
-        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-hLBbgP eSRjKV gRhBOZ css-19ged5u-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-hLBbgP eSRjKV gRhBOZ css-18fs5t5-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
         disabled={false}
         id=":r6:"
         onBlur={[Function]}
@@ -923,7 +923,7 @@ exports[`Test Code Verification screen snapshot tests should render loading veri
     className="sc-csuSiG MuiBox-root css-11uvpxd"
   >
     <span
-      className="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter css-1bbanaz-MuiTypography-root"
+      className="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter css-cvcw95-MuiTypography-root"
     >
       Super Monitoria©. 
       <a
@@ -978,7 +978,7 @@ exports[`Test Code Verification screen snapshot tests should render screen 1`] =
         </p>
       </div>
       <button
-        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-hLBbgP eSRjKV gRhBOZ css-19ged5u-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-hLBbgP eSRjKV gRhBOZ css-18fs5t5-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
         disabled={false}
         id=":r0:"
         onBlur={[Function]}
@@ -1028,12 +1028,12 @@ exports[`Test Code Verification screen snapshot tests should render screen 1`] =
         />
       </div>
       <h3
-        className="MuiTypography-root MuiTypography-h3 css-1xv9tyd-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-h3 css-1w7645j-MuiTypography-root"
       >
         Quase lá!
       </h3>
       <p
-        className="MuiTypography-root MuiTypography-body1 css-1toz7ve-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-body1 css-5fhr9f-MuiTypography-root"
       >
         Te enviamos um código de confirmação de e-mail. Para concluir seu cadastro, digite o código recebido abaixo.
       </p>
@@ -1047,7 +1047,7 @@ exports[`Test Code Verification screen snapshot tests should render screen 1`] =
         }
       >
         <div
-          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary sc-ftTHYK sc-jrcTuL beuLgP hWFQHY css-dh2gpg-MuiInputBase-root-MuiOutlinedInput-root"
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary sc-ftTHYK sc-jrcTuL beuLgP hWFQHY css-v9i4p-MuiInputBase-root-MuiOutlinedInput-root"
           onClick={[Function]}
         >
           <input
@@ -1083,7 +1083,7 @@ exports[`Test Code Verification screen snapshot tests should render screen 1`] =
           className="sc-kDvujY MuiBox-root css-ef4drl"
         >
           <button
-            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-oha5iv-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-105755-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
             disabled={false}
             id=":r1:"
             onBlur={[Function]}
@@ -1104,7 +1104,7 @@ exports[`Test Code Verification screen snapshot tests should render screen 1`] =
             Concluir o cadastro
           </button>
           <button
-            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium Mui-disabled MuiButton-root MuiLoadingButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-1331roj-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+            className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium Mui-disabled MuiButton-root MuiLoadingButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium sc-bcXHqe sc-ipEyDJ gBODOj fWsFUP css-dqnh4x-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
             disabled={true}
             id="code-verification-resend-code-button"
             onBlur={[Function]}
@@ -1135,7 +1135,7 @@ exports[`Test Code Verification screen snapshot tests should render screen 1`] =
     className="sc-csuSiG MuiBox-root css-11uvpxd"
   >
     <span
-      className="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter css-1bbanaz-MuiTypography-root"
+      className="MuiTypography-root MuiTypography-caption MuiTypography-alignCenter css-cvcw95-MuiTypography-root"
     >
       Super Monitoria©. 
       <a

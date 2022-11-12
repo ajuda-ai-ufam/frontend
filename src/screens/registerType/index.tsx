@@ -1,14 +1,14 @@
 import Container from '../../components/container';
 import LogoImage from '../../components/logoImage';
-import WelcomeArea from './components/WelcomeArea';
+import TypeOfRegister from './components/TypeOfRegister';
 
-const Login = () => {
+const Register = () => {
   return (
     <Container>
       <LogoImage />
-      <WelcomeArea />
+      <TypeOfRegister />
     </Container>
   );
 };
 
-export default Login;
+export default Register;

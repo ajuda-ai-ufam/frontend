@@ -19,6 +19,18 @@ export const Container = styled(Box).attrs({
   }
 `;
 
+export const LoginButton = styled(Button).attrs({
+  color: 'secondary',
+})`
+  @media (max-width: ${theme.breakpoints.values.md}px) {
+    width: 150px !important;
+  }
+
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    width: 130px !important;
+  }
+`;
+
 export const ContainerUp = styled(Box).attrs({
   display: 'flex',
   flexDirection: 'row',
@@ -35,13 +47,13 @@ export const ContainerUp = styled(Box).attrs({
   }
 `;
 
-export const ContainerRegister = styled(Box).attrs({
+export const ContainerLogin = styled(Box).attrs({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
 })``;
 
-export const ContainerRegisterText = styled(Box).attrs({
+export const ContainerLoginText = styled(Box).attrs({
   marginRight: '16px',
 })`
   @media (max-width: ${theme.breakpoints.values.sm}px) {
@@ -61,11 +73,3 @@ export const ContainerMiddle = styled(Box).attrs({
   justifyContent: 'center',
   alignItems: 'center',
 })``;
-
-export const SignUpButton = styled(Button).attrs({
-  color: 'secondary',
-})`
-  @media (max-width: ${theme.breakpoints.values.sm}px) {
-    width: 135px !important;
-  }
-`;

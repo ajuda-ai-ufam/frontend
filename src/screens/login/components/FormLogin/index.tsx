@@ -61,8 +61,8 @@ const FormLogin = () => {
   return (
     <Container>
       <ContainerUp>
-        <TypographyLogin component="h1">Faça seu login</TypographyLogin>
-        <TypographyCredentials component="h5">
+        <TypographyLogin variant="h3">Faça seu login</TypographyLogin>
+        <TypographyCredentials variant="body1">
           Insira suas credenciais abaixo para continuar
         </TypographyCredentials>
 

@@ -1,6 +1,16 @@
 import { Shadows } from '@material-ui/core/styles/shadows';
 import { createTheme } from '@mui/material';
 
+const breakpoints = {
+  values: {
+    xs: 0,
+    sm: 600,
+    md: 905,
+    lg: 1048,
+    xl: 1280,
+  },
+};
+
 const theme = createTheme({
   shadows: Array(25).fill('none') as Shadows,
   palette: {
@@ -34,18 +44,30 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: 'Inter',
+    allVariants: {
+      color: '#2D2D2C',
+    },
     h1: {
-      fontWeight: 400,
+      fontWeight: 600,
       fontSize: 57,
       letterSpacing: -0.25,
+      [`@media (max-width:${breakpoints.values.md}px)`]: {
+        fontSize: '45px',
+      },
     },
     h2: {
-      fontWeight: 400,
+      fontWeight: 600,
       fontSize: 45,
+      [`@media (max-width:${breakpoints.values.md}px)`]: {
+        fontSize: '36px',
+      },
     },
     h3: {
-      fontWeight: 400,
+      fontWeight: 600,
       fontSize: 36,
+      [`@media (max-width:${breakpoints.values.md}px)`]: {
+        fontSize: '28px',
+      },
     },
     subtitle1: {
       fontWeight: 400,
@@ -58,6 +80,9 @@ const theme = createTheme({
     body1: {
       fontWeight: 400,
       fontSize: 16,
+      [`@media (max-width:${breakpoints.values.md}px)`]: {
+        fontSize: '14px',
+      },
     },
     body2: {
       fontWeight: 400,
@@ -74,15 +99,7 @@ const theme = createTheme({
       textTransform: 'none',
     },
   },
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 600,
-      md: 905,
-      lg: 1048,
-      xl: 1280,
-    },
-  },
+  breakpoints,
 });
 
 export default theme;

@@ -1,5 +1,4 @@
 import { styled as styledMUI } from '@material-ui/core/styles';
-import { Link } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { Box } from '@mui/system';
 
@@ -20,25 +19,20 @@ export const ContainerUp = styled(Box).attrs({
   alignItems: 'center',
 })``;
 
-export const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-export const ContainerLogin = styled(Box).attrs({
+export const ContainerDisclaimer = styled(Box).attrs({
   display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'space-between',
+  flexDirection: 'column',
+  justifyContent: 'center',
   alignItems: 'center',
-  width: '100%',
+  marginTop: '13px',
+  width: '420px',
 })`
   @media (max-width: ${theme.breakpoints.values.sm}px) {
-    flex-direction: column !important;
+    width: 100% !important;
   }
 `;
 
-export const LoginButton = styled(Button).attrs({
+export const StudentButton = styled(Button).attrs({
   color: 'primary',
 })`
   @media (max-width: ${theme.breakpoints.values.sm}px) {
@@ -47,31 +41,38 @@ export const LoginButton = styled(Button).attrs({
   }
 `;
 
-export const ForgotPasswordLink = styled(Link).attrs({
-  variant: 'body2',
-  underline: 'hover',
-  color: 'primary',
-})``;
+export const ProfessorButton = styled(Button).attrs({
+  color: 'secondary',
+})`
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    width: 100% !important;
+  }
+`;
 
 export const ContainerBottom = styled(Box).attrs({
   display: 'flex',
   flexDirection: 'row',
-  justifyContent: 'center',
+  justifyContent: 'space-evenly',
   alignItems: 'center',
-  marginTop: '10px',
-})``;
+  marginTop: '32px',
+})`
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    flex-direction: column !important;
+  }
+`;
 
-export const TypographyLogin = styledMUI(Typography)({
-  lineHeight: '52px',
+export const TypographyStartRegister = styledMUI(Typography)({
+  lineHeight: '41.15px',
   align: 'center',
-  color: theme.palette.secondary.main,
-  margin: '16px !important',
-});
-
-export const TypographyCredentials = styledMUI(Typography)({
-  lineHeight: '19.36px',
-  align: 'center',
-  textAlign: 'center',
   color: theme.palette.secondary.main,
   margin: 2,
+  textAlign: 'center',
+});
+
+export const TypographyDisclaimer = styledMUI(Typography)({
+  lineHeight: '24px',
+  align: 'center',
+  color: theme.palette.secondary.main,
+  margin: 2,
+  textAlign: 'center',
 });
