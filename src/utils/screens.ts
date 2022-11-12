@@ -3,4 +3,6 @@ export const SCREENS = {
   HOME: '/',
   LOGIN: '/',
   REGISTER: '/register',
+  CREATE_STUDENT: '/register/student',
+  CREATE_PROFESSOR: '/register/professor',
 };

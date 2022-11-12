@@ -1,5 +1,6 @@
 import { Box } from '@mui/system';
 import styled from 'styled-components';
+import { Button } from '../../../../components/button';
 import theme from '../../../../utils/theme';
 
 export const Container = styled(Box).attrs({
@@ -15,6 +16,18 @@ export const Container = styled(Box).attrs({
 
   @media (max-width: ${theme.breakpoints.values.sm}px) {
     margin: 0 16px 0 16px !important;
+  }
+`;
+
+export const LoginButton = styled(Button).attrs({
+  color: 'secondary',
+})`
+  @media (max-width: ${theme.breakpoints.values.md}px) {
+    width: 150px !important;
+  }
+
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    width: 130px !important;
   }
 `;
 
@@ -34,13 +47,13 @@ export const ContainerUp = styled(Box).attrs({
   }
 `;
 
-export const ContainerRegister = styled(Box).attrs({
+export const ContainerLogin = styled(Box).attrs({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
 })``;
 
-export const ContainerRegisterText = styled(Box).attrs({
+export const ContainerLoginText = styled(Box).attrs({
   marginRight: '16px',
 })`
   @media (max-width: ${theme.breakpoints.values.sm}px) {
