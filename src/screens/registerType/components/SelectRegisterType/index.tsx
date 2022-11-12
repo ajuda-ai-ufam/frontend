@@ -34,7 +34,7 @@ const SelectRegisterType = () => {
           id={testId.typeRegister.iAmProfessorButton}
           onClick={handleClickProfessor}
         >
-          Sou professor
+          Sou Professor
         </ProfessorButton>
         <StudentButton
           id={testId.typeRegister.iAmStudentButton}
