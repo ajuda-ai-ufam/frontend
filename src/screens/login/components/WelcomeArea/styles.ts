@@ -1,5 +1,6 @@
 import { Box } from '@mui/system';
 import styled from 'styled-components';
+import { Button } from '../../../../components/button';
 import theme from '../../../../utils/theme';
 
 export const Container = styled(Box).attrs({
@@ -60,3 +61,11 @@ export const ContainerMiddle = styled(Box).attrs({
   justifyContent: 'center',
   alignItems: 'center',
 })``;
+
+export const SignUpButton = styled(Button).attrs({
+  color: 'secondary',
+})`
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    width: 135px !important;
+  }
+`;
