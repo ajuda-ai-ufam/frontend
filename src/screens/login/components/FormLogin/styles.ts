@@ -11,7 +11,11 @@ export const Container = styled(Box).attrs({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-})``;
+})`
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    width: 100% !important;
+  }
+`;
 
 export const ContainerUp = styled(Box).attrs({
   display: 'flex',
@@ -24,6 +28,7 @@ export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100% !important;
 `;
 
 export const ContainerLogin = styled(Box).attrs({

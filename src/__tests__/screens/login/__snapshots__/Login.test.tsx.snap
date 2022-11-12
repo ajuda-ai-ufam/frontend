@@ -89,7 +89,7 @@ exports[`Test Login screen snapshot tests should render screen 1`] = `
       className="sc-idXgbr MuiBox-root css-wkpw2c"
     >
       <div
-        className="sc-pyfCe MuiBox-root css-1b6n4o1"
+        className="sc-pyfCe daZzEw MuiBox-root css-1b6n4o1"
       >
         <div
           className="sc-jrcTuL MuiBox-root css-wkpw2c"
@@ -105,7 +105,7 @@ exports[`Test Login screen snapshot tests should render screen 1`] = `
             Insira suas credenciais abaixo para continuar
           </p>
           <form
-            className="sc-kDvujY kpgBAx"
+            className="sc-kDvujY dgdtEP"
             id="login-form"
             onSubmit={[MockFunction]}
           >
@@ -442,7 +442,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid e-ma
       className="sc-idXgbr MuiBox-root css-wkpw2c"
     >
       <div
-        className="sc-pyfCe MuiBox-root css-1b6n4o1"
+        className="sc-pyfCe daZzEw MuiBox-root css-1b6n4o1"
       >
         <div
           className="sc-jrcTuL MuiBox-root css-wkpw2c"
@@ -458,7 +458,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid e-ma
             Insira suas credenciais abaixo para continuar
           </p>
           <form
-            className="sc-kDvujY kpgBAx"
+            className="sc-kDvujY dgdtEP"
             id="login-form"
             onSubmit={[MockFunction]}
           >
@@ -803,7 +803,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid logi
       className="sc-idXgbr MuiBox-root css-wkpw2c"
     >
       <div
-        className="sc-pyfCe MuiBox-root css-1b6n4o1"
+        className="sc-pyfCe daZzEw MuiBox-root css-1b6n4o1"
       >
         <div
           className="sc-jrcTuL MuiBox-root css-wkpw2c"
@@ -819,7 +819,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid logi
             Insira suas credenciais abaixo para continuar
           </p>
           <form
-            className="sc-kDvujY kpgBAx"
+            className="sc-kDvujY dgdtEP"
             id="login-form"
             onSubmit={[MockFunction]}
           >
@@ -1165,7 +1165,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid pass
       className="sc-idXgbr MuiBox-root css-wkpw2c"
     >
       <div
-        className="sc-pyfCe MuiBox-root css-1b6n4o1"
+        className="sc-pyfCe daZzEw MuiBox-root css-1b6n4o1"
       >
         <div
           className="sc-jrcTuL MuiBox-root css-wkpw2c"
@@ -1181,7 +1181,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid pass
             Insira suas credenciais abaixo para continuar
           </p>
           <form
-            className="sc-kDvujY kpgBAx"
+            className="sc-kDvujY dgdtEP"
             id="login-form"
             onSubmit={[MockFunction]}
           >
@@ -1532,7 +1532,7 @@ exports[`Test Login screen snapshot tests should render screen with loading logi
       className="sc-idXgbr MuiBox-root css-wkpw2c"
     >
       <div
-        className="sc-pyfCe MuiBox-root css-1b6n4o1"
+        className="sc-pyfCe daZzEw MuiBox-root css-1b6n4o1"
       >
         <div
           className="sc-jrcTuL MuiBox-root css-wkpw2c"
@@ -1548,7 +1548,7 @@ exports[`Test Login screen snapshot tests should render screen with loading logi
             Insira suas credenciais abaixo para continuar
           </p>
           <form
-            className="sc-kDvujY kpgBAx"
+            className="sc-kDvujY dgdtEP"
             id="login-form"
             onSubmit={[MockFunction]}
           >
@@ -1918,7 +1918,7 @@ exports[`Test Login screen snapshot tests should render screen with password sho
       className="sc-idXgbr MuiBox-root css-wkpw2c"
     >
       <div
-        className="sc-pyfCe MuiBox-root css-1b6n4o1"
+        className="sc-pyfCe daZzEw MuiBox-root css-1b6n4o1"
       >
         <div
           className="sc-jrcTuL MuiBox-root css-wkpw2c"
@@ -1934,7 +1934,7 @@ exports[`Test Login screen snapshot tests should render screen with password sho
             Insira suas credenciais abaixo para continuar
           </p>
           <form
-            className="sc-kDvujY kpgBAx"
+            className="sc-kDvujY dgdtEP"
             id="login-form"
             onSubmit={[MockFunction]}
           >
