@@ -65,12 +65,13 @@ export const TypographyLogin = styledMUI(Typography)({
   lineHeight: '52px',
   align: 'center',
   color: theme.palette.secondary.main,
-  margin: 2,
+  margin: '16px !important',
 });
 
 export const TypographyCredentials = styledMUI(Typography)({
   lineHeight: '19.36px',
   align: 'center',
+  textAlign: 'center',
   color: theme.palette.secondary.main,
   margin: 2,
 });
