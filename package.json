@@ -33,7 +33,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --verbose --passWithNoTests --silent",
+    "test": "jest --verbose --passWithNoTests --silent --maxWorkers=50%",
     "eject": "react-scripts eject",
     "lint": "npx eslint ./src && echo \"> No lint errors found in src/.\"",
     "lint:commit": "npx --no-install commitlint --edit && echo \"> No errors found in commit messages.\"",
@@ -76,7 +76,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.31.10",
     "husky": "^8.0.0",
-    "jest": "^29.1.2",
+    "jest": "^29.3.1",
     "jest-canvas-mock": "^2.4.0",
     "jest-environment-jsdom": "^29.1.2",
     "prettier": "^2.7.1",
