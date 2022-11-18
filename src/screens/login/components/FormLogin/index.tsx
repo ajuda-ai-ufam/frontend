@@ -15,6 +15,7 @@ import { NavLink } from 'react-router-dom';
 import { TextField } from '../../../../components/textField';
 import { SCREENS } from '../../../../utils/screens';
 import testId from '../../../../utils/testId';
+import theme from '../../../../utils/theme';
 import useLogin from '../../hooks/useLogin';
 import {
   Container,
@@ -130,7 +131,10 @@ const FormLogin = () => {
 
       <ContainerBottom>
         <Typography align="center">Ainda não tem uma conta?&nbsp;</Typography>
-        <NavLink to={SCREENS.REGISTER}>
+        <NavLink
+          style={{ textDecorationColor: theme.palette.secondary.main }}
+          to={SCREENS.REGISTER}
+        >
           <Typography color={'secondary'}>Cadastre-se</Typography>
         </NavLink>
       </ContainerBottom>
