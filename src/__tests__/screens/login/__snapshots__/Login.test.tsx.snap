@@ -305,6 +305,11 @@ exports[`Test Login screen snapshot tests should render screen 1`] = `
             className=""
             href="/register"
             onClick={[Function]}
+            style={
+              {
+                "textDecorationColor": "#2D2D2C",
+              }
+            }
           >
             <p
               className="MuiTypography-root MuiTypography-body1 css-1i4c8mu-MuiTypography-root"
@@ -663,6 +668,11 @@ exports[`Test Login screen snapshot tests should render screen with invalid e-ma
             className=""
             href="/register"
             onClick={[Function]}
+            style={
+              {
+                "textDecorationColor": "#2D2D2C",
+              }
+            }
           >
             <p
               className="MuiTypography-root MuiTypography-body1 css-1i4c8mu-MuiTypography-root"
@@ -1025,6 +1035,11 @@ exports[`Test Login screen snapshot tests should render screen with invalid logi
             className=""
             href="/register"
             onClick={[Function]}
+            style={
+              {
+                "textDecorationColor": "#2D2D2C",
+              }
+            }
           >
             <p
               className="MuiTypography-root MuiTypography-body1 css-1i4c8mu-MuiTypography-root"
@@ -1392,6 +1407,11 @@ exports[`Test Login screen snapshot tests should render screen with invalid pass
             className=""
             href="/register"
             onClick={[Function]}
+            style={
+              {
+                "textDecorationColor": "#2D2D2C",
+              }
+            }
           >
             <p
               className="MuiTypography-root MuiTypography-body1 css-1i4c8mu-MuiTypography-root"
@@ -1781,6 +1801,11 @@ exports[`Test Login screen snapshot tests should render screen with loading logi
             className=""
             href="/register"
             onClick={[Function]}
+            style={
+              {
+                "textDecorationColor": "#2D2D2C",
+              }
+            }
           >
             <p
               className="MuiTypography-root MuiTypography-body1 css-1i4c8mu-MuiTypography-root"
@@ -2134,6 +2159,11 @@ exports[`Test Login screen snapshot tests should render screen with password sho
             className=""
             href="/register"
             onClick={[Function]}
+            style={
+              {
+                "textDecorationColor": "#2D2D2C",
+              }
+            }
           >
             <p
               className="MuiTypography-root MuiTypography-body1 css-1i4c8mu-MuiTypography-root"
