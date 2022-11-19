@@ -17,7 +17,7 @@ export const Container = styled(Box).attrs({
 export const CodeTextField = styled(TextField).attrs({
   type: 'text',
   name: 'code',
-  placeholder: 'Código de confirmação',
+  placeholder: 'Código de Confirmação',
   inputProps: { maxLength: 6 },
 })`
   width: 100% !important;
