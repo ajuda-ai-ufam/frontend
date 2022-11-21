@@ -36,6 +36,7 @@ const theme = createTheme({
     },
     background: {
       default: '#ECEDEA',
+      paper: '#65B95E',
     },
     action: {
       disabled: '#65B95E66',
@@ -70,8 +71,10 @@ const theme = createTheme({
       },
     },
     subtitle1: {
-      fontWeight: 400,
-      fontSize: 32,
+      fontWeight: 500,
+      fontSize: 16,
+      lineHeight: '24px',
+      letterSpacing: '0.1px',
     },
     subtitle2: {
       fontWeight: 400,
