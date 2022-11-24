@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useLoginRequest from '../../../service/requests/useLoginRequest';
+import useGetLoggedUser from '../../../service/storage/getLoggedUser';
 import { SCREENS } from '../../../utils/screens';
 import { TLoginHook } from './types';
 
 const useLogin = (): TLoginHook => {
   const navigate = useNavigate();
   const { error, isLoading, isSuccess, login, resetError } = useLoginRequest();
+  const user = useGetLoggedUser();
 
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
@@ -69,11 +71,13 @@ const useLogin = (): TLoginHook => {
   }, [error]);
 
   useEffect(() => {
+    if (user) navigate(SCREENS.SUBJECTS);
+
     document.title = 'Entrar';
   }, []);
 
   useEffect(() => {
-    if (isSuccess) alert('Parabéns! Você está logado.');
+    if (isSuccess) navigate(SCREENS.HOME);
   }, [isSuccess]);
 
   return {
