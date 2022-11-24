@@ -14,6 +14,9 @@ const breakpoints = {
 const theme = createTheme({
   shadows: Array(25).fill('none') as Shadows,
   palette: {
+    grey: {
+      A100: '#ECEDEA',
+    },
     primary: {
       light: '#70D268',
       main: '#65B95E',
@@ -35,7 +38,8 @@ const theme = createTheme({
       contrastText: '#fff',
     },
     background: {
-      default: '#ECEDEA',
+      default: '#F6F7F6',
+      paper: '#65B95E',
     },
     action: {
       disabled: '#65B95E66',
@@ -64,14 +68,39 @@ const theme = createTheme({
     },
     h3: {
       fontWeight: 600,
+      lineHeight: '44px',
       fontSize: 36,
       [`@media (max-width:${breakpoints.values.md}px)`]: {
         fontSize: '28px',
       },
     },
-    subtitle1: {
-      fontWeight: 400,
+    h4: {
+      fontWeight: 500,
       fontSize: 32,
+      [`@media (max-width:${breakpoints.values.md}px)`]: {
+        fontSize: '24px',
+      },
+    },
+    h5: {
+      fontWeight: 500,
+      fontSize: 28,
+      [`@media (max-width:${breakpoints.values.md}px)`]: {
+        fontSize: '16px',
+      },
+    },
+    h6: {
+      fontWeight: 500,
+      lineHeight: '32px',
+      fontSize: 24,
+      [`@media (max-width:${breakpoints.values.sm}px)`]: {
+        fontSize: '16px',
+      },
+    },
+    subtitle1: {
+      fontWeight: 500,
+      fontSize: 16,
+      lineHeight: '24px',
+      letterSpacing: '0.1px',
     },
     subtitle2: {
       fontWeight: 400,
@@ -79,6 +108,7 @@ const theme = createTheme({
     },
     body1: {
       fontWeight: 400,
+      lineHeight: '20px',
       fontSize: 16,
       [`@media (max-width:${breakpoints.values.md}px)`]: {
         fontSize: '14px',

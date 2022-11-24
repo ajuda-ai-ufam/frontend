@@ -17,7 +17,7 @@ const SignInHeader = () => {
   return (
     <Container>
       <LogoContainer>
-        <Link href={SCREENS.HOME}>
+        <Link href={SCREENS.LOGIN}>
           <img src={HeaderLogo} alt={'Super Monitoria'} />
         </Link>
       </LogoContainer>
