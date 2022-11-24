@@ -7,5 +7,6 @@ export const SCREENS = {
   CREATE_STUDENT: '/register/student',
   CREATE_PROFESSOR: '/register/professor',
   SUBJECTS: '/subjects',
+  SUBJECT_DETAILS: '/subjects/:id',
   MONITOR_REQUESTS: '/monitor-requests',
 };
