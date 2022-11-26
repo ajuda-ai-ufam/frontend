@@ -12,7 +12,7 @@ export const StyledCard = styled(Card).attrs({
   padding: 16px 24px;
 
   :hover {
-    background-color: ${theme.palette.grey.A100} !important;
+    background-color: ${theme.palette.grey[200]} !important;
     cursor: pointer;
     transition: 0.8s;
   }

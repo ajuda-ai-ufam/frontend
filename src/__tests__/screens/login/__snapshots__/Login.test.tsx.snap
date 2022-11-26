@@ -62,7 +62,7 @@ exports[`Test Login screen snapshot tests should render screen 1`] = `
           </p>
         </div>
         <button
-          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-18fs5t5-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-1gvy6f3-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
           disabled={false}
           id="login-register-button"
           onBlur={[Function]}
@@ -113,7 +113,7 @@ exports[`Test Login screen snapshot tests should render screen 1`] = `
               className="MuiBox-root css-8atqhb"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-zv5y65-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-2ycegv-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -169,7 +169,7 @@ exports[`Test Login screen snapshot tests should render screen 1`] = `
               className="MuiBox-root css-8875ym"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1cn2n3g-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1nzt4e0-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -210,7 +210,7 @@ exports[`Test Login screen snapshot tests should render screen 1`] = `
                 >
                   <button
                     aria-label="toggle password visibility"
-                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-1jew56n-MuiButtonBase-root-MuiIconButton-root"
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-gxoo4k-MuiButtonBase-root-MuiIconButton-root"
                     disabled={false}
                     id="login-show-password-icon-button"
                     onBlur={[Function]}
@@ -270,7 +270,7 @@ exports[`Test Login screen snapshot tests should render screen 1`] = `
                 Esqueci minha senha
               </a>
               <button
-                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-105755-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-2urf4o-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
                 disabled={false}
                 id=":r1:"
                 onBlur={[Function]}
@@ -420,7 +420,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid e-ma
           </p>
         </div>
         <button
-          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-18fs5t5-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-1gvy6f3-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
           disabled={false}
           id="login-register-button"
           onBlur={[Function]}
@@ -471,7 +471,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid e-ma
               className="MuiBox-root css-8atqhb"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-zv5y65-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-2ycegv-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -532,7 +532,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid e-ma
               className="MuiBox-root css-8875ym"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1cn2n3g-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1nzt4e0-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -573,7 +573,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid e-ma
                 >
                   <button
                     aria-label="toggle password visibility"
-                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-1jew56n-MuiButtonBase-root-MuiIconButton-root"
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-gxoo4k-MuiButtonBase-root-MuiIconButton-root"
                     disabled={false}
                     id="login-show-password-icon-button"
                     onBlur={[Function]}
@@ -633,7 +633,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid e-ma
                 Esqueci minha senha
               </a>
               <button
-                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-105755-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-2urf4o-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
                 disabled={false}
                 id=":r5:"
                 onBlur={[Function]}
@@ -783,7 +783,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid logi
           </p>
         </div>
         <button
-          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-18fs5t5-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-1gvy6f3-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
           disabled={false}
           id="login-register-button"
           onBlur={[Function]}
@@ -837,7 +837,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid logi
               className="MuiBox-root css-8atqhb"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-zv5y65-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-2ycegv-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -893,7 +893,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid logi
               className="MuiBox-root css-8875ym"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1cn2n3g-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1nzt4e0-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -934,7 +934,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid logi
                 >
                   <button
                     aria-label="toggle password visibility"
-                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-1jew56n-MuiButtonBase-root-MuiIconButton-root"
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-gxoo4k-MuiButtonBase-root-MuiIconButton-root"
                     disabled={false}
                     id="login-show-password-icon-button"
                     onBlur={[Function]}
@@ -997,7 +997,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid logi
                 Esqueci minha senha
               </a>
               <button
-                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-105755-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-2urf4o-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
                 disabled={false}
                 id=":rb:"
                 onBlur={[Function]}
@@ -1150,7 +1150,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid pass
           </p>
         </div>
         <button
-          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-18fs5t5-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-1gvy6f3-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
           disabled={false}
           id="login-register-button"
           onBlur={[Function]}
@@ -1204,7 +1204,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid pass
               className="MuiBox-root css-8atqhb"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-zv5y65-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-2ycegv-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -1260,7 +1260,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid pass
               className="MuiBox-root css-8875ym"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1cn2n3g-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1nzt4e0-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -1301,7 +1301,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid pass
                 >
                   <button
                     aria-label="toggle password visibility"
-                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-1jew56n-MuiButtonBase-root-MuiIconButton-root"
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-gxoo4k-MuiButtonBase-root-MuiIconButton-root"
                     disabled={false}
                     id="login-show-password-icon-button"
                     onBlur={[Function]}
@@ -1369,7 +1369,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid pass
                 Esqueci minha senha
               </a>
               <button
-                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-105755-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-2urf4o-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
                 disabled={false}
                 id=":r7:"
                 onBlur={[Function]}
@@ -1522,7 +1522,7 @@ exports[`Test Login screen snapshot tests should render screen with loading logi
           </p>
         </div>
         <button
-          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-18fs5t5-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-1gvy6f3-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
           disabled={false}
           id="login-register-button"
           onBlur={[Function]}
@@ -1576,7 +1576,7 @@ exports[`Test Login screen snapshot tests should render screen with loading logi
               className="MuiBox-root css-8atqhb"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-zv5y65-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-2ycegv-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -1632,7 +1632,7 @@ exports[`Test Login screen snapshot tests should render screen with loading logi
               className="MuiBox-root css-8875ym"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1cn2n3g-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1nzt4e0-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -1673,7 +1673,7 @@ exports[`Test Login screen snapshot tests should render screen with loading logi
                 >
                   <button
                     aria-label="toggle password visibility"
-                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-1jew56n-MuiButtonBase-root-MuiIconButton-root"
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-gxoo4k-MuiButtonBase-root-MuiIconButton-root"
                     disabled={false}
                     id="login-show-password-icon-button"
                     onBlur={[Function]}
@@ -1736,7 +1736,7 @@ exports[`Test Login screen snapshot tests should render screen with loading logi
                 Esqueci minha senha
               </a>
               <button
-                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiLoadingButton-loading MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium Mui-disabled MuiButton-root MuiLoadingButton-root MuiLoadingButton-loading MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-105755-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiLoadingButton-loading MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium Mui-disabled MuiButton-root MuiLoadingButton-root MuiLoadingButton-loading MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-2urf4o-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
                 disabled={true}
                 id=":r3:"
                 onBlur={[Function]}
@@ -1755,7 +1755,7 @@ exports[`Test Login screen snapshot tests should render screen with loading logi
                 type="submit"
               >
                 <div
-                  className="MuiLoadingButton-loadingIndicator MuiLoadingButton-loadingIndicatorCenter css-likury-MuiLoadingButton-loadingIndicator"
+                  className="MuiLoadingButton-loadingIndicator MuiLoadingButton-loadingIndicatorCenter css-sro313-MuiLoadingButton-loadingIndicator"
                 >
                   <span
                     aria-labelledby=":r3:"
@@ -1916,7 +1916,7 @@ exports[`Test Login screen snapshot tests should render screen with password sho
           </p>
         </div>
         <button
-          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-18fs5t5-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-1gvy6f3-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
           disabled={false}
           id="login-register-button"
           onBlur={[Function]}
@@ -1967,7 +1967,7 @@ exports[`Test Login screen snapshot tests should render screen with password sho
               className="MuiBox-root css-8atqhb"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-zv5y65-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-2ycegv-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -2023,7 +2023,7 @@ exports[`Test Login screen snapshot tests should render screen with password sho
               className="MuiBox-root css-8875ym"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1cn2n3g-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1nzt4e0-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -2064,7 +2064,7 @@ exports[`Test Login screen snapshot tests should render screen with password sho
                 >
                   <button
                     aria-label="toggle password visibility"
-                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-1jew56n-MuiButtonBase-root-MuiIconButton-root"
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-gxoo4k-MuiButtonBase-root-MuiIconButton-root"
                     disabled={false}
                     id="login-show-password-icon-button"
                     onBlur={[Function]}
@@ -2124,7 +2124,7 @@ exports[`Test Login screen snapshot tests should render screen with password sho
                 Esqueci minha senha
               </a>
               <button
-                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-105755-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-2urf4o-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
                 disabled={false}
                 id=":r9:"
                 onBlur={[Function]}
