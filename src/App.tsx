@@ -8,6 +8,7 @@ import MonitorRequests from './screens/monitorRequests';
 import RegisterProfessor from './screens/registerProfessor';
 import RegisterStudent from './screens/registerStudent';
 import Register from './screens/registerType';
+import SubjectDetails from './screens/subjectDetails';
 import Subjects from './screens/subjects';
 import { SCREENS } from './utils/screens';
 import theme from './utils/theme';
@@ -28,6 +29,7 @@ const App: React.FC = () => {
             element={<RegisterProfessor />}
           />
           <Route path={SCREENS.CREATE_STUDENT} element={<RegisterStudent />} />
+          <Route path={SCREENS.SUBJECT_DETAILS} element={<SubjectDetails />} />
           <Route path={SCREENS.SUBJECTS} element={<Subjects />} />
           <Route path={SCREENS.CALENDAR} element={<Calendar />} />
           <Route

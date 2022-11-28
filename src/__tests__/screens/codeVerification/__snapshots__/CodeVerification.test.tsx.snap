@@ -89,12 +89,12 @@ exports[`Test Code Verification screen snapshot tests should load code generatio
         />
       </div>
       <h3
-        className="MuiTypography-root MuiTypography-h3 css-1w7645j-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-h3 css-h8fymg-MuiTypography-root"
       >
         Quase lá!
       </h3>
       <p
-        className="MuiTypography-root MuiTypography-body1 css-5fhr9f-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-body1 css-kilq1v-MuiTypography-root"
       >
         Te enviamos um código de confirmação de e-mail. Para concluir seu cadastro, digite o código recebido abaixo.
       </p>
@@ -108,7 +108,7 @@ exports[`Test Code Verification screen snapshot tests should load code generatio
         }
       >
         <div
-          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary sc-ftTHYK sc-jrcTuL beuLgP hWFQHY css-v9i4p-MuiInputBase-root-MuiOutlinedInput-root"
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary sc-ftTHYK sc-jrcTuL beuLgP hWFQHY css-ihtv7a-MuiInputBase-root-MuiOutlinedInput-root"
           onClick={[Function]}
         >
           <input
@@ -336,12 +336,12 @@ exports[`Test Code Verification screen snapshot tests should render code generat
         />
       </div>
       <h3
-        className="MuiTypography-root MuiTypography-h3 css-1w7645j-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-h3 css-h8fymg-MuiTypography-root"
       >
         Quase lá!
       </h3>
       <p
-        className="MuiTypography-root MuiTypography-body1 css-5fhr9f-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-body1 css-kilq1v-MuiTypography-root"
       >
         Te enviamos um código de confirmação de e-mail. Para concluir seu cadastro, digite o código recebido abaixo.
       </p>
@@ -355,7 +355,7 @@ exports[`Test Code Verification screen snapshot tests should render code generat
         }
       >
         <div
-          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary sc-ftTHYK sc-jrcTuL beuLgP hWFQHY css-v9i4p-MuiInputBase-root-MuiOutlinedInput-root"
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary sc-ftTHYK sc-jrcTuL beuLgP hWFQHY css-ihtv7a-MuiInputBase-root-MuiOutlinedInput-root"
           onClick={[Function]}
         >
           <input
@@ -553,12 +553,12 @@ exports[`Test Code Verification screen snapshot tests should render code verifie
         />
       </div>
       <h3
-        className="MuiTypography-root MuiTypography-h3 css-1w7645j-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-h3 css-h8fymg-MuiTypography-root"
       >
         Muito bem!
       </h3>
       <p
-        className="MuiTypography-root MuiTypography-body1 css-5fhr9f-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-body1 css-kilq1v-MuiTypography-root"
       >
         Agora que seu cadastro foi concluído você poderá aproveitar para solicitar ajuda dos monitores sempre que precisar.
       </p>
@@ -698,12 +698,12 @@ exports[`Test Code Verification screen snapshot tests should render invalid code
         />
       </div>
       <h3
-        className="MuiTypography-root MuiTypography-h3 css-1w7645j-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-h3 css-h8fymg-MuiTypography-root"
       >
         Quase lá!
       </h3>
       <p
-        className="MuiTypography-root MuiTypography-body1 css-5fhr9f-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-body1 css-kilq1v-MuiTypography-root"
       >
         Te enviamos um código de confirmação de e-mail. Para concluir seu cadastro, digite o código recebido abaixo.
       </p>
@@ -717,7 +717,7 @@ exports[`Test Code Verification screen snapshot tests should render invalid code
         }
       >
         <div
-          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error sc-ftTHYK sc-jrcTuL beuLgP hWFQHY css-v9i4p-MuiInputBase-root-MuiOutlinedInput-root"
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error sc-ftTHYK sc-jrcTuL beuLgP hWFQHY css-ihtv7a-MuiInputBase-root-MuiOutlinedInput-root"
           onClick={[Function]}
         >
           <input
@@ -1028,12 +1028,12 @@ exports[`Test Code Verification screen snapshot tests should render screen 1`] =
         />
       </div>
       <h3
-        className="MuiTypography-root MuiTypography-h3 css-1w7645j-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-h3 css-h8fymg-MuiTypography-root"
       >
         Quase lá!
       </h3>
       <p
-        className="MuiTypography-root MuiTypography-body1 css-5fhr9f-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-body1 css-kilq1v-MuiTypography-root"
       >
         Te enviamos um código de confirmação de e-mail. Para concluir seu cadastro, digite o código recebido abaixo.
       </p>
@@ -1047,7 +1047,7 @@ exports[`Test Code Verification screen snapshot tests should render screen 1`] =
         }
       >
         <div
-          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary sc-ftTHYK sc-jrcTuL beuLgP hWFQHY css-v9i4p-MuiInputBase-root-MuiOutlinedInput-root"
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary sc-ftTHYK sc-jrcTuL beuLgP hWFQHY css-ihtv7a-MuiInputBase-root-MuiOutlinedInput-root"
           onClick={[Function]}
         >
           <input
