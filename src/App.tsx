@@ -12,33 +12,49 @@ import SubjectDetails from './screens/subjectDetails';
 import Subjects from './screens/subjects';
 import { SCREENS } from './utils/screens';
 import theme from './utils/theme';
+import { SnackbarProvider } from 'notistack';
 
 const App: React.FC = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Routes>
-          <Route path={SCREENS.LOGIN} element={<Login />} />
-          <Route path={SCREENS.REGISTER} element={<Register />} />
-          <Route
-            path={SCREENS.CODE_VERIFICATION}
-            element={<CodeVerificationScreen />}
-          />
-          <Route
-            path={SCREENS.CREATE_PROFESSOR}
-            element={<RegisterProfessor />}
-          />
-          <Route path={SCREENS.CREATE_STUDENT} element={<RegisterStudent />} />
-          <Route path={SCREENS.SUBJECT_DETAILS} element={<SubjectDetails />} />
-          <Route path={SCREENS.SUBJECTS} element={<Subjects />} />
-          <Route path={SCREENS.CALENDAR} element={<Calendar />} />
-          <Route
-            path={SCREENS.MONITOR_REQUESTS}
-            element={<MonitorRequests />}
-          />
-        </Routes>
-      </BrowserRouter>
-    </ThemeProvider>
+    <SnackbarProvider
+      anchorOrigin={{
+        vertical: 'top',
+        horizontal: 'center',
+      }}
+      autoHideDuration={7000}
+      maxSnack={3}
+    >
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <Routes>
+            <Route path={SCREENS.LOGIN} element={<Login />} />
+            <Route path={SCREENS.REGISTER} element={<Register />} />
+            <Route
+              path={SCREENS.CODE_VERIFICATION}
+              element={<CodeVerificationScreen />}
+            />
+            <Route
+              path={SCREENS.CREATE_PROFESSOR}
+              element={<RegisterProfessor />}
+            />
+            <Route
+              path={SCREENS.CREATE_STUDENT}
+              element={<RegisterStudent />}
+            />
+            <Route
+              path={SCREENS.SUBJECT_DETAILS}
+              element={<SubjectDetails />}
+            />
+            <Route path={SCREENS.SUBJECTS} element={<Subjects />} />
+            <Route path={SCREENS.CALENDAR} element={<Calendar />} />
+            <Route
+              path={SCREENS.MONITOR_REQUESTS}
+              element={<MonitorRequests />}
+            />
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
+    </SnackbarProvider>
   );
 };
 
