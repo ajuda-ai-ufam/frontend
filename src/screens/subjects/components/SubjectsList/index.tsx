@@ -16,7 +16,7 @@ type Props = {
   totalPages: number;
   subjects?: TSubject[];
   userTypeId?: number;
-  handleAddProfessor(id: number): void;
+  handleAssignProfessors(subject: TSubject): void;
   handleChangePage(event: React.ChangeEvent<unknown>, page: number): void;
   handleSubjectClick(id: number): void;
   handleScheduleHelp(id: number): void;
@@ -28,7 +28,7 @@ const SubjectsList = ({
   totalPages,
   subjects,
   userTypeId,
-  handleAddProfessor,
+  handleAssignProfessors,
   handleChangePage,
   handleScheduleHelp,
   handleSubjectClick,
@@ -64,7 +64,7 @@ const SubjectsList = ({
             key={subject.id}
             subject={subject}
             userTypeId={userTypeId}
-            handleAddProfessor={handleAddProfessor}
+            handleAssignProfessors={handleAssignProfessors}
             handleScheduleHelp={handleScheduleHelp}
             handleSubjectClick={handleSubjectClick}
           />

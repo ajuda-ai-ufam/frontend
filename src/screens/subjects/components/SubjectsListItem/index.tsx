@@ -14,7 +14,7 @@ import {
 type Props = {
   subject: TSubject;
   userTypeId?: number;
-  handleAddProfessor(id: number): void;
+  handleAssignProfessors(subject: TSubject): void;
   handleScheduleHelp(id: number): void;
   handleSubjectClick(id: number): void;
 };
@@ -22,7 +22,7 @@ type Props = {
 const SubjectsListItem = ({
   subject,
   userTypeId,
-  handleAddProfessor,
+  handleAssignProfessors,
   handleScheduleHelp,
   handleSubjectClick,
 }: Props) => {
@@ -44,7 +44,7 @@ const SubjectsListItem = ({
       return (
         <ButtonContainer>
           <ActionButton
-            onClick={() => handleAddProfessor(subject.id)}
+            onClick={() => handleAssignProfessors(subject)}
             startIcon={<Add />}
           >
             Professor

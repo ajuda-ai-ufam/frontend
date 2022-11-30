@@ -2,11 +2,13 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useListSubjectsRequest from '../../../service/requests/useListSubjectsRequest';
 import useGetLoggedUser from '../../../service/storage/getLoggedUser';
+import { useSnackBar } from '../../../utils/renderSnackBar';
 import { SCREENS } from '../../../utils/screens';
 
 const useSubjects = () => {
   const navigate = useNavigate();
   const user = useGetLoggedUser();
+  const { showErrorSnackBar } = useSnackBar();
 
   const {
     data: subjectsResponse,
@@ -47,11 +49,6 @@ const useSubjects = () => {
     navigate(SCREENS.SUBJECT_DETAILS.replace(':id', subjectId.toString()));
   };
 
-  const handleAddProfessor = (subjectId: number) => {
-    // TODO - Adicionar modal
-    alert(`Add professor para a disciplina ${subjectId}`);
-  };
-
   const handleScheduleHelp = (subjectId: number) => {
     // TODO - Adicionar modal
     alert(`Agendar ajuda na disciplina ${subjectId}`);
@@ -65,8 +62,7 @@ const useSubjects = () => {
 
   useEffect(() => {
     if (subjectsError) {
-      // TODO - Mudar para snackbar
-      alert(`Erro ao carregar disciplinas. Erro: ${subjectsError}`);
+      showErrorSnackBar(`Erro ao carregar disciplinas. Erro: ${subjectsError}`);
     }
   }, [subjectsError]);
 
@@ -77,7 +73,6 @@ const useSubjects = () => {
     subjects,
     isLoadingSubjects,
     searchFieldElement,
-    handleAddProfessor,
     handleChangePage,
     handleScheduleHelp,
     handleSearch,

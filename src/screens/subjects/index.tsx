@@ -2,7 +2,9 @@ import { Search } from '@mui/icons-material';
 import { InputAdornment, Typography } from '@mui/material';
 import ContainerWithSidebar from '../../components/containerWithSidebar';
 import { SidebarItemEnum } from '../../utils/constants';
+import AssignProfessorsModal from '../../components/assignProfessorsModal';
 import SubjectsList from './components/SubjectsList';
+import useAssignProfessorsModal from '../../components/assignProfessorsModal/hooks/useAssignProfessorsModal';
 import useSubjects from './hooks/useSubjects';
 import { Card, Container, SearchField } from './styles';
 
@@ -14,15 +16,38 @@ const Subjects = () => {
     isLoadingSubjects,
     searchFieldElement,
     userTypeId,
-    handleAddProfessor,
     handleChangePage,
     handleScheduleHelp,
     handleSearch,
     handleSubjectClick,
   } = useSubjects();
 
+  const {
+    isLoading: isLoadingAssignProfessors,
+    isSuccess,
+    isOpen: isAssignProfessorsModalOpen,
+    professors,
+    selectedProfessorsIds,
+    selectedSubject,
+    handleAssignProfessorsClick,
+    handleChangeProfessors,
+    handleCloseModal: handleCloseAssignProfessorsModal,
+    handleOpenModal: handleOpenAssignProfessorsModal,
+  } = useAssignProfessorsModal();
+
   return (
     <ContainerWithSidebar selectedSidebarItem={SidebarItemEnum.SUBJECTS}>
+      <AssignProfessorsModal
+        isLoading={isLoadingAssignProfessors}
+        isSuccess={isSuccess}
+        isOpen={isAssignProfessorsModalOpen}
+        professors={professors}
+        selectedProfessorsIds={selectedProfessorsIds}
+        subject={selectedSubject}
+        handleAssignProfessorsClick={handleAssignProfessorsClick}
+        handleChangeProfessors={handleChangeProfessors}
+        handleClose={handleCloseAssignProfessorsModal}
+      />
       <Container>
         <Card>
           <Typography variant="h3">Disciplinas</Typography>
@@ -49,7 +74,7 @@ const Subjects = () => {
             subjects={subjects}
             userTypeId={userTypeId}
             isLoading={isLoadingSubjects}
-            handleAddProfessor={handleAddProfessor}
+            handleAssignProfessors={handleOpenAssignProfessorsModal}
             handleChangePage={handleChangePage}
             handleScheduleHelp={handleScheduleHelp}
             handleSubjectClick={handleSubjectClick}

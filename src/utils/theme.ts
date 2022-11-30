@@ -42,7 +42,7 @@ const theme = createTheme({
       paper: '#65B95E',
     },
     action: {
-      disabled: '#65B95E66',
+      disabled: '#fff',
       disabledBackground: '#70D26866',
     },
   },

@@ -1,3 +1,4 @@
+import { alpha } from '@material-ui/core';
 import { Box } from '@mui/system';
 import styled from 'styled-components';
 import { Button } from '../../components/button';
@@ -43,6 +44,9 @@ export const CodeFormButton = styled(Button).attrs({
 })`
   width: 100%;
   min-width: 245px;
+  :disabled {
+    color: ${alpha(theme.palette.primary.main, 0.5)} !important;
+  }
 `;
 
 export const CopyRigthContainer = styled(Box).attrs({
