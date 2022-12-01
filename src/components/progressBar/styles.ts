@@ -10,7 +10,7 @@ type ProgressStepProps = BoxProps & {
 export const ProgressStep = styled(Box).attrs<ProgressStepProps>((props) => ({
   backgroundColor: props.isSelected
     ? theme.palette.primary.main
-    : theme.palette.background.default,
+    : theme.palette.grey.A100,
   borderRadius: '10px',
 }))<ProgressStepProps>`
   width: ${(props) => (props.isSelected ? '32px' : '16px')};

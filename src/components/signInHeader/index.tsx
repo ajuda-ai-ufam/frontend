@@ -1,5 +1,4 @@
-import { Typography } from '@material-ui/core';
-import { Link } from '@mui/material';
+import { Link, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import HeaderLogo from '../../assets/header-logo.svg';
 import { SCREENS } from '../../utils/screens';

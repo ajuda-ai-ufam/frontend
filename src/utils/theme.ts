@@ -1,6 +1,9 @@
 import { Shadows } from '@material-ui/core/styles/shadows';
 import { createTheme } from '@mui/material';
 
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+
 const breakpoints = {
   values: {
     xs: 0,
@@ -11,8 +14,34 @@ const breakpoints = {
   },
 };
 
+const components = {
+  MuiSelect: {
+    defaultProps: {
+      MenuProps: {
+        PaperProps: {
+          style: {
+            maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+            width: 250,
+            backgroundColor: 'white',
+            boxShadow: '0px 0px 12px rgba(0, 0, 0, 0.1)',
+          },
+        },
+        sx: {
+          '&& .Mui-selected': {
+            backgroundColor: '#eeeeee',
+            ':hover': {
+              backgroundColor: '#e0e0e0',
+            },
+          },
+        },
+      },
+    },
+  },
+};
+
 const theme = createTheme({
   shadows: Array(25).fill('none') as Shadows,
+
   palette: {
     grey: {
       A100: '#ECEDEA',
@@ -130,6 +159,7 @@ const theme = createTheme({
     },
   },
   breakpoints,
+  components,
 });
 
 export default theme;
