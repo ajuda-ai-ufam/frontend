@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { AxiosError } from 'axios';
 import api from '../../api';
-import useSaveToken from '../../storage/saveToken';
 import {
   TRegisterProfessorRequestHook,
   TRegisterProfessorRequest,
@@ -14,16 +13,24 @@ const useRegisterProfessorRequest = (): TRegisterProfessorRequestHook => {
   const [error, setError] = useState<string>();
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const register = async (name: string, email: string, password: string) => {
+  const register = async (
+    name: string,
+    email: string,
+    password: string,
+    confirmPassword: string
+  ) => {
     setIsLoading(true);
     setIsSuccess(false);
     setError(undefined);
-    const body: TRegisterProfessorRequest = { name, email, password };
-
+    const body: TRegisterProfessorRequest = {
+      name,
+      email,
+      password,
+      confirm_password: confirmPassword,
+    };
     try {
-      const res = await api.post('user/teacher', body);
-      const data = res.data as TRegisterProfessorResponse;
-      useSaveToken(data.access_token);
+      await api.post('/user/teacher', { body });
+
       setIsSuccess(true);
     } catch (error) {
       const err = error as AxiosError;
@@ -38,13 +45,10 @@ const useRegisterProfessorRequest = (): TRegisterProfessorRequestHook => {
     }
   };
 
-  const resetError = () => setError(undefined);
-
   return {
     isLoading,
     isSuccess,
     error,
-    resetError,
     register,
   };
 };

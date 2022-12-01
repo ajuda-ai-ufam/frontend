@@ -6,7 +6,7 @@ import { TRegisterProfessorHook } from './types';
 
 const useRegisterProfessor = (): TRegisterProfessorHook => {
   const navigate = useNavigate();
-  const { error, isLoading, isSuccess, register, resetError } =
+  const { error, isLoading, isSuccess, register } =
     useRegisterProfessorRequest();
 
   const [emailError, setEmailError] = useState('');
@@ -39,7 +39,6 @@ const useRegisterProfessor = (): TRegisterProfessorHook => {
     e.preventDefault();
     setPasswordError('');
     setEmailError('');
-    resetError();
 
     if (!name) {
       return setNameError('Informe o nome');
@@ -79,7 +78,7 @@ const useRegisterProfessor = (): TRegisterProfessorHook => {
       return setConfPasswordError('Deve ser idêntico a senha');
     }
 
-    void register(name, email, password);
+    void register(name, email, password, confPassword);
   };
 
   return {
