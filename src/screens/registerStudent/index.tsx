@@ -157,11 +157,15 @@ const RegisterStudent = () => {
       <Container>
         <SignInHeader />
         <CardContainer>
-          {!isLoading ? (
-            <ContainerProgressBar>
+          {isLoading ? (
+            <ContainerProgressBar sx={{ visibility: 'hidden' }}>
               <ProgressBar steps={3} currentStep={step} />
             </ContainerProgressBar>
-          ) : undefined}
+          ) : (
+            <ContainerProgressBar sx={{ visibility: 'visibly' }}>
+              <ProgressBar steps={3} currentStep={step} />
+            </ContainerProgressBar>
+          )}
           {CardContent()}
         </CardContainer>
       </Container>

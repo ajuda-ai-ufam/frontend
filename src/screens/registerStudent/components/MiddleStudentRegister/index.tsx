@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/core';
 import { FormHelperText, MenuItem } from '@mui/material';
 import { ReactNode } from 'react';
+import theme from '../../../../utils/theme';
 import {
   validateCourse,
   validateEnrollment,
@@ -39,7 +40,7 @@ const MiddleStudentRegister = ({
 
   const usePlaceholderStyles = makeStyles(() => ({
     placeholder: {
-      color: '#aaa',
+      color: theme.palette.grey[500],
     },
   }));
 
@@ -70,7 +71,7 @@ const MiddleStudentRegister = ({
       <TypographyTextRegister sx={{ mt: '12px' }} variant="body1">
         Agora fale um pouco sobre você e nos informe seus dados acadêmicos.
       </TypographyTextRegister>
-      <StyledForm>
+      <StyledForm onSubmit={handleSecondContinueClick}>
         <StyledFormBox sx={{ mt: '32px' }}>
           <StyledFormTextField
             value={enrollment}
@@ -94,13 +95,13 @@ const MiddleStudentRegister = ({
             id="course"
             onChange={handleCourseChange}
             renderValue={
-              course !== 'Selecione um curso'
+              course !== 'Selecione um curso*'
                 ? undefined
-                : () => <Placeholder>Selecione um curso</Placeholder>
+                : () => <Placeholder>Selecione um curso*</Placeholder>
             }
           >
-            <MenuItem value="Selecione um curso" disabled>
-              Selecione um curso
+            <MenuItem value="Selecione um curso*" disabled>
+              Selecione um curso*
             </MenuItem>
             {courses.map((course) => (
               <MenuItem
@@ -128,9 +129,7 @@ const MiddleStudentRegister = ({
           <LeftButton variant="text" onClick={handleBackClick}>
             Voltar
           </LeftButton>
-          <RightButton onClick={handleSecondContinueClick}>
-            Continuar
-          </RightButton>
+          <RightButton type="submit">Continuar</RightButton>
         </ContainerContinue>
       </StyledForm>
     </>

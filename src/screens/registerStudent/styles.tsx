@@ -20,11 +20,7 @@ export const Container = styled(Box).attrs({
   flexDirection: 'column',
   justifyContent: 'flex-start',
   gap: '16px',
-})`
-  /* @media (max-width: ${theme.breakpoints.values.sm}px) {
-    margin: 0 16px !important;
-  } */
-`;
+})``;
 
 export const ContainerContinue = styled(Box).attrs({
   display: 'flex',
@@ -70,10 +66,10 @@ export const StyledFormTextField = styled(OutlinedInput)`
 `;
 
 export const StyledForm = styled.form`
-  margin: 0 16px !important;
-  width: 100% !important;
-  right: 0 !important;
-  left: 0 !important;
+  margin: 0 16px;
+  width: 100%;
+  right: 0;
+  left: 0;
 `;
 
 export const TypographyTextRegister = styledMUI(Typography)({
@@ -93,7 +89,14 @@ export const CopyRigthContainer = styled(Box).attrs({
   justifyContent: 'center',
   width: '100%',
   paddingBottom: '24px',
-})``;
+})`
+  @media (max-width: ${theme.breakpoints.values.md}px) {
+    margin-top: 64px !important;
+  }
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    margin-top: 24px !important;
+  }
+`;
 
 export const CardContainer = styled(Box).attrs({
   display: 'flex',
@@ -114,7 +117,7 @@ export const Card = styled(Box).attrs((props) => ({
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
   max-width: 500px;
   width: 80%;
-  min-height: 500px;
+  min-height: 400px;
 
   @media (max-width: ${theme.breakpoints.values.md}px) {
     width: 50% !important;

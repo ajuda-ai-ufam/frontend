@@ -19,6 +19,7 @@ import {
 
 const useRegister = () => {
   const navigate = useNavigate();
+
   const { showErrorSnackBar } = useSnackBar();
 
   const { coursesFetch, data: courses } = useCourseRequest();
@@ -28,7 +29,7 @@ const useRegister = () => {
 
   const [step, setStep] = useState(0);
   const [courseId, setCourseId] = useState(0);
-  const [course, setCourse] = useState('Selecione um curso');
+  const [course, setCourse] = useState('Selecione um curso*');
   const [courseError, setCourseError] = useState('');
   const [name, setName] = useState('');
   const [enrollment, setEnrollment] = useState('');
