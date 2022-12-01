@@ -116,6 +116,8 @@ const theme = createTheme({
     },
     body2: {
       fontWeight: 400,
+      lineHeight: '20px',
+      letterSpacing: '0.1px',
       fontSize: 14,
     },
     caption: {

@@ -262,7 +262,7 @@ exports[`Test Login screen snapshot tests should render screen 1`] = `
               className="sc-ipEyDJ kLWMPZ MuiBox-root css-mwwja"
             >
               <a
-                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-tbtf8t-MuiTypography-root-MuiLink-root"
+                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-1qjxhzk-MuiTypography-root-MuiLink-root"
                 href="/register"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -625,7 +625,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid e-ma
               className="sc-ipEyDJ kLWMPZ MuiBox-root css-mwwja"
             >
               <a
-                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-tbtf8t-MuiTypography-root-MuiLink-root"
+                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-1qjxhzk-MuiTypography-root-MuiLink-root"
                 href="/register"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -989,7 +989,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid logi
               className="sc-ipEyDJ kLWMPZ MuiBox-root css-mwwja"
             >
               <a
-                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-tbtf8t-MuiTypography-root-MuiLink-root"
+                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-1qjxhzk-MuiTypography-root-MuiLink-root"
                 href="/register"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -1361,7 +1361,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid pass
               className="sc-ipEyDJ kLWMPZ MuiBox-root css-mwwja"
             >
               <a
-                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-tbtf8t-MuiTypography-root-MuiLink-root"
+                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-1qjxhzk-MuiTypography-root-MuiLink-root"
                 href="/register"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -1728,7 +1728,7 @@ exports[`Test Login screen snapshot tests should render screen with loading logi
               className="sc-ipEyDJ kLWMPZ MuiBox-root css-mwwja"
             >
               <a
-                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-tbtf8t-MuiTypography-root-MuiLink-root"
+                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-1qjxhzk-MuiTypography-root-MuiLink-root"
                 href="/register"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -2116,7 +2116,7 @@ exports[`Test Login screen snapshot tests should render screen with password sho
               className="sc-ipEyDJ kLWMPZ MuiBox-root css-mwwja"
             >
               <a
-                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-tbtf8t-MuiTypography-root-MuiLink-root"
+                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-1qjxhzk-MuiTypography-root-MuiLink-root"
                 href="/register"
                 onBlur={[Function]}
                 onFocus={[Function]}
