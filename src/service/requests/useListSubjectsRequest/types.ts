@@ -2,7 +2,7 @@ export type TSubject = {
   id: number;
   name: string;
   code: string;
-  course_id: 1;
+  course_id: number;
 };
 
 export type TListSubjectsResponse = {
