@@ -1,5 +1,14 @@
+import SignInHeader from '../../components/signInHeader';
+import Container from '../../components/container';
+import FormRegister from './components/FormRegister';
+
 const RegisterProfessor = () => {
-  return <div>Hello World Register Professor</div>;
+  return (
+    <>
+      <SignInHeader />
+      <FormRegister />
+    </>
+  );
 };
 
 export default RegisterProfessor;
