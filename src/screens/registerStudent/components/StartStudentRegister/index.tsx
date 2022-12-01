@@ -76,7 +76,7 @@ const StartStudentRegister = ({
       <TypographyTextRegister sx={{ mt: '12px' }} variant="body1">
         Preencha os campos abaixo para iniciar o seu cadastro.
       </TypographyTextRegister>
-      <StyledForm>
+      <StyledForm onSubmit={handleContinueClick}>
         <StyledFormBox sx={{ mt: '32px' }}>
           <StyledFormTextField
             value={name}
@@ -148,7 +148,7 @@ const StartStudentRegister = ({
           <LeftButton variant="text" onClick={handleCancelRegisterClick}>
             Cancelar cadastro
           </LeftButton>
-          <RightButton onClick={handleContinueClick}>Continuar</RightButton>
+          <RightButton type="submit">Continuar</RightButton>
         </ContainerContinue>
       </StyledForm>
     </>

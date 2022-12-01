@@ -21,7 +21,7 @@ const App: React.FC = () => {
         vertical: 'top',
         horizontal: 'center',
       }}
-      autoHideDuration={7000}
+      autoHideDuration={5000}
       maxSnack={3}
     >
       <ThemeProvider theme={theme}>

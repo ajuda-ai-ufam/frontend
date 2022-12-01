@@ -18,7 +18,6 @@ import {
   ConfirmationContainer,
   ConfirmationTextContainer,
   LoadingContainer,
-  MenuProps,
   Placeholder,
   StyledTypography,
 } from './styles';
@@ -111,7 +110,6 @@ const AssignProfessorsModal = ({
               </ChipsContainer>
             )
           }
-          MenuProps={MenuProps}
         >
           {professors.map((professor) => (
             <MenuItem key={professor.id} value={professor.id}>
