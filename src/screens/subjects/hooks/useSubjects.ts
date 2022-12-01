@@ -32,7 +32,8 @@ const useSubjects = () => {
   const handleSearch = (e: React.SyntheticEvent<EventTarget>) => {
     e.preventDefault();
 
-    void listSubjects({ search: searchFieldElement.current?.value });
+    void listSubjects({ page: 1, search: searchFieldElement.current?.value });
+    setPage(1);
   };
 
   const handleChangePage = (
@@ -41,7 +42,12 @@ const useSubjects = () => {
   ) => {
     if (newPage === page) return;
 
-    void listSubjects({ page: newPage });
+    void listSubjects({
+      page: newPage,
+      search: searchFieldElement.current?.value
+        ? searchFieldElement.current?.value
+        : undefined,
+    });
     setPage(newPage);
   };
 

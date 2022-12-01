@@ -1,12 +1,12 @@
-import { Search } from '@mui/icons-material';
-import { InputAdornment, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import ContainerWithSidebar from '../../components/containerWithSidebar';
 import { SidebarItemEnum } from '../../utils/constants';
 import AssignProfessorsModal from '../../components/assignProfessorsModal';
 import SubjectsList from './components/SubjectsList';
 import useAssignProfessorsModal from '../../components/assignProfessorsModal/hooks/useAssignProfessorsModal';
 import useSubjects from './hooks/useSubjects';
-import { Card, Container, SearchField } from './styles';
+import { Card, Container } from './styles';
+import SearchField from '../../components/searchField';
 
 const Subjects = () => {
   const {
@@ -55,18 +55,11 @@ const Subjects = () => {
             Clique na disciplina para exibir mais detalhes
           </Typography>
 
-          <form onSubmit={handleSearch}>
-            <SearchField
-              inputRef={searchFieldElement}
-              placeholder="Buscar disciplina"
-              onChange={() => undefined}
-              startAdornment={
-                <InputAdornment position="start">
-                  <Search />
-                </InputAdornment>
-              }
-            />
-          </form>
+          <SearchField
+            inputRef={searchFieldElement}
+            placeholder="Buscar disciplina"
+            handleSearch={handleSearch}
+          />
 
           <SubjectsList
             page={page}

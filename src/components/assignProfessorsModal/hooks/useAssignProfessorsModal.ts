@@ -1,5 +1,6 @@
 import { SelectChangeEvent } from '@mui/material';
 import { useEffect, useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import useAssignProfessorsRequest from '../../../service/requests/useAssignProfessorsRequest';
 import useListProfessorsRequest from '../../../service/requests/useListProfessorsRequest';
 import { TSubject } from '../../../service/requests/useListSubjectsRequest/types';
@@ -7,6 +8,7 @@ import { useSnackBar } from '../../../utils/renderSnackBar';
 import { TSelectedProfessor } from './types';
 
 const useAssignProfessorsModal = () => {
+  const navigate = useNavigate();
   const { data: listProfessorsResponse, listProfessors } =
     useListProfessorsRequest();
   const { isSuccess, isLoading, assignProfessors, error, resetStates } =
@@ -20,7 +22,7 @@ const useAssignProfessorsModal = () => {
   );
 
   const professors: TSelectedProfessor[] = useMemo(() => {
-    if (!listProfessorsResponse) return [];
+    if (!listProfessorsResponse || !selectedSubject) return [];
 
     const notAssignedProfessors = listProfessorsResponse.data.filter(
       (prof) =>
@@ -39,6 +41,8 @@ const useAssignProfessorsModal = () => {
     setIsOpen(false);
     resetStates();
     setSelectedProfessorsIds([]);
+
+    if (isSuccess) navigate(0);
   };
 
   const handleOpenModal = (subject: TSubject) => {
