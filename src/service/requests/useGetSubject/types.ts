@@ -1,6 +1,6 @@
 import { TSubject } from '../useListSubjectsRequest/types';
 
-type TSubjectProfessor = {
+export type TSubjectResponsible = {
   id: number;
   name: string;
   email: string;
@@ -22,7 +22,7 @@ export type TSubjectMonitor = {
 };
 
 export type TCompleteSubject = TSubject & {
-  responsables: TSubjectProfessor[];
+  responsables: TSubjectResponsible[];
   monitors: TSubjectMonitor[];
 };
 
