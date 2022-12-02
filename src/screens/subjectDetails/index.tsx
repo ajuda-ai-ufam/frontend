@@ -51,7 +51,9 @@ const SubjectDetails = () => {
         <Typography variant="h3">{subject.name}</Typography>
 
         <LegendTypography>
-          Aqui estão listados todos os professores e monitores desta disciplina
+          {userType === TypeUserEnum.STUDENT
+            ? 'Clique em um monitor para iniciar um agendamento.'
+            : 'Aqui estão listados todos os professores e monitores desta disciplina'}
         </LegendTypography>
       </>
     );
