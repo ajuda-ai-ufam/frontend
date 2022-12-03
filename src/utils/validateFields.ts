@@ -18,6 +18,9 @@ export const validateEmail = (email: string): string => {
   if (email.split('@')[0].length < 3 || email.split('@')[0].length > 20)
     return 'Informe um e-mail válido!';
 
+  const re = /^([\w.]{3,20})@icomp.ufam.edu.br$/gm;
+  if (!re.test(email)) return 'Informe um e-mail icomp válido!';
+
   return '';
 };
 
