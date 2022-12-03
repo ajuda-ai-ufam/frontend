@@ -12,10 +12,6 @@ export type TRegisterProfessorRequest = {
     confirm_password: string;
 };
 
-export type TRegisterProfessorResponse = {
-    access_token: string;
-};
-
 export type TRegisterProfessorErrorResponse = {
     statusCode: number;
     message: string;

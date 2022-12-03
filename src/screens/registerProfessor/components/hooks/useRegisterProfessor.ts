@@ -25,6 +25,7 @@ const useRegisterProfessor = () => {
   const [confPassword, setConfPassword] = useState('');
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
@@ -41,6 +42,16 @@ const useRegisterProfessor = () => {
 
   const handleCancelClick = () => {
     navigate(SCREENS.LOGIN);
+  };
+
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const handleMouseDownPassword = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    event.preventDefault();
   };
 
   const handleContinueClick = (e: React.SyntheticEvent<EventTarget>) => {
@@ -111,6 +122,8 @@ const useRegisterProfessor = () => {
     handleConfPasswordChange,
     handleCancelClick,
     handleContinueClick,
+    handleClickShowPassword,
+    handleMouseDownPassword,
     name,
     email,
     password,
@@ -122,6 +135,7 @@ const useRegisterProfessor = () => {
     emailError,
     passwordError,
     confPasswordError,
+    showPassword,
     setNameError,
     setEmailError,
     setPasswordError,

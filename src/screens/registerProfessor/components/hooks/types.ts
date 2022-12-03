@@ -20,4 +20,5 @@ export type TRegisterProfessorHook = {
     emailError: string;
     passwordError: string;
     confPasswordError: string;
+    showPassword: boolean;
 };

@@ -1,16 +1,18 @@
-import { Box, FormHelperText } from '@mui/material';
-import BottomArea from '../../../../components/bottomArea';
-import { TextField } from '../../../../components/textField';
-import useRegisterProfessor from '../hooks/useRegister';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { Box, FormHelperText, InputAdornment, IconButton } from '@mui/material';
+import Copyright from '../../../../components/copyright';
+import useRegisterProfessor from '../hooks/useRegisterProfessor';
 import {
   Container,
   StyledForm,
   FormContainer,
   TypographyRegister,
-  TypographyCredentials,
   ContainerRegisterOption,
-  CancelRegisterLink,
+  CancelRegister,
   RegisterButton,
+  CopyrigthContainer,
+  StyledFormTextField,
 } from './styles';
 import {
   validateConfirmPassword,
@@ -29,6 +31,7 @@ const FormRegister = () => {
     nameError,
     password,
     passwordError,
+    showPassword,
     setNameError,
     setConfPasswordError,
     setEmailError,
@@ -39,6 +42,8 @@ const FormRegister = () => {
     handlePasswordChange,
     handleConfPasswordChange,
     handleContinueClick,
+    handleClickShowPassword,
+    handleMouseDownPassword,
   } = useRegisterProfessor();
 
   const NameError = () => {
@@ -71,13 +76,16 @@ const FormRegister = () => {
   return (
     <Container>
       <FormContainer>
-        <TypographyRegister>Cadastro de Professor</TypographyRegister>
-        <TypographyCredentials>
+        <TypographyRegister variant="h4">
+          Cadastro de Professor
+        </TypographyRegister>
+        <TypographyRegister variant="body1">
           Preencha os campos abaixo para iniciar o seu cadastro.
-        </TypographyCredentials>
+        </TypographyRegister>
+
         <StyledForm onSubmit={handleContinueClick}>
-          <Box sx={{ width: '100%' }}>
-            <TextField
+          <Box>
+            <StyledFormTextField
               error={!!nameError}
               value={name}
               id="name"
@@ -86,13 +94,12 @@ const FormRegister = () => {
               onBlur={() => setNameError(validateName(name))}
               type="text"
               placeholder="Nome Completo* "
-              sx={{ mt: 4, width: '100%' }}
             />
             <NameError />
           </Box>
 
-          <Box sx={{ width: '100%' }}>
-            <TextField
+          <Box>
+            <StyledFormTextField
               error={!!emailError}
               value={email}
               id="email"
@@ -101,13 +108,12 @@ const FormRegister = () => {
               onBlur={() => setEmailError(validateEmail(email))}
               type="text"
               placeholder="E-mail do Icomp* "
-              sx={{ mt: 4, width: '100%' }}
             />
             <EmailError />
           </Box>
 
-          <Box sx={{ width: '100%' }}>
-            <TextField
+          <Box>
+            <StyledFormTextField
               error={!!passwordError}
               value={password}
               id="password"
@@ -116,13 +122,12 @@ const FormRegister = () => {
               onBlur={() => setPasswordError(validatePassword(name, password))}
               type="password"
               placeholder="Crie sua senha* "
-              sx={{ mt: 4, width: '100%' }}
             />
             <PasswordError />
           </Box>
 
-          <Box sx={{ width: '100%' }}>
-            <TextField
+          <Box>
+            <StyledFormTextField
               error={!!confPasswordError}
               value={confPassword}
               id="confirm_password"
@@ -133,22 +138,35 @@ const FormRegister = () => {
                   validateConfirmPassword(password, confPassword)
                 )
               }
-              type="password"
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              }
+              type={showPassword ? 'text' : 'password'}
               placeholder="Confirme sua senha* "
-              sx={{ mt: 4, width: '100%' }}
             />
             <ConfPasswordError />
           </Box>
 
           <ContainerRegisterOption>
-            <CancelRegisterLink onClick={handleCancelClick}>
+            <CancelRegister variant="text" onClick={handleCancelClick}>
               Cancelar cadastro
-            </CancelRegisterLink>
+            </CancelRegister>
             <RegisterButton type="submit">Continuar</RegisterButton>
           </ContainerRegisterOption>
         </StyledForm>
       </FormContainer>
-      <BottomArea />
+      <CopyrigthContainer>
+        <Copyright />
+      </CopyrigthContainer>
     </Container>
   );
 };
