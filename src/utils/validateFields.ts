@@ -19,7 +19,7 @@ export const validateEmail = (email: string): string => {
     return 'Informe um e-mail válido!';
 
   const re = /^([\w.]{3,20})@icomp.ufam.edu.br$/gm;
-  if (!re.test(email)) return 'Informe um e-mail válido!';
+  if (!re.test(email)) return 'Informe um e-mail icomp válido!';
 
   return '';
 };
