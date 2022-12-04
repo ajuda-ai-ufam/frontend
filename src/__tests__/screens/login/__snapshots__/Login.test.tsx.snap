@@ -56,13 +56,13 @@ exports[`Test Login screen snapshot tests should render screen 1`] = `
           className="sc-fEXmlR ktuAEL MuiBox-root css-1ay9vb9"
         >
           <p
-            className="MuiTypography-root MuiTypography-body1 css-h4jzzx-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-body1 css-1jxod77-MuiTypography-root"
           >
             Não é cadastrado?
           </p>
         </div>
         <button
-          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-18fs5t5-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-1gvy6f3-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
           disabled={false}
           id="login-register-button"
           onBlur={[Function]}
@@ -95,12 +95,12 @@ exports[`Test Login screen snapshot tests should render screen 1`] = `
           className="sc-jrcTuL MuiBox-root css-wkpw2c"
         >
           <h3
-            className="MuiTypography-root MuiTypography-h3 ForwardRef(Typography)-root-1 css-ses0wv-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-h3 ForwardRef(Typography)-root-1 css-10jwzv0-MuiTypography-root"
           >
             Faça seu login
           </h3>
           <p
-            className="MuiTypography-root MuiTypography-body1 ForwardRef(Typography)-root-2 css-h4jzzx-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-body1 ForwardRef(Typography)-root-2 css-1jxod77-MuiTypography-root"
           >
             Insira suas credenciais abaixo para continuar
           </p>
@@ -113,7 +113,7 @@ exports[`Test Login screen snapshot tests should render screen 1`] = `
               className="MuiBox-root css-8atqhb"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-1xv2y7e-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-2ycegv-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -169,7 +169,7 @@ exports[`Test Login screen snapshot tests should render screen 1`] = `
               className="MuiBox-root css-8875ym"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1l7of66-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1nzt4e0-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -210,7 +210,7 @@ exports[`Test Login screen snapshot tests should render screen 1`] = `
                 >
                   <button
                     aria-label="toggle password visibility"
-                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-1jew56n-MuiButtonBase-root-MuiIconButton-root"
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-gxoo4k-MuiButtonBase-root-MuiIconButton-root"
                     disabled={false}
                     id="login-show-password-icon-button"
                     onBlur={[Function]}
@@ -262,7 +262,7 @@ exports[`Test Login screen snapshot tests should render screen 1`] = `
               className="sc-ipEyDJ kLWMPZ MuiBox-root css-mwwja"
             >
               <a
-                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-tbtf8t-MuiTypography-root-MuiLink-root"
+                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-1qjxhzk-MuiTypography-root-MuiLink-root"
                 href="/register"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -270,7 +270,7 @@ exports[`Test Login screen snapshot tests should render screen 1`] = `
                 Esqueci minha senha
               </a>
               <button
-                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-105755-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-2urf4o-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
                 disabled={false}
                 id=":r1:"
                 onBlur={[Function]}
@@ -297,7 +297,7 @@ exports[`Test Login screen snapshot tests should render screen 1`] = `
           className="sc-bqWxrE MuiBox-root css-1tqrsn5"
         >
           <p
-            className="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter css-5fhr9f-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter css-kilq1v-MuiTypography-root"
           >
             Ainda não tem uma conta? 
           </p>
@@ -312,7 +312,7 @@ exports[`Test Login screen snapshot tests should render screen 1`] = `
             }
           >
             <p
-              className="MuiTypography-root MuiTypography-body1 css-1i4c8mu-MuiTypography-root"
+              className="MuiTypography-root MuiTypography-body1 css-14zn9tq-MuiTypography-root"
             >
               Cadastre-se
             </p>
@@ -414,13 +414,13 @@ exports[`Test Login screen snapshot tests should render screen with invalid e-ma
           className="sc-fEXmlR ktuAEL MuiBox-root css-1ay9vb9"
         >
           <p
-            className="MuiTypography-root MuiTypography-body1 css-h4jzzx-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-body1 css-1jxod77-MuiTypography-root"
           >
             Não é cadastrado?
           </p>
         </div>
         <button
-          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-18fs5t5-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-1gvy6f3-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
           disabled={false}
           id="login-register-button"
           onBlur={[Function]}
@@ -453,12 +453,12 @@ exports[`Test Login screen snapshot tests should render screen with invalid e-ma
           className="sc-jrcTuL MuiBox-root css-wkpw2c"
         >
           <h3
-            className="MuiTypography-root MuiTypography-h3 ForwardRef(Typography)-root-1 css-ses0wv-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-h3 ForwardRef(Typography)-root-1 css-10jwzv0-MuiTypography-root"
           >
             Faça seu login
           </h3>
           <p
-            className="MuiTypography-root MuiTypography-body1 ForwardRef(Typography)-root-2 css-h4jzzx-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-body1 ForwardRef(Typography)-root-2 css-1jxod77-MuiTypography-root"
           >
             Insira suas credenciais abaixo para continuar
           </p>
@@ -471,7 +471,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid e-ma
               className="MuiBox-root css-8atqhb"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-1xv2y7e-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-2ycegv-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -532,7 +532,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid e-ma
               className="MuiBox-root css-8875ym"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1l7of66-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1nzt4e0-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -573,7 +573,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid e-ma
                 >
                   <button
                     aria-label="toggle password visibility"
-                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-1jew56n-MuiButtonBase-root-MuiIconButton-root"
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-gxoo4k-MuiButtonBase-root-MuiIconButton-root"
                     disabled={false}
                     id="login-show-password-icon-button"
                     onBlur={[Function]}
@@ -625,7 +625,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid e-ma
               className="sc-ipEyDJ kLWMPZ MuiBox-root css-mwwja"
             >
               <a
-                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-tbtf8t-MuiTypography-root-MuiLink-root"
+                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-1qjxhzk-MuiTypography-root-MuiLink-root"
                 href="/register"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -633,7 +633,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid e-ma
                 Esqueci minha senha
               </a>
               <button
-                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-105755-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-2urf4o-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
                 disabled={false}
                 id=":r5:"
                 onBlur={[Function]}
@@ -660,7 +660,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid e-ma
           className="sc-bqWxrE MuiBox-root css-1tqrsn5"
         >
           <p
-            className="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter css-5fhr9f-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter css-kilq1v-MuiTypography-root"
           >
             Ainda não tem uma conta? 
           </p>
@@ -675,7 +675,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid e-ma
             }
           >
             <p
-              className="MuiTypography-root MuiTypography-body1 css-1i4c8mu-MuiTypography-root"
+              className="MuiTypography-root MuiTypography-body1 css-14zn9tq-MuiTypography-root"
             >
               Cadastre-se
             </p>
@@ -777,13 +777,13 @@ exports[`Test Login screen snapshot tests should render screen with invalid logi
           className="sc-fEXmlR ktuAEL MuiBox-root css-1ay9vb9"
         >
           <p
-            className="MuiTypography-root MuiTypography-body1 css-h4jzzx-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-body1 css-1jxod77-MuiTypography-root"
           >
             Não é cadastrado?
           </p>
         </div>
         <button
-          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-18fs5t5-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-1gvy6f3-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
           disabled={false}
           id="login-register-button"
           onBlur={[Function]}
@@ -819,12 +819,12 @@ exports[`Test Login screen snapshot tests should render screen with invalid logi
           className="sc-jrcTuL MuiBox-root css-wkpw2c"
         >
           <h3
-            className="MuiTypography-root MuiTypography-h3 ForwardRef(Typography)-root-1 css-ses0wv-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-h3 ForwardRef(Typography)-root-1 css-10jwzv0-MuiTypography-root"
           >
             Faça seu login
           </h3>
           <p
-            className="MuiTypography-root MuiTypography-body1 ForwardRef(Typography)-root-2 css-h4jzzx-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-body1 ForwardRef(Typography)-root-2 css-1jxod77-MuiTypography-root"
           >
             Insira suas credenciais abaixo para continuar
           </p>
@@ -837,7 +837,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid logi
               className="MuiBox-root css-8atqhb"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-1xv2y7e-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-2ycegv-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -893,7 +893,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid logi
               className="MuiBox-root css-8875ym"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1l7of66-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1nzt4e0-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -934,7 +934,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid logi
                 >
                   <button
                     aria-label="toggle password visibility"
-                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-1jew56n-MuiButtonBase-root-MuiIconButton-root"
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-gxoo4k-MuiButtonBase-root-MuiIconButton-root"
                     disabled={false}
                     id="login-show-password-icon-button"
                     onBlur={[Function]}
@@ -989,7 +989,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid logi
               className="sc-ipEyDJ kLWMPZ MuiBox-root css-mwwja"
             >
               <a
-                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-tbtf8t-MuiTypography-root-MuiLink-root"
+                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-1qjxhzk-MuiTypography-root-MuiLink-root"
                 href="/register"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -997,7 +997,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid logi
                 Esqueci minha senha
               </a>
               <button
-                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-105755-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-2urf4o-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
                 disabled={false}
                 id=":rb:"
                 onBlur={[Function]}
@@ -1027,7 +1027,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid logi
           className="sc-bqWxrE MuiBox-root css-1tqrsn5"
         >
           <p
-            className="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter css-5fhr9f-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter css-kilq1v-MuiTypography-root"
           >
             Ainda não tem uma conta? 
           </p>
@@ -1042,7 +1042,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid logi
             }
           >
             <p
-              className="MuiTypography-root MuiTypography-body1 css-1i4c8mu-MuiTypography-root"
+              className="MuiTypography-root MuiTypography-body1 css-14zn9tq-MuiTypography-root"
             >
               Cadastre-se
             </p>
@@ -1144,13 +1144,13 @@ exports[`Test Login screen snapshot tests should render screen with invalid pass
           className="sc-fEXmlR ktuAEL MuiBox-root css-1ay9vb9"
         >
           <p
-            className="MuiTypography-root MuiTypography-body1 css-h4jzzx-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-body1 css-1jxod77-MuiTypography-root"
           >
             Não é cadastrado?
           </p>
         </div>
         <button
-          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-18fs5t5-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-1gvy6f3-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
           disabled={false}
           id="login-register-button"
           onBlur={[Function]}
@@ -1186,12 +1186,12 @@ exports[`Test Login screen snapshot tests should render screen with invalid pass
           className="sc-jrcTuL MuiBox-root css-wkpw2c"
         >
           <h3
-            className="MuiTypography-root MuiTypography-h3 ForwardRef(Typography)-root-1 css-ses0wv-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-h3 ForwardRef(Typography)-root-1 css-10jwzv0-MuiTypography-root"
           >
             Faça seu login
           </h3>
           <p
-            className="MuiTypography-root MuiTypography-body1 ForwardRef(Typography)-root-2 css-h4jzzx-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-body1 ForwardRef(Typography)-root-2 css-1jxod77-MuiTypography-root"
           >
             Insira suas credenciais abaixo para continuar
           </p>
@@ -1204,7 +1204,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid pass
               className="MuiBox-root css-8atqhb"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-1xv2y7e-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-2ycegv-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -1260,7 +1260,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid pass
               className="MuiBox-root css-8875ym"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1l7of66-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1nzt4e0-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -1301,7 +1301,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid pass
                 >
                   <button
                     aria-label="toggle password visibility"
-                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-1jew56n-MuiButtonBase-root-MuiIconButton-root"
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-gxoo4k-MuiButtonBase-root-MuiIconButton-root"
                     disabled={false}
                     id="login-show-password-icon-button"
                     onBlur={[Function]}
@@ -1361,7 +1361,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid pass
               className="sc-ipEyDJ kLWMPZ MuiBox-root css-mwwja"
             >
               <a
-                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-tbtf8t-MuiTypography-root-MuiLink-root"
+                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-1qjxhzk-MuiTypography-root-MuiLink-root"
                 href="/register"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -1369,7 +1369,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid pass
                 Esqueci minha senha
               </a>
               <button
-                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-105755-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-2urf4o-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
                 disabled={false}
                 id=":r7:"
                 onBlur={[Function]}
@@ -1399,7 +1399,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid pass
           className="sc-bqWxrE MuiBox-root css-1tqrsn5"
         >
           <p
-            className="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter css-5fhr9f-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter css-kilq1v-MuiTypography-root"
           >
             Ainda não tem uma conta? 
           </p>
@@ -1414,7 +1414,7 @@ exports[`Test Login screen snapshot tests should render screen with invalid pass
             }
           >
             <p
-              className="MuiTypography-root MuiTypography-body1 css-1i4c8mu-MuiTypography-root"
+              className="MuiTypography-root MuiTypography-body1 css-14zn9tq-MuiTypography-root"
             >
               Cadastre-se
             </p>
@@ -1516,13 +1516,13 @@ exports[`Test Login screen snapshot tests should render screen with loading logi
           className="sc-fEXmlR ktuAEL MuiBox-root css-1ay9vb9"
         >
           <p
-            className="MuiTypography-root MuiTypography-body1 css-h4jzzx-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-body1 css-1jxod77-MuiTypography-root"
           >
             Não é cadastrado?
           </p>
         </div>
         <button
-          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-18fs5t5-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-1gvy6f3-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
           disabled={false}
           id="login-register-button"
           onBlur={[Function]}
@@ -1558,12 +1558,12 @@ exports[`Test Login screen snapshot tests should render screen with loading logi
           className="sc-jrcTuL MuiBox-root css-wkpw2c"
         >
           <h3
-            className="MuiTypography-root MuiTypography-h3 ForwardRef(Typography)-root-1 css-ses0wv-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-h3 ForwardRef(Typography)-root-1 css-10jwzv0-MuiTypography-root"
           >
             Faça seu login
           </h3>
           <p
-            className="MuiTypography-root MuiTypography-body1 ForwardRef(Typography)-root-2 css-h4jzzx-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-body1 ForwardRef(Typography)-root-2 css-1jxod77-MuiTypography-root"
           >
             Insira suas credenciais abaixo para continuar
           </p>
@@ -1576,7 +1576,7 @@ exports[`Test Login screen snapshot tests should render screen with loading logi
               className="MuiBox-root css-8atqhb"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-1xv2y7e-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-2ycegv-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -1632,7 +1632,7 @@ exports[`Test Login screen snapshot tests should render screen with loading logi
               className="MuiBox-root css-8875ym"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1l7of66-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1nzt4e0-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -1673,7 +1673,7 @@ exports[`Test Login screen snapshot tests should render screen with loading logi
                 >
                   <button
                     aria-label="toggle password visibility"
-                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-1jew56n-MuiButtonBase-root-MuiIconButton-root"
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-gxoo4k-MuiButtonBase-root-MuiIconButton-root"
                     disabled={false}
                     id="login-show-password-icon-button"
                     onBlur={[Function]}
@@ -1728,7 +1728,7 @@ exports[`Test Login screen snapshot tests should render screen with loading logi
               className="sc-ipEyDJ kLWMPZ MuiBox-root css-mwwja"
             >
               <a
-                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-tbtf8t-MuiTypography-root-MuiLink-root"
+                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-1qjxhzk-MuiTypography-root-MuiLink-root"
                 href="/register"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -1736,7 +1736,7 @@ exports[`Test Login screen snapshot tests should render screen with loading logi
                 Esqueci minha senha
               </a>
               <button
-                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiLoadingButton-loading MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium Mui-disabled MuiButton-root MuiLoadingButton-root MuiLoadingButton-loading MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-105755-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiLoadingButton-loading MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium Mui-disabled MuiButton-root MuiLoadingButton-root MuiLoadingButton-loading MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-2urf4o-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
                 disabled={true}
                 id=":r3:"
                 onBlur={[Function]}
@@ -1755,7 +1755,7 @@ exports[`Test Login screen snapshot tests should render screen with loading logi
                 type="submit"
               >
                 <div
-                  className="MuiLoadingButton-loadingIndicator MuiLoadingButton-loadingIndicatorCenter css-likury-MuiLoadingButton-loadingIndicator"
+                  className="MuiLoadingButton-loadingIndicator MuiLoadingButton-loadingIndicatorCenter css-sro313-MuiLoadingButton-loadingIndicator"
                 >
                   <span
                     aria-labelledby=":r3:"
@@ -1793,7 +1793,7 @@ exports[`Test Login screen snapshot tests should render screen with loading logi
           className="sc-bqWxrE MuiBox-root css-1tqrsn5"
         >
           <p
-            className="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter css-5fhr9f-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter css-kilq1v-MuiTypography-root"
           >
             Ainda não tem uma conta? 
           </p>
@@ -1808,7 +1808,7 @@ exports[`Test Login screen snapshot tests should render screen with loading logi
             }
           >
             <p
-              className="MuiTypography-root MuiTypography-body1 css-1i4c8mu-MuiTypography-root"
+              className="MuiTypography-root MuiTypography-body1 css-14zn9tq-MuiTypography-root"
             >
               Cadastre-se
             </p>
@@ -1910,13 +1910,13 @@ exports[`Test Login screen snapshot tests should render screen with password sho
           className="sc-fEXmlR ktuAEL MuiBox-root css-1ay9vb9"
         >
           <p
-            className="MuiTypography-root MuiTypography-body1 css-h4jzzx-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-body1 css-1jxod77-MuiTypography-root"
           >
             Não é cadastrado?
           </p>
         </div>
         <button
-          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-18fs5t5-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-dIfARi cLAbaM bHKQDj css-1gvy6f3-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
           disabled={false}
           id="login-register-button"
           onBlur={[Function]}
@@ -1949,12 +1949,12 @@ exports[`Test Login screen snapshot tests should render screen with password sho
           className="sc-jrcTuL MuiBox-root css-wkpw2c"
         >
           <h3
-            className="MuiTypography-root MuiTypography-h3 ForwardRef(Typography)-root-1 css-ses0wv-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-h3 ForwardRef(Typography)-root-1 css-10jwzv0-MuiTypography-root"
           >
             Faça seu login
           </h3>
           <p
-            className="MuiTypography-root MuiTypography-body1 ForwardRef(Typography)-root-2 css-h4jzzx-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-body1 ForwardRef(Typography)-root-2 css-1jxod77-MuiTypography-root"
           >
             Insira suas credenciais abaixo para continuar
           </p>
@@ -1967,7 +1967,7 @@ exports[`Test Login screen snapshot tests should render screen with password sho
               className="MuiBox-root css-8atqhb"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-1xv2y7e-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart sc-iBYQkv dVmWfp css-2ycegv-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -2023,7 +2023,7 @@ exports[`Test Login screen snapshot tests should render screen with password sho
               className="MuiBox-root css-8875ym"
             >
               <div
-                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1l7of66-MuiInputBase-root-MuiOutlinedInput-root"
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-adornedStart MuiInputBase-adornedEnd sc-iBYQkv dVmWfp css-1nzt4e0-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <div
@@ -2064,7 +2064,7 @@ exports[`Test Login screen snapshot tests should render screen with password sho
                 >
                   <button
                     aria-label="toggle password visibility"
-                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-1jew56n-MuiButtonBase-root-MuiIconButton-root"
+                    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-gxoo4k-MuiButtonBase-root-MuiIconButton-root"
                     disabled={false}
                     id="login-show-password-icon-button"
                     onBlur={[Function]}
@@ -2116,7 +2116,7 @@ exports[`Test Login screen snapshot tests should render screen with password sho
               className="sc-ipEyDJ kLWMPZ MuiBox-root css-mwwja"
             >
               <a
-                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-tbtf8t-MuiTypography-root-MuiLink-root"
+                className="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover sc-eDWCr css-1qjxhzk-MuiTypography-root-MuiLink-root"
                 href="/register"
                 onBlur={[Function]}
                 onFocus={[Function]}
@@ -2124,7 +2124,7 @@ exports[`Test Login screen snapshot tests should render screen with password sho
                 Esqueci minha senha
               </a>
               <button
-                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-105755-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+                className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium sc-ftTHYK sc-csuSiG khrxOW iqjFsB css-2urf4o-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
                 disabled={false}
                 id=":r9:"
                 onBlur={[Function]}
@@ -2151,7 +2151,7 @@ exports[`Test Login screen snapshot tests should render screen with password sho
           className="sc-bqWxrE MuiBox-root css-1tqrsn5"
         >
           <p
-            className="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter css-5fhr9f-MuiTypography-root"
+            className="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter css-kilq1v-MuiTypography-root"
           >
             Ainda não tem uma conta? 
           </p>
@@ -2166,7 +2166,7 @@ exports[`Test Login screen snapshot tests should render screen with password sho
             }
           >
             <p
-              className="MuiTypography-root MuiTypography-body1 css-1i4c8mu-MuiTypography-root"
+              className="MuiTypography-root MuiTypography-body1 css-14zn9tq-MuiTypography-root"
             >
               Cadastre-se
             </p>
