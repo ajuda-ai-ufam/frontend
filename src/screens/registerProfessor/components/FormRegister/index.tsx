@@ -1,50 +1,53 @@
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { Box, FormHelperText, InputAdornment, IconButton } from '@mui/material';
-import Copyright from '../../../../components/copyright';
+import LoadingAnimation from '../../../../components/loadingAnimation';
+import { FormHelperText, InputAdornment, IconButton } from '@mui/material';
 import useRegisterProfessor from '../hooks/useRegisterProfessor';
-import {
-  Container,
-  StyledForm,
-  FormContainer,
-  TypographyRegister,
-  ContainerRegisterOption,
-  CancelRegister,
-  RegisterButton,
-  CopyrigthContainer,
-  StyledFormTextField,
-} from './styles';
+import { TRegisterProfessorHook } from '../hooks/types';
 import {
   validateConfirmPassword,
   validateEmail,
   validateName,
   validatePassword,
 } from '../../../../utils/validateFields';
+import {
+  FormContainer,
+  CardForm,
+  TypographyContainer,
+  TypographyTextRegister,
+  StyledForm,
+  StyledFormTextField,
+  TextFieldContainer,
+  ButtonContainer,
+  CancelButton,
+  ContinueButton,
+} from '../../styles';
 
 const FormRegister = () => {
   const {
-    confPassword,
-    confPasswordError,
-    email,
-    emailError,
     name,
     nameError,
+    setNameError,
+    handleNameChange,
+    email,
+    emailError,
+    handleEmailChange,
+    setEmailError,
     password,
     passwordError,
     showPassword,
-    setNameError,
-    setConfPasswordError,
-    setEmailError,
-    setPasswordError,
-    handleCancelClick,
-    handleNameChange,
-    handleEmailChange,
-    handlePasswordChange,
-    handleConfPasswordChange,
-    handleContinueClick,
     handleClickShowPassword,
     handleMouseDownPassword,
-  } = useRegisterProfessor();
+    handlePasswordChange,
+    setPasswordError,
+    confPassword,
+    confPasswordError,
+    handleConfPasswordChange,
+    setConfPasswordError,
+    isLoading,
+    handleCancelClick,
+    handleContinueClick,
+  }: TRegisterProfessorHook = useRegisterProfessor();
 
   const NameError = () => {
     if (!!nameError) return <FormHelperText error>{nameError}</FormHelperText>;
@@ -66,7 +69,7 @@ const FormRegister = () => {
     return <></>;
   };
 
-  const ConfPasswordError = () => {
+  const ConfirmPasswordError = () => {
     if (!!confPasswordError)
       return <FormHelperText error>{confPasswordError}</FormHelperText>;
 
@@ -74,100 +77,112 @@ const FormRegister = () => {
   };
 
   return (
-    <Container>
-      <FormContainer>
-        <TypographyRegister variant="h4">
-          Cadastro de Professor
-        </TypographyRegister>
-        <TypographyRegister variant="body1">
-          Preencha os campos abaixo para iniciar o seu cadastro.
-        </TypographyRegister>
-
-        <StyledForm onSubmit={handleContinueClick}>
-          <Box>
-            <StyledFormTextField
-              error={!!nameError}
-              value={name}
-              id="name"
-              name="name"
-              onChange={handleNameChange}
-              onBlur={() => setNameError(validateName(name))}
-              type="text"
-              placeholder="Nome Completo* "
-            />
-            <NameError />
-          </Box>
-
-          <Box>
-            <StyledFormTextField
-              error={!!emailError}
-              value={email}
-              id="email"
-              name="email"
-              onChange={handleEmailChange}
-              onBlur={() => setEmailError(validateEmail(email))}
-              type="text"
-              placeholder="E-mail do Icomp* "
-            />
-            <EmailError />
-          </Box>
-
-          <Box>
-            <StyledFormTextField
-              error={!!passwordError}
-              value={password}
-              id="password"
-              name="password"
-              onChange={handlePasswordChange}
-              onBlur={() => setPasswordError(validatePassword(name, password))}
-              type="password"
-              placeholder="Crie sua senha* "
-            />
-            <PasswordError />
-          </Box>
-
-          <Box>
-            <StyledFormTextField
-              error={!!confPasswordError}
-              value={confPassword}
-              id="confirm_password"
-              name="confirm_password"
-              onChange={handleConfPasswordChange}
-              onBlur={() =>
-                setConfPasswordError(
-                  validateConfirmPassword(password, confPassword)
-                )
-              }
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
-                    onMouseDown={handleMouseDownPassword}
-                    edge="end"
-                  >
-                    {showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              }
-              type={showPassword ? 'text' : 'password'}
-              placeholder="Confirme sua senha* "
-            />
-            <ConfPasswordError />
-          </Box>
-
-          <ContainerRegisterOption>
-            <CancelRegister variant="text" onClick={handleCancelClick}>
-              Cancelar cadastro
-            </CancelRegister>
-            <RegisterButton type="submit">Continuar</RegisterButton>
-          </ContainerRegisterOption>
-        </StyledForm>
-      </FormContainer>
-      <CopyrigthContainer>
-        <Copyright />
-      </CopyrigthContainer>
-    </Container>
+    <>
+      <CardForm>
+        {!isLoading ? (
+          <FormContainer>
+            <TypographyContainer>
+              <TypographyTextRegister variant="h4">
+                Cadastro de Professor
+              </TypographyTextRegister>
+              <TypographyTextRegister variant="body1">
+                Preencha os campos abaixo para iniciar o seu cadastro.
+              </TypographyTextRegister>
+            </TypographyContainer>
+            <StyledForm onSubmit={handleContinueClick}>
+              <TextFieldContainer>
+                <StyledFormTextField
+                  value={name}
+                  error={!!nameError}
+                  id="name"
+                  name="name"
+                  placeholder="Nome Completo*"
+                  onBlur={() => setNameError(validateName(name))}
+                  onChange={handleNameChange}
+                />
+                <NameError />
+              </TextFieldContainer>
+              <TextFieldContainer>
+                <StyledFormTextField
+                  value={email}
+                  error={!!emailError}
+                  id="email"
+                  name="email"
+                  placeholder="E-mail do IComp"
+                  onBlur={() => setEmailError(validateEmail(email))}
+                  onChange={handleEmailChange}
+                />
+                <EmailError />
+              </TextFieldContainer>
+              <TextFieldContainer>
+                <StyledFormTextField
+                  type={showPassword ? 'text' : 'password'}
+                  onBlur={() =>
+                    setPasswordError(validatePassword(name, password))
+                  }
+                  value={password}
+                  error={!!passwordError}
+                  id="password"
+                  name="password"
+                  onChange={handlePasswordChange}
+                  placeholder="Crie sua senha*"
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                        edge="end"
+                      >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                />
+                <PasswordError />
+              </TextFieldContainer>
+              <TextFieldContainer>
+                <StyledFormTextField
+                  type={showPassword ? 'text' : 'password'}
+                  onBlur={() =>
+                    setConfPasswordError(
+                      validateConfirmPassword(password, confPassword)
+                    )
+                  }
+                  value={confPassword}
+                  error={!!confPasswordError}
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  onChange={handleConfPasswordChange}
+                  placeholder="Confirme sua senha*"
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                        edge="end"
+                      >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                />
+                <ConfirmPasswordError />
+              </TextFieldContainer>
+              <ButtonContainer>
+                <CancelButton variant="text" onClick={handleCancelClick}>
+                  Cancelar cadastro
+                </CancelButton>
+                <ContinueButton type="submit">Continuar</ContinueButton>
+              </ButtonContainer>
+            </StyledForm>
+          </FormContainer>
+        ) : (
+          <LoadingAnimation />
+        )}
+      </CardForm>
+    </>
   );
 };
 

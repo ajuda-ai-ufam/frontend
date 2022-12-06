@@ -1,24 +1,31 @@
 export type TRegisterProfessorHook = {
-    handleNameChange(e: React.ChangeEvent<HTMLInputElement>): void;
-    handleEmailChange(e: React.ChangeEvent<HTMLInputElement>): void;
-    handlePasswordChange(e: React.ChangeEvent<HTMLInputElement>): void;
-    handleConfPasswordChange(e: React.ChangeEvent<HTMLInputElement>): void;
-    handleCancelClick(): void;
-    handleContinueClick(e: React.SyntheticEvent<EventTarget>): void;
-    setNameError(name: string): void;
-    setEmailError(email: string): void;
-    setPasswordError(password: string): void;
-    setConfPasswordError(confPassword: string): void;
-    name: string;
-    email: string;
-    password: string;
-    confPassword: string;
-    error?: string;
-    isLoading: boolean;
-    isSuccess: boolean;
-    nameError: string;
-    emailError: string;
-    passwordError: string;
-    confPasswordError: string;
-    showPassword: boolean;
+  name: string;
+  nameError: string;
+  setNameError(name: string): void;
+  handleNameChange(e: React.ChangeEvent<HTMLInputElement>): void;
+
+  email: string;
+  emailError: string;
+  handleEmailChange(e: React.ChangeEvent<HTMLInputElement>): void;
+  setEmailError(email: string): void;
+
+  password: string;
+  passwordError: string;
+  showPassword: boolean;
+  handleClickShowPassword(): void;
+  handleMouseDownPassword(e: React.MouseEvent<HTMLButtonElement>): void;
+  handlePasswordChange(e: React.ChangeEvent<HTMLInputElement>): void;
+  setPasswordError(password: string): void;
+
+  confPassword: string;
+  confPasswordError: string;
+  handleConfPasswordChange(e: React.ChangeEvent<HTMLInputElement>): void;
+  setConfPasswordError(confPassword: string): void;
+
+  error?: string;
+  isLoading: boolean;
+  isSuccess: boolean;
+
+  handleCancelClick(): void;
+  handleContinueClick(e: React.SyntheticEvent<EventTarget>): void;
 };

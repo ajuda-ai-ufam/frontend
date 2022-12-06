@@ -96,7 +96,7 @@ const useRegisterProfessor = () => {
 
   useEffect(() => {
     if (error) {
-      if (error == 'Email já cadastrado') {
+      if (error == 'Email já cadastrado.') {
         setEmailError('E-mail já cadastrado!');
         return;
       }
