@@ -61,6 +61,7 @@ const useSubjects = () => {
   };
 
   useEffect(() => {
+    document.title = 'Disciplinas';
     if (!user) return navigate(SCREENS.LOGIN);
 
     void listSubjects();

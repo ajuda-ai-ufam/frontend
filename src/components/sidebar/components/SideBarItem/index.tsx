@@ -14,7 +14,7 @@ const SideBarItem = ({ isSelected, sidebarItem }: Props) => {
 
   return (
     <List>
-      <ItemButton onClick={handleClick} isSelected={isSelected}>
+      <ItemButton onClick={handleClick} selected={!!isSelected}>
         <ItemIcon>
           <Icon
             fontSize={'large'}
