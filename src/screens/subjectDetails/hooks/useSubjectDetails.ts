@@ -73,6 +73,12 @@ const useSubjectDetails = () => {
     if (id) getSubject(Number(id));
   }, []);
 
+  useEffect(() => {
+    if (!subject) return;
+
+    document.title = subject.name;
+  }, [subject]);
+
   return {
     error,
     isLoading,
