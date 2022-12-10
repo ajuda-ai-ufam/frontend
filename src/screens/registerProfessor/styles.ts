@@ -39,6 +39,7 @@ export const CardForm = styled(Box).attrs({
   border-radius: 24px;
   max-width: 500px !important;
   width: 80%;
+  min-height: 500px;
 
   @media (max-width: ${theme.breakpoints.values.md}px) {
     width: 50% !important;
