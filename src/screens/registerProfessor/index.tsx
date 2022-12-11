@@ -1,5 +1,27 @@
+import SignInHeader from '../../components/signInHeader';
+import Copyright from '../../components/copyright';
+import {
+  Container,
+  CardContainer,
+  CopyrightContainer,
+  OutsideContainer,
+} from './styles';
+import FormRegister from './components/FormRegister';
+
 const RegisterProfessor = () => {
-  return <div>Hello World Register Professor</div>;
+  return (
+    <OutsideContainer>
+      <Container>
+        <SignInHeader />
+        <CardContainer>
+          <FormRegister />
+        </CardContainer>
+      </Container>
+      <CopyrightContainer>
+        <Copyright />
+      </CopyrightContainer>
+    </OutsideContainer>
+  );
 };
 
 export default RegisterProfessor;
