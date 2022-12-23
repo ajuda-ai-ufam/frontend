@@ -23,3 +23,11 @@ export const UserRole = {
   [TypeUserEnum.PROFESSOR]: 'Professor',
   [TypeUserEnum.COORDINATOR]: 'Coordenador',
 };
+
+export enum TypeMonitoringStatus {
+  PENDING = 'Pendente',
+  APPROVED = 'Aprovada',
+  AVAILABLE = 'Disponível',
+  FINISHED = 'Finalizada',
+  REJECTED = 'Rejeitada',
+}
