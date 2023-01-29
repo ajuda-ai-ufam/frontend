@@ -43,12 +43,12 @@ const useSidebar = () => {
     },
   };
 
-  const calendarItem: TSidebarItem = {
-    key: SidebarItemEnum.CALENDAR,
-    text: 'Calendário',
+  const schedulesItem: TSidebarItem = {
+    key: SidebarItemEnum.SCHEDULES,
+    text: 'Agendamentos',
     icon: EventNoteRounded,
     handleClick: () => {
-      navigate(SCREENS.CALENDAR);
+      navigate(SCREENS.SCHEDULES);
     },
   };
 
@@ -83,7 +83,7 @@ const useSidebar = () => {
     if (!user) return [subjectsItem, logoutItem];
 
     if (user?.type_user_id === TypeUserEnum.STUDENT)
-      return [subjectsItem, calendarItem, logoutItem];
+      return [subjectsItem, schedulesItem, logoutItem];
 
     return [subjectsItem, monitorRequestsItem, logoutItem];
   }, [user]);

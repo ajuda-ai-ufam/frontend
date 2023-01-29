@@ -52,9 +52,9 @@ export enum SchedulesFilters {
   NEXT_EVENTS = 'Próximos eventos',
   PENDING = 'Pendentes',
   CONFIRMED = 'Confirmados',
-  WAITING_APPROVAL = 'Aguardando aprovação',
+  WAITING_APPROVAL = 'Aguardando confirmação',
   WILL_HELP = 'Vou ajudar',
-  RECEIVE_HELP = 'Receberei ajuda',
+  RECEIVE_HELP = 'Serei ajudado',
 }
 
 export const schedulesFiltersParamConverter = {

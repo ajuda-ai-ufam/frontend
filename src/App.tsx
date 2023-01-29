@@ -1,7 +1,8 @@
 import { ThemeProvider } from '@mui/system';
+import { SnackbarProvider } from 'notistack';
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Calendar from './screens/calendar';
+import Schedules from './screens/schedules';
 import CodeVerificationScreen from './screens/codeVerification';
 import Login from './screens/login';
 import MonitorRequests from './screens/monitorRequests';
@@ -12,7 +13,6 @@ import SubjectDetails from './screens/subjectDetails';
 import Subjects from './screens/subjects';
 import { SCREENS } from './utils/screens';
 import theme from './utils/theme';
-import { SnackbarProvider } from 'notistack';
 
 const App: React.FC = () => {
   return (
@@ -46,7 +46,7 @@ const App: React.FC = () => {
               element={<SubjectDetails />}
             />
             <Route path={SCREENS.SUBJECTS} element={<Subjects />} />
-            <Route path={SCREENS.CALENDAR} element={<Calendar />} />
+            <Route path={SCREENS.SCHEDULES} element={<Schedules />} />
             <Route
               path={SCREENS.MONITOR_REQUESTS}
               element={<MonitorRequests />}
