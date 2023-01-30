@@ -14,6 +14,12 @@ export const ButtonContainer = styled(Box).attrs({
   justifyContent: 'center',
 })``;
 
+export const ButtonsContainer = styled(Box).attrs({
+  display: 'flex',
+  width: '100%',
+  justifyContent: 'space-around',
+})``;
+
 export const Label = styled(Typography).attrs({
   variant: 'body2',
 })`

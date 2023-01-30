@@ -7,11 +7,16 @@ const useScheduleDetailsModal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedSchedule, setSelectedSchedule] = useState<TSchedules>();
 
+  // TODO - Criar hooks de aceitar e rejeitar monitoria
+
   const modalType = useMemo(() => {
     if (!selectedSchedule) return ScheduleDetailsModalType.CONFIRMED;
 
     if (selectedSchedule.id_status === SchedulesStatus.CONFIRMED)
       return ScheduleDetailsModalType.CONFIRMED;
+
+    if (selectedSchedule.id_status === SchedulesStatus.PENDING)
+      return ScheduleDetailsModalType.PENDING;
 
     return ScheduleDetailsModalType.DEFAULT;
   }, [selectedSchedule]);

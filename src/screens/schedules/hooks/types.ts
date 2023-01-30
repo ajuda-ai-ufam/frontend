@@ -9,6 +9,7 @@ export type TFormatedSchedules = {
 
 export enum ScheduleDetailsModalType {
   LOADING = 'loading',
+  PENDING = 'pending',
   CONFIRMED = 'confirmed',
   DENIED = 'denied',
   DEFAULT = 'default',

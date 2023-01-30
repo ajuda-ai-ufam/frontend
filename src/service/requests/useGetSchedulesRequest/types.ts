@@ -19,6 +19,13 @@ export type TStudent = {
   user: TUser;
 };
 
+export type TSubject = {
+  id: number;
+  name: string;
+  code: string;
+  course_id: number;
+};
+
 export type TMonitor = {
   id: number;
   id_status: number;
@@ -26,6 +33,7 @@ export type TMonitor = {
   student_id: number;
   subject_id: number;
   student: TStudent;
+  subject: TSubject;
 };
 
 export type TSchedules = {
