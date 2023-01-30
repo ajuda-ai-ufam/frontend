@@ -1,15 +1,22 @@
 import { useEffect, useMemo, useState } from 'react';
 import useGetSchedulesRequest from '../../../service/requests/useGetSchedulesRequest';
-import { TSchedules } from '../../../service/requests/useGetSchedulesRequest/types';
 import { SchedulesFilters } from '../../../utils/constants';
 import { useSnackBar } from '../../../utils/renderSnackBar';
+import useScheduleDetailsModal from './useScheduleDetailsModal';
 import useFilterParams from './useFilterParams';
 import useFormatSchedules from './useFormatSchedules';
 
 const useSchedules = () => {
-  const { showInfoSnackBar, showErrorSnackBar } = useSnackBar();
+  const { showErrorSnackBar } = useSnackBar();
   const { response, error, getSchedules, isLoading } = useGetSchedulesRequest();
   const { schedules } = useFormatSchedules(response);
+  const {
+    isOpen: isScheduleDetailsModalOpen,
+    modalType,
+    handleOpen: handleEventClick,
+    handleClose: handleCloseScheduleDetailsModal,
+    selectedSchedule,
+  } = useScheduleDetailsModal();
 
   const [page, setPage] = useState(1);
   const [selectedFilter, setSelectedFilter] = useState(
@@ -29,11 +36,6 @@ const useSchedules = () => {
     });
     setSelectedFilter(filter);
     setPage(1);
-  };
-
-  const handleEventClick = (schedule: TSchedules) => {
-    // TODO: Open modal
-    showInfoSnackBar(`Você selecionou o evento ${schedule.id}`);
   };
 
   const handleChangePage = (
@@ -63,15 +65,19 @@ const useSchedules = () => {
   }, [error]);
 
   return {
+    isScheduleDetailsModalOpen,
+    modalType,
     schedules,
     page,
     selectedFilter,
+    selectedSchedule,
     error,
     totalPages,
     isLoading,
     handleFilterClick,
     handleEventClick,
     handleChangePage,
+    handleCloseScheduleDetailsModal,
   };
 };
 

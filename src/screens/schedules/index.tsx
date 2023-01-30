@@ -1,6 +1,7 @@
 import { Typography } from '@mui/material';
 import ContainerWithSidebar from '../../components/containerWithSidebar';
 import { SchedulesFilters, SidebarItemEnum } from '../../utils/constants';
+import ScheduleDetailsModal from './components/ScheduleDetailsModal';
 import EventList from './components/EventList';
 import useSchedules from './hooks/useSchedules';
 import {
@@ -14,14 +15,18 @@ import {
 const Schedules = () => {
   const {
     selectedFilter,
+    isScheduleDetailsModalOpen,
+    modalType,
     handleFilterClick,
     handleEventClick,
     schedules,
+    selectedSchedule,
     isLoading,
     error,
     page,
     handleChangePage,
     totalPages,
+    handleCloseScheduleDetailsModal,
   } = useSchedules();
 
   const renderFilterChips = () => {
@@ -39,6 +44,13 @@ const Schedules = () => {
 
   return (
     <ContainerWithSidebar selectedSidebarItem={SidebarItemEnum.SCHEDULES}>
+      <ScheduleDetailsModal
+        schedule={selectedSchedule}
+        isOpen={isScheduleDetailsModalOpen}
+        handleClose={handleCloseScheduleDetailsModal}
+        modalType={modalType}
+      />
+
       <Container>
         <Card>
           <Typography variant="h3">Agendamentos</Typography>

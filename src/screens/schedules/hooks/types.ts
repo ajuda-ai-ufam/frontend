@@ -6,3 +6,10 @@ export type TFormatedSchedules = {
   weekDay: string;
   events: TSchedules[];
 };
+
+export enum ScheduleDetailsModalType {
+  LOADING = 'loading',
+  CONFIRMED = 'confirmed',
+  DENIED = 'denied',
+  DEFAULT = 'default',
+}
