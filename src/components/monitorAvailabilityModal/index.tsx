@@ -283,7 +283,7 @@ const MonitorAvailabilityModal = ({
           </AvailabilityContainer>
         </HoursContainer>
         <ButtonContainer>
-          <ButtonCancel color="primary" variant="text">
+          <ButtonCancel onClick={handleClose} color="primary" variant="text">
             Cancelar
           </ButtonCancel>
           <ButtonSave onClick={handleSaveAvailability} color="primary">
