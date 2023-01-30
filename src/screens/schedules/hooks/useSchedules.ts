@@ -14,7 +14,9 @@ const useSchedules = () => {
     isOpen: isScheduleDetailsModalOpen,
     modalType,
     handleOpen: handleEventClick,
+    handleAcceptSchedule,
     handleClose: handleCloseScheduleDetailsModal,
+    handleRefuseSchedule,
     selectedSchedule,
   } = useScheduleDetailsModal();
 
@@ -74,10 +76,12 @@ const useSchedules = () => {
     error,
     totalPages,
     isLoading,
+    handleAcceptSchedule,
     handleFilterClick,
     handleEventClick,
     handleChangePage,
     handleCloseScheduleDetailsModal,
+    handleRefuseSchedule,
   };
 };
 

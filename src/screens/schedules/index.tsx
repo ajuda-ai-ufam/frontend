@@ -24,7 +24,9 @@ const Schedules = () => {
     isLoading,
     error,
     page,
+    handleAcceptSchedule,
     handleChangePage,
+    handleRefuseSchedule,
     totalPages,
     handleCloseScheduleDetailsModal,
   } = useSchedules();
@@ -47,6 +49,8 @@ const Schedules = () => {
       <ScheduleDetailsModal
         schedule={selectedSchedule}
         isOpen={isScheduleDetailsModalOpen}
+        handleAccept={handleAcceptSchedule}
+        handleRefuse={handleRefuseSchedule}
         handleClose={handleCloseScheduleDetailsModal}
         modalType={modalType}
       />

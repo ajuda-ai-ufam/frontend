@@ -11,6 +11,6 @@ export enum ScheduleDetailsModalType {
   LOADING = 'loading',
   PENDING = 'pending',
   CONFIRMED = 'confirmed',
-  DENIED = 'denied',
+  REFUSED = 'refused',
   DEFAULT = 'default',
 }

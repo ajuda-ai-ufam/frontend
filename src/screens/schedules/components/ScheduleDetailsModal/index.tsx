@@ -1,22 +1,28 @@
 import { useMemo } from 'react';
+import LoadingAnimation from '../../../../components/loadingAnimation';
 import Modal from '../../../../components/modal';
 import { TSchedules } from '../../../../service/requests/useGetSchedulesRequest/types';
 import { ScheduleDetailsModalType } from '../../hooks/types';
 import ConfirmedScheduleModalContent from '../ConfirmedScheduleModalContent';
 import PendingScheduleModalContent from '../PendingScheduleModalContent';
+import RefusedScheduleModalContent from '../RefusedScheduleModalContent';
 
 type Props = {
   modalType: ScheduleDetailsModalType;
   schedule?: TSchedules;
   isOpen: boolean;
+  handleAccept(): void;
   handleClose(): void;
+  handleRefuse(): void;
 };
 
 const ScheduleDetailsModal = ({
   modalType,
   schedule,
   isOpen,
+  handleAccept,
   handleClose,
+  handleRefuse,
 }: Props) => {
   if (!schedule || modalType === ScheduleDetailsModalType.DEFAULT) return <></>;
 
@@ -41,7 +47,6 @@ const ScheduleDetailsModal = ({
       isOpen={isOpen}
       handleClose={handleClose}
     >
-      {/* TODO - Add loading and denied variations */}
       {modalType === ScheduleDetailsModalType.CONFIRMED ? (
         <ConfirmedScheduleModalContent
           email={userData.email}
@@ -60,8 +65,20 @@ const ScheduleDetailsModal = ({
           subject={schedule.monitor.subject.name}
           start={schedule.start}
           isMonitor={schedule.is_monitoring}
+          handleAccept={handleAccept}
           handleClose={handleClose}
+          handleRefuse={handleRefuse}
         />
+      ) : (
+        <></>
+      )}
+      {modalType === ScheduleDetailsModalType.REFUSED ? (
+        <RefusedScheduleModalContent handleClose={handleClose} />
+      ) : (
+        <></>
+      )}
+      {modalType === ScheduleDetailsModalType.LOADING ? (
+        <LoadingAnimation />
       ) : (
         <></>
       )}

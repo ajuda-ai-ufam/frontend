@@ -18,7 +18,14 @@ export const ButtonsContainer = styled(Box).attrs({
   display: 'flex',
   width: '100%',
   justifyContent: 'space-around',
-})``;
+})`
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    flex-direction: column-reverse;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 16px;
+  }
+`;
 
 export const Label = styled(Typography).attrs({
   variant: 'body2',

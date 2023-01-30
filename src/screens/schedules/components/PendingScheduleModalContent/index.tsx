@@ -6,6 +6,7 @@ import {
   DataContainer,
   Label,
 } from '../ScheduleDetailsModal/styles';
+import { ChangeStatusButton } from './styles';
 
 type Props = {
   name: string;
@@ -13,7 +14,9 @@ type Props = {
   subject: string;
   start: Date;
   isMonitor: boolean;
+  handleAccept(): void;
   handleClose(): void;
+  handleRefuse(): void;
 };
 
 const PendingScheduleModalContent = ({
@@ -22,7 +25,9 @@ const PendingScheduleModalContent = ({
   subject,
   start,
   isMonitor,
+  handleAccept,
   handleClose,
+  handleRefuse,
 }: Props) => (
   <>
     <Typography variant="h4">Requisição de agendamento</Typography>
@@ -57,15 +62,12 @@ const PendingScheduleModalContent = ({
       <Typography variant="body2">{start.toLocaleTimeString()}</Typography>
     </DataContainer>
 
-    {/* TODO - Add handles para fazer requisições */}
     {isMonitor ? (
       <ButtonsContainer>
-        <Button variant="text" color="primary" onClick={handleClose}>
+        <ChangeStatusButton variant="text" onClick={handleRefuse}>
           Recusar
-        </Button>
-        <Button color="primary" onClick={handleClose}>
-          Aceitar
-        </Button>
+        </ChangeStatusButton>
+        <ChangeStatusButton onClick={handleAccept}>Aceitar</ChangeStatusButton>
       </ButtonsContainer>
     ) : (
       <ButtonContainer>
