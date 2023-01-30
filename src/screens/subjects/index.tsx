@@ -6,7 +6,10 @@ import SubjectsList from './components/SubjectsList';
 import useAssignProfessorsModal from '../../components/assignProfessorsModal/hooks/useAssignProfessorsModal';
 import useSubjects from './hooks/useSubjects';
 import { Card, Container } from './styles';
+import { Button } from '../../components/button';
 import SearchField from '../../components/searchField';
+import useMonitorAvailabilityModal from '../../components/monitorAvailabilityModal/hooks/useMonitorAvailabilityModal';
+import MonitorAvailabilityModal from '../../components/monitorAvailabilityModal';
 
 const Subjects = () => {
   const {
@@ -35,6 +38,14 @@ const Subjects = () => {
     handleOpenModal: handleOpenAssignProfessorsModal,
   } = useAssignProfessorsModal();
 
+  const {
+    isLoading: isLoadingMonitorAvailability,
+    isSuccess: isSuccessMonitorAvailability,
+    isOpen: isOpenMonitorAvailability,
+    handleCloseModal: handleCloseMonitorAvailability,
+    handleOpenModal: handleOpenMonitorAvailability,
+  } = useMonitorAvailabilityModal();
+
   return (
     <ContainerWithSidebar selectedSidebarItem={SidebarItemEnum.SUBJECTS}>
       <AssignProfessorsModal
@@ -54,6 +65,12 @@ const Subjects = () => {
           <Typography style={{ marginTop: '8px' }} variant="body1">
             Clique na disciplina para exibir mais detalhes
           </Typography>
+          <Button
+            onClick={() => handleOpenMonitorAvailability()}
+            color="secondary"
+          >
+            Gerenciar Disponibilidade
+          </Button>
 
           <SearchField
             inputRef={searchFieldElement}
@@ -74,6 +91,13 @@ const Subjects = () => {
           />
         </Card>
       </Container>
+      <MonitorAvailabilityModal
+        isLoading={isLoadingMonitorAvailability}
+        isSuccess={isSuccessMonitorAvailability}
+        isOpen={isOpenMonitorAvailability}
+        handleClose={handleCloseMonitorAvailability}
+        handleOpen={handleOpenMonitorAvailability}
+      />
     </ContainerWithSidebar>
   );
 };
