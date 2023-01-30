@@ -1,5 +1,5 @@
 export const SCREENS = {
-  CALENDAR: '/calendar',
+  SCHEDULES: '/schedules',
   CODE_VERIFICATION: '/code-verification',
   HOME: '/subjects',
   LOGIN: '/',

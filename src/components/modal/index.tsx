@@ -4,13 +4,14 @@ import { Container } from './styles';
 
 type Props = {
   isOpen: boolean;
+  width?: string;
   handleClose(): void;
   children: React.ReactNode;
 };
 
-const Modal = ({ isOpen, handleClose, children }: Props) => (
+const Modal = ({ isOpen, width, handleClose, children }: Props) => (
   <MuiMiodal open={isOpen} onClose={handleClose}>
-    <Container>{children}</Container>
+    <Container maxWidth={width}>{children}</Container>
   </MuiMiodal>
 );
 
