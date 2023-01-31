@@ -3,6 +3,7 @@ import { useState } from 'react';
 import api from '../../api';
 import {
   TListSubjectsErrorResponse,
+  TListSubjectsHttpResponse,
   TListSubjectsParams,
   TListSubjectsResponse,
 } from './types';
@@ -20,7 +21,25 @@ const useListSubjectsRequest = () => {
     try {
       const response = await api.get('/subject', { params });
 
-      setData(response.data as TListSubjectsResponse);
+      const httpResponse = response.data as TListSubjectsHttpResponse;
+
+      const formatedSubjects = httpResponse.data.map((subject) => ({
+        id: subject.id,
+        name: subject.name,
+        code: subject.code,
+        course_id: subject.course_id,
+        responsables: subject.SubjectResponsability.map(
+          (resp) => resp.professor.user
+        ),
+        monitors: subject.Monitor.map((monitor) => ({
+          ...monitor.student.user,
+          id: monitor.id,
+          course: monitor.student.course,
+          responsable: monitor.responsible_professor.user,
+        })),
+      }));
+
+      setData({ meta: httpResponse.meta, data: formatedSubjects });
     } catch (error) {
       const err = error as AxiosError;
       const errorData = err.response?.data as TListSubjectsErrorResponse;
