@@ -213,34 +213,76 @@ const useMonitorAvailabilityModal = () => {
   const handleSaveAvailability = () => {
     if (sameHour) {
       if (segundaSelected)
-        console.log({ day: 0, start: sameHourDe, end: sameHourAte });
+        monitorAvailability({
+          weekDay: 0,
+          hours: { start: sameHourDe, end: sameHourAte },
+        });
       if (tercaSelected)
-        console.log({ day: 1, start: sameHourDe, end: sameHourAte });
+        monitorAvailability({
+          weekDay: 1,
+          hours: { start: sameHourDe, end: sameHourAte },
+        });
       if (quartaSelected)
-        console.log({ day: 2, start: sameHourDe, end: sameHourAte });
+        monitorAvailability({
+          weekDay: 2,
+          hours: { start: sameHourDe, end: sameHourAte },
+        });
       if (quintaSelected)
-        console.log({ day: 3, start: sameHourDe, end: sameHourAte });
+        monitorAvailability({
+          weekDay: 3,
+          hours: { start: sameHourDe, end: sameHourAte },
+        });
       if (sextaSelected)
-        console.log({ day: 4, start: sameHourDe, end: sameHourAte });
+        monitorAvailability({
+          weekDay: 4,
+          hours: { start: sameHourDe, end: sameHourAte },
+        });
       if (sabadoSelected)
-        console.log({ day: 5, start: sameHourDe, end: sameHourAte });
+        monitorAvailability({
+          weekDay: 5,
+          hours: { start: sameHourDe, end: sameHourAte },
+        });
       if (domingoSelected)
-        console.log({ day: 6, start: sameHourDe, end: sameHourAte });
+        monitorAvailability({
+          weekDay: 6,
+          hours: { start: sameHourDe, end: sameHourAte },
+        });
     } else {
       if (segundaSelected)
-        console.log({ day: 0, start: segundaHourDe, end: segundaHourAte });
+        monitorAvailability({
+          weekDay: 0,
+          hours: { start: segundaHourDe, end: segundaHourAte },
+        });
       if (tercaSelected)
-        console.log({ day: 1, start: tercaHourDe, end: tercaHourAte });
+        monitorAvailability({
+          weekDay: 1,
+          hours: { start: tercaHourDe, end: tercaHourAte },
+        });
       if (quartaSelected)
-        console.log({ day: 2, start: quartaHourDe, end: quartaHourAte });
+        monitorAvailability({
+          weekDay: 2,
+          hours: { start: quartaHourDe, end: quartaHourAte },
+        });
       if (quintaSelected)
-        console.log({ day: 3, start: quintaHourDe, end: quintaHourAte });
+        monitorAvailability({
+          weekDay: 3,
+          hours: { start: quintaHourDe, end: quintaHourAte },
+        });
       if (sextaSelected)
-        console.log({ day: 4, start: sextaHourDe, end: sextaHourAte });
+        monitorAvailability({
+          weekDay: 0,
+          hours: { start: sextaHourDe, end: sextaHourAte },
+        });
       if (sabadoSelected)
-        console.log({ day: 5, start: sabadoHourDe, end: sabadoHourAte });
+        monitorAvailability({
+          weekDay: 0,
+          hours: { start: sabadoHourDe, end: sabadoHourAte },
+        });
       if (domingoSelected)
-        console.log({ day: 6, start: domingoHourDe, end: domingoHourAte });
+        monitorAvailability({
+          weekDay: 0,
+          hours: { start: domingoHourDe, end: domingoHourAte },
+        });
     }
   };
   useEffect(() => {

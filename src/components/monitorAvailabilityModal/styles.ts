@@ -31,17 +31,9 @@ export const CardContainer = styled(Box).attrs({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'flex-start',
-  padding: '32px 24px',
+  padding: '8px 0px',
 })`
   gap: 24px;
-  width: 444px;
-
-  @media (max-width: ${theme.breakpoints.values.md}px) {
-    width: 384px !important;
-  }
-  @media (max-width: ${theme.breakpoints.values.sm}px) {
-    width: 280px !important;
-  }
 `;
 
 export const TypographyContainer = styled(Box).attrs({

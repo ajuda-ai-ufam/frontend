@@ -1,8 +1,12 @@
 export type TMonitorAvailabilityRequest = {
   weekDay: number;
+  hours: hours;
+};
+
+export type hours = {
   start: string;
   end: string;
-};
+}
 
 export type TMonitorAvailabilityErrorResponse = {
   statusCode: number;

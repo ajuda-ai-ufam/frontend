@@ -24,6 +24,7 @@ import {
   ButtonSave,
 } from './styles';
 import useMonitorAvailabilityModal from './hooks/useMonitorAvailabilityModal';
+import useSubjectDetails from '../../screens/subjectDetails/hooks/useSubjectDetails';
 
 type Props = {
   isLoading: boolean;
@@ -84,6 +85,8 @@ const MonitorAvailabilityModal = ({
     handleSameHourAte,
     handleSaveAvailability,
   } = useMonitorAvailabilityModal();
+
+  const { subject } = useSubjectDetails();
   const renderContent = () => {
     if (isLoading) {
       return (
@@ -118,8 +121,8 @@ const MonitorAvailabilityModal = ({
           <Typography variant="h4">Gerenciar disponibilidade</Typography>
           <Typography variant="body1">
             Selecione abaixo o período que você está disponível na disciplina
-            Banco de Dados I, assim os demais usuários poderão agendar um
-            horário com você.
+            <strong> {subject?.name}</strong>, assim os demais usuários poderão
+            agendar um horário com você.
           </Typography>
         </TypographyContainer>
 
@@ -295,7 +298,7 @@ const MonitorAvailabilityModal = ({
   };
 
   return (
-    <Modal isOpen={isOpen} handleClose={handleClose}>
+    <Modal width="492px" isOpen={isOpen} handleClose={handleClose}>
       {renderContent()}
     </Modal>
   );
