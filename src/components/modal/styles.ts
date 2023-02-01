@@ -1,5 +1,6 @@
 import { Box } from '@mui/system';
 import styled from 'styled-components';
+import theme from '../../utils/theme';
 
 export const Container = styled(Box).attrs({
   display: 'flex',
@@ -18,4 +19,10 @@ export const Container = styled(Box).attrs({
 
   border-radius: 24px;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+  max-height: 90%;
+  overflow-y: overlay;
+
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    max-height: 80% !important;
+  }
 `;

@@ -4,10 +4,12 @@ import AddMonitorModal from '../../../../components/addMonitorModal';
 import useAddMonitorModal from '../../../../components/addMonitorModal/hooks/useAddMonitorModal';
 import AssignProfessorsModal from '../../../../components/assignProfessorsModal';
 import useAssignProfessorsModal from '../../../../components/assignProfessorsModal/hooks/useAssignProfessorsModal';
+import useMonitorAvailabilityModal from '../../../../components/monitorAvailabilityModal/hooks/useMonitorAvailabilityModal';
 import { Button } from '../../../../components/button';
 import { TCompleteSubject } from '../../../../service/requests/useGetSubject/types';
 import { TypeUserEnum } from '../../../../utils/constants';
 import { Container } from './styles';
+import MonitorAvailabilityModal from '../../../../components/monitorAvailabilityModal';
 
 type Props = {
   subject?: TCompleteSubject;
@@ -42,22 +44,32 @@ const SubjectHeader = ({ subject, userType, handleGoBackClick }: Props) => {
     handleOpenModal: handleOpenAddMonitorModal,
   } = useAddMonitorModal();
 
+  const monitorAvailabilityModal = useMonitorAvailabilityModal();
+
   const renderButton = () => {
     if (!subject) return <></>;
 
-    if (
-      userType === TypeUserEnum.STUDENT &&
-      subject.responsables.length &&
-      !subject.monitors.find((monitor) => monitor.id === Number(userId))
-    ) {
-      return (
-        <Button
-          onClick={() => handleOpenAddMonitorModal(subject)}
-          color="secondary"
-        >
-          Quero ser monitor
-        </Button>
-      );
+    if (userType === TypeUserEnum.STUDENT && subject.responsables.length) {
+      if (!subject.monitors.find((monitor) => monitor.id === Number(userId))) {
+        return (
+          <Button
+            onClick={() => handleOpenAddMonitorModal(subject)}
+            color="secondary"
+          >
+            Quero ser monitor
+          </Button>
+        );
+      } else {
+        return (
+          <Button
+            onClick={() => monitorAvailabilityModal.handleOpenModal()}
+            color="secondary"
+            width="auto"
+          >
+            Gerenciar Disponibilidade
+          </Button>
+        );
+      }
     }
 
     if (userType === TypeUserEnum.COORDINATOR) {
@@ -98,6 +110,10 @@ const SubjectHeader = ({ subject, userType, handleGoBackClick }: Props) => {
         handleAddMonitorClick={handleAddMonitorClick}
         handleChangeProfessor={handleChangeProfessor}
         handleClose={handleCloseAddMonitorModal}
+      />
+      <MonitorAvailabilityModal
+        subject={subject}
+        {...monitorAvailabilityModal}
       />
       <IconButton onClick={handleGoBackClick}>
         <ArrowBack />
