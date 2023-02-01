@@ -41,6 +41,7 @@ export type TGetSubjectResponse = {
     };
   }[];
   Monitor: {
+    id: number;
     responsible_professor: {
       user: {
         id: number;

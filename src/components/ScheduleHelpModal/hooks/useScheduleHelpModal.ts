@@ -2,7 +2,10 @@ import { SelectChangeEvent } from '@mui/material';
 import moment from 'moment';
 import { useEffect, useMemo, useState } from 'react';
 import useGetMonitorAvailableTimesRequest from '../../../service/requests/useGetMonitorAvailableTimesRequest';
-import { TCompleteSubject } from '../../../service/requests/useGetSubject/types';
+import {
+  TCompleteSubject,
+  TSubjectMonitor,
+} from '../../../service/requests/useGetSubject/types';
 import useScheduleRequest from '../../../service/requests/useScheduleRequest';
 import { useSnackBar } from '../../../utils/renderSnackBar';
 
@@ -68,6 +71,16 @@ const useScheduleHelpModal = () => {
 
   const handleOpen = (subject: TCompleteSubject) => {
     setSelectedSubject(subject);
+    setIsOpen(true);
+  };
+
+  const handleOpenWithMonitor = (
+    subject: TCompleteSubject,
+    monitor: TSubjectMonitor
+  ) => {
+    setSelectedSubject(subject);
+    setSelectedProfessorId(monitor.responsable.id);
+    setSelectedMonitorId(monitor.id);
     setIsOpen(true);
   };
 
@@ -164,6 +177,7 @@ const useScheduleHelpModal = () => {
     handleConfirmSchedule,
     handleEditData,
     handleOpen,
+    handleOpenWithMonitor,
     handleShowConfirmation,
   };
 };
