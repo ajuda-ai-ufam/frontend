@@ -27,20 +27,15 @@ import useMonitorAvailabilityModal from './hooks/useMonitorAvailabilityModal';
 import useSubjectDetails from '../../screens/subjectDetails/hooks/useSubjectDetails';
 
 type Props = {
-  isLoading: boolean;
-  isSuccess: boolean;
   isOpen: boolean;
   handleClose(): void;
   handleOpen(): void;
 };
 
-const MonitorAvailabilityModal = ({
-  isLoading,
-  isSuccess,
-  isOpen,
-  handleClose,
-}: Props) => {
+const MonitorAvailabilityModal = ({ isOpen, handleClose }: Props) => {
   const {
+    isLoading,
+    isSuccess,
     segundaSelected,
     tercaSelected,
     quartaSelected,

@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useMonitorAvailabilityRequest from '../../../service/requests/useMonitorAvailabilityRequest';
 import useGetLoggedUser from '../../../service/storage/getLoggedUser';
 import { useSnackBar } from '../../../utils/renderSnackBar';
-import { TDayHourAvailable } from '../../../service/requests/useMonitorAvailabilityRequest/types';
+import { TAvailability } from '../../../service/requests/useMonitorAvailabilityRequest/types';
 import { SelectChangeEvent } from '@mui/material';
 
 const useMonitorAvailabilityModal = () => {
@@ -14,9 +14,7 @@ const useMonitorAvailabilityModal = () => {
   const { isSuccess, isLoading, monitorAvailability, error, resetStates } =
     useMonitorAvailabilityRequest();
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedDayHour, setSelectedDayHour] = useState<TDayHourAvailable[]>(
-    []
-  );
+
   const [sameHour, setSameHour] = useState(false);
   const [segundaSelected, setSegunda] = useState(false);
   const [tercaSelected, setTerca] = useState(false);
@@ -49,6 +47,40 @@ const useMonitorAvailabilityModal = () => {
 
   const [sameHourDe, setSameHourDe] = useState('de');
   const [sameHourAte, setSameHourAte] = useState('até');
+
+  const days = [
+    [segundaSelected, segundaHourDe, segundaHourAte],
+    [tercaSelected, tercaHourDe, tercaHourAte],
+    [quartaSelected, quartaHourDe, quartaHourAte],
+    [quintaSelected, quintaHourDe, segundaHourAte],
+    [sextaSelected, sextaHourDe, sextaHourAte],
+    [sabadoSelected, sabadoHourDe, sabadoHourAte],
+    [domingoSelected, domingoHourDe, domingoHourAte],
+  ];
+
+  const availability: TAvailability[] = useMemo(() => {
+    let newAvailability: TAvailability[] = [];
+    for (let i = 0; i < days.length; i++) {
+      if (days[i][0] === true) {
+        sameHour
+          ? (newAvailability = [
+              ...newAvailability,
+              {
+                weekDay: i,
+                hours: [{ start: sameHourDe, end: sameHourAte }],
+              },
+            ])
+          : (newAvailability = [
+              ...newAvailability,
+              {
+                weekDay: i,
+                hours: [{ start: String(days[i][1]), end: String(days[i][2]) }],
+              },
+            ]);
+      }
+    }
+    return newAvailability;
+  }, [days]);
 
   const handleCloseModal = () => {
     setIsOpen(false);
@@ -188,103 +220,18 @@ const useMonitorAvailabilityModal = () => {
       target: { value },
     } = event;
     setSameHourDe(value);
-    if (segundaSelected) setSegundaHourDe(value);
-    if (tercaSelected) setTercaHourDe(value);
-    if (quartaSelected) setQuartaHourDe(value);
-    if (quintaSelected) setQuintaHourDe(value);
-    if (sextaSelected) setSextaHourDe(value);
-    if (sabadoSelected) setSabadoHourDe(value);
-    if (domingoSelected) setDomingoHourDe(value);
   };
   const handleSameHourAte = (event: SelectChangeEvent<string>) => {
     const {
       target: { value },
     } = event;
     setSameHourAte(value);
-    if (segundaSelected) setSegundaHourAte(value);
-    if (tercaSelected) setTercaHourAte(value);
-    if (quartaSelected) setQuartaHourAte(value);
-    if (quintaSelected) setQuintaHourAte(value);
-    if (sextaSelected) setSextaHourAte(value);
-    if (sabadoSelected) setSabadoHourAte(value);
-    if (domingoSelected) setDomingoHourAte(value);
   };
 
   const handleSaveAvailability = () => {
-    if (sameHour) {
-      if (segundaSelected)
-        monitorAvailability({
-          weekDay: 0,
-          hours: { start: sameHourDe, end: sameHourAte },
-        });
-      if (tercaSelected)
-        monitorAvailability({
-          weekDay: 1,
-          hours: { start: sameHourDe, end: sameHourAte },
-        });
-      if (quartaSelected)
-        monitorAvailability({
-          weekDay: 2,
-          hours: { start: sameHourDe, end: sameHourAte },
-        });
-      if (quintaSelected)
-        monitorAvailability({
-          weekDay: 3,
-          hours: { start: sameHourDe, end: sameHourAte },
-        });
-      if (sextaSelected)
-        monitorAvailability({
-          weekDay: 4,
-          hours: { start: sameHourDe, end: sameHourAte },
-        });
-      if (sabadoSelected)
-        monitorAvailability({
-          weekDay: 5,
-          hours: { start: sameHourDe, end: sameHourAte },
-        });
-      if (domingoSelected)
-        monitorAvailability({
-          weekDay: 6,
-          hours: { start: sameHourDe, end: sameHourAte },
-        });
-    } else {
-      if (segundaSelected)
-        monitorAvailability({
-          weekDay: 0,
-          hours: { start: segundaHourDe, end: segundaHourAte },
-        });
-      if (tercaSelected)
-        monitorAvailability({
-          weekDay: 1,
-          hours: { start: tercaHourDe, end: tercaHourAte },
-        });
-      if (quartaSelected)
-        monitorAvailability({
-          weekDay: 2,
-          hours: { start: quartaHourDe, end: quartaHourAte },
-        });
-      if (quintaSelected)
-        monitorAvailability({
-          weekDay: 3,
-          hours: { start: quintaHourDe, end: quintaHourAte },
-        });
-      if (sextaSelected)
-        monitorAvailability({
-          weekDay: 0,
-          hours: { start: sextaHourDe, end: sextaHourAte },
-        });
-      if (sabadoSelected)
-        monitorAvailability({
-          weekDay: 0,
-          hours: { start: sabadoHourDe, end: sabadoHourAte },
-        });
-      if (domingoSelected)
-        monitorAvailability({
-          weekDay: 0,
-          hours: { start: domingoHourDe, end: domingoHourAte },
-        });
-    }
+    monitorAvailability(availability);
   };
+
   useEffect(() => {
     if (error) {
       showErrorSnackBar(`Erro desconhecido. Erro: ${error}`);

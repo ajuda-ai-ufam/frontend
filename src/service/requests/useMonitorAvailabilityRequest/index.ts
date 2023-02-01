@@ -3,6 +3,7 @@ import { AxiosError } from 'axios';
 import api from '../../api';
 import {
   TMonitorAvailabilityRequest,
+  TAvailability,
   TMonitorAvailabilityErrorResponse,
 } from './types';
 
@@ -11,13 +12,14 @@ const useMonitorAvailabilityRequest = () => {
   const [error, setError] = useState<string>();
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const monitorAvailability = async (body: TMonitorAvailabilityRequest) => {
+  const monitorAvailability = async (availabilities: TAvailability[]) => {
     setIsLoading(true);
     setIsSuccess(false);
     setError(undefined);
 
     try {
-      await api.post('/monitor/availability', body);
+      console.log(availabilities);
+      await api.post('/monitor/availability', { availability: availabilities });
       setIsSuccess(true);
     } catch (error) {
       const err = error as AxiosError;

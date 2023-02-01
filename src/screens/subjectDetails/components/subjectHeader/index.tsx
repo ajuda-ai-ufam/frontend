@@ -118,8 +118,6 @@ const SubjectHeader = ({ subject, userType, handleGoBackClick }: Props) => {
         handleClose={handleCloseAddMonitorModal}
       />
       <MonitorAvailabilityModal
-        isLoading={isLoadingMonitorAvailability}
-        isSuccess={isSuccessMonitorAvailability}
         isOpen={isOpenMonitorAvailability}
         handleClose={handleCloseMonitorAvailability}
         handleOpen={handleOpenMonitorAvailability}
