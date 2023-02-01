@@ -1,12 +1,14 @@
 import { Typography } from '@mui/material';
-import ContainerWithSidebar from '../../components/containerWithSidebar';
-import { SidebarItemEnum } from '../../utils/constants';
 import AssignProfessorsModal from '../../components/assignProfessorsModal';
-import SubjectsList from './components/SubjectsList';
 import useAssignProfessorsModal from '../../components/assignProfessorsModal/hooks/useAssignProfessorsModal';
+import ContainerWithSidebar from '../../components/containerWithSidebar';
+import ScheduleHelpModal from '../../components/ScheduleHelpModal';
+import useScheduleHelpModal from '../../components/ScheduleHelpModal/hooks/useScheduleHelpModal';
+import SearchField from '../../components/searchField';
+import { SidebarItemEnum } from '../../utils/constants';
+import SubjectsList from './components/SubjectsList';
 import useSubjects from './hooks/useSubjects';
 import { Card, Container } from './styles';
-import SearchField from '../../components/searchField';
 
 const Subjects = () => {
   const {
@@ -17,7 +19,6 @@ const Subjects = () => {
     searchFieldElement,
     userTypeId,
     handleChangePage,
-    handleScheduleHelp,
     handleSearch,
     handleSubjectClick,
   } = useSubjects();
@@ -35,6 +36,31 @@ const Subjects = () => {
     handleOpenModal: handleOpenAssignProfessorsModal,
   } = useAssignProfessorsModal();
 
+  const {
+    availableHours,
+    availableMonitors,
+    isLoadingMonitorAvailableTimes,
+    isScheduleLoading,
+    isScheduleSuccess,
+    isOpen: isScheduleModalOpen,
+    monitorAvailableTimes,
+    selectedDate,
+    selectedMonitorId,
+    selectedProfessorId,
+    handleChangeHour,
+    handleChangeProfessor,
+    handleChangeMonitor,
+    selectedHourIndex,
+    selectedSubject: selectedScheduleSubject,
+    showConfirmation,
+    handleChangeDate,
+    handleClose: handleCloseScheduleModal,
+    handleOpen: handleOpenScheduleModal,
+    handleConfirmSchedule,
+    handleEditData,
+    handleShowConfirmation,
+  } = useScheduleHelpModal();
+
   return (
     <ContainerWithSidebar selectedSidebarItem={SidebarItemEnum.SUBJECTS}>
       <AssignProfessorsModal
@@ -47,6 +73,29 @@ const Subjects = () => {
         handleAssignProfessorsClick={handleAssignProfessorsClick}
         handleChangeProfessors={handleChangeProfessors}
         handleClose={handleCloseAssignProfessorsModal}
+      />
+      <ScheduleHelpModal
+        availableHours={availableHours}
+        availableMonitors={availableMonitors}
+        isLoadingMonitorAvailableTimes={isLoadingMonitorAvailableTimes}
+        isScheduleLoading={isScheduleLoading}
+        isScheduleSuccess={isScheduleSuccess}
+        monitorAvailableTimes={monitorAvailableTimes}
+        selectedDate={selectedDate}
+        selectedHourIndex={selectedHourIndex}
+        selectedMonitorId={selectedMonitorId}
+        selectedProfessorId={selectedProfessorId}
+        showConfirmation={showConfirmation}
+        handleChangeHour={handleChangeHour}
+        handleChangeDate={handleChangeDate}
+        handleChangeMonitor={handleChangeMonitor}
+        handleChangeProfessor={handleChangeProfessor}
+        handleEditData={handleEditData}
+        handleShowConfirmation={handleShowConfirmation}
+        subject={selectedScheduleSubject}
+        isOpen={isScheduleModalOpen}
+        handleClose={handleCloseScheduleModal}
+        handleConfirmSchedule={handleConfirmSchedule}
       />
       <Container>
         <Card>
@@ -69,7 +118,7 @@ const Subjects = () => {
             isLoading={isLoadingSubjects}
             handleAssignProfessors={handleOpenAssignProfessorsModal}
             handleChangePage={handleChangePage}
-            handleScheduleHelp={handleScheduleHelp}
+            handleConfirmSchedule={handleOpenScheduleModal}
             handleSubjectClick={handleSubjectClick}
           />
         </Card>

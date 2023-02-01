@@ -55,12 +55,8 @@ const useSubjects = () => {
     navigate(SCREENS.SUBJECT_DETAILS.replace(':id', subjectId.toString()));
   };
 
-  const handleScheduleHelp = (subjectId: number) => {
-    // TODO - Adicionar modal
-    alert(`Agendar ajuda na disciplina ${subjectId}`);
-  };
-
   useEffect(() => {
+    document.title = 'Disciplinas';
     if (!user) return navigate(SCREENS.LOGIN);
 
     void listSubjects();
@@ -80,7 +76,6 @@ const useSubjects = () => {
     isLoadingSubjects,
     searchFieldElement,
     handleChangePage,
-    handleScheduleHelp,
     handleSearch,
     handleSubjectClick,
   };

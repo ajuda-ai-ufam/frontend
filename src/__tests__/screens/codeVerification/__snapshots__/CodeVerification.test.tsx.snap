@@ -30,7 +30,7 @@ exports[`Test Code Verification screen snapshot tests should load code generatio
         className="sc-eDvSVe bISOCY MuiBox-root css-70qvj9"
       >
         <p
-          className="MuiTypography-root MuiTypography-body1"
+          className="MuiTypography-root MuiTypography-body1 css-1jxod77-MuiTypography-root"
         >
           Já possui cadastro?
         </p>
@@ -277,7 +277,7 @@ exports[`Test Code Verification screen snapshot tests should render code generat
         className="sc-eDvSVe bISOCY MuiBox-root css-70qvj9"
       >
         <p
-          className="MuiTypography-root MuiTypography-body1"
+          className="MuiTypography-root MuiTypography-body1 css-1jxod77-MuiTypography-root"
         >
           Já possui cadastro?
         </p>
@@ -497,7 +497,7 @@ exports[`Test Code Verification screen snapshot tests should render code verifie
         className="sc-eDvSVe bISOCY MuiBox-root css-70qvj9"
       >
         <p
-          className="MuiTypography-root MuiTypography-body1"
+          className="MuiTypography-root MuiTypography-body1 css-1jxod77-MuiTypography-root"
         >
           Já possui cadastro?
         </p>
@@ -639,7 +639,7 @@ exports[`Test Code Verification screen snapshot tests should render invalid code
         className="sc-eDvSVe bISOCY MuiBox-root css-70qvj9"
       >
         <p
-          className="MuiTypography-root MuiTypography-body1"
+          className="MuiTypography-root MuiTypography-body1 css-1jxod77-MuiTypography-root"
         >
           Já possui cadastro?
         </p>
@@ -862,7 +862,7 @@ exports[`Test Code Verification screen snapshot tests should render loading veri
         className="sc-eDvSVe bISOCY MuiBox-root css-70qvj9"
       >
         <p
-          className="MuiTypography-root MuiTypography-body1"
+          className="MuiTypography-root MuiTypography-body1 css-1jxod77-MuiTypography-root"
         >
           Já possui cadastro?
         </p>
@@ -972,7 +972,7 @@ exports[`Test Code Verification screen snapshot tests should render screen 1`] =
         className="sc-eDvSVe bISOCY MuiBox-root css-70qvj9"
       >
         <p
-          className="MuiTypography-root MuiTypography-body1"
+          className="MuiTypography-root MuiTypography-body1 css-1jxod77-MuiTypography-root"
         >
           Já possui cadastro?
         </p>
