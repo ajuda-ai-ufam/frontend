@@ -1,87 +1,64 @@
-import { Typography } from '@mui/material';
+import { Chip, SelectChangeEvent, Typography } from '@mui/material';
+import { TCompleteSubject } from '../../service/requests/useGetSubject/types';
+import { Button } from '../button';
 import CheckedAnimation from '../checkedAnimation';
 import LoadingAnimation from '../loadingAnimation';
-import { Button } from '../button';
 import Modal from '../modal';
-import { Chip } from '@mui/material';
 import HourSelect from './components/HourSelect';
+import { TWeekDayAvailabilityState } from './hooks/types';
 import {
-  LoadingContainer,
-  ConfirmationContainer,
-  ConfirmationTextContainer,
-  TypographyContainer,
-  WeekDayContainer,
-  DaysContainer,
-  HoursContainer,
-  SelectContainer,
-  StyledSwitch,
+  AvailabilityContainer,
+  ButtonCancel,
+  ButtonContainer,
+  ButtonSave,
   CardContainer,
   ChipContainer,
-  AvailabilityContainer,
+  ConfirmationContainer,
+  ConfirmationTextContainer,
+  DaysContainer,
+  HoursContainer,
+  LoadingContainer,
+  SelectContainer,
+  StyledSwitch,
   SwitchContainer,
-  ButtonContainer,
-  ButtonCancel,
-  ButtonSave,
+  TypographyContainer,
+  WeekDayContainer,
 } from './styles';
-import useMonitorAvailabilityModal from './hooks/useMonitorAvailabilityModal';
-import useSubjectDetails from '../../screens/subjectDetails/hooks/useSubjectDetails';
 
 type Props = {
+  subject?: TCompleteSubject;
+  isLoading: boolean;
+  isSuccess: boolean;
   isOpen: boolean;
-  handleClose(): void;
-  handleOpen(): void;
+  sameAvailability: TWeekDayAvailabilityState;
+  weekDayAvailability: TWeekDayAvailabilityState[];
+  handleCloseModal(): void;
+  handleFromHourChange(event: SelectChangeEvent<string>): void;
+  handleFromSameHourChange(event: SelectChangeEvent<string>): void;
+  handleToHourChange(event: SelectChangeEvent<string>): void;
+  handleToSameHourChange(event: SelectChangeEvent<string>): void;
+  handleWeekDaySelect(event: React.MouseEvent<HTMLDivElement>): void;
+  handleOpenModal(): void;
+  handleSwitchChange(event: React.ChangeEvent<HTMLInputElement>): void;
+  handleSaveAvailability(): void;
 };
 
-const MonitorAvailabilityModal = ({ isOpen, handleClose }: Props) => {
-  const {
-    isLoading,
-    isSuccess,
-    segundaSelected,
-    tercaSelected,
-    quartaSelected,
-    quintaSelected,
-    sextaSelected,
-    sabadoSelected,
-    domingoSelected,
-    sameHour,
-    segundaHourDe,
-    tercaHourDe,
-    quartaHourDe,
-    quintaHourDe,
-    sextaHourDe,
-    sabadoHourDe,
-    domingoHourDe,
-    sameHourDe,
-    segundaHourAte,
-    tercaHourAte,
-    quartaHourAte,
-    quintaHourAte,
-    sextaHourAte,
-    sabadoHourAte,
-    domingoHourAte,
-    sameHourAte,
-    handleDaySelect,
-    handleSwitchChange,
-    handleSegundaHourDe,
-    handleTercaHourDe,
-    handleQuartaHourDe,
-    handleQuintaHourDe,
-    handleSextaHourDe,
-    handleSabadoHourDe,
-    handleDomingoHourDe,
-    handleSegundaHourAte,
-    handleTercaHourAte,
-    handleQuartaHourAte,
-    handleQuintaHourAte,
-    handleSextaHourAte,
-    handleSabadoHourAte,
-    handleDomingoHourAte,
-    handleSameHourDe,
-    handleSameHourAte,
-    handleSaveAvailability,
-  } = useMonitorAvailabilityModal();
-
-  const { subject } = useSubjectDetails();
+const MonitorAvailabilityModal = ({
+  subject,
+  isLoading,
+  isSuccess,
+  isOpen,
+  sameAvailability,
+  weekDayAvailability,
+  handleCloseModal,
+  handleFromHourChange,
+  handleFromSameHourChange,
+  handleToHourChange,
+  handleToSameHourChange,
+  handleWeekDaySelect,
+  handleSwitchChange,
+  handleSaveAvailability,
+}: Props) => {
   const renderContent = () => {
     if (isLoading) {
       return (
@@ -103,7 +80,7 @@ const MonitorAvailabilityModal = ({ isOpen, handleClose }: Props) => {
             </Typography>
           </ConfirmationTextContainer>
 
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleCloseModal} color="primary">
             Voltar
           </Button>
         </ConfirmationContainer>
@@ -125,69 +102,16 @@ const MonitorAvailabilityModal = ({ isOpen, handleClose }: Props) => {
           <Typography variant="subtitle1">Dias da semana</Typography>
           <DaysContainer>
             <ChipContainer>
-              <Chip
-                key={0}
-                label="S"
-                onClick={() => {
-                  handleDaySelect(0);
-                }}
-                color={segundaSelected ? 'primary' : 'secondary'}
-                variant={segundaSelected ? 'filled' : 'outlined'}
-              />
-              <Chip
-                key={1}
-                label="T"
-                onClick={() => {
-                  handleDaySelect(1);
-                }}
-                color={tercaSelected ? 'primary' : 'secondary'}
-                variant={tercaSelected ? 'filled' : 'outlined'}
-              />
-              <Chip
-                key={2}
-                label="Q"
-                onClick={() => {
-                  handleDaySelect(2);
-                }}
-                color={quartaSelected ? 'primary' : 'secondary'}
-                variant={quartaSelected ? 'filled' : 'outlined'}
-              />
-              <Chip
-                key={3}
-                label="Q"
-                onClick={() => {
-                  handleDaySelect(3);
-                }}
-                color={quintaSelected ? 'primary' : 'secondary'}
-                variant={quintaSelected ? 'filled' : 'outlined'}
-              />
-              <Chip
-                key={4}
-                label="S"
-                onClick={() => {
-                  handleDaySelect(4);
-                }}
-                color={sextaSelected ? 'primary' : 'secondary'}
-                variant={sextaSelected ? 'filled' : 'outlined'}
-              />
-              <Chip
-                key={5}
-                label="S"
-                onClick={() => {
-                  handleDaySelect(5);
-                }}
-                color={sabadoSelected ? 'primary' : 'secondary'}
-                variant={sabadoSelected ? 'filled' : 'outlined'}
-              />
-              <Chip
-                key={6}
-                label="D"
-                onClick={() => {
-                  handleDaySelect(6);
-                }}
-                color={domingoSelected ? 'primary' : 'secondary'}
-                variant={domingoSelected ? 'filled' : 'outlined'}
-              />
+              {weekDayAvailability.map((availability) => (
+                <Chip
+                  key={availability.weekDay}
+                  id={availability.weekDay.toString()}
+                  label={availability.label}
+                  onClick={handleWeekDaySelect}
+                  color={availability.isSelected ? 'primary' : 'secondary'}
+                  variant={availability.isSelected ? 'filled' : 'outlined'}
+                />
+              ))}
             </ChipContainer>
           </DaysContainer>
         </WeekDayContainer>
@@ -199,101 +123,52 @@ const MonitorAvailabilityModal = ({ isOpen, handleClose }: Props) => {
               <Typography variant="body1">
                 Manter mesmo horário para todos os dias
               </Typography>
-              <StyledSwitch checked={sameHour} onChange={handleSwitchChange} />
+              <StyledSwitch
+                checked={sameAvailability.isSelected}
+                onChange={handleSwitchChange}
+              />
             </SwitchContainer>
-            {sameHour ? (
-              <SelectContainer isSelected={sameHour}>
+
+            {sameAvailability.isSelected ? (
+              <SelectContainer isSelected={sameAvailability.isSelected}>
                 <HourSelect
-                  day={'Disponivel'}
-                  hourDe={sameHourDe}
-                  handleHourDe={handleSameHourDe}
-                  hourAte={sameHourAte}
-                  handleHourAte={handleSameHourAte}
+                  name={sameAvailability.name}
+                  fromHourIndex={sameAvailability.fromHourIndex}
+                  handleFromHourChange={handleFromSameHourChange}
+                  toHourIndex={sameAvailability.toHourIndex}
+                  handleToHourChange={handleToSameHourChange}
+                  weekDay={sameAvailability.weekDay}
                 />
               </SelectContainer>
             ) : (
               <>
-                <SelectContainer isSelected={segundaSelected}>
-                  <HourSelect
-                    day={'Segunda'}
-                    hourDe={segundaHourDe}
-                    handleHourDe={handleSegundaHourDe}
-                    hourAte={segundaHourAte}
-                    handleHourAte={handleSegundaHourAte}
-                  />
-                </SelectContainer>
-                <SelectContainer isSelected={tercaSelected}>
-                  <HourSelect
-                    day={'Terça'}
-                    hourDe={tercaHourDe}
-                    handleHourDe={handleTercaHourDe}
-                    hourAte={tercaHourAte}
-                    handleHourAte={handleTercaHourAte}
-                  />
-                </SelectContainer>
-                <SelectContainer isSelected={quartaSelected}>
-                  <HourSelect
-                    day={'Quarta'}
-                    hourDe={quartaHourDe}
-                    handleHourDe={handleQuartaHourDe}
-                    hourAte={quartaHourAte}
-                    handleHourAte={handleQuartaHourAte}
-                  />
-                </SelectContainer>
-                <SelectContainer isSelected={quintaSelected}>
-                  <HourSelect
-                    day={'Quinta'}
-                    hourDe={quintaHourDe}
-                    handleHourDe={handleQuintaHourDe}
-                    hourAte={quintaHourAte}
-                    handleHourAte={handleQuintaHourAte}
-                  />
-                </SelectContainer>
-                <SelectContainer isSelected={sextaSelected}>
-                  <HourSelect
-                    day={'Sexta'}
-                    hourDe={sextaHourDe}
-                    handleHourDe={handleSextaHourDe}
-                    hourAte={sextaHourAte}
-                    handleHourAte={handleSextaHourAte}
-                  />
-                </SelectContainer>
-                <SelectContainer isSelected={sabadoSelected}>
-                  <HourSelect
-                    day={'Sabado'}
-                    hourDe={sabadoHourDe}
-                    handleHourDe={handleSabadoHourDe}
-                    hourAte={sabadoHourAte}
-                    handleHourAte={handleSabadoHourAte}
-                  />
-                </SelectContainer>
-                <SelectContainer isSelected={domingoSelected}>
-                  <HourSelect
-                    day={'Domingo'}
-                    hourDe={domingoHourDe}
-                    handleHourDe={handleDomingoHourDe}
-                    hourAte={domingoHourAte}
-                    handleHourAte={handleDomingoHourAte}
-                  />
-                </SelectContainer>
+                {weekDayAvailability.map((availability) => (
+                  <SelectContainer isSelected={availability.isSelected}>
+                    <HourSelect
+                      name={availability.name}
+                      fromHourIndex={availability.fromHourIndex}
+                      handleFromHourChange={handleFromHourChange}
+                      toHourIndex={availability.toHourIndex}
+                      handleToHourChange={handleToHourChange}
+                      weekDay={availability.weekDay}
+                    />
+                  </SelectContainer>
+                ))}
               </>
             )}
           </AvailabilityContainer>
         </HoursContainer>
+
         <ButtonContainer>
-          <ButtonCancel onClick={handleClose} color="primary" variant="text">
-            Cancelar
-          </ButtonCancel>
-          <ButtonSave onClick={handleSaveAvailability} color="primary">
-            Salvar
-          </ButtonSave>
+          <ButtonCancel onClick={handleCloseModal}>Cancelar</ButtonCancel>
+          <ButtonSave onClick={handleSaveAvailability}>Salvar</ButtonSave>
         </ButtonContainer>
       </CardContainer>
     );
   };
 
   return (
-    <Modal width="492px" isOpen={isOpen} handleClose={handleClose}>
+    <Modal width="492px" isOpen={isOpen} handleClose={handleCloseModal}>
       {renderContent()}
     </Modal>
   );

@@ -1,24 +1,19 @@
 import { useState } from 'react';
 import { AxiosError } from 'axios';
 import api from '../../api';
-import {
-  TMonitorAvailabilityRequest,
-  TAvailability,
-  TMonitorAvailabilityErrorResponse,
-} from './types';
+import { TAvailability, TMonitorAvailabilityErrorResponse } from './types';
 
-const useMonitorAvailabilityRequest = () => {
+const useUpdateMonitorAvailabilityRequest = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string>();
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const monitorAvailability = async (availabilities: TAvailability[]) => {
+  const updateMonitorAvailability = async (availabilities: TAvailability[]) => {
     setIsLoading(true);
     setIsSuccess(false);
     setError(undefined);
 
     try {
-      console.log(availabilities);
       await api.post('/monitor/availability', { availability: availabilities });
       setIsSuccess(true);
     } catch (error) {
@@ -43,9 +38,9 @@ const useMonitorAvailabilityRequest = () => {
     isLoading,
     isSuccess,
     error,
-    monitorAvailability,
+    updateMonitorAvailability,
     resetStates,
   };
 };
 
-export default useMonitorAvailabilityRequest;
+export default useUpdateMonitorAvailabilityRequest;

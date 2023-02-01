@@ -1,97 +1,82 @@
 import { Typography, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 import { TextField } from '../../textField';
+import { HOUR_OPTIONS } from '../hooks/types';
 import { Placeholder, Container } from '../styles';
 
 type Props = {
-  day: string;
-  hourDe: string;
-  hourAte: string;
-  handleHourDe(event: SelectChangeEvent<string>): void;
-  handleHourAte(event: SelectChangeEvent<string>): void;
+  name: string;
+  fromHourIndex: number;
+  toHourIndex: number;
+  weekDay: number;
+  handleFromHourChange(event: SelectChangeEvent<string>): void;
+  handleToHourChange(event: SelectChangeEvent<string>): void;
 };
 
 const HourSelect = ({
-  day,
-  hourDe,
-  hourAte,
-  handleHourDe,
-  handleHourAte,
+  name,
+  fromHourIndex,
+  toHourIndex,
+  weekDay,
+  handleFromHourChange,
+  handleToHourChange,
 }: Props) => {
-  const hourOption = [
-    '00:00',
-    '01:00',
-    '02:00',
-    '03:00',
-    '04:00',
-    '05:00',
-    '06:00',
-    '07:00',
-    '08:00',
-    '09:00',
-    '10:00',
-    '11:00',
-    '12:00',
-    '13:00',
-    '14:00',
-    '15:00',
-    '16:00',
-    '17:00',
-    '18:00',
-    '19:00',
-    '20:00',
-    '21:00',
-    '22:00',
-    '23:00',
-  ];
   return (
     <>
-      <Typography variant="body1">{day}</Typography>
+      <Typography variant="body1">{name}</Typography>
+
       <Container>
         <Select
+          name={weekDay.toString()}
           displayEmpty
           sx={{ minWidth: '124px', maxWidth: '154px' }}
-          value={hourDe}
-          onChange={handleHourDe}
+          value={fromHourIndex.toString()}
+          onChange={handleFromHourChange}
           input={<TextField />}
           renderValue={(selected: string) =>
-            selected !== hourDe ? (
+            Number(selected) === -1 ? (
               <Placeholder>de</Placeholder>
             ) : (
-              <Typography variant="body1">{selected}</Typography>
+              <Typography variant="body1">
+                {HOUR_OPTIONS[Number(selected)]}
+              </Typography>
             )
           }
         >
           {[
-            <MenuItem key={-1} value={'de'}>
+            <MenuItem key={-1} value={'-1'}>
               de
             </MenuItem>,
-            ...hourOption.map((h) => (
-              <MenuItem key={hourOption.indexOf(h)} value={h}>
+            ...HOUR_OPTIONS.map((h, index) => (
+              <MenuItem key={index} value={index}>
                 {h}
               </MenuItem>
             )),
           ]}
         </Select>
+
         <Select
+          name={weekDay.toString()}
           displayEmpty
           sx={{ minWidth: '124px', maxWidth: '154px' }}
-          value={hourAte}
-          onChange={handleHourAte}
+          value={toHourIndex.toString()}
+          onChange={handleToHourChange}
           input={<TextField />}
           renderValue={(selected: string) =>
-            selected !== hourAte ? (
+            Number(selected) === -1 ? (
               <Placeholder>até</Placeholder>
             ) : (
-              <Typography variant="body1">{selected}</Typography>
+              <Typography variant="body1">
+                {HOUR_OPTIONS[Number(selected)]}
+              </Typography>
             )
           }
         >
           {[
-            <MenuItem key={-1} value={'ate'}>
+            <MenuItem key={-1} value={'-1'}>
               até
             </MenuItem>,
-            ...hourOption.map((h) => (
-              <MenuItem key={hourOption.indexOf(h)} value={h}>
+            ...HOUR_OPTIONS.map((h, index) => (
+              <MenuItem key={index} value={index}>
                 {h}
               </MenuItem>
             )),

@@ -1,4 +1,4 @@
-import { Typography, Chip, Switch, Modal } from '@mui/material';
+import { Typography, Chip, Switch, Modal, Select } from '@mui/material';
 import { Box } from '@mui/system';
 import styled from 'styled-components';
 import theme from '../../utils/theme';
@@ -123,7 +123,7 @@ export const SelectContainer = styled(Box).attrs<SelectContainerProps>(
   (props) => ({
     display: props.isSelected ? 'flex' : 'none',
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
   })
@@ -132,7 +132,6 @@ export const SelectContainer = styled(Box).attrs<SelectContainerProps>(
 
   @media (max-width: ${theme.breakpoints.values.sm}px) {
     flex-direction: column !important;
-    justify-content: center !important;
     align-items: flex-start !important;
     gap: 8px !important;
   }
@@ -147,20 +146,21 @@ export const Container = styled(Box).attrs({
 
   @media (max-width: ${theme.breakpoints.values.sm}px) {
     gap: 8px !important;
-    justify-content: space-between !important;
+    width: 100%;
+    justify-content: center !important;
+    align-items: center !important;
   }
 `;
 
 export const ButtonContainer = styled(Box).attrs({
   display: 'flex',
   flexDirection: 'row',
-  justifyContent: 'flex-end',
+  justifyContent: 'center',
   alignItems: 'center',
-  padding: '16px 0px 0px',
+  padding: '16px 0',
   width: '100%',
+  gap: '32px',
 })`
-  gap: 32px;
-
   @media (max-width: ${theme.breakpoints.values.sm}px) {
     gap: 24px !important;
     padding: 0px !important;

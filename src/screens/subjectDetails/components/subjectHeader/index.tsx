@@ -44,13 +44,7 @@ const SubjectHeader = ({ subject, userType, handleGoBackClick }: Props) => {
     handleOpenModal: handleOpenAddMonitorModal,
   } = useAddMonitorModal();
 
-  const {
-    isLoading: isLoadingMonitorAvailability,
-    isSuccess: isSuccessMonitorAvailability,
-    isOpen: isOpenMonitorAvailability,
-    handleCloseModal: handleCloseMonitorAvailability,
-    handleOpenModal: handleOpenMonitorAvailability,
-  } = useMonitorAvailabilityModal();
+  const monitorAvailabilityModal = useMonitorAvailabilityModal();
 
   const renderButton = () => {
     if (!subject) return <></>;
@@ -68,7 +62,7 @@ const SubjectHeader = ({ subject, userType, handleGoBackClick }: Props) => {
       } else {
         return (
           <Button
-            onClick={() => handleOpenMonitorAvailability()}
+            onClick={() => monitorAvailabilityModal.handleOpenModal()}
             color="secondary"
             width="auto"
           >
@@ -118,9 +112,8 @@ const SubjectHeader = ({ subject, userType, handleGoBackClick }: Props) => {
         handleClose={handleCloseAddMonitorModal}
       />
       <MonitorAvailabilityModal
-        isOpen={isOpenMonitorAvailability}
-        handleClose={handleCloseMonitorAvailability}
-        handleOpen={handleOpenMonitorAvailability}
+        subject={subject}
+        {...monitorAvailabilityModal}
       />
       <IconButton onClick={handleGoBackClick}>
         <ArrowBack />
