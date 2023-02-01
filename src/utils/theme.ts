@@ -37,6 +37,20 @@ const components = {
       },
     },
   },
+  MuiPickersDay: {
+    styleOverrides: {
+      dayWithMargin: {
+        backgroundColor: 'white',
+      },
+    },
+  },
+  MuiCalendarPicker: {
+    styleOverrides: {
+      root: {
+        backgroundColor: 'white',
+      },
+    },
+  },
 };
 
 const theme = createTheme({

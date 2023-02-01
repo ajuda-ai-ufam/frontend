@@ -2,6 +2,8 @@ import { ErrorOutlineSharp } from '@mui/icons-material';
 import { CircularProgress, Typography } from '@mui/material';
 import Breadcrumbs from '../../components/breadcrumbs';
 import ContainerWithSidebar from '../../components/containerWithSidebar';
+import ScheduleHelpModal from '../../components/ScheduleHelpModal';
+import useScheduleHelpModal from '../../components/ScheduleHelpModal/hooks/useScheduleHelpModal';
 import SearchField from '../../components/searchField';
 import { SidebarItemEnum, TypeUserEnum } from '../../utils/constants';
 import { SCREENS } from '../../utils/screens';
@@ -26,11 +28,36 @@ const SubjectDetails = () => {
     selectedProfessorId,
     userType,
     handleGoBackClick,
-    handleMonitorClick,
+    getMonitorClickHandler,
     handleProfessorFilterClick,
     handleSearch,
     handleSearchChange,
   } = useSubjectDetails();
+
+  const {
+    availableHours,
+    availableMonitors,
+    isLoadingMonitorAvailableTimes,
+    isScheduleLoading,
+    isScheduleSuccess,
+    isOpen: isScheduleModalOpen,
+    monitorAvailableTimes,
+    selectedDate,
+    selectedMonitorId,
+    selectedProfessorId: selectedScheduleProfessorId,
+    handleChangeHour,
+    handleChangeProfessor,
+    handleChangeMonitor,
+    selectedHourIndex,
+    selectedSubject: selectedScheduleSubject,
+    showConfirmation,
+    handleChangeDate,
+    handleClose: handleCloseScheduleModal,
+    handleOpenWithMonitor: handleOpenScheduleModal,
+    handleConfirmSchedule,
+    handleEditData,
+    handleShowConfirmation,
+  } = useScheduleHelpModal();
 
   const renderPageTop = () => {
     if (!subject) return <></>;
@@ -123,7 +150,7 @@ const SubjectDetails = () => {
           monitors={monitors}
           selectedProfessorId={selectedProfessorId}
           subject={subject}
-          handleMonitorClick={handleMonitorClick}
+          handleMonitorClick={getMonitorClickHandler(handleOpenScheduleModal)}
           handleProfessorFilterClick={handleProfessorFilterClick}
         />
       </>
@@ -132,6 +159,29 @@ const SubjectDetails = () => {
 
   return (
     <ContainerWithSidebar selectedSidebarItem={SidebarItemEnum.SUBJECTS}>
+      <ScheduleHelpModal
+        availableHours={availableHours}
+        availableMonitors={availableMonitors}
+        isLoadingMonitorAvailableTimes={isLoadingMonitorAvailableTimes}
+        isScheduleLoading={isScheduleLoading}
+        isScheduleSuccess={isScheduleSuccess}
+        monitorAvailableTimes={monitorAvailableTimes}
+        selectedDate={selectedDate}
+        selectedHourIndex={selectedHourIndex}
+        selectedMonitorId={selectedMonitorId}
+        selectedProfessorId={selectedScheduleProfessorId}
+        showConfirmation={showConfirmation}
+        handleChangeHour={handleChangeHour}
+        handleChangeDate={handleChangeDate}
+        handleChangeMonitor={handleChangeMonitor}
+        handleChangeProfessor={handleChangeProfessor}
+        handleEditData={handleEditData}
+        handleShowConfirmation={handleShowConfirmation}
+        subject={selectedScheduleSubject}
+        isOpen={isScheduleModalOpen}
+        handleClose={handleCloseScheduleModal}
+        handleConfirmSchedule={handleConfirmSchedule}
+      />
       <Container>
         <Card>{renderCardContent()}</Card>
       </Container>

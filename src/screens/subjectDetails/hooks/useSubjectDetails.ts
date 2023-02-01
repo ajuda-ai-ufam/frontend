@@ -1,7 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import useGetSubject from '../../../service/requests/useGetSubject';
-import { TSubjectMonitor } from '../../../service/requests/useGetSubject/types';
+import {
+  TCompleteSubject,
+  TSubjectMonitor,
+} from '../../../service/requests/useGetSubject/types';
 import useGetLoggedUser from '../../../service/storage/getLoggedUser';
 import { TypeUserEnum, UserRole } from '../../../utils/constants';
 import { useSnackBar } from '../../../utils/renderSnackBar';
@@ -10,7 +13,7 @@ import { SCREENS } from '../../../utils/screens';
 const useSubjectDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { showErrorSnackBar, showDefaultSnackBar } = useSnackBar();
+  const { showDefaultSnackBar } = useSnackBar();
 
   const { isLoading, data: subject, error, getSubject } = useGetSubject();
   const user = useGetLoggedUser();
@@ -52,19 +55,26 @@ const useSubjectDetails = () => {
     setSelectedProfessorId((prev) => (prev === professorId ? -1 : professorId));
   };
 
-  const handleMonitorClick = (monitor: TSubjectMonitor) => {
-    if (userType !== TypeUserEnum.STUDENT) {
-      showDefaultSnackBar(
-        `Como ${UserRole[
-          userType
-        ].toLowerCase()}, você não pode agendar uma monitoria.`
-      );
-      return;
-    }
+  const getMonitorClickHandler = (
+    openScheduleModal: (
+      subject: TCompleteSubject,
+      monitor: TSubjectMonitor
+    ) => void
+  ) => {
+    return (monitor: TSubjectMonitor) => {
+      if (userType !== TypeUserEnum.STUDENT) {
+        showDefaultSnackBar(
+          `Como ${UserRole[
+            userType
+          ].toLowerCase()}, você não pode agendar uma monitoria.`
+        );
+        return;
+      }
 
-    showErrorSnackBar(
-      `Desculpe, ainda não é possível agendar monitoria com o(a) ${monitor.name}`
-    );
+      if (!subject) return;
+
+      openScheduleModal(subject, monitor);
+    };
   };
 
   useEffect(() => {
@@ -88,7 +98,7 @@ const useSubjectDetails = () => {
     subject,
     userType,
     handleGoBackClick,
-    handleMonitorClick,
+    getMonitorClickHandler,
     handleProfessorFilterClick,
     handleSearch,
     handleSearchChange,

@@ -15,7 +15,7 @@ type Props = {
   subject: TSubject;
   userTypeId?: number;
   handleAssignProfessors(subject: TSubject): void;
-  handleScheduleHelp(id: number): void;
+  handleConfirmSchedule(subject: TSubject): void;
   handleSubjectClick(id: number): void;
 };
 
@@ -23,7 +23,7 @@ const SubjectsListItem = ({
   subject,
   userTypeId,
   handleAssignProfessors,
-  handleScheduleHelp,
+  handleConfirmSchedule,
   handleSubjectClick,
 }: Props) => {
   const renderButton = () => {
@@ -31,10 +31,10 @@ const SubjectsListItem = ({
       return (
         <ButtonContainer>
           <ActionButton
-            onClick={() => handleScheduleHelp(subject.id)}
+            onClick={() => handleConfirmSchedule(subject)}
             startIcon={<CalendarMonthRounded />}
           >
-            Ajuda
+            Agendar
           </ActionButton>
         </ButtonContainer>
       );

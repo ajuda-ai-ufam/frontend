@@ -1,3 +1,5 @@
+import { TCompleteSubject } from '../useGetSubject/types';
+
 export type TSubject = {
   id: number;
   name: string;
@@ -12,7 +14,52 @@ export type TListSubjectsResponse = {
     total_pages: number;
     total_items: number;
   };
-  data: TSubject[];
+  data: TCompleteSubject[];
+};
+
+export type TListSubjectsHttpResponse = {
+  meta: {
+    current_page: number;
+    items_per_page: number;
+    total_pages: number;
+    total_items: number;
+  };
+  data: {
+    id: number;
+    name: string;
+    code: string;
+    course_id: number;
+    SubjectResponsability: {
+      professor: {
+        user: {
+          id: number;
+          name: string;
+          email: string;
+        };
+      };
+    }[];
+    Monitor: {
+      id: number;
+      responsible_professor: {
+        user: {
+          id: number;
+          name: string;
+          email: string;
+        };
+      };
+      student: {
+        user: {
+          id: number;
+          name: string;
+          email: string;
+        };
+        course: {
+          id: number;
+          name: string;
+        };
+      };
+    }[];
+  }[];
 };
 
 export type TListSubjectsParams = {
