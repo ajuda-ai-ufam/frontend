@@ -133,3 +133,25 @@ export const ContinueButton = styled(Button).attrs({
     width: 100% !important;
   }
 `;
+
+export const ConsentContainer = styled(Box).attrs({
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'flex-start',
+  padding: '0px',
+  gap: '8px',
+})`
+  margin-top: 32px;
+`;
+
+export const TypographyConsent = styled(Typography).attrs({
+  variant: 'caption',
+  textAlign: 'center',
+})``;
+
+export const TypographyGreen = styled(Typography).attrs({
+  variant: 'caption',
+  color: 'primary',
+})`
+  cursor: pointer !important;
+`;
