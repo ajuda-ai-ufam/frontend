@@ -21,7 +21,12 @@ import {
   ButtonContainer,
   CancelButton,
   ContinueButton,
+  ConsentContainer,
+  TypographyConsent,
+  TypographyGreen,
 } from '../../styles';
+import useTermConsentModal from '../../../../components/termsConsentModal/hooks/useTermConsentModal';
+import TermConsentModal from '../../../../components/termsConsentModal';
 
 const FormRegister = () => {
   const {
@@ -48,6 +53,8 @@ const FormRegister = () => {
     handleCancelClick,
     handleContinueClick,
   }: TRegisterProfessorHook = useRegisterProfessor();
+
+  const { isOpen, handleOpenModal, handleCloseModal } = useTermConsentModal();
 
   const NameError = () => {
     if (!!nameError) return <FormHelperText error>{nameError}</FormHelperText>;
@@ -159,6 +166,17 @@ const FormRegister = () => {
                   />
                   <ConfirmPasswordError />
                 </TextFieldContainer>
+                <ConsentContainer>
+                  <TypographyConsent>
+                    Ao clicar em “Finalizar”, você autoriza o recebimento de
+                    notificações pelo e-mail IComp cadastrado na plataforma, bem
+                    como Aceito os{' '}
+                    <TypographyGreen onClick={() => handleOpenModal()}>
+                      Termos de Consentimentos de Coleta de Dados e Política de
+                      Privacidade.
+                    </TypographyGreen>
+                  </TypographyConsent>
+                </ConsentContainer>
                 <ButtonContainer>
                   <CancelButton variant="text" onClick={handleCancelClick}>
                     Cancelar cadastro
@@ -166,6 +184,12 @@ const FormRegister = () => {
                   <ContinueButton type="submit">Continuar</ContinueButton>
                 </ButtonContainer>
               </StyledForm>
+
+              <TermConsentModal
+                isOpen={isOpen}
+                handleOpenModal={handleOpenModal}
+                handleCloseModal={handleCloseModal}
+              />
             </>
           ) : (
             <LoadingAnimation />

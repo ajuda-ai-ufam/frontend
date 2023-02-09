@@ -8,13 +8,13 @@ const useAddMonitorRequest = () => {
   const [error, setError] = useState<string>();
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const addMonitor = async (studentId: number, body: TAddMonitorRequest) => {
+  const addMonitor = async (body: TAddMonitorRequest) => {
     setIsLoading(true);
     setIsSuccess(false);
     setError(undefined);
 
     try {
-      await api.post(`/monitor/request/${studentId}`, body);
+      await api.post(`/monitor/request/`, body);
 
       setIsSuccess(true);
     } catch (error) {

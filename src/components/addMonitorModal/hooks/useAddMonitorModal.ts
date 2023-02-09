@@ -49,7 +49,7 @@ const useAddMonitorModal = () => {
   };
 
   const handleAddMonitorClick = () => {
-    addMonitor(user ? Number(user.sub) : -1, {
+    addMonitor({
       professor_id: selectedProfessorId,
       subject_id: selectedSubject?.id as number,
     });

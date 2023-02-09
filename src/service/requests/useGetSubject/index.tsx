@@ -33,6 +33,7 @@ const useGetSubject = () => {
         monitors: data.Monitor.map((monitor) => ({
           ...monitor.student.user,
           id: monitor.id,
+          studentId: monitor.student.user.id,
           course: monitor.student.course,
           responsable: monitor.responsible_professor.user,
         })),
