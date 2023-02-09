@@ -10,6 +10,7 @@ export type TSubjectMonitor = {
   id: number;
   name: string;
   email: string;
+  studentId?: number;
   responsable: {
     id: number;
     name: string;

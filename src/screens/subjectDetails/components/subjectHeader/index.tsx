@@ -48,9 +48,12 @@ const SubjectHeader = ({ subject, userType, handleGoBackClick }: Props) => {
 
   const renderButton = () => {
     if (!subject) return <></>;
-
     if (userType === TypeUserEnum.STUDENT && subject.responsables.length) {
-      if (!subject.monitors.find((monitor) => monitor.id === Number(userId))) {
+      if (
+        !subject.monitors.find(
+          (monitor) => monitor.studentId === Number(userId)
+        )
+      ) {
         return (
           <Button
             onClick={() => handleOpenAddMonitorModal(subject)}
