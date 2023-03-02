@@ -6,7 +6,11 @@ import {
   TSubjectMonitor,
 } from '../../../service/requests/useGetSubject/types';
 import useGetLoggedUser from '../../../service/storage/getLoggedUser';
-import { TypeUserEnum, UserRole } from '../../../utils/constants';
+import {
+  TypeMonitoringStatus,
+  TypeUserEnum,
+  UserRole,
+} from '../../../utils/constants';
 import { useSnackBar } from '../../../utils/renderSnackBar';
 import { SCREENS } from '../../../utils/screens';
 
@@ -25,7 +29,10 @@ const useSubjectDetails = () => {
   const monitors = useMemo(() => {
     if (!subject) return [];
 
-    let filteredMonitors = subject.monitors;
+    let filteredMonitors = subject.monitors.filter(
+      (monitor) => monitor.status === TypeMonitoringStatus.AVAILABLE
+    );
+
     if (selectedProfessorId !== -1) {
       filteredMonitors = filteredMonitors.filter(
         (monitor) => monitor.responsable.id === selectedProfessorId

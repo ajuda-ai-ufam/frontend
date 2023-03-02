@@ -1,3 +1,4 @@
+import { TypeMonitoringStatus } from '../../../utils/constants';
 import { TSubject } from '../useListSubjectsRequest/types';
 
 export type TSubjectResponsible = {
@@ -11,6 +12,7 @@ export type TSubjectMonitor = {
   name: string;
   email: string;
   studentId?: number;
+  status?: TypeMonitoringStatus;
   responsable: {
     id: number;
     name: string;
@@ -60,6 +62,10 @@ export type TGetSubjectResponse = {
         id: number;
         name: string;
       };
+    };
+    status: {
+      id: number;
+      status: string;
     };
   }[];
 };
