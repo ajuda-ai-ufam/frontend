@@ -1,4 +1,4 @@
-import { Typography, Chip, Switch, Modal, Select } from '@mui/material';
+import { Switch, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import styled from 'styled-components';
 import theme from '../../utils/theme';

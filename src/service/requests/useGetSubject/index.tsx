@@ -1,5 +1,6 @@
 import { AxiosError } from 'axios';
 import { useState } from 'react';
+import { TypeMonitoringStatus } from '../../../utils/constants';
 import api from '../../api';
 import {
   TCompleteSubject,
@@ -34,6 +35,7 @@ const useGetSubject = () => {
           ...monitor.student.user,
           id: monitor.id,
           studentId: monitor.student.user.id,
+          status: monitor.status.status as TypeMonitoringStatus,
           course: monitor.student.course,
           responsable: monitor.responsible_professor.user,
         })),
