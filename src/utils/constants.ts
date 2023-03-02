@@ -38,14 +38,16 @@ export enum SchedulesStatus {
   PENDING = 1,
   CONFIRMED = 2,
   CANCELED = 3,
-  OVERDUE = 4,
+  REALIZED = 4,
+  NOT_REALIZED = 5,
 }
 
 export const ScheduleStatusTranslate = {
   [SchedulesStatus.PENDING]: 'Pendente',
   [SchedulesStatus.CONFIRMED]: 'Confirmado',
   [SchedulesStatus.CANCELED]: 'Cancelado',
-  [SchedulesStatus.OVERDUE]: 'Vencido',
+  [SchedulesStatus.REALIZED]: 'Realizada',
+  [SchedulesStatus.NOT_REALIZED]: 'Não realizada',
 };
 
 export enum SchedulesFilters {
