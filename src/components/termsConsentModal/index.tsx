@@ -11,15 +11,10 @@ import {
 
 type Props = {
   isOpen: boolean;
-  handleOpenModal(): void;
   handleCloseModal(): void;
 };
 
-const TermConsentModal = ({
-  isOpen,
-  handleOpenModal,
-  handleCloseModal,
-}: Props) => {
+const TermConsentModal = ({ isOpen, handleCloseModal }: Props) => {
   const renderContent = () => {
     return (
       <TermConsentCard>

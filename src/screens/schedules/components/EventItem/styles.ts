@@ -102,7 +102,8 @@ const scheduleStatusColor = {
   [SchedulesStatus.PENDING]: theme.palette.warning.main,
   [SchedulesStatus.CONFIRMED]: theme.palette.primary.main,
   [SchedulesStatus.CANCELED]: theme.palette.error.main,
-  [SchedulesStatus.OVERDUE]: theme.palette.error.main,
+  [SchedulesStatus.REALIZED]: theme.palette.error.main,
+  [SchedulesStatus.NOT_REALIZED]: theme.palette.error.main,
 };
 
 export const StatusIcon = styled(Box).attrs<StatusIconProps>((props) => ({

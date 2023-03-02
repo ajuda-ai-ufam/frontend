@@ -171,7 +171,7 @@ const FormRegister = () => {
                     Ao clicar em “Finalizar”, você autoriza o recebimento de
                     notificações pelo e-mail IComp cadastrado na plataforma, bem
                     como Aceito os{' '}
-                    <TypographyGreen onClick={() => handleOpenModal()}>
+                    <TypographyGreen onClick={handleOpenModal}>
                       Termos de Consentimentos de Coleta de Dados e Política de
                       Privacidade.
                     </TypographyGreen>
@@ -187,7 +187,6 @@ const FormRegister = () => {
 
               <TermConsentModal
                 isOpen={isOpen}
-                handleOpenModal={handleOpenModal}
                 handleCloseModal={handleCloseModal}
               />
             </>
