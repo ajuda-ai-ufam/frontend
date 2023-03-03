@@ -27,8 +27,10 @@ api.interceptors.response.use(
     return response;
   },
   (error) => {
-    useClearStorage();
-    window.location.href = SCREENS.LOGIN;
+    if (error.response.status === 401) {
+      useClearStorage();
+      window.location.href = SCREENS.LOGIN;
+    }
     return Promise.reject(error);
   }
 );
