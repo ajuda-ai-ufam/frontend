@@ -11,7 +11,7 @@ export const SCREENS = {
   MONITOR_REQUESTS: '/monitor-requests',
 };
 
-export const NOTLOGGEDSCREENS = [
+export const NOT_LOGGED_SCREENS = [
   '/code-verification',
   '/',
   '/register',
