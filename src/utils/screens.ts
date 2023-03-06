@@ -10,3 +10,11 @@ export const SCREENS = {
   SUBJECT_DETAILS: '/subjects/:id',
   MONITOR_REQUESTS: '/monitor-requests',
 };
+
+export const NOT_LOGGED_SCREENS = [
+  '/code-verification',
+  '/',
+  '/register',
+  '/register/student',
+  '/register/professor',
+];
