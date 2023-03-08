@@ -12,6 +12,7 @@ export enum SidebarItemEnum {
   SCHEDULES = 'schedules',
   MONITOR_REQUESTS = 'monitor-requests',
   LOGOUT = 'logout',
+  SCHEDULES_HISTORIC = 'schedules-historic',
 }
 
 export enum TypeUserEnum {
