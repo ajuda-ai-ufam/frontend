@@ -46,10 +46,8 @@ const useSchedulesHistoric = ({ getSchedules, setPage }: Props) => {
 
   const handleChangeBeginDateFilter = (date: Dayjs | null) => {
     const currentFilters: TScheduleHistoricFilters = {
-      nameOrEnrollFilter: filters.nameOrEnrollFilter,
+      ...filters,
       beginDateFilter: date,
-      endDateFilter: filters.endDateFilter,
-      responsiblesOrSubjectsFilter: filters.responsiblesOrSubjectsFilter,
     };
 
     handleFiltersChange(currentFilters);
@@ -57,10 +55,8 @@ const useSchedulesHistoric = ({ getSchedules, setPage }: Props) => {
 
   const handleChangeEndDateFilter = (date: Dayjs | null) => {
     const currentFilters: TScheduleHistoricFilters = {
-      nameOrEnrollFilter: filters.nameOrEnrollFilter,
-      beginDateFilter: filters.beginDateFilter,
+      ...filters,
       endDateFilter: date,
-      responsiblesOrSubjectsFilter: filters.responsiblesOrSubjectsFilter,
     };
 
     handleFiltersChange(currentFilters);
@@ -75,9 +71,7 @@ const useSchedulesHistoric = ({ getSchedules, setPage }: Props) => {
       typeof value === 'string' ? value.split(' ') : value;
 
     const currentFilters: TScheduleHistoricFilters = {
-      nameOrEnrollFilter: filters.nameOrEnrollFilter,
-      beginDateFilter: filters.beginDateFilter,
-      endDateFilter: filters.endDateFilter,
+      ...filters,
       responsiblesOrSubjectsFilter: responsiblesOrSubjectsFilter,
     };
 
@@ -88,10 +82,8 @@ const useSchedulesHistoric = ({ getSchedules, setPage }: Props) => {
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
     const currentFilters: TScheduleHistoricFilters = {
+      ...filters,
       nameOrEnrollFilter: e.target.value,
-      beginDateFilter: filters.beginDateFilter,
-      endDateFilter: filters.endDateFilter,
-      responsiblesOrSubjectsFilter: filters.responsiblesOrSubjectsFilter,
     };
 
     handleFiltersChange(currentFilters);
