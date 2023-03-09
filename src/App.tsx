@@ -16,6 +16,7 @@ import theme from './utils/theme';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import 'moment/locale/pt';
+import SchedulesHistoric from './screens/schedulesHistoric';
 
 const App: React.FC = () => {
   return (
@@ -54,6 +55,11 @@ const App: React.FC = () => {
               <Route
                 path={SCREENS.MONITOR_REQUESTS}
                 element={<MonitorRequests />}
+              />
+
+              <Route
+                path={SCREENS.SCHEDULES_HISTORIC}
+                element={<SchedulesHistoric />}
               />
             </Routes>
           </BrowserRouter>
