@@ -3,6 +3,7 @@ import {
   GroupAddRounded,
   LogoutRounded,
   SchoolRounded,
+  HistoryRounded,
 } from '@mui/icons-material';
 import { useMediaQuery } from '@mui/material';
 import { useEffect, useMemo, useState } from 'react';
@@ -40,6 +41,15 @@ const useSidebar = () => {
     icon: SchoolRounded,
     handleClick: () => {
       navigate(SCREENS.SUBJECTS);
+    },
+  };
+
+  const schedulesHistoric: TSidebarItem = {
+    key: SidebarItemEnum.SCHEDULES_HISTORIC,
+    text: 'Histórico',
+    icon: HistoryRounded,
+    handleClick: () => {
+      navigate(SCREENS.SCHEDULES_HISTORIC);
     },
   };
 
@@ -85,7 +95,7 @@ const useSidebar = () => {
     if (user?.type_user_id === TypeUserEnum.STUDENT)
       return [subjectsItem, schedulesItem, logoutItem];
 
-    return [subjectsItem, monitorRequestsItem, logoutItem];
+    return [subjectsItem, monitorRequestsItem, schedulesHistoric, logoutItem];
   }, [user]);
 
   return {
