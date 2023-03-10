@@ -1,7 +1,6 @@
 import { Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import styled from 'styled-components';
-import { SchedulesStatus } from '../../../../utils/constants';
 import theme from '../../../../utils/theme';
 
 export const Container = styled(Box).attrs({
@@ -96,26 +95,3 @@ export const StatusValue = styled(Box).attrs({
   alignItems: 'center',
   gap: '8px',
 })``;
-
-interface StatusIconProps {
-  status: SchedulesStatus;
-  monitor: boolean;
-}
-
-const scheduleStatusColor = {
-  [SchedulesStatus.PENDING]: theme.palette.warning.main,
-  [SchedulesStatus.CONFIRMED]: theme.palette.primary.main,
-  [SchedulesStatus.CANCELED]: theme.palette.error.main,
-  [SchedulesStatus.OVERDUE]: theme.palette.error.main,
-};
-
-export const StatusIcon = styled(Box).attrs<StatusIconProps>((props) => ({
-  width: '16px',
-  minWidth: '16px',
-  height: '16px',
-  borderRadius: '16px',
-  backgroundColor:
-    !props.monitor && props.status === SchedulesStatus.PENDING
-      ? theme.palette.grey[400]
-      : scheduleStatusColor[props.status],
-}))<StatusIconProps>``;
