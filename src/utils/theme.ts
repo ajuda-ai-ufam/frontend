@@ -8,7 +8,7 @@ const breakpoints = {
   values: {
     xs: 0,
     sm: 600,
-    md: 905,
+    md: 906,
     lg: 1048,
     xl: 1280,
   },
@@ -41,6 +41,13 @@ const components = {
     styleOverrides: {
       dayWithMargin: {
         backgroundColor: 'white',
+      },
+    },
+  },
+  MuiCalendarOrClockPicker: {
+    styleOverrides: {
+      root: {
+        boxShadow: '0px 0px 12px rgba(0, 0, 0, 0.1) !important',
       },
     },
   },
