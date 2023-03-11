@@ -1,3 +1,5 @@
+import { SchedulesStatus } from '../../../utils/constants';
+
 export type TCourse = {
   id: number;
   name: string;
@@ -70,4 +72,5 @@ export type TGetSchedulesHistoricRequestParams = {
   responsibleIds?: number[];
   studentName?: string;
   studentEnrollment?: string;
+  status?: SchedulesStatus;
 };
