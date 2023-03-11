@@ -5,7 +5,7 @@ import useGetAllProfessors from '../../../service/requests/useGetAllProfessors';
 import useGetProfessorSubjects from '../../../service/requests/useGetProfessorSubjects';
 import { TGetSchedulesHistoricRequestParams } from '../../../service/requests/useGetSchedulesHistoricRequest/types';
 import useGetLoggedUser from '../../../service/storage/getLoggedUser';
-import { TypeUserEnum } from '../../../utils/constants';
+import { SchedulesStatus, TypeUserEnum } from '../../../utils/constants';
 import { useSnackBar } from '../../../utils/renderSnackBar';
 import { TScheduleHistoricFilters } from './types';
 
@@ -118,6 +118,7 @@ const useSchedulesHistoric = ({ getSchedules, setPage }: Props) => {
       startDate: filters.beginDateFilter?.toDate(),
       studentName: getValues.name,
       studentEnrollment: getValues.enrollment.toString(),
+      status: SchedulesStatus.REALIZED,
     } as TGetSchedulesHistoricRequestParams;
 
     const ids = filters.responsiblesOrSubjectsFilter.map((attr) =>

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import useGetSchedulesHistoricRequest from '../../../service/requests/useGetSchedulesHistoricRequest';
 import { TGetSchedulesHistoricRequestParams } from '../../../service/requests/useGetSchedulesHistoricRequest/types';
 import useGetLoggedUser from '../../../service/storage/getLoggedUser';
-import { TypeUserEnum } from '../../../utils/constants';
+import { SchedulesStatus, TypeUserEnum } from '../../../utils/constants';
 import { useSnackBar } from '../../../utils/renderSnackBar';
 import useFiltersForm from './useFiltersForm';
 import useFormatSchedules from './useFormatSchedules';
@@ -57,6 +57,7 @@ const useSchedulesHistoric = () => {
       startDate: filters.beginDateFilter?.toDate(),
       studentName: getValues.name,
       studentEnrollment: getValues.enrollment.toString(),
+      status: SchedulesStatus.REALIZED,
     } as TGetSchedulesHistoricRequestParams;
 
     const ids = filters.responsiblesOrSubjectsFilter.map((attr) =>
@@ -75,7 +76,7 @@ const useSchedulesHistoric = () => {
   useEffect(() => {
     document.title = 'Histórico de Agendamentos';
 
-    void getSchedules({ page });
+    void getSchedules({ page, status: SchedulesStatus.REALIZED });
   }, []);
 
   useEffect(() => {
