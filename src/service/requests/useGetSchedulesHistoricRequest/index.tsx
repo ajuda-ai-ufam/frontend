@@ -1,7 +1,6 @@
 import { AxiosError } from 'axios';
 import moment from 'moment';
 import { useState } from 'react';
-import { SchedulesStatus } from '../../../utils/constants';
 import api from '../../api';
 import {
   TGetSchedulesHistoricErrorResponse,
@@ -19,6 +18,7 @@ const useGetSchedulesHistoricRequest = () => {
     startDate,
     endDate,
     responsibleIds,
+    status,
     studentEnrollment,
     studentName,
     subjectIds,
@@ -37,9 +37,8 @@ const useGetSchedulesHistoricRequest = () => {
 
     try {
       const response = await api.get(
-        `/schedules?pageSize=10&page=${page || 1}&status=${
-          SchedulesStatus.CONFIRMED
-        }${
+        `/schedules?pageSize=10&page=${page || 1}
+        ${status ? `&status=${status}` : ''}${
           startDate
             ? `&startDate=` + moment(startDate).format('YYYY-MM-DD')
             : ``
