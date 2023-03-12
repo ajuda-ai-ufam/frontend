@@ -87,6 +87,7 @@ export const SchedulesOpen = styled(Box).attrs({
   @media (max-width: ${theme.breakpoints.values.md}px) {
     flex-direction: row !important;
     flex-wrap: wrap !important;
+    justify-content: center !important;
   }
 `;
 
@@ -96,7 +97,11 @@ export const ElementContainer = styled(Box).attrs({
   alignItems: 'flex-start',
   padding: '0px',
   gap: '4px',
-})``;
+})`
+  @media (max-width: ${theme.breakpoints.values.md}px) {
+    align-items: center !important;
+  }
+`;
 
 export const ConfirmationButtonContainer = styled(Box).attrs({
   display: 'flex',
