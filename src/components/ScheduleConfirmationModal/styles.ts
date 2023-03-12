@@ -51,11 +51,22 @@ export const ScheduleContainer = styled(Box).attrs({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
+  justifyContent: 'space-between',
   padding: '16px 24px',
   gap: '16px',
+  backgroundColor: theme.palette.background.default,
+  width: '94%',
 })`
-  background: #f6f7f6;
   border-radius: 16px;
+
+  @media (max-width: ${theme.breakpoints.values.md}px) {
+    flex-direction: column !important;
+    width: 40% !important;
+  }
+
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    width: 100% !important;
+  }
 `;
 
 export const SchedulesOpen = styled(Box).attrs({
@@ -64,10 +75,20 @@ export const SchedulesOpen = styled(Box).attrs({
   alignItems: 'flex-start',
   justifyContent: 'space-between',
   maxHeight: '488px',
-  width: '968px',
+  maxWidth: '968px',
+  width: '100%',
   gap: '16px',
   overflow: 'auto',
-})``;
+})`
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    max-height: 100% !important;
+    widht: 80% !important;
+  }
+  @media (max-width: ${theme.breakpoints.values.md}px) {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+  }
+`;
 
 export const ElementContainer = styled(Box).attrs({
   display: 'flex',
@@ -75,7 +96,6 @@ export const ElementContainer = styled(Box).attrs({
   alignItems: 'flex-start',
   padding: '0px',
   gap: '4px',
-  width: '192px',
 })``;
 
 export const ConfirmationButtonContainer = styled(Box).attrs({
@@ -90,12 +110,24 @@ export const ConfirmationButtonContainer = styled(Box).attrs({
 export const ConfirmationButton = styled(Button).attrs({
   variant: 'contained',
   color: 'primary',
-})``;
+
+  width: '50%',
+})`
+  @media (max-width: ${theme.breakpoints.values.md}px) {
+    width: 50% !important ;
+  }
+`;
 
 export const NegationButton = styled(Button).attrs({
   variant: 'contained',
   color: 'error',
-})``;
+
+  width: '50%',
+})`
+  @media (max-width: ${theme.breakpoints.values.md}px) {
+    width: 50% !important ;
+  }
+`;
 
 export const FinalButton = styled(Button).attrs({
   color: 'primary',

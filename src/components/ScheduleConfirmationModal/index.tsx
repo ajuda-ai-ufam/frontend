@@ -2,21 +2,13 @@ import Modal from '../modal';
 import {
   HeaderTypography,
   SubTypography,
-  DoneTypography,
-  NotDoneTypography,
   Card,
-  ScheduleContainer,
   ButtonContainer,
-  ElementContainer,
-  ConfirmationButtonContainer,
-  ConfirmationButton,
-  NegationButton,
   FinalButton,
   SchedulesOpen,
 } from './styles';
-import { Typography } from '@mui/material';
 import { TScheduleEnding } from '../../service/requests/useGetSchedulesEndingRequest/types';
-import { CheckCircleRounded, CancelRounded } from '@mui/icons-material';
+import ScheduleElement from './components/scheduleElement';
 
 type Props = {
   isOpen: boolean;
@@ -25,6 +17,7 @@ type Props = {
   isLoadingUpdate: boolean;
   errorUpdate?: string;
   numberScheduleOpens: number;
+  selectedSchedule?: TScheduleEnding;
   handleClickDone(schedule: TScheduleEnding): void;
   handleClickNotDone(schedule: TScheduleEnding): void;
   handleClose(): void;
@@ -36,13 +29,12 @@ const ScheduleConfirmationModal = ({
   handleClose,
   handleClickDone,
   handleClickNotDone,
-  isSuccess,
   isLoadingUpdate,
-  errorUpdate,
   numberScheduleOpens,
+  selectedSchedule,
 }: Props) => {
-  const renderContent = () => {
-    return (
+  return (
+    <Modal width="991px" isOpen={isOpen} handleClose={handleClose}>
       <Card>
         <HeaderTypography>Confirme sua monitoria</HeaderTypography>
         <SubTypography>
@@ -52,65 +44,21 @@ const ScheduleConfirmationModal = ({
         </SubTypography>
         <SchedulesOpen>
           {scheduleState?.map((schedule) => (
-            <ScheduleContainer>
-              <ElementContainer>
-                <Typography variant="caption">Aluno</Typography>
-                <Typography variant="subtitle1">{schedule.name}</Typography>
-              </ElementContainer>
-              <ElementContainer>
-                <Typography variant="caption">Data</Typography>
-                <Typography variant="subtitle1">{schedule.date}</Typography>
-              </ElementContainer>
-              <ElementContainer>
-                <Typography variant="caption">Horário</Typography>
-                <Typography variant="subtitle1">{`${schedule.startHour} até ${schedule.endHour}`}</Typography>
-              </ElementContainer>
-              <ConfirmationButtonContainer>
-                {schedule.status === 2 ? (
-                  <>
-                    <NegationButton
-                      loading={isLoadingUpdate}
-                      onClick={() => handleClickNotDone(schedule)}
-                    >
-                      Não realizada
-                    </NegationButton>
-                    <ConfirmationButton
-                      loading={isLoadingUpdate}
-                      onClick={() => handleClickDone(schedule)}
-                    >
-                      Realizada
-                    </ConfirmationButton>
-                  </>
-                ) : schedule.status === 4 ? (
-                  <>
-                    <CheckCircleRounded color="primary" />
-                    <DoneTypography>Realizada</DoneTypography>
-                  </>
-                ) : (
-                  <>
-                    <CancelRounded color="error" />
-                    <NotDoneTypography>Não realizada</NotDoneTypography>
-                  </>
-                )}
-              </ConfirmationButtonContainer>
-            </ScheduleContainer>
+            <ScheduleElement
+              schedule={schedule}
+              handleClickDone={handleClickDone}
+              handleClickNotDone={handleClickNotDone}
+              isLoadingUpdate={isLoadingUpdate}
+              selectedSchedule={selectedSchedule}
+            />
           ))}
         </SchedulesOpen>
         <ButtonContainer>
-          {numberScheduleOpens != 0 ? (
-            <FinalButton disabled>Finalizar Confirmaçõoes</FinalButton>
-          ) : (
-            <FinalButton onClick={handleClose}>
-              Finalizar Confirmaçõoes
-            </FinalButton>
-          )}
+          <FinalButton disabled={!!numberScheduleOpens} onClick={handleClose}>
+            Finalizar Confirmações
+          </FinalButton>
         </ButtonContainer>
       </Card>
-    );
-  };
-  return (
-    <Modal width="991px" isOpen={isOpen} handleClose={handleClose}>
-      {renderContent()}
     </Modal>
   );
 };

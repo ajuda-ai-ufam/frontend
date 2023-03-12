@@ -66,10 +66,11 @@ const Subjects = () => {
   const {
     isOpen: isOpenScheduleConfirmationModal,
     scheduleState,
-    isSuccess: isSuccessUpdate,
+    isSuccessUpdate: isSuccessUpdate,
     isLoadingUpdate: isLoadingUpdate,
     errorUpdate: errorUpdate,
     numberScheduleOpens: numberScheduleOpens,
+    selectedSchedule: selectedSchedule,
     handleCloseModal: handleCloseScheduleConfirmation,
     handleClickDone: handleClickDone,
     handleClickNotDone: handleClickNotDone,
@@ -122,6 +123,7 @@ const Subjects = () => {
         isLoadingUpdate={isLoadingUpdate}
         errorUpdate={errorUpdate}
         numberScheduleOpens={numberScheduleOpens}
+        selectedSchedule={selectedSchedule}
       />
       <Container>
         <Card>

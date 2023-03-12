@@ -2,13 +2,11 @@ import { useState } from 'react';
 import { AxiosError } from 'axios';
 import api from '../../api';
 import { TUpdateScheduleEndingErrorResponse } from './types';
-import { useSnackBar } from '../../../utils/renderSnackBar';
 
-const useUpdateScheduleEnding = () => {
+const useUpdateScheduleEndingRequest = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string>();
   const [isSuccess, setIsSuccess] = useState(false);
-  const { showSuccessSnackBar } = useSnackBar();
 
   const updateScheduleEnding = async (id: number, realized: boolean) => {
     setIsLoading(true);
@@ -18,16 +16,13 @@ const useUpdateScheduleEnding = () => {
     try {
       await api.post(`/schedules/${id}/end`, { realized: realized });
       setIsSuccess(true);
-      realized === true
-        ? showSuccessSnackBar('Monitoria realizada.')
-        : showSuccessSnackBar('Monitora não realizada.');
     } catch (error) {
       const err = error as AxiosError;
       const errorData = err.response
         ?.data as TUpdateScheduleEndingErrorResponse;
       const errorMessage = errorData?.message || 'Erro desconhecido';
 
-      console.error('Error during register. Error:', errorMessage);
+      console.error('Error during update schedule. Error:', errorMessage);
 
       setError(errorMessage);
     } finally {
@@ -49,4 +44,4 @@ const useUpdateScheduleEnding = () => {
   };
 };
 
-export default useUpdateScheduleEnding;
+export default useUpdateScheduleEndingRequest;
