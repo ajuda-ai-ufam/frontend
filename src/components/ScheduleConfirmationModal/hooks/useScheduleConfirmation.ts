@@ -32,12 +32,12 @@ const useScheduleConfirmation = () => {
   const handleClickDone = (schedule: TScheduleEnding) => {
     setRealized(true);
     setSelectedSchedule(schedule);
-    updateScheduleEnding(schedule.id, realized);
+    updateScheduleEnding(schedule.id, true);
   };
 
   const handleClickNotDone = (schedule: TScheduleEnding) => {
     setSelectedSchedule(schedule);
-    updateScheduleEnding(schedule.id, realized);
+    updateScheduleEnding(schedule.id, false);
   };
 
   const handleCloseModal = () => {
