@@ -7,34 +7,22 @@ import {
   FinalButton,
   SchedulesOpen,
 } from './styles';
-import { TScheduleEnding } from '../../service/requests/useGetSchedulesEndingRequest/types';
 import ScheduleElement from './components/scheduleElement';
+import useScheduleConfirmation from './hooks/useScheduleConfirmation';
 
-type Props = {
-  isOpen: boolean;
-  scheduleState?: TScheduleEnding[];
-  isSuccess: boolean;
-  isLoadingUpdate: boolean;
-  errorUpdate?: string;
-  numberScheduleOpens: number;
-  selectedSchedule?: TScheduleEnding;
-  handleClickDone(schedule: TScheduleEnding): void;
-  handleClickNotDone(schedule: TScheduleEnding): void;
-  handleClose(): void;
-};
-
-const ScheduleConfirmationModal = ({
-  isOpen,
-  scheduleState,
-  handleClose,
-  handleClickDone,
-  handleClickNotDone,
-  isLoadingUpdate,
-  numberScheduleOpens,
-  selectedSchedule,
-}: Props) => {
+const ScheduleConfirmationModal = () => {
+  const {
+    isOpen,
+    scheduleState,
+    isLoadingUpdate,
+    numberScheduleOpens,
+    selectedSchedule,
+    handleClickDone,
+    handleClickNotDone,
+    handleCloseModal,
+  } = useScheduleConfirmation();
   return (
-    <Modal width="991px" isOpen={isOpen} handleClose={handleClose}>
+    <Modal width="991px" isOpen={isOpen} handleClose={handleCloseModal}>
       <Card>
         <HeaderTypography>Confirme sua monitoria</HeaderTypography>
         <SubTypography>
@@ -54,7 +42,10 @@ const ScheduleConfirmationModal = ({
           ))}
         </SchedulesOpen>
         <ButtonContainer>
-          <FinalButton disabled={!!numberScheduleOpens} onClick={handleClose}>
+          <FinalButton
+            disabled={!!numberScheduleOpens}
+            onClick={handleCloseModal}
+          >
             Finalizar Confirmações
           </FinalButton>
         </ButtonContainer>

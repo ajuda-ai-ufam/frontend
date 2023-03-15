@@ -2,11 +2,10 @@ import { Typography } from '@mui/material';
 import AssignProfessorsModal from '../../components/assignProfessorsModal';
 import useAssignProfessorsModal from '../../components/assignProfessorsModal/hooks/useAssignProfessorsModal';
 import ContainerWithSidebar from '../../components/containerWithSidebar';
-import useScheduleConfirmation from '../../components/ScheduleConfirmationModal/hooks/useScheduleConfirmation';
 import ScheduleHelpModal from '../../components/ScheduleHelpModal';
 import useScheduleHelpModal from '../../components/ScheduleHelpModal/hooks/useScheduleHelpModal';
 import SearchField from '../../components/searchField';
-import { SidebarItemEnum } from '../../utils/constants';
+import { SidebarItemEnum, TypeUserEnum } from '../../utils/constants';
 import SubjectsList from './components/SubjectsList';
 import useSubjects from './hooks/useSubjects';
 import { Card, Container } from './styles';
@@ -63,19 +62,6 @@ const Subjects = () => {
     handleShowConfirmation,
   } = useScheduleHelpModal();
 
-  const {
-    isOpen: isOpenScheduleConfirmationModal,
-    scheduleState,
-    isSuccessUpdate: isSuccessUpdate,
-    isLoadingUpdate: isLoadingUpdate,
-    errorUpdate: errorUpdate,
-    numberScheduleOpens: numberScheduleOpens,
-    selectedSchedule: selectedSchedule,
-    handleCloseModal: handleCloseScheduleConfirmation,
-    handleClickDone: handleClickDone,
-    handleClickNotDone: handleClickNotDone,
-  } = useScheduleConfirmation();
-
   return (
     <ContainerWithSidebar selectedSidebarItem={SidebarItemEnum.SUBJECTS}>
       <AssignProfessorsModal
@@ -113,18 +99,12 @@ const Subjects = () => {
         handleConfirmSchedule={handleConfirmSchedule}
       />
 
-      <ScheduleConfirmationModal
-        isOpen={isOpenScheduleConfirmationModal}
-        scheduleState={scheduleState}
-        handleClose={handleCloseScheduleConfirmation}
-        handleClickDone={handleClickDone}
-        handleClickNotDone={handleClickNotDone}
-        isSuccess={isSuccessUpdate}
-        isLoadingUpdate={isLoadingUpdate}
-        errorUpdate={errorUpdate}
-        numberScheduleOpens={numberScheduleOpens}
-        selectedSchedule={selectedSchedule}
-      />
+      {userTypeId === TypeUserEnum.STUDENT ? (
+        <ScheduleConfirmationModal />
+      ) : (
+        <></>
+      )}
+
       <Container>
         <Card>
           <Typography variant="h3">Disciplinas</Typography>
