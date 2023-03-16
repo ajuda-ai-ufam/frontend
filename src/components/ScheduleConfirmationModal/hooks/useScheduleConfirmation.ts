@@ -5,8 +5,9 @@ import useUpdateScheduleEndingRequest from '../../../service/requests/useUpdateS
 import { useSnackBar } from '../../../utils/renderSnackBar';
 import useScheduleEndingFormat from './useScheduleEndingFormat';
 import { SchedulesStatus } from '../../../utils/constants';
+import { TScheduleConfirmationHook } from './types';
 
-const useScheduleConfirmation = () => {
+const useScheduleConfirmation = (): TScheduleConfirmationHook => {
   const [isOpen, setIsOpen] = useState(false);
   const { showErrorSnackBar, showSuccessSnackBar, showInfoSnackBar } =
     useSnackBar();
@@ -32,12 +33,12 @@ const useScheduleConfirmation = () => {
   const handleClickDone = (schedule: TScheduleEnding) => {
     setRealized(true);
     setSelectedSchedule(schedule);
-    updateScheduleEnding(schedule.id, realized);
+    updateScheduleEnding(schedule.id, true);
   };
 
   const handleClickNotDone = (schedule: TScheduleEnding) => {
     setSelectedSchedule(schedule);
-    updateScheduleEnding(schedule.id, realized);
+    updateScheduleEnding(schedule.id, false);
   };
 
   const handleCloseModal = () => {
