@@ -51,7 +51,6 @@ const ScheduleElement = ({
               <>
                 <NegationButton
                   disabled={isLoadingUpdate}
-                  variant="contained"
                   onClick={() => handleClickNotDone(schedule)}
                   sx={{
                     '&.Mui-disabled': {
@@ -60,7 +59,7 @@ const ScheduleElement = ({
                     },
                   }}
                 >
-                  Não Realizada
+                  Não realizada
                 </NegationButton>
                 <ConfirmationButton
                   disabled={isLoadingUpdate}
