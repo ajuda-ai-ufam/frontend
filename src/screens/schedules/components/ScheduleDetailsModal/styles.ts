@@ -2,6 +2,13 @@ import { Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import styled from 'styled-components';
 import theme from '../../../../utils/theme';
+import { Button } from '../../../../components/button';
+
+interface ButtonProp {
+  borderColor?: string;
+  hoverBorderColor?: string;
+  hoverBackGroundColor?: string;
+}
 
 export const DataContainer = styled(Box).attrs({
   display: 'grid',
@@ -11,8 +18,23 @@ export const DataContainer = styled(Box).attrs({
 export const ButtonContainer = styled(Box).attrs({
   display: 'flex',
   width: '100%',
-  justifyContent: 'center',
+  justifyContent: 'space-around',
 })``;
+
+export const ActionButton = styled(Button).attrs((props: ButtonProp) => ({
+  width: '150px',
+  sx: {
+    borderColor: props.borderColor,
+    ':hover': {
+      borderColor: props.hoverBorderColor,
+      backgroundColor: props.hoverBackGroundColor,
+    },
+  },
+}))<ButtonProp>`
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    width: 100% !important;
+  }
+`;
 
 export const ButtonsContainer = styled(Box).attrs({
   display: 'flex',
