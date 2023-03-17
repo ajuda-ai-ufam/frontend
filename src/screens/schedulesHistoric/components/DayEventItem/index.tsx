@@ -3,7 +3,12 @@ import { TSchedules } from '../../../../service/requests/useGetSchedulesHistoric
 import theme from '../../../../utils/theme';
 import { TFormatedSchedules } from '../../hooks/types';
 import EventItem from '../EventItem';
-import { Container, DateContainer, EventsContainer } from './styles';
+import {
+  Container,
+  DateContainer,
+  EventsContainer,
+  DateDayContainer,
+} from './styles';
 
 type Props = {
   dayEvent: TFormatedSchedules;
@@ -11,16 +16,18 @@ type Props = {
 };
 
 const DayEventItem = ({ dayEvent, handleEventClick }: Props) => {
-  const { day, weekDay, month, events } = dayEvent;
+  const { day, weekDay, month, year, events } = dayEvent;
 
   return (
     <Container>
       <DateContainer>
-        <Typography variant="subtitle1">{month}</Typography>
-        <Typography variant="h2">{day}</Typography>
-        <Typography variant="body2" color={theme.palette.grey[500]}>
-          {weekDay}
-        </Typography>
+        <Typography variant="subtitle1">{`${month} ${year}`}</Typography>
+        <DateDayContainer>
+          <Typography variant="h2">{day}</Typography>
+          <Typography variant="body2" color={theme.palette.grey[500]}>
+            {weekDay}
+          </Typography>
+        </DateDayContainer>
       </DateContainer>
 
       <EventsContainer>

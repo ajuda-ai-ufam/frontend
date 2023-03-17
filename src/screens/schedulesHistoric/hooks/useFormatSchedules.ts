@@ -20,6 +20,7 @@ const useFormatSchedules = (
     schedule: TSchedules
   ) => {
     const scheduleGroup = schedule.startDate.toLocaleDateString('pt-BR', {
+      year: 'numeric',
       weekday: 'long',
       month: 'long',
       day: 'numeric',
@@ -45,9 +46,10 @@ const useFormatSchedules = (
     const formatedSchedules: TFormatedSchedules[] = [];
     schedulesGroupMap.forEach((value, key) => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const [weekDay, day, prep, month] = key.split(' ');
+      const [weekDay, day, prep, month, prep2, year] = key.split(' ');
 
       formatedSchedules.push({
+        year: capitalize(year),
         day: Number(day),
         weekDay: capitalize(weekDay.split('-')[0].split(',')[0]),
         month: capitalize(month),
