@@ -22,7 +22,7 @@ export type TScheduleEnding = {
   date: string;
   startHour: string;
   endHour: string;
-  status: number
+  status: number;
   id: number;
 };
 
