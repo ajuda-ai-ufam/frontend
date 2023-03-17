@@ -46,8 +46,7 @@ const useFormatSchedules = (
     const formatedSchedules: TFormatedSchedules[] = [];
     schedulesGroupMap.forEach((value, key) => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const [weekDay, day, prep, month] = key.split(' ');
-      const year = key.slice(key.length - 4, key.length);
+      const [weekDay, day, prep, month, prep2, year] = key.split(' ');
 
       formatedSchedules.push({
         year: capitalize(year),
