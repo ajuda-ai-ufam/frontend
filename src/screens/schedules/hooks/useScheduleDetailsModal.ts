@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useAcceptScheduleRequest from '../../../service/requests/useAcceptScheduleRequest';
+import useCancelScheduleRequest from '../../../service/requests/useCancelScheduleRequest';
 import { TSchedules } from '../../../service/requests/useGetSchedulesRequest/types';
 import useRefuseScheduleRequest from '../../../service/requests/useRefuseScheduleRequest';
 import { SchedulesStatus } from '../../../utils/constants';
@@ -9,7 +10,9 @@ import { ScheduleDetailsModalType } from './types';
 
 const useScheduleDetailsModal = () => {
   const navigate = useNavigate();
+
   const { showErrorSnackBar, showSuccessSnackBar } = useSnackBar();
+
   const {
     acceptSchedule,
     error: acceptError,
@@ -17,6 +20,7 @@ const useScheduleDetailsModal = () => {
     isSuccess: isAcceptSuccess,
     resetStates: resetAcceptStates,
   } = useAcceptScheduleRequest();
+
   const {
     refuseSchedule,
     error: refuseError,
@@ -25,14 +29,27 @@ const useScheduleDetailsModal = () => {
     resetStates: resetRefuseStates,
   } = useRefuseScheduleRequest();
 
+  const {
+    cancelSchedule,
+    error: cancelError,
+    isLoading: isCancelLoading,
+    isSuccess: isCancelSuccess,
+    resetStates: resetCancelStates,
+  } = useCancelScheduleRequest();
+
   const [isOpen, setIsOpen] = useState(false);
+
+  const [isCancelModalOpen, setCancelModalOpen] = useState(false);
+
   const [selectedSchedule, setSelectedSchedule] = useState<TSchedules>();
 
   const modalType = useMemo(() => {
     if (!selectedSchedule) return ScheduleDetailsModalType.CONFIRMED;
 
-    if (isAcceptLoading || isRefuseLoading)
+    if (isAcceptLoading || isRefuseLoading || isCancelLoading)
       return ScheduleDetailsModalType.LOADING;
+
+    if (isCancelModalOpen) return ScheduleDetailsModalType.CANCELED;
 
     if (isRefuseSuccess) return ScheduleDetailsModalType.REFUSED;
 
@@ -49,8 +66,10 @@ const useScheduleDetailsModal = () => {
     selectedSchedule,
     isAcceptLoading,
     isRefuseLoading,
+    isCancelLoading,
     isRefuseSuccess,
     isAcceptSuccess,
+    isCancelModalOpen,
   ]);
 
   const handleAcceptSchedule = () => {
@@ -59,12 +78,36 @@ const useScheduleDetailsModal = () => {
     void acceptSchedule(selectedSchedule.id);
   };
 
+  const handleCancelSchedule = () => {
+    if (!selectedSchedule) return;
+
+    void cancelSchedule(selectedSchedule.id);
+  };
+
+  const handleOpenCancelModal = () => {
+    setCancelModalOpen(true);
+  };
+
+  const handleCloseCancelModal = () => {
+    setCancelModalOpen(false);
+  };
+
   const handleClose = () => {
-    if (isAcceptSuccess || isRefuseSuccess || acceptError || refuseError)
+    if (
+      isAcceptSuccess ||
+      isRefuseSuccess ||
+      isCancelSuccess ||
+      cancelError ||
+      acceptError ||
+      refuseError
+    )
       navigate(0);
+
+    handleCloseCancelModal();
 
     resetAcceptStates();
     resetRefuseStates();
+    resetCancelStates();
     setSelectedSchedule(undefined);
     setIsOpen(false);
   };
@@ -93,6 +136,12 @@ const useScheduleDetailsModal = () => {
   }, [refuseError]);
 
   useEffect(() => {
+    if (!cancelError) return;
+
+    showErrorSnackBar(`Erro ao cancelar agendamento: ${cancelError}`);
+  }, [cancelError]);
+
+  useEffect(() => {
     if (!isAcceptSuccess) return;
 
     showSuccessSnackBar(`Agendamento aceito com sucesso.`);
@@ -108,12 +157,16 @@ const useScheduleDetailsModal = () => {
     modalType,
     selectedSchedule,
     isAcceptLoading,
+    isCancelSuccess,
     isOpen,
     isRefuseLoading,
     handleAcceptSchedule,
     handleClose,
     handleRefuseSchedule,
     handleOpen,
+    handleOpenCancelModal,
+    handleCloseCancelModal,
+    handleCancelSchedule,
   };
 };
 

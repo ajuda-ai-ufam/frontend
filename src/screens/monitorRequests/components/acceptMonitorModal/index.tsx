@@ -1,14 +1,11 @@
-import { Typography } from '@mui/material';
 import { TMonitorRequest } from '../../../../service/requests/useGetAllMonitorRequests/types';
 
 import { Button } from '../../../../components/button';
-import CheckedAnimation from '../../../../components/checkedAnimation';
+import { ConfirmedActionContent } from '../../../../components/confirmedActionContent';
 import LoadingAnimation from '../../../../components/loadingAnimation';
 import Modal from '../../../../components/modal';
 import {
   ButtonsContainer,
-  ConfirmationContainer,
-  ConfirmationTextContainer,
   ConfirmButton,
   LoadingContainer,
   StyledTypography,
@@ -44,20 +41,10 @@ const AcceptMonitorModal = ({
 
     if (isSuccess) {
       return (
-        <ConfirmationContainer>
-          <CheckedAnimation />
-
-          <ConfirmationTextContainer>
-            <Typography variant="h4">Tudo certo!</Typography>
-            <Typography variant="body1" textAlign={'center'}>
-              Um novo monitor foi adicionado à disciplina
-            </Typography>
-          </ConfirmationTextContainer>
-
-          <Button onClick={handleClose} color="primary">
-            Voltar
-          </Button>
-        </ConfirmationContainer>
+        <ConfirmedActionContent
+          confirmationText="Um novo monitor foi adicionado à disciplina"
+          handleClose={handleClose}
+        />
       );
     }
 

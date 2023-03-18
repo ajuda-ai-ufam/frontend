@@ -16,7 +16,11 @@ const Schedules = () => {
   const {
     selectedFilter,
     isScheduleDetailsModalOpen,
+    isCancelSuccess,
     modalType,
+    handleOpenCancelModal,
+    handleCloseCancelModal,
+    handleCancelSchedule,
     handleFilterClick,
     handleEventClick,
     schedules,
@@ -49,9 +53,13 @@ const Schedules = () => {
       <ScheduleDetailsModal
         schedule={selectedSchedule}
         isOpen={isScheduleDetailsModalOpen}
+        isCancelSuccess={isCancelSuccess}
+        handleOpenCancelModal={handleOpenCancelModal}
+        handleCloseCancelModal={handleCloseCancelModal}
         handleAccept={handleAcceptSchedule}
         handleRefuse={handleRefuseSchedule}
         handleClose={handleCloseScheduleDetailsModal}
+        handleCancelSchedule={handleCancelSchedule}
         modalType={modalType}
       />
 
