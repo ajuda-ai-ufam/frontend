@@ -52,12 +52,6 @@ const ScheduleElement = ({
                 <NegationButton
                   disabled={isLoadingUpdate}
                   onClick={() => handleClickNotDone(schedule)}
-                  sx={{
-                    '&.Mui-disabled': {
-                      background: '#DC333366',
-                      color: '#fff',
-                    },
-                  }}
                 >
                   Não realizada
                 </NegationButton>

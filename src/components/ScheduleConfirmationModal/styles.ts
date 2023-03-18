@@ -129,6 +129,10 @@ export const NegationButton = styled(Button).attrs({
 
   width: '50%',
 })`
+  &:disabled {
+    background-color: ${theme.palette.error.main}66 !important;
+  }
+
   @media (max-width: ${theme.breakpoints.values.md}px) {
     width: 50% !important ;
   }
