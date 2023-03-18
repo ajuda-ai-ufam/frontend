@@ -32,8 +32,7 @@ const CancelScheduleModalContent = ({
       <Typography variant="body1">
         Caso você cancele o horário agendado, você não o verá mais na lista de
         agendamentos. Ao desmarcar o {isMonitor ? 'aluno' : 'monitor'} receberá
-        um e-mail informando a ação.
-        <br /> Deseja continuar?
+        um e-mail informando a ação. Deseja continuar?
       </Typography>
       <ButtonsContainer>
         <ActionButton
