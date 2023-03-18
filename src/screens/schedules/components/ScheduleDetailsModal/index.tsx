@@ -1,8 +1,10 @@
+import { Box } from '@mui/material';
 import { useMemo } from 'react';
 import LoadingAnimation from '../../../../components/loadingAnimation';
 import Modal from '../../../../components/modal';
 import { TSchedules } from '../../../../service/requests/useGetSchedulesRequest/types';
 import { ScheduleDetailsModalType } from '../../hooks/types';
+import CancelScheduleModalContent from '../CancelScheduleModalContent';
 import ConfirmedScheduleModalContent from '../ConfirmedScheduleModalContent';
 import PendingScheduleModalContent from '../PendingScheduleModalContent';
 import RefusedScheduleModalContent from '../RefusedScheduleModalContent';
@@ -11,7 +13,11 @@ type Props = {
   modalType: ScheduleDetailsModalType;
   schedule?: TSchedules;
   isOpen: boolean;
+  isCancelSuccess: boolean;
   handleAccept(): void;
+  handleOpenCancelModal(): void;
+  handleCloseCancelModal(): void;
+  handleCancelSchedule(): void;
   handleClose(): void;
   handleRefuse(): void;
 };
@@ -20,6 +26,10 @@ const ScheduleDetailsModal = ({
   modalType,
   schedule,
   isOpen,
+  isCancelSuccess,
+  handleOpenCancelModal,
+  handleCloseCancelModal,
+  handleCancelSchedule,
   handleAccept,
   handleClose,
   handleRefuse,
@@ -47,6 +57,17 @@ const ScheduleDetailsModal = ({
       isOpen={isOpen}
       handleClose={handleClose}
     >
+      {modalType === ScheduleDetailsModalType.CANCELED ? (
+        <CancelScheduleModalContent
+          handleClose={handleClose}
+          isCancelSuccess={isCancelSuccess}
+          handleCancelSchedule={handleCancelSchedule}
+          isMonitor={schedule.is_monitoring}
+          handleCloseCancelModal={handleCloseCancelModal}
+        />
+      ) : (
+        <></>
+      )}
       {modalType === ScheduleDetailsModalType.CONFIRMED ? (
         <ConfirmedScheduleModalContent
           email={userData.email}
@@ -54,6 +75,7 @@ const ScheduleDetailsModal = ({
           whatsapp={userData.whatsapp}
           isMonitor={schedule.is_monitoring}
           handleClose={handleClose}
+          handleOpenCancelModal={handleOpenCancelModal}
         />
       ) : (
         <></>
@@ -78,7 +100,15 @@ const ScheduleDetailsModal = ({
         <></>
       )}
       {modalType === ScheduleDetailsModalType.LOADING ? (
-        <LoadingAnimation />
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <LoadingAnimation />
+        </Box>
       ) : (
         <></>
       )}

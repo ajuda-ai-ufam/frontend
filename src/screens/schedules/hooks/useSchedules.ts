@@ -12,12 +12,16 @@ const useSchedules = () => {
   const { schedules } = useFormatSchedules(response);
   const {
     isOpen: isScheduleDetailsModalOpen,
+    handleCloseCancelModal,
+    handleOpenCancelModal,
     modalType,
     handleOpen: handleEventClick,
     handleAcceptSchedule,
     handleClose: handleCloseScheduleDetailsModal,
     handleRefuseSchedule,
     selectedSchedule,
+    handleCancelSchedule,
+    isCancelSuccess,
   } = useScheduleDetailsModal();
 
   const [page, setPage] = useState(1);
@@ -76,12 +80,16 @@ const useSchedules = () => {
     error,
     totalPages,
     isLoading,
+    isCancelSuccess,
     handleAcceptSchedule,
     handleFilterClick,
     handleEventClick,
     handleChangePage,
     handleCloseScheduleDetailsModal,
     handleRefuseSchedule,
+    handleCloseCancelModal,
+    handleOpenCancelModal,
+    handleCancelSchedule,
   };
 };
 

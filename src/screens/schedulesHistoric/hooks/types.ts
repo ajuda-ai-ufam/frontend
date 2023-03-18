@@ -2,6 +2,7 @@ import { Dayjs } from 'dayjs';
 import { TSchedules } from '../../../service/requests/useGetSchedulesHistoricRequest/types';
 
 export type TFormatedSchedules = {
+  year: string;
   month: string;
   day: number;
   weekDay: string;

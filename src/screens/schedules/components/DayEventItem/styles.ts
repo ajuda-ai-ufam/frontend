@@ -19,9 +19,11 @@ export const DateContainer = styled(Box).attrs({
   flexDirection: 'column',
   gap: '8px',
   padding: '0 32px',
+  width: '5%',
 })`
   @media (max-width: ${theme.breakpoints.values.sm}px) {
     padding: 0 8px !important;
+    width: 20% !important;
   }
 `;
 
@@ -29,5 +31,5 @@ export const EventsContainer = styled(Box).attrs({
   display: 'flex',
   flexDirection: 'column',
   gap: '8px',
-  width: '100%',
+  width: '90%',
 })``;

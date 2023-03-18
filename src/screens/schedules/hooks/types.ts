@@ -13,4 +13,5 @@ export enum ScheduleDetailsModalType {
   CONFIRMED = 'confirmed',
   REFUSED = 'refused',
   DEFAULT = 'default',
+  CANCELED = 'canceled',
 }

@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
-import { Button } from '../../../../components/button';
 import {
-  ButtonContainer,
+  ActionButton,
+  ButtonsContainer,
   DataContainer,
   Label,
 } from '../ScheduleDetailsModal/styles';
@@ -12,6 +12,7 @@ type Props = {
   whatsapp?: string;
   isMonitor: boolean;
   handleClose(): void;
+  handleOpenCancelModal(): void;
 };
 
 const ConfirmedScheduleModalContent = ({
@@ -20,6 +21,7 @@ const ConfirmedScheduleModalContent = ({
   whatsapp,
   isMonitor,
   handleClose,
+  handleOpenCancelModal,
 }: Props) => (
   <>
     <Typography variant="h4">Horário agendado</Typography>
@@ -43,11 +45,14 @@ const ConfirmedScheduleModalContent = ({
       <Typography variant="body2">{whatsapp || '-'}</Typography>
     </DataContainer>
 
-    <ButtonContainer>
-      <Button variant="text" color="primary" onClick={handleClose}>
+    <ButtonsContainer>
+      <ActionButton variant="text" color="primary" onClick={handleClose}>
         Fechar
-      </Button>
-    </ButtonContainer>
+      </ActionButton>
+      <ActionButton color="primary" onClick={handleOpenCancelModal}>
+        Desmarcar
+      </ActionButton>
+    </ButtonsContainer>
   </>
 );
 
