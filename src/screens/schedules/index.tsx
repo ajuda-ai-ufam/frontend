@@ -67,8 +67,9 @@ const Schedules = () => {
         <Card>
           <Typography variant="h3">Agendamentos</Typography>
           <LegendTypography>
-            Aqui você encontra todos os agendamentos confirmados e pendentes,
-            clique em um agendamento para exibir mais detalhes
+            Aqui você encontra todos os agendamentos confirmados, pendentes,
+            cancelados e realizados. Clique em um agendamento para exibir mais
+            detalhes.
           </LegendTypography>
           <FiltersContainer>{renderFilterChips()}</FiltersContainer>
 
