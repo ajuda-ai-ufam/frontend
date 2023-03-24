@@ -17,6 +17,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import 'moment/locale/pt';
 import SchedulesHistoric from './screens/schedulesHistoric';
+import Error from './screens/error';
 
 const App: React.FC = () => {
   return (
@@ -61,6 +62,7 @@ const App: React.FC = () => {
                 path={SCREENS.SCHEDULES_HISTORIC}
                 element={<SchedulesHistoric />}
               />
+              <Route path="*" element={<Error />} />
             </Routes>
           </BrowserRouter>
         </ThemeProvider>
