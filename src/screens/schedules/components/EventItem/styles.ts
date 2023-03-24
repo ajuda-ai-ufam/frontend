@@ -3,6 +3,7 @@ import { Box } from '@mui/system';
 import styled from 'styled-components';
 import { SchedulesStatus } from '../../../../utils/constants';
 import theme from '../../../../utils/theme';
+import { blue, orange } from '@mui/material/colors';
 
 export const Container = styled(Box).attrs({
   display: 'flex',
@@ -99,11 +100,11 @@ interface StatusIconProps {
 }
 
 const scheduleStatusColor = {
-  [SchedulesStatus.PENDING]: theme.palette.warning.main,
   [SchedulesStatus.CONFIRMED]: theme.palette.primary.main,
   [SchedulesStatus.CANCELED]: theme.palette.error.main,
-  [SchedulesStatus.REALIZED]: theme.palette.error.main,
-  [SchedulesStatus.NOT_REALIZED]: theme.palette.error.main,
+  [SchedulesStatus.PENDING]: theme.palette.warning.main,
+  [SchedulesStatus.REALIZED]: blue[500],
+  [SchedulesStatus.NOT_REALIZED]: orange[500],
 };
 
 export const StatusIcon = styled(Box).attrs<StatusIconProps>((props) => ({
