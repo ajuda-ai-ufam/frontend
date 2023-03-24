@@ -1,7 +1,7 @@
 import Copyright from '../../components/copyright';
 import LoadingAnimation from '../../components/loadingAnimation';
 import ProgressBar from '../../components/progressBar';
-import SignInHeader from '../../components/signInHeader';
+import Header from '../../components/Header';
 import FinalStudentRegister from './components/FinalStudentRegister';
 import MiddleStudentRegister from './components/MiddleStudentRegister';
 import StartStudentRegister from './components/StartStudentRegister';
@@ -155,7 +155,7 @@ const RegisterStudent = () => {
   return (
     <OutsideContainer>
       <Container>
-        <SignInHeader />
+        <Header showLogin={true} />
         <CardContainer>
           {isLoading ? (
             <ContainerProgressBar sx={{ visibility: 'hidden' }}>
