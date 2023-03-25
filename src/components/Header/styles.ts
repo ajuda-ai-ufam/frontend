@@ -3,6 +3,10 @@ import { Box } from '@mui/system';
 import theme from '../../utils/theme';
 import { Button } from '../button';
 
+interface LoginContainerProps {
+  visibility: string;
+}
+
 export const Container = styled(Box).attrs({
   display: 'flex',
   flexDirection: 'row',
@@ -41,9 +45,14 @@ export const RegisterTypographyContainer = styled(Box).attrs({
   }
 `;
 
-export const LoginContainer = styled(Box).attrs({
-  display: 'flex',
-  alignItems: 'center',
-  flexDirection: 'row',
-  gap: '24px',
-})``;
+export const LoginContainer = styled(Box).attrs(
+  (props: LoginContainerProps) => ({
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'row',
+    gap: '24px',
+    sx: {
+      visibility: props.visibility,
+    },
+  })
+)<LoginContainerProps>``;

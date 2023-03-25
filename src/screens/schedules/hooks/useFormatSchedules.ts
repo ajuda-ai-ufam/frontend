@@ -46,7 +46,7 @@ const useFormatSchedules = (response?: TGetSchedulesRequestResponse) => {
 
       formatedSchedules.push({
         day: Number(day),
-        weekDay: capitalize(weekDay.split('-')[0]),
+        weekDay: capitalize(weekDay.split('-')[0].split(',')[0]),
         month: capitalize(month),
         events: value,
       });
