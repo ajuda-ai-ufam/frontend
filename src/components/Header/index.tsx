@@ -2,6 +2,7 @@ import { Link, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import HeaderLogo from '../../assets/header-logo.svg';
 import { SCREENS } from '../../utils/screens';
+import useHeader from './hooks/useHeader';
 import {
   Container,
   LoginButton,
@@ -10,18 +11,23 @@ import {
   RegisterTypographyContainer,
 } from './styles';
 
-const SignInHeader = () => {
+type Props = {
+  showLogin: boolean;
+};
+
+const Header = ({ showLogin }: Props) => {
   const navigate = useNavigate();
+  const { handleLogoClick } = useHeader();
 
   return (
     <Container>
       <LogoContainer>
-        <Link href={SCREENS.LOGIN}>
+        <Link href={handleLogoClick()}>
           <img src={HeaderLogo} alt={'Super Monitoria'} />
         </Link>
       </LogoContainer>
 
-      <LoginContainer>
+      <LoginContainer visibility={showLogin ? 'visible' : 'hidden'}>
         <RegisterTypographyContainer>
           <Typography variant={'body1'}>Já possui cadastro?</Typography>
         </RegisterTypographyContainer>
@@ -33,4 +39,4 @@ const SignInHeader = () => {
   );
 };
 
-export default SignInHeader;
+export default Header;

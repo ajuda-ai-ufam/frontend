@@ -1,4 +1,4 @@
-import SignInHeader from '../../components/signInHeader';
+import Header from '../../components/Header';
 import Copyright from '../../components/copyright';
 import {
   Container,
@@ -12,7 +12,7 @@ const RegisterProfessor = () => {
   return (
     <OutsideContainer>
       <Container>
-        <SignInHeader />
+        <Header showLogin={true} />
         <CardContainer>
           <FormRegister />
         </CardContainer>

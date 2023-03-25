@@ -1,6 +1,6 @@
 import { FormHelperText, Typography } from '@mui/material';
 import Copyright from '../../components/copyright';
-import SignInHeader from '../../components/signInHeader';
+import Header from '../../components/Header';
 import EmailAnimation from './components/EmailAnimation';
 import LoadingAnimation from '../../components/loadingAnimation';
 import useCodeVerification from './hooks/useCodeVerification';
@@ -86,7 +86,7 @@ const CodeVerificationScreen = () => {
 
   return (
     <Container>
-      <SignInHeader />
+      <Header showLogin={true} />
 
       <CardContainer>
         <Card>{CardContent()}</Card>
