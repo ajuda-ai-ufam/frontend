@@ -12,7 +12,7 @@ import {
   OutsideContainer,
 } from './styles';
 
-const Error = () => {
+const NotFoundError = () => {
   const navigate = useNavigate();
   const { handleLogoClick } = useHeader();
   return (
@@ -26,7 +26,7 @@ const Error = () => {
           <Typography variant="h3">
             Desculpe, não encontramos a página que você procura
           </Typography>
-          <Typography variant="h6">
+          <Typography variant="body1">
             Verifique o endereço digitado ou clique no botão abaixo
           </Typography>
           <Button
@@ -46,4 +46,4 @@ const Error = () => {
   );
 };
 
-export default Error;
+export default NotFoundError;
