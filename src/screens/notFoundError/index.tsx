@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../components/button';
-import Copyright from '../../components/copyright';
+import SuperMonitoria from '../../components/superMonitoria';
 import Header from '../../components/Header';
 import useHeader from '../../components/Header/hooks/useHeader';
 import NotFoundErrorAnimation from '../../components/notFoundErrorAnimation';
@@ -39,7 +39,7 @@ const NotFoundError = () => {
           </Button>
         </ContainerMessage>
         <ContainerCopyright>
-          <Copyright mb={3} />
+          <SuperMonitoria mb={3} />
         </ContainerCopyright>
       </OutsideContainer>
     </>

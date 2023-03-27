@@ -1,5 +1,5 @@
 import { FormHelperText, Typography } from '@mui/material';
-import Copyright from '../../components/copyright';
+import SuperMonitoria from '../../components/superMonitoria';
 import Header from '../../components/Header';
 import EmailAnimation from './components/EmailAnimation';
 import LoadingAnimation from '../../components/loadingAnimation';
@@ -93,7 +93,7 @@ const CodeVerificationScreen = () => {
       </CardContainer>
 
       <CopyRigthContainer>
-        <Copyright />
+        <SuperMonitoria />
       </CopyRigthContainer>
     </Container>
   );

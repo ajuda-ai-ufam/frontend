@@ -1,4 +1,4 @@
-import Copyright from '../../components/copyright';
+import SuperMonitoria from '../../components/superMonitoria';
 import LoadingAnimation from '../../components/loadingAnimation';
 import ProgressBar from '../../components/progressBar';
 import Header from '../../components/Header';
@@ -170,7 +170,7 @@ const RegisterStudent = () => {
         </CardContainer>
       </Container>
       <CopyRigthContainer>
-        <Copyright />
+        <SuperMonitoria />
       </CopyRigthContainer>
     </OutsideContainer>
   );
