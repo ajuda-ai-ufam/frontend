@@ -1,5 +1,5 @@
 import Header from '../../components/Header';
-import Copyright from '../../components/copyright';
+import SuperMonitoria from '../../components/superMonitoria';
 import {
   Container,
   CardContainer,
@@ -18,7 +18,7 @@ const RegisterProfessor = () => {
         </CardContainer>
       </Container>
       <CopyrightContainer>
-        <Copyright />
+        <SuperMonitoria />
       </CopyrightContainer>
     </OutsideContainer>
   );

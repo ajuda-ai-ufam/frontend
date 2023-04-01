@@ -1,12 +1,11 @@
 import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
 
 type CopyrightProps = {
   mt?: number;
   mb?: number;
 };
 
-const Copyright = ({ mt, mb }: CopyrightProps) => {
+const SuperMonitoria = ({ mt, mb }: CopyrightProps) => {
   return (
     <Typography
       variant="caption"
@@ -14,14 +13,11 @@ const Copyright = ({ mt, mb }: CopyrightProps) => {
       align="center"
       sx={{ mt: mt, mb: mb }}
     >
-      {'Super Monitoria©. '}
-      <Link color="inherit" href="https://mui.com/">
-        Todos os Direitos Reservados
-      </Link>{' '}
+      {'Super Monitoria, '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
   );
 };
 
-export default Copyright;
+export default SuperMonitoria;
