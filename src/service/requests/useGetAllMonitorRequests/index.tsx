@@ -23,10 +23,6 @@ const useGetAllMonitorRequests = () => {
 
       const dt = response.data as TListMonitorsRequestResponse;
 
-      dt.data = dt.data.filter(
-        (monitor) => monitor.status.status === TypeMonitoringStatus.PENDING
-      );
-
       setData(dt);
     } catch (error) {
       const err = error as AxiosError;
