@@ -1,6 +1,5 @@
 import { AxiosError } from 'axios';
 import { useState } from 'react';
-import { TypeMonitoringStatus } from '../../../utils/constants';
 import api from '../../api';
 import {
   TListMonitorsRequestsErrorResponse,
