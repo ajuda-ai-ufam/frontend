@@ -4,6 +4,7 @@ import useGetAllMonitorRequests from '../../../service/requests/useGetAllMonitor
 import useGetLoggedUser from '../../../service/storage/getLoggedUser';
 import { useSnackBar } from '../../../utils/renderSnackBar';
 import { SCREENS } from '../../../utils/screens';
+import { TypeMonitorStatus } from '../../../utils/constants';
 
 const useMonitorRequests = () => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const useMonitorRequests = () => {
   const [page, setPage] = useState(1);
 
   const totalPages = useMemo(
-    () => requestsResponse?.meta.total_pages || 0,
+    () => requestsResponse?.meta.totalPages || 0,
     [requestsResponse]
   );
   const requests = useMemo(
@@ -32,7 +33,12 @@ const useMonitorRequests = () => {
   const handleSearch = (e: React.SyntheticEvent<EventTarget>) => {
     e.preventDefault();
 
-    void listRequests({ page: 1, search: searchFieldElement.current?.value });
+    void listRequests({
+      page: 1,
+      name: searchFieldElement.current?.value,
+      status: TypeMonitorStatus.PENDING,
+      pageSize: 9,
+    });
     setPage(1);
   };
 
@@ -44,9 +50,11 @@ const useMonitorRequests = () => {
 
     void listRequests({
       page: newPage,
-      search: searchFieldElement.current?.value
+      name: searchFieldElement.current?.value
         ? searchFieldElement.current?.value
         : undefined,
+      status: TypeMonitorStatus.PENDING,
+      pageSize: 9,
     });
     setPage(newPage);
   };
@@ -54,7 +62,7 @@ const useMonitorRequests = () => {
   useEffect(() => {
     if (!user) return navigate(SCREENS.LOGIN);
 
-    void listRequests();
+    void listRequests({ status: TypeMonitorStatus.PENDING, pageSize: 9 });
   }, []);
 
   useEffect(() => {

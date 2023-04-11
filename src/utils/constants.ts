@@ -43,6 +43,14 @@ export enum SchedulesStatus {
   NOT_REALIZED = 5,
 }
 
+export enum TypeMonitorStatus {
+  PENDING = 1,
+  APPROVED = 2,
+  AVAILABLE = 3,
+  FINISHED = 4,
+  REJECTED = 5,
+}
+
 export const ScheduleStatusTranslate = {
   [SchedulesStatus.PENDING]: 'Pendente',
   [SchedulesStatus.CONFIRMED]: 'Confirmado',
