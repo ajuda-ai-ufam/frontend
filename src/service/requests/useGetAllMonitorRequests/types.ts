@@ -41,21 +41,19 @@ export type TMonitorRequest = {
 
 export type TListMonitorsRequestResponse = {
   meta: {
-    current_page: number;
-    items_per_page: number;
-    total_pages: number;
-    total_items: number;
+    page: number;
+    pageSize: number;
+    totalItems: number;
+    totalPages: number;
   };
   data: TMonitorRequest[];
 };
 
 export type TListMonitorsRequestParams = {
-  quantity?: number;
-  number?: number;
   page?: number;
-  field?: string;
-  order?: 'asc' | 'desc';
-  search?: string;
+  pageSize?: number;
+  name?: string;
+  status?: number;
 };
 
 export type TListMonitorsRequestsErrorResponse = {

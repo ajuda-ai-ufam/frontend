@@ -1,6 +1,5 @@
 import { AxiosError } from 'axios';
 import { useState } from 'react';
-import { TypeMonitoringStatus } from '../../../utils/constants';
 import api from '../../api';
 import {
   TListMonitorsRequestsErrorResponse,
@@ -22,10 +21,6 @@ const useGetAllMonitorRequests = () => {
       const response = await api.get('/monitor/all', { params });
 
       const dt = response.data as TListMonitorsRequestResponse;
-
-      dt.data = dt.data.filter(
-        (monitor) => monitor.status.status === TypeMonitoringStatus.PENDING
-      );
 
       setData(dt);
     } catch (error) {
