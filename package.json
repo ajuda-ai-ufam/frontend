@@ -38,6 +38,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "git pull origin main && react-scripts build && cp -rfv ./build/* /var/www/html && systemctl restart apache2",
     "test": "jest --verbose --passWithNoTests --silent --maxWorkers=50%",
     "eject": "react-scripts eject",
     "lint": "npx eslint ./src && echo \"> No lint errors found in src/.\"",
