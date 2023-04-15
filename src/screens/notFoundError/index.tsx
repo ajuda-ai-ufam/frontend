@@ -2,8 +2,8 @@ import { Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../components/button';
 import SuperMonitoria from '../../components/superMonitoria';
-import Header from '../../components/Header';
-import useHeader from '../../components/Header/hooks/useHeader';
+import Header from '../../components/header';
+import useHeader from '../../components/header/hooks/useHeader';
 import NotFoundErrorAnimation from '../../components/notFoundErrorAnimation';
 import {
   ContainerCopyright,

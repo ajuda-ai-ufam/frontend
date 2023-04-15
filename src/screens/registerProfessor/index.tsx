@@ -1,4 +1,4 @@
-import Header from '../../components/Header';
+import Header from '../../components/header';
 import SuperMonitoria from '../../components/superMonitoria';
 import {
   Container,
