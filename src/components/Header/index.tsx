@@ -8,14 +8,16 @@ import {
   LoginButton,
   LoginContainer,
   LogoContainer,
+  RegisterButton,
   RegisterTypographyContainer,
 } from './styles';
 
 type Props = {
   showLogin: boolean;
+  showRegisterButton?: boolean;
 };
 
-const Header = ({ showLogin }: Props) => {
+const Header = ({ showLogin, showRegisterButton }: Props) => {
   const navigate = useNavigate();
   const { handleLogoClick } = useHeader();
 
@@ -28,9 +30,20 @@ const Header = ({ showLogin }: Props) => {
       </LogoContainer>
 
       <LoginContainer visibility={showLogin ? 'visible' : 'hidden'}>
-        <RegisterTypographyContainer>
-          <Typography variant={'body1'}>Já possui cadastro?</Typography>
-        </RegisterTypographyContainer>
+        {showRegisterButton ? (
+          <RegisterButton
+            color="secondary"
+            variant="text"
+            onClick={() => navigate(SCREENS.REGISTER)}
+          >
+            Cadastre-se
+          </RegisterButton>
+        ) : (
+          <RegisterTypographyContainer>
+            <Typography variant={'body1'}>Já possui cadastro?</Typography>
+          </RegisterTypographyContainer>
+        )}
+
         <LoginButton onClick={() => navigate(SCREENS.LOGIN)}>
           Faça seu login
         </LoginButton>
