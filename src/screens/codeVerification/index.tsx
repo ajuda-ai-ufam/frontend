@@ -1,6 +1,6 @@
 import { FormHelperText, Typography } from '@mui/material';
 import SuperMonitoria from '../../components/superMonitoria';
-import Header from '../../components/Header';
+import Header from '../../components/header';
 import EmailAnimation from './components/EmailAnimation';
 import LoadingAnimation from '../../components/loadingAnimation';
 import useCodeVerification from './hooks/useCodeVerification';

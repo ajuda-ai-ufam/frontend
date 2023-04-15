@@ -13,6 +13,7 @@ export const Container = styled(Box).attrs({
   justifyContent: 'space-between',
   margin: '12px 40px 0 40px',
   background: '#fff',
+  padding: '0 0 12px 0',
 })`
   @media (max-width: ${theme.breakpoints.values.sm}px) {
     margin: 12px 16px 0 16px !important;
@@ -56,3 +57,9 @@ export const LoginContainer = styled(Box).attrs(
     },
   })
 )<LoginContainerProps>``;
+
+export const RegisterButton = styled(Button)`
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    display: none !important;
+  }
+`;

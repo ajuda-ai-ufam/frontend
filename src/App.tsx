@@ -18,6 +18,7 @@ import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import 'moment/locale/pt';
 import SchedulesHistoric from './screens/schedulesHistoric';
 import NotFoundError from './screens/notFoundError';
+import LandingPage from './screens/landingPage';
 
 const App: React.FC = () => {
   return (
@@ -62,6 +63,7 @@ const App: React.FC = () => {
                 path={SCREENS.SCHEDULES_HISTORIC}
                 element={<SchedulesHistoric />}
               />
+              <Route path={SCREENS.LANDING_PAGE} element={<LandingPage />} />
               <Route path="*" element={<NotFoundError />} />
             </Routes>
           </BrowserRouter>

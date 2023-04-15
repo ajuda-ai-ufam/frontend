@@ -10,6 +10,7 @@ export const SCREENS = {
   SUBJECTS: '/subjects',
   SUBJECT_DETAILS: '/subjects/:id',
   MONITOR_REQUESTS: '/monitor-requests',
+  LANDING_PAGE: '/about',
 };
 
 export const NOT_LOGGED_SCREENS = [
@@ -18,4 +19,5 @@ export const NOT_LOGGED_SCREENS = [
   '/register',
   '/register/student',
   '/register/professor',
+  '/about',
 ];
