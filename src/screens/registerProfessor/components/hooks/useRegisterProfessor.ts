@@ -26,6 +26,7 @@ const useRegisterProfessor = () => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
@@ -46,6 +47,10 @@ const useRegisterProfessor = () => {
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
+  };
+
+  const handleClickShowConfirmPassword = () => {
+    setShowConfirmPassword(!showConfirmPassword);
   };
 
   const handleMouseDownPassword = (
@@ -123,6 +128,7 @@ const useRegisterProfessor = () => {
     handleCancelClick,
     handleContinueClick,
     handleClickShowPassword,
+    handleClickShowConfirmPassword,
     handleMouseDownPassword,
     name,
     email,
@@ -136,6 +142,7 @@ const useRegisterProfessor = () => {
     passwordError,
     confPasswordError,
     showPassword,
+    showConfirmPassword,
     setNameError,
     setEmailError,
     setPasswordError,

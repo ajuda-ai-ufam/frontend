@@ -43,6 +43,7 @@ const useRegister = () => {
   const [whatsappError, setWhatsappError] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [nameError, setNameError] = useState('');
   const [enrollmentError, setEnrollmentError] = useState('');
@@ -120,6 +121,10 @@ const useRegister = () => {
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
+  };
+
+  const handleClickShowConfirmPassword = () => {
+    setShowConfirmPassword(!showConfirmPassword);
   };
 
   const handleMouseDownPassword = (
@@ -258,12 +263,14 @@ const useRegister = () => {
     email,
     password,
     confirmPassword,
+    showConfirmPassword,
     showPassword,
     handleNameChange,
     handleConfirmPasswordChange,
     handleEmailChange,
     handlePasswordChange,
     handleClickShowPassword,
+    handleClickShowConfirmPassword,
     handleMouseDownPassword,
     handleContinueClick,
     nameError,
