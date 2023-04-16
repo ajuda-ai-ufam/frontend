@@ -46,10 +46,14 @@ const ConfirmedScheduleModalContent = ({
     </DataContainer>
 
     <ButtonsContainer>
-      <ActionButton variant="text" color="primary" onClick={handleClose}>
+      <ActionButton
+        variant="text"
+        color="primary"
+        onClick={handleOpenCancelModal}
+      >
         Desmarcar
       </ActionButton>
-      <ActionButton color="primary" onClick={handleOpenCancelModal}>
+      <ActionButton color="primary" onClick={handleClose}>
         Fechar
       </ActionButton>
     </ButtonsContainer>
