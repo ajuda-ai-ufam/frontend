@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from 'axios';
+import axios, { InternalAxiosRequestConfig } from 'axios';
 import useGetToken from '../storage/getToken';
 import useClearStorage from '../storage/clearStorage';
 import { SCREENS } from '../../utils/screens';
@@ -8,7 +8,7 @@ const api = axios.create({
   baseURL: process.env.REACT_APP_API_BASE_URL,
 });
 
-api.interceptors.request.use((config: AxiosRequestConfig) => {
+api.interceptors.request.use((config: InternalAxiosRequestConfig<unknown>) => {
   const token = useGetToken();
 
   if (config.headers) {
