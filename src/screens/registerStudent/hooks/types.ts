@@ -20,6 +20,8 @@ export type TStartStudentRegisterHook = {
 
   confirmPassword: string;
   confirmPasswordError: string;
+  showConfirmPassword: boolean;
+  handleClickShowConfirmPassword(): void;
   handleConfirmPasswordChange(e: React.ChangeEvent<HTMLInputElement>): void;
   setConfirmPasswordError(confirmPassword: string): void;
 
