@@ -21,10 +21,12 @@ import {
 const StartStudentRegister = ({
   confirmPassword,
   confirmPasswordError,
+  showConfirmPassword,
   email,
   emailError,
   handleCancelRegisterClick,
   handleClickShowPassword,
+  handleClickShowConfirmPassword,
   handleConfirmPasswordChange,
   handleContinueClick,
   handleEmailChange,
@@ -111,12 +113,24 @@ const StartStudentRegister = ({
             name="password"
             placeholder="Crie sua senha*"
             onChange={handlePasswordChange}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                  edge="end"
+                >
+                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            }
           />
           <PasswordError />
         </StyledFormBox>
         <StyledFormBox>
           <StyledFormTextField
-            type={showPassword ? 'text' : 'password'}
+            type={showConfirmPassword ? 'text' : 'password'}
             onBlur={() =>
               setConfirmPasswordError(
                 validateConfirmPassword(password, confirmPassword)
@@ -132,11 +146,11 @@ const StartStudentRegister = ({
               <InputAdornment position="end">
                 <IconButton
                   aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
+                  onClick={handleClickShowConfirmPassword}
                   onMouseDown={handleMouseDownPassword}
                   edge="end"
                 >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                  {showConfirmPassword ? <VisibilityOff /> : <Visibility />}
                 </IconButton>
               </InputAdornment>
             }

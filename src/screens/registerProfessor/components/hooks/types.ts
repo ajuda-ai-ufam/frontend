@@ -19,6 +19,8 @@ export type TRegisterProfessorHook = {
 
   confPassword: string;
   confPasswordError: string;
+  showConfirmPassword: boolean;
+  handleClickShowConfirmPassword(): void;
   handleConfPasswordChange(e: React.ChangeEvent<HTMLInputElement>): void;
   setConfPasswordError(confPassword: string): void;
 

@@ -47,6 +47,8 @@ const FormRegister = () => {
     setPasswordError,
     confPassword,
     confPasswordError,
+    showConfirmPassword,
+    handleClickShowConfirmPassword,
     handleConfPasswordChange,
     setConfPasswordError,
     isLoading,
@@ -134,12 +136,24 @@ const FormRegister = () => {
                     name="password"
                     onChange={handlePasswordChange}
                     placeholder="Crie sua senha*"
+                    endAdornment={
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          onClick={handleClickShowPassword}
+                          onMouseDown={handleMouseDownPassword}
+                          edge="end"
+                        >
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    }
                   />
                   <PasswordError />
                 </TextFieldContainer>
                 <TextFieldContainer>
                   <StyledFormTextField
-                    type={showPassword ? 'text' : 'password'}
+                    type={showConfirmPassword ? 'text' : 'password'}
                     onBlur={() =>
                       setConfPasswordError(
                         validateConfirmPassword(password, confPassword)
@@ -155,11 +169,15 @@ const FormRegister = () => {
                       <InputAdornment position="end">
                         <IconButton
                           aria-label="toggle password visibility"
-                          onClick={handleClickShowPassword}
+                          onClick={handleClickShowConfirmPassword}
                           onMouseDown={handleMouseDownPassword}
                           edge="end"
                         >
-                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                          {showConfirmPassword ? (
+                            <VisibilityOff />
+                          ) : (
+                            <Visibility />
+                          )}
                         </IconButton>
                       </InputAdornment>
                     }
