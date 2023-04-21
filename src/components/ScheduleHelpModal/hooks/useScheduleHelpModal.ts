@@ -10,7 +10,7 @@ import useScheduleRequest from '../../../service/requests/useScheduleRequest';
 import { useSnackBar } from '../../../utils/renderSnackBar';
 
 const useScheduleHelpModal = () => {
-  const { showErrorSnackBar, showSuccessSnackBar } = useSnackBar();
+  const { showErrorSnackBar } = useSnackBar();
   const {
     data: monitorAvailableTimes,
     isLoading: isLoadingMonitorAvailableTimes,
