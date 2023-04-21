@@ -149,12 +149,6 @@ const useScheduleHelpModal = () => {
     resetScheduleStates();
   }, [scheduleError]);
 
-  useEffect(() => {
-    if (!isScheduleSuccess) return;
-
-    showSuccessSnackBar(`Monitoria agendada com sucesso!`);
-  }, [isScheduleSuccess]);
-
   return {
     availableHours,
     availableMonitors,
