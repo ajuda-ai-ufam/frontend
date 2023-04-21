@@ -11,7 +11,9 @@ const ConfirmedScheduleModalContent = ({ handleClose }: Props) => (
     <CheckedAnimation />
 
     <Typography variant="h4">Muito bem!</Typography>
-
+    <Typography variant="body1" textAlign={'center'}>
+      Foi enviado ao monitor uma solicitação de agendamento.
+    </Typography>
     <StyledButton sx={{ margin: '16px 0 8px 0' }} onClick={handleClose}>
       Voltar
     </StyledButton>
