@@ -152,14 +152,10 @@ export const TopLeftImage = styled(Box)`
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url(${TopLeftImage1920});
-  margin-top: -228px;
-  width: 298px;
-  height: 388px;
-  @media (max-width: ${theme.breakpoints.values.md}px) {
-    margin-top: -120px !important;
-    width: 158px !important;
-    height: 206px !important;
-  }
+
+  margin-top: -120px !important;
+  width: 158px !important;
+  height: 206px !important;
   @media (max-width: ${theme.breakpoints.values.sm}px) {
     margin-top: -80px !important;
     width: 106px !important;
@@ -173,15 +169,11 @@ export const TopRightImage = styled(Box)`
   right: 0;
   background-size: contain;
   background-repeat: no-repeat;
-  margin-top: -228px;
   background-image: url(${TopRightImage1920});
-  width: 310px;
-  height: 388px;
-  @media (max-width: ${theme.breakpoints.values.md}px) {
-    margin-top: -120px !important;
-    width: 164px !important;
-    height: 206px !important;
-  }
+  margin-top: -120px !important;
+  width: 164px !important;
+  height: 206px !important;
+
   @media (max-width: ${theme.breakpoints.values.sm}px) {
     margin-top: -80px !important;
     width: 111px !important;
@@ -195,15 +187,11 @@ export const BottomLeftImage = styled(Box)`
   left: 0;
   background-size: contain;
   background-repeat: no-repeat;
-  margin-bottom: -156px;
   background-image: url(${BottomLeftImage1920});
-  width: 204px;
-  height: 288px;
-  @media (max-width: ${theme.breakpoints.values.md}px) {
-    width: 108px !important;
-    height: 152px !important;
-    margin-bottom: -82px;
-  }
+  width: 108px !important;
+  height: 152px !important;
+  margin-bottom: -82px;
+
   @media (max-width: ${theme.breakpoints.values.sm}px) {
     width: 72px !important;
     margin-bottom: -56px;
@@ -217,15 +205,11 @@ export const BottomRightImage = styled(Box)`
   right: 0;
   background-size: contain;
   background-repeat: no-repeat;
-  margin-bottom: -156px;
   background-image: url(${BottomRightImage1920});
-  width: 298px;
-  height: 288px;
-  @media (max-width: ${theme.breakpoints.values.md}px) {
-    width: 158px !important;
-    margin-bottom: -82px;
-    height: 152px !important;
-  }
+  width: 158px !important;
+  margin-bottom: -82px;
+  height: 152px !important;
+
   @media (max-width: ${theme.breakpoints.values.sm}px) {
     width: 105px !important;
     margin-bottom: -56px;
