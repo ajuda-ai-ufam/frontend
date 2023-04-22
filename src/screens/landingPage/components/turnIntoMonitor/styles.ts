@@ -1,8 +1,8 @@
 import { Box, Typography } from '@mui/material';
 import styled from 'styled-components';
 import theme from '../../../../utils/theme';
-import LeftImage1920 from '../../../../assets/landingPageImages/1920/image-44.png';
-import RightImage1920 from '../../../../assets/landingPageImages/1920/image-45.png';
+import LeftImage1920 from '../../../../assets/landingPageImages/lateralAssets/image-44.png';
+import RightImage1920 from '../../../../assets/landingPageImages/lateralAssets/image-45.png';
 import { Button } from '../../../../components/button';
 
 export const InnerContainer = styled(Box).attrs({
