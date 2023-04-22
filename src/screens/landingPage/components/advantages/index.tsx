@@ -28,7 +28,7 @@ const Advantages = () => {
       <BottomRightImage />
       <SectionContainer color={theme.palette.secondary.main}>
         <InnerContainer>
-          <TitleTypography color={'white'}>
+          <TitleTypography sx={{ mt: '16px' }} color={'white'}>
             Conheça as vantagens
           </TitleTypography>
           <InfoTypography sx={{ margin: '16px 0' }}>

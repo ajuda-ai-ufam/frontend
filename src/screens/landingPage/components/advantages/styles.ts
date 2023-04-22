@@ -21,7 +21,10 @@ export const OutsideContainer = styled(Box).attrs({
   position: 'relative',
 })`
   @media (max-height: 700px) {
-    margin: 84px 0 0 0 !important;
+    margin: 100px 0 0 0 !important;
+  }
+  @media (max-height: 600px) {
+    margin: 130px 0 0 0 !important;
   }
 `;
 
