@@ -20,6 +20,7 @@ const RegisterStudent = () => {
   const {
     confirmPassword,
     confirmPasswordError,
+    showConfirmPassword,
     contactEmail,
     course,
     courseError,
@@ -32,6 +33,7 @@ const RegisterStudent = () => {
     handleBackClick,
     handleCancelRegisterClick,
     handleClickShowPassword,
+    handleClickShowConfirmPassword,
     handleConfirmPasswordChange,
     handleContactEmailChange,
     handleContinueClick,
@@ -98,8 +100,10 @@ const RegisterStudent = () => {
             handlePasswordChange={handlePasswordChange}
             confirmPassword={confirmPassword}
             confirmPasswordError={confirmPasswordError}
+            showConfirmPassword={showConfirmPassword}
             handleConfirmPasswordChange={handleConfirmPasswordChange}
             handleClickShowPassword={handleClickShowPassword}
+            handleClickShowConfirmPassword={handleClickShowConfirmPassword}
             handleMouseDownPassword={handleMouseDownPassword}
             handleContinueClick={handleContinueClick}
             handleCancelRegisterClick={handleCancelRegisterClick}

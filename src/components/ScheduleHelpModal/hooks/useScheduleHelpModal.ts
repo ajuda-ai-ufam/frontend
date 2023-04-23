@@ -10,7 +10,7 @@ import useScheduleRequest from '../../../service/requests/useScheduleRequest';
 import { useSnackBar } from '../../../utils/renderSnackBar';
 
 const useScheduleHelpModal = () => {
-  const { showErrorSnackBar, showSuccessSnackBar } = useSnackBar();
+  const { showErrorSnackBar } = useSnackBar();
   const {
     data: monitorAvailableTimes,
     isLoading: isLoadingMonitorAvailableTimes,
@@ -148,12 +148,6 @@ const useScheduleHelpModal = () => {
     showErrorSnackBar(`Erro ao agendar monitoria: ${scheduleError}`);
     resetScheduleStates();
   }, [scheduleError]);
-
-  useEffect(() => {
-    if (!isScheduleSuccess) return;
-
-    showSuccessSnackBar(`Monitoria agendada com sucesso!`);
-  }, [isScheduleSuccess]);
 
   return {
     availableHours,

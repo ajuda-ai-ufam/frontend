@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import styled from 'styled-components';
-import LogoImage1920 from '../../../../assets/landingPageImages/1920/image-46.png';
+import LogoImage1920 from '../../../../assets/landingPageImages/superlogo.png';
 import theme from '../../../../utils/theme';
 
 export const InnerContainer = styled(Box).attrs({
