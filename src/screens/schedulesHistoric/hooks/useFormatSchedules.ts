@@ -9,11 +9,20 @@ import { TFormatedSchedules } from './types';
 const useFormatSchedules = (
   response?: TGetSchedulesHistoricRequestResponse
 ) => {
-  const formatDateType = (schedule: TSchedules) => ({
-    ...schedule,
-    startDate: new Date(schedule.startDate),
-    endDate: new Date(schedule.endDate),
-  });
+  const formatDateType = (schedule: TSchedules) => {
+    const AMT_OFFSET = -4;
+    const startDate = new Date(schedule.startDate);
+    startDate.setHours(startDate.getHours() - AMT_OFFSET);
+
+    const endDate = new Date(schedule.endDate);
+    endDate.setHours(endDate.getHours() - AMT_OFFSET);
+
+    return {
+      ...schedule,
+      startDate,
+      endDate,
+    };
+  };
 
   const groupSchedulesByDate = (
     groups: Map<string, TSchedules[]>,
