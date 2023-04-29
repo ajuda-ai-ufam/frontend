@@ -15,7 +15,6 @@ type Props = {
 };
 
 const RemoveConfirmationModal = ({
-  selectedMonitorRemove,
   handleClose,
   handleEndingMonitoringClick,
 }: Props) => {
