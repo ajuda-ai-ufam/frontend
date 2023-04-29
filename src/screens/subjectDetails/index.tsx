@@ -17,6 +17,8 @@ import {
   LegendTypography,
   ProgressContainer,
 } from './styles';
+import useRemoveMonitorModal from '../../components/removeMonitorModal/hooks/useRemoveMonitorModal';
+import RemoveMonitorModal from '../../components/removeMonitorModal';
 
 const SubjectDetails = () => {
   const {
@@ -59,6 +61,15 @@ const SubjectDetails = () => {
     handleEditData,
     handleShowConfirmation,
   } = useScheduleHelpModal();
+
+  const {
+    isOpen: isOpenRemoveMonitor,
+    selectedMonitor: selectedMonitorRemove,
+    handleOpenRemoveMonitorModal,
+    handleClose: handleCloseRemoveMonitorModal,
+    modalState: RemoveMonitorModalState,
+    handleRemoveMonitorClick,
+  } = useRemoveMonitorModal();
 
   const renderPageTop = () => {
     if (!subject) return <></>;
@@ -153,7 +164,10 @@ const SubjectDetails = () => {
           monitors={monitors}
           selectedProfessorId={selectedProfessorId}
           subject={subject}
-          handleMonitorClick={getMonitorClickHandler(handleOpenScheduleModal)}
+          handleMonitorClick={getMonitorClickHandler(
+            handleOpenScheduleModal,
+            handleOpenRemoveMonitorModal
+          )}
           handleProfessorFilterClick={handleProfessorFilterClick}
         />
       </>
@@ -184,6 +198,14 @@ const SubjectDetails = () => {
         isOpen={isScheduleModalOpen}
         handleClose={handleCloseScheduleModal}
         handleConfirmSchedule={handleConfirmSchedule}
+      />
+
+      <RemoveMonitorModal
+        isOpen={isOpenRemoveMonitor}
+        selectedMonitorRemove={selectedMonitorRemove}
+        handleClose={handleCloseRemoveMonitorModal}
+        modalState={RemoveMonitorModalState}
+        handleRemoveMonitorClick={handleRemoveMonitorClick}
       />
       <Container>
         <Card>{renderCardContent()}</Card>
