@@ -11,11 +11,13 @@ import {
 type Props = {
   selectedMonitorRemove?: TSubjectMonitor;
   handleClose(): void;
+  handleEndingMonitoringClick(): void;
 };
 
 const RemoveConfirmationModal = ({
   selectedMonitorRemove,
   handleClose,
+  handleEndingMonitoringClick,
 }: Props) => {
   return (
     <RemoveMonitorCard>
@@ -28,7 +30,9 @@ const RemoveConfirmationModal = ({
         <ConfirmCloseButton onClick={handleClose}>
           Não, desejo sair
         </ConfirmCloseButton>
-        <ConfirmRemoveButton>Sim, continuar</ConfirmRemoveButton>
+        <ConfirmRemoveButton onClick={handleEndingMonitoringClick}>
+          Sim, continuar
+        </ConfirmRemoveButton>
       </RemoveButtonContainer>
     </RemoveMonitorCard>
   );

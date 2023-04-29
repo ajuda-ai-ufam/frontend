@@ -16,12 +16,14 @@ type Props = {
   selectedMonitorRemove?: TSubjectMonitor;
   handleClose(): void;
   handleRemoveMonitorClick(): void;
+  isMyMonitor: boolean;
 };
 
 const DataMonitorModal = ({
   selectedMonitorRemove,
   handleClose,
   handleRemoveMonitorClick,
+  isMyMonitor,
 }: Props) => {
   return (
     <Card>
@@ -77,9 +79,13 @@ const DataMonitorModal = ({
         </DataContainer>
       </MonitorContainer>
       <ButtonContainer>
-        <RemoveButton onClick={handleRemoveMonitorClick}>
-          Remover Monitor
-        </RemoveButton>
+        {isMyMonitor ? (
+          <RemoveButton onClick={handleRemoveMonitorClick}>
+            Remover Monitor
+          </RemoveButton>
+        ) : (
+          <></>
+        )}
         <CloseButton onClick={handleClose}>Fechar</CloseButton>
       </ButtonContainer>
     </Card>

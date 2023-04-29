@@ -57,7 +57,12 @@ export const ButtonContainer = styled(Box).attrs({
   alignItems: 'center',
   gap: '120px',
   width: '100%',
-})``;
+})`
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    flex-direction: column-reverse !important;
+    gap: 16px !important;
+  }
+`;
 
 export const RemoveButtonContainer = styled(Box).attrs({
   display: 'flex',
@@ -65,19 +70,32 @@ export const RemoveButtonContainer = styled(Box).attrs({
   alignItems: 'flex-start',
   gap: '24px',
   width: '100%',
-})``;
+})`
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    flex-direction: column-reverse !important;
+    gap: 16px !important;
+  }
+`;
 
 export const CloseButton = styled(Button).attrs({
   variant: 'contained',
   color: 'primary',
   width: '159px',
-})``;
+})`
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    width: 100% !important;
+  }
+`;
 
 export const RemoveButton = styled(Button).attrs({
   color: 'primary',
   variant: 'text',
   width: '159px',
-})``;
+})`
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    width: 100% !important;
+  }
+`;
 
 export const RemoveMonitorCard = styled(Box).attrs({
   display: 'flex',
@@ -94,9 +112,40 @@ export const ConfirmRemoveButton = styled(Button).attrs({
   variant: 'contained',
   color: 'error',
   width: '160px',
-})``;
+})`
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    width: 100% !important;
+  }
+`;
 
 export const ConfirmCloseButton = styled(Button).attrs({
   variant: 'text',
   color: 'secondary',
+})`
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    width: 100% !important;
+  }
+`;
+
+export const ConfirmationContainer = styled(Box).attrs({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  width: '100%',
+  gap: '24px',
+  padding: '16px 0',
+})``;
+
+export const ConfirmationTextContainer = styled(Box).attrs({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  gap: '8px',
+})``;
+
+export const LoadingContainer = styled(Box).attrs({
+  display: 'flex',
+  justifyContent: 'center',
+  width: '100%',
+  padding: '16px 0',
 })``;

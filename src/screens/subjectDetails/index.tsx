@@ -69,6 +69,10 @@ const SubjectDetails = () => {
     handleClose: handleCloseRemoveMonitorModal,
     modalState: RemoveMonitorModalState,
     handleRemoveMonitorClick,
+    isSuccess: isSuccessRemoveMonitor,
+    isLoading: isLoadingRemoveMonitor,
+    handleEndingMonitoringClick,
+    isMyMonitor,
   } = useRemoveMonitorModal();
 
   const renderPageTop = () => {
@@ -206,6 +210,10 @@ const SubjectDetails = () => {
         handleClose={handleCloseRemoveMonitorModal}
         modalState={RemoveMonitorModalState}
         handleRemoveMonitorClick={handleRemoveMonitorClick}
+        isLoading={isLoadingRemoveMonitor}
+        isSuccess={isSuccessRemoveMonitor}
+        handleEndingMonitoringClick={handleEndingMonitoringClick}
+        isMyMonitor={isMyMonitor}
       />
       <Container>
         <Card>{renderCardContent()}</Card>
