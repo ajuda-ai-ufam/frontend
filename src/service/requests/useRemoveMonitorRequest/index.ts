@@ -22,7 +22,7 @@ const useRemoveMonitorRequest = () => {
       const errorData = err.response?.data as TEndingMonitoringErrorResponse;
       const errorMessage = errorData?.message || 'Erro desconhecido';
 
-      console.error('Error during ending monitoring. Error:', errorMessage);
+      console.error('Error during remove monitor. Error:', errorMessage);
 
       setError(errorMessage);
     } finally {

@@ -10,7 +10,7 @@ const useRemoveMonitorModal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedMonitor, setSelectedMonitor] = useState<TSubjectMonitor>();
   const user = useGetLoggedUser();
-  const [modalState, setModalState] = useState(0);
+  const [showMonitorData, setShowMonitorData] = useState(true);
 
   const { showErrorSnackBar } = useSnackBar();
   const navigate = useNavigate();
@@ -35,7 +35,7 @@ const useRemoveMonitorModal = () => {
   }, [selectedMonitor]);
 
   const handleRemoveMonitorClick = () => {
-    setModalState(1);
+    setShowMonitorData(false);
   };
 
   const handleEndingMonitoringClick = () => {
@@ -46,7 +46,7 @@ const useRemoveMonitorModal = () => {
 
   const handleClose = () => {
     setSelectedMonitor(undefined);
-    setModalState(0);
+    setShowMonitorData(true);
     setIsOpen(false);
 
     if (isSuccess) navigate(0);
@@ -55,10 +55,10 @@ const useRemoveMonitorModal = () => {
   useEffect(() => {
     if (error) {
       showErrorSnackBar(
-        `Não foi possível remover o monitor, tente novamente mais tarde. Erro ${error}`
+        `Não foi possível remover o(a) monitor(a), tente novamente mais tarde. Erro ${error}`
       );
       setSelectedMonitor(undefined);
-      setModalState(0);
+      setShowMonitorData(true);
       setIsOpen(false);
     }
   }, [error]);
@@ -66,7 +66,7 @@ const useRemoveMonitorModal = () => {
   return {
     isOpen,
     selectedMonitor,
-    modalState,
+    showMonitorData,
     isLoading,
     isSuccess,
     isMyMonitor,

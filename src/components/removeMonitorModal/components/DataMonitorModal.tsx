@@ -12,6 +12,8 @@ import {
   ButtonContainer,
 } from '../styles';
 
+import dataMonitorList, { TMonitorDataList } from './DataMonitorList';
+
 type Props = {
   selectedMonitorRemove?: TSubjectMonitor;
   handleClose(): void;
@@ -25,58 +27,23 @@ const DataMonitorModal = ({
   handleRemoveMonitorClick,
   isMyMonitor,
 }: Props) => {
+  let dataList: TMonitorDataList = { data: [] };
+
+  if (selectedMonitorRemove) {
+    dataList = dataMonitorList(selectedMonitorRemove);
+  }
   return (
     <Card>
-      <TypographyTitle>Dados do Monitor</TypographyTitle>
+      <TypographyTitle>Dados do(a) Monitor(a)</TypographyTitle>
       <MonitorContainer>
-        <DataContainer>
-          <TypographyDataContainer>
-            <TypographyData>Curso</TypographyData>
-          </TypographyDataContainer>
-          <TypographyDataMonitor>
-            {selectedMonitorRemove?.course.name}
-          </TypographyDataMonitor>
-        </DataContainer>
-        <DataContainer>
-          <TypographyDataContainer>
-            <TypographyData>Monitor (a)</TypographyData>
-          </TypographyDataContainer>
-          <TypographyDataMonitor>
-            {selectedMonitorRemove?.name}
-          </TypographyDataMonitor>
-        </DataContainer>
-        <DataContainer>
-          <TypographyDataContainer>
-            <TypographyData>Professor (a)</TypographyData>
-          </TypographyDataContainer>
-          <TypographyDataMonitor>
-            {selectedMonitorRemove?.responsable.name}
-          </TypographyDataMonitor>
-        </DataContainer>
-        <DataContainer>
-          <TypographyDataContainer>
-            <TypographyData>E-mail</TypographyData>
-          </TypographyDataContainer>
-          <TypographyDataMonitor>
-            {selectedMonitorRemove?.email}
-          </TypographyDataMonitor>
-        </DataContainer>
-        <DataContainer>
-          <TypographyDataContainer>
-            <TypographyData>Linkedin</TypographyData>
-          </TypographyDataContainer>
-          <TypographyDataMonitor>
-            {selectedMonitorRemove?.linkedin}
-          </TypographyDataMonitor>
-        </DataContainer>
-        <DataContainer>
-          <TypographyDataContainer>
-            <TypographyData>Whatsapp</TypographyData>
-          </TypographyDataContainer>
-          <TypographyDataMonitor>
-            {selectedMonitorRemove?.whatsapp}
-          </TypographyDataMonitor>
-        </DataContainer>
+        {dataList.data.map((data) => (
+          <DataContainer>
+            <TypographyDataContainer>
+              <TypographyData>{data.label}</TypographyData>
+            </TypographyDataContainer>
+            <TypographyDataMonitor>{data.value}</TypographyDataMonitor>
+          </DataContainer>
+        ))}
       </MonitorContainer>
       <ButtonContainer>
         {isMyMonitor ? (

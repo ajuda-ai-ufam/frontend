@@ -16,7 +16,7 @@ import {
 type Props = {
   isOpen: boolean;
   selectedMonitorRemove?: TSubjectMonitor;
-  modalState: number;
+  showMonitorData: boolean;
   handleClose(): void;
   handleRemoveMonitorClick(): void;
   isLoading: boolean;
@@ -28,7 +28,7 @@ type Props = {
 const RemoveMonitorModal = ({
   isOpen,
   selectedMonitorRemove,
-  modalState,
+  showMonitorData,
   handleClose,
   handleRemoveMonitorClick,
   isLoading,
@@ -37,56 +37,50 @@ const RemoveMonitorModal = ({
   isMyMonitor,
 }: Props) => {
   const renderContent = () => {
-    if (!isSuccess && !isLoading) {
-      if (modalState === 0) {
-        return (
-          <DataMonitorModal
-            selectedMonitorRemove={selectedMonitorRemove}
-            handleClose={handleClose}
-            handleRemoveMonitorClick={handleRemoveMonitorClick}
-            isMyMonitor={isMyMonitor}
-          />
-        );
-      }
+    if (isSuccess) {
+      return (
+        <ConfirmationContainer>
+          <CheckedAnimation />
 
-      if (modalState === 1) {
-        return (
-          <RemoveConfirmationModal
-            selectedMonitorRemove={selectedMonitorRemove}
-            handleClose={handleClose}
-            handleEndingMonitoringClick={handleEndingMonitoringClick}
-          />
-        );
-      }
-    } else {
-      if (isSuccess) {
-        return (
-          <ConfirmationContainer>
-            <CheckedAnimation />
+          <ConfirmationTextContainer>
+            <Typography variant="h4">Tudo certo!</Typography>
+            <Typography variant="body1">O(A) monitor(a) foi removido(a)</Typography>
+          </ConfirmationTextContainer>
 
-            <ConfirmationTextContainer>
-              <Typography variant="h4">Tudo certo!</Typography>
-              <Typography variant="body1">O monitor foi removido</Typography>
-            </ConfirmationTextContainer>
-
-            <Button onClick={handleClose} color="primary">
-              Voltar
-            </Button>
-          </ConfirmationContainer>
-        );
-      } else {
-        return (
-          <LoadingContainer>
-            <LoadingAnimation />
-          </LoadingContainer>
-        );
-      }
+          <Button onClick={handleClose} color="primary">
+            Voltar
+          </Button>
+        </ConfirmationContainer>
+      );
     }
+
+    if (isLoading) {
+      return (
+        <LoadingContainer>
+          <LoadingAnimation />
+        </LoadingContainer>
+      );
+    }
+
+    return showMonitorData ? (
+      <DataMonitorModal
+        selectedMonitorRemove={selectedMonitorRemove}
+        handleClose={handleClose}
+        handleRemoveMonitorClick={handleRemoveMonitorClick}
+        isMyMonitor={isMyMonitor}
+      />
+    ) : (
+      <RemoveConfirmationModal
+        selectedMonitorRemove={selectedMonitorRemove}
+        handleClose={handleClose}
+        handleEndingMonitoringClick={handleEndingMonitoringClick}
+      />
+    );
   };
 
   return (
     <Modal
-      width={modalState === 0 ? '462px' : '368px'}
+      width={showMonitorData ? '462px' : '368px'}
       isOpen={isOpen}
       handleClose={handleClose}
     >

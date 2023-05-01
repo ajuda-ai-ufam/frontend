@@ -67,7 +67,7 @@ const SubjectDetails = () => {
     selectedMonitor: selectedMonitorRemove,
     handleOpenRemoveMonitorModal,
     handleClose: handleCloseRemoveMonitorModal,
-    modalState: RemoveMonitorModalState,
+    showMonitorData: showRemoveMonitorData,
     handleRemoveMonitorClick,
     isSuccess: isSuccessRemoveMonitor,
     isLoading: isLoadingRemoveMonitor,
@@ -208,7 +208,7 @@ const SubjectDetails = () => {
         isOpen={isOpenRemoveMonitor}
         selectedMonitorRemove={selectedMonitorRemove}
         handleClose={handleCloseRemoveMonitorModal}
-        modalState={RemoveMonitorModalState}
+        showMonitorData={showRemoveMonitorData}
         handleRemoveMonitorClick={handleRemoveMonitorClick}
         isLoading={isLoadingRemoveMonitor}
         isSuccess={isSuccessRemoveMonitor}

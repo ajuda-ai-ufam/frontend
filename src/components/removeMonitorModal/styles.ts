@@ -8,7 +8,7 @@ export const Card = styled(Box).attrs({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  alignItems: 'center',
+  alignItems: 'flex-start',
   paddingTop: '8px',
   gap: '24px',
   width: '100%',
@@ -119,7 +119,7 @@ export const ConfirmRemoveButton = styled(Button).attrs({
 `;
 
 export const ConfirmCloseButton = styled(Button).attrs({
-  variant: 'text',
+  variant: 'outlined',
   color: 'secondary',
 })`
   @media (max-width: ${theme.breakpoints.values.sm}px) {
