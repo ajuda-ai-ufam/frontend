@@ -4,6 +4,10 @@ import styled from 'styled-components';
 import { Button } from '../../../../components/button';
 import theme from '../../../../utils/theme';
 
+type Props = {
+  wid: string;
+};
+
 export const StyledCard = styled(Card).attrs({
   width: '100%',
 })`
@@ -34,11 +38,11 @@ export const Container = styled(Box).attrs({
   }
 `;
 
-export const ActionButton = styled(Button).attrs({
+export const ActionButton = styled(Button).attrs(({ wid }: Props) => ({
   color: 'primary',
   variant: 'outlined',
-  width: '140px',
-})`
+  width: wid,
+}))<Props>`
   :hover {
     background-color: ${theme.palette.primary.main} !important;
     color: white;

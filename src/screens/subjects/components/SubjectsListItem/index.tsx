@@ -1,4 +1,4 @@
-import { Add, CalendarMonthRounded } from '@mui/icons-material';
+import { CalendarMonthRounded, EditRounded } from '@mui/icons-material';
 import { CardContent } from '@mui/material';
 import React from 'react';
 import { TSubject } from '../../../../service/requests/useListSubjectsRequest/types';
@@ -33,6 +33,7 @@ const SubjectsListItem = ({
           <ActionButton
             onClick={() => handleConfirmSchedule(subject)}
             startIcon={<CalendarMonthRounded />}
+            wid="140px"
           >
             Agendar
           </ActionButton>
@@ -45,9 +46,12 @@ const SubjectsListItem = ({
         <ButtonContainer>
           <ActionButton
             onClick={() => handleAssignProfessors(subject)}
-            startIcon={<Add />}
+            wid="204px"
+            color="primary"
+            variant="outlined"
+            startIcon={<EditRounded />}
           >
-            Professor
+            Editar professores
           </ActionButton>
         </ButtonContainer>
       );

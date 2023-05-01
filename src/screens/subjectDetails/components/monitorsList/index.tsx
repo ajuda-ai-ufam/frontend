@@ -37,12 +37,16 @@ const MonitorsList = ({
         label="Ver todos"
         onClick={() => handleProfessorFilterClick()}
       />,
-      ...subject.responsables.map((prof) => (
+      ...subject.responsables.map((subjectReponsables) => (
         <StyledChip
-          key={prof.id}
-          isSelected={selectedProfessorId === prof.id}
-          label={`Prof. ${prof.name}`}
-          onClick={() => handleProfessorFilterClick(prof.id)}
+          key={subjectReponsables.professor.user.id}
+          isSelected={
+            selectedProfessorId === subjectReponsables.professor.user.id
+          }
+          label={`Prof. ${subjectReponsables.professor.user.name}`}
+          onClick={() =>
+            handleProfessorFilterClick(subjectReponsables.professor.user.id)
+          }
         />
       )),
     ];
