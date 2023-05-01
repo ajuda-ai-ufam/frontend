@@ -65,7 +65,7 @@ const FormScheduleModalContent = ({
           <Typography>
             {subject.responsables.find(
               (prof) => prof.id === Number(selected[0])
-            )?.name || ''}
+            )?.professor.user.name || ''}
           </Typography>
         )
       }
@@ -74,9 +74,12 @@ const FormScheduleModalContent = ({
         <MenuItem key={-1} value={-1}>
           Selecionar Professor
         </MenuItem>,
-        ...subject.responsables.map((professor) => (
-          <MenuItem key={professor.id} value={professor.id}>
-            {professor.name}
+        ...subject.responsables.map((subjectResponsible) => (
+          <MenuItem
+            key={subjectResponsible.professor.user.id}
+            value={subjectResponsible.professor.user.id}
+          >
+            {subjectResponsible.professor.user.name}
           </MenuItem>
         )),
       ]}

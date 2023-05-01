@@ -42,8 +42,10 @@ const ConfirmScheduleModalContent = ({
       data.push({
         label: 'Professor',
         value:
-          subject.responsables.find((prof) => prof.id === selectedProfessorId)
-            ?.name || '',
+          subject.responsables.find(
+            (subjectResponsible) =>
+              subjectResponsible.professor.user.id === selectedProfessorId
+          )?.professor.user.name || '',
       });
     }
 

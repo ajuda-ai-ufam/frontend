@@ -92,8 +92,10 @@ const AddMonitorModal = ({
               <Placeholder>Selecionar Professor</Placeholder>
             ) : (
               <Typography>
-                {professors.find((prof) => prof.id === Number(selected[0]))
-                  ?.name || ''}
+                {professors.find(
+                  (subjectResponsible) =>
+                    subjectResponsible.professor.user.id === Number(selected[0])
+                )?.professor.user.name || ''}
               </Typography>
             )
           }
@@ -102,9 +104,12 @@ const AddMonitorModal = ({
             <MenuItem key={-1} value={-1}>
               Selecionar Professor
             </MenuItem>,
-            ...professors.map((professor) => (
-              <MenuItem key={professor.id} value={professor.id}>
-                {professor.name}
+            ...professors.map((subjectResponsible) => (
+              <MenuItem
+                key={subjectResponsible.professor.user.id}
+                value={subjectResponsible.professor.user.id}
+              >
+                {subjectResponsible.professor.user.name}
               </MenuItem>
             )),
           ]}
