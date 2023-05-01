@@ -72,7 +72,7 @@ export enum SchedulesFilters {
   CANCELED = 'Cancelados',
   WAITING_APPROVAL = 'Aguardando confirmação',
   WILL_HELP = 'Vou ajudar',
-  RECEIVE_HELP = 'Serei ajudado',
+  RECEIVE_HELP = 'Serei ajudado(a)',
 }
 
 export const schedulesFiltersParamConverter = {

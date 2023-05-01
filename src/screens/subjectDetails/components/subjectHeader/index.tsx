@@ -91,7 +91,7 @@ const SubjectHeader = ({
     if (userType === TypeUserEnum.COORDINATOR) {
       return (
         <Button
-          width="204px"
+          width="auto"
           color="primary"
           startIcon={<EditRounded />}
           onClick={() => handleOpenAssignProfessorsModal(subject)}
