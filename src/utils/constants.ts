@@ -43,6 +43,12 @@ export enum SchedulesStatus {
   NOT_REALIZED = 5,
 }
 
+export enum ReponsabilityProfessorStatus {
+  PENDING = 'Pendente',
+  APPROVED = 'Aprovado',
+  ENDED = 'Finalizada',
+}
+
 export enum TypeMonitorStatus {
   PENDING = 1,
   APPROVED = 2,
