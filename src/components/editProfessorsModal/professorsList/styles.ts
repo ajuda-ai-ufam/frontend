@@ -8,7 +8,7 @@ export const Container = styled(Box).attrs({
   gap: '8px',
   paddingRight: '20px',
 })`
-  overflow: scroll;
+  overflow-y: scroll;
 `;
 
 export const StyledCard = styled(Card).attrs({
