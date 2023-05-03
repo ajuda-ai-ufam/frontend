@@ -50,6 +50,7 @@ const Subjects = () => {
   const {
     availableHours,
     availableMonitors,
+    description,
     isLoadingMonitorAvailableTimes,
     isScheduleLoading,
     isScheduleSuccess,
@@ -58,6 +59,7 @@ const Subjects = () => {
     selectedDate,
     selectedMonitorId,
     selectedProfessorId,
+    handleChangeDescription,
     handleChangeHour,
     handleChangeProfessor,
     handleChangeMonitor,
@@ -95,6 +97,7 @@ const Subjects = () => {
       <ScheduleHelpModal
         availableHours={availableHours}
         availableMonitors={availableMonitors}
+        description={description}
         isLoadingMonitorAvailableTimes={isLoadingMonitorAvailableTimes}
         isScheduleLoading={isScheduleLoading}
         isScheduleSuccess={isScheduleSuccess}
@@ -106,6 +109,7 @@ const Subjects = () => {
         showConfirmation={showConfirmation}
         handleChangeHour={handleChangeHour}
         handleChangeDate={handleChangeDate}
+        handleChangeDescription={handleChangeDescription}
         handleChangeMonitor={handleChangeMonitor}
         handleChangeProfessor={handleChangeProfessor}
         handleEditData={handleEditData}
