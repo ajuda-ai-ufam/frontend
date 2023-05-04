@@ -55,6 +55,15 @@ const useSubjects = () => {
     navigate(SCREENS.SUBJECT_DETAILS.replace(':id', subjectId.toString()));
   };
 
+  const refetchSubjects = () => {
+    void listSubjects({
+      page: page,
+      search: searchFieldElement.current?.value
+        ? searchFieldElement.current?.value
+        : undefined,
+    });
+  };
+
   useEffect(() => {
     document.title = 'Disciplinas';
     if (!user) return navigate(SCREENS.LOGIN);
@@ -78,6 +87,7 @@ const useSubjects = () => {
     handleChangePage,
     handleSearch,
     handleSubjectClick,
+    refetchSubjects,
   };
 };
 

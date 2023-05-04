@@ -1,35 +1,48 @@
-import { AddRounded, ArrowBack } from '@mui/icons-material';
+import { EditRounded, ArrowBack } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
 import AddMonitorModal from '../../../../components/addMonitorModal';
 import useAddMonitorModal from '../../../../components/addMonitorModal/hooks/useAddMonitorModal';
-import AssignProfessorsModal from '../../../../components/assignProfessorsModal';
-import useAssignProfessorsModal from '../../../../components/assignProfessorsModal/hooks/useAssignProfessorsModal';
+import useAssignProfessorsModal from '../../../../components/editProfessorsModal/hooks/useEditProfessorsModal';
 import useMonitorAvailabilityModal from '../../../../components/monitorAvailabilityModal/hooks/useMonitorAvailabilityModal';
 import { Button } from '../../../../components/button';
 import { TCompleteSubject } from '../../../../service/requests/useGetSubject/types';
 import { TypeUserEnum } from '../../../../utils/constants';
 import { Container } from './styles';
 import MonitorAvailabilityModal from '../../../../components/monitorAvailabilityModal';
+import EditProfessorsModal from '../../../../components/editProfessorsModal';
 
 type Props = {
   subject?: TCompleteSubject;
   userType: TypeUserEnum;
   handleGoBackClick(): void;
+  refetchSubject(): void;
 };
 
-const SubjectHeader = ({ subject, userType, handleGoBackClick }: Props) => {
+const SubjectHeader = ({
+  subject,
+  userType,
+  handleGoBackClick,
+  refetchSubject,
+}: Props) => {
   const {
-    isLoading: isLoadingAssignProfessors,
-    isSuccess,
+    isLoadingAssignProfessor,
+    isLoadingEndResponsability,
+    isSuccessAssignProfessor,
     isOpen: isAssignProfessorsModalOpen,
     professors,
+    selectedProfessorRemove,
     selectedProfessorsIds,
     selectedSubject,
     handleAssignProfessorsClick,
     handleChangeProfessors,
     handleCloseModal: handleCloseAssignProfessorsModal,
     handleOpenModal: handleOpenAssignProfessorsModal,
-  } = useAssignProfessorsModal();
+    handleCloseRemoveProfessorModal,
+    isRemoveProfessorModalOpen,
+    handleClickRemoveProfessor,
+    handleEndResponsabilityClick,
+    subjectReponsibles,
+  } = useAssignProfessorsModal({ refetchSubject });
   const {
     isLoading: isLoadingAddMonitor,
     isSuccess: isSuccessAddMonitor,
@@ -80,9 +93,10 @@ const SubjectHeader = ({ subject, userType, handleGoBackClick }: Props) => {
         <Button
           width="204px"
           color="primary"
+          startIcon={<EditRounded />}
           onClick={() => handleOpenAssignProfessorsModal(subject)}
         >
-          <AddRounded /> Adicionar professor
+          Editar professores
         </Button>
       );
     }
@@ -92,9 +106,13 @@ const SubjectHeader = ({ subject, userType, handleGoBackClick }: Props) => {
 
   return (
     <Container>
-      <AssignProfessorsModal
-        isLoading={isLoadingAssignProfessors}
-        isSuccess={isSuccess}
+      <EditProfessorsModal
+        handleEndResponsabilityClick={handleEndResponsabilityClick}
+        isLoadingEndResponsability={isLoadingEndResponsability}
+        subjectReponsibles={subjectReponsibles}
+        isLoading={isLoadingAssignProfessor}
+        selectedProfessorRemove={selectedProfessorRemove}
+        isSuccess={isSuccessAssignProfessor}
         isOpen={isAssignProfessorsModalOpen}
         professors={professors}
         selectedProfessorsIds={selectedProfessorsIds}
@@ -102,6 +120,9 @@ const SubjectHeader = ({ subject, userType, handleGoBackClick }: Props) => {
         handleAssignProfessorsClick={handleAssignProfessorsClick}
         handleChangeProfessors={handleChangeProfessors}
         handleClose={handleCloseAssignProfessorsModal}
+        handleClickRemoveProfessor={handleClickRemoveProfessor}
+        handleCloseRemoveProfessorModal={handleCloseRemoveProfessorModal}
+        isRemoveProfessorModalOpen={isRemoveProfessorModalOpen}
       />
       <AddMonitorModal
         isLoading={isLoadingAddMonitor}

@@ -84,6 +84,10 @@ const useSubjectDetails = () => {
     };
   };
 
+  const refetchSubject = () => {
+    if (id) getSubject(Number(id));
+  };
+
   useEffect(() => {
     if (!userType) navigate(SCREENS.LOGIN);
 
@@ -109,6 +113,7 @@ const useSubjectDetails = () => {
     handleProfessorFilterClick,
     handleSearch,
     handleSearchChange,
+    refetchSubject,
   };
 };
 
