@@ -1,15 +1,15 @@
 import { Typography } from '@mui/material';
-import AssignProfessorsModal from '../../components/assignProfessorsModal';
-import useAssignProfessorsModal from '../../components/assignProfessorsModal/hooks/useAssignProfessorsModal';
-import ContainerWithSidebar from '../../components/containerWithSidebar';
+import ScheduleConfirmationModal from '../../components/ScheduleConfirmationModal';
 import ScheduleHelpModal from '../../components/ScheduleHelpModal';
 import useScheduleHelpModal from '../../components/ScheduleHelpModal/hooks/useScheduleHelpModal';
+import ContainerWithSidebar from '../../components/containerWithSidebar';
+import EditProfessorsModal from '../../components/editProfessorsModal';
+import useEditProfessorsModal from '../../components/editProfessorsModal/hooks/useEditProfessorsModal';
 import SearchField from '../../components/searchField';
 import { SidebarItemEnum, TypeUserEnum } from '../../utils/constants';
 import SubjectsList from './components/SubjectsList';
 import useSubjects from './hooks/useSubjects';
 import { Card, Container } from './styles';
-import ScheduleConfirmationModal from '../../components/ScheduleConfirmationModal';
 
 const Subjects = () => {
   const {
@@ -22,20 +22,30 @@ const Subjects = () => {
     handleChangePage,
     handleSearch,
     handleSubjectClick,
+    refetchSubjects,
   } = useSubjects();
 
   const {
-    isLoading: isLoadingAssignProfessors,
-    isSuccess,
+    isLoadingAssignProfessor,
+    isSuccessAssignProfessor,
     isOpen: isAssignProfessorsModalOpen,
     professors,
     selectedProfessorsIds,
     selectedSubject,
+    subjectReponsibles,
     handleAssignProfessorsClick,
     handleChangeProfessors,
     handleCloseModal: handleCloseAssignProfessorsModal,
     handleOpenModal: handleOpenAssignProfessorsModal,
-  } = useAssignProfessorsModal();
+    handleClickRemoveProfessor,
+    handleCloseRemoveProfessorModal,
+    isRemoveProfessorModalOpen,
+    selectedProfessorRemove,
+    isLoadingEndResponsability,
+    handleEndResponsabilityClick,
+  } = useEditProfessorsModal({
+    refetchSubject: refetchSubjects,
+  });
 
   const {
     availableHours,
@@ -64,9 +74,13 @@ const Subjects = () => {
 
   return (
     <ContainerWithSidebar selectedSidebarItem={SidebarItemEnum.SUBJECTS}>
-      <AssignProfessorsModal
-        isLoading={isLoadingAssignProfessors}
-        isSuccess={isSuccess}
+      <EditProfessorsModal
+        handleEndResponsabilityClick={handleEndResponsabilityClick}
+        isLoadingEndResponsability={isLoadingEndResponsability}
+        subjectReponsibles={subjectReponsibles}
+        selectedProfessorRemove={selectedProfessorRemove}
+        isLoading={isLoadingAssignProfessor}
+        isSuccess={isSuccessAssignProfessor}
         isOpen={isAssignProfessorsModalOpen}
         professors={professors}
         selectedProfessorsIds={selectedProfessorsIds}
@@ -74,6 +88,9 @@ const Subjects = () => {
         handleAssignProfessorsClick={handleAssignProfessorsClick}
         handleChangeProfessors={handleChangeProfessors}
         handleClose={handleCloseAssignProfessorsModal}
+        handleClickRemoveProfessor={handleClickRemoveProfessor}
+        handleCloseRemoveProfessorModal={handleCloseRemoveProfessorModal}
+        isRemoveProfessorModalOpen={isRemoveProfessorModalOpen}
       />
       <ScheduleHelpModal
         availableHours={availableHours}

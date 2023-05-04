@@ -32,6 +32,7 @@ const SubjectDetails = () => {
     handleProfessorFilterClick,
     handleSearch,
     handleSearchChange,
+    refetchSubject,
   } = useSubjectDetails();
 
   const {
@@ -65,6 +66,7 @@ const SubjectDetails = () => {
     return (
       <>
         <SubjectHeader
+          refetchSubject={refetchSubject}
           subject={subject}
           userType={userType}
           handleGoBackClick={handleGoBackClick}
@@ -91,6 +93,7 @@ const SubjectDetails = () => {
       return (
         <>
           <SubjectHeader
+            refetchSubject={refetchSubject}
             subject={subject}
             userType={userType}
             handleGoBackClick={handleGoBackClick}
