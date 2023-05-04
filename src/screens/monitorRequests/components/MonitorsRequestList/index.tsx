@@ -49,7 +49,7 @@ const MonitorsRequestList = ({
       <Container>
         <FallbackContainer>
           <FallbackTypography>
-            Ops... Não foi encontrado nenhum(a) monitor(a).
+            Ops... Não foi encontrado(a) nenhum(a) monitor(a).
           </FallbackTypography>
         </FallbackContainer>
       </Container>

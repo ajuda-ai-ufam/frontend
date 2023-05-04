@@ -22,9 +22,9 @@ export enum TypeUserEnum {
 }
 
 export const UserRole = {
-  [TypeUserEnum.STUDENT]: 'Aluno',
-  [TypeUserEnum.PROFESSOR]: 'Professor',
-  [TypeUserEnum.COORDINATOR]: 'Coordenador',
+  [TypeUserEnum.STUDENT]: 'Aluno(a)',
+  [TypeUserEnum.PROFESSOR]: 'Professor(a)',
+  [TypeUserEnum.COORDINATOR]: 'Coordenador(a)',
 };
 
 export enum TypeMonitoringStatus {

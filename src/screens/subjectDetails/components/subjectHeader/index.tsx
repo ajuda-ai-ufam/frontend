@@ -72,7 +72,7 @@ const SubjectHeader = ({
             onClick={() => handleOpenAddMonitorModal(subject)}
             color="secondary"
           >
-            Quero ser monitor
+            Quero ser monitor(a)
           </Button>
         );
       } else {

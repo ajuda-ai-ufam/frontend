@@ -154,7 +154,7 @@ const FormScheduleModalContent = ({
       >
         {[
           <MenuItem key={-1} value={-1}>
-            Selecionar Monitor
+            Selecionar Monitor(a)
           </MenuItem>,
           ...availableHours.map((hour, index) => (
             <MenuItem key={index} value={index}>

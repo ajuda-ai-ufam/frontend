@@ -93,7 +93,7 @@ const FormRegister = () => {
             <>
               <TypographyContainer>
                 <TypographyTextRegister variant="h4">
-                  Cadastro de Professor
+                  Cadastro de Professor(a)
                 </TypographyTextRegister>
                 <TypographyTextRegister variant="body1">
                   Preencha os campos abaixo para iniciar o seu cadastro.

@@ -57,7 +57,9 @@ const useAddMonitorModal = () => {
 
   useEffect(() => {
     if (error) {
-      showErrorSnackBar(`Erro ao solicitar para ser monitor. Erro: ${error}`);
+      showErrorSnackBar(
+        `Erro ao solicitar para ser monitor(a). Erro: ${error}`
+      );
     }
   }, [error]);
 
