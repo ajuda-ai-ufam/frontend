@@ -1,4 +1,4 @@
-import { TSubjectMonitor } from '../../../service/requests/useGetSubject/types';
+import { TSubjectMonitor } from '../../../../service/requests/useGetSubject/types';
 import {
   Card,
   TypographyTitle,
@@ -10,9 +10,7 @@ import {
   CloseButton,
   RemoveButton,
   ButtonContainer,
-} from '../styles';
-
-import dataMonitorList, { TMonitorDataList } from './DataMonitorList';
+} from '../../styles';
 
 type Props = {
   selectedMonitorRemove?: TSubjectMonitor;
@@ -21,13 +19,27 @@ type Props = {
   isMyMonitor: boolean;
 };
 
+const dataMonitorList = (selectedMonitor: TSubjectMonitor) => {
+  const dataList = {
+    data: [
+      { label: 'Curso', value: selectedMonitor.course.name },
+      { label: 'Monitor(a)', value: selectedMonitor.name },
+      { label: 'Professor(a)', value: selectedMonitor.responsable.name },
+      { label: 'E-mail', value: selectedMonitor.email },
+      { label: 'Linkedin', value: selectedMonitor.linkedin || '-' },
+      { label: 'Whatsapp', value: selectedMonitor.whatsapp || '-' },
+    ],
+  };
+  return dataList;
+};
+
 const DataMonitorModal = ({
   selectedMonitorRemove,
   handleClose,
   handleRemoveMonitorClick,
   isMyMonitor,
 }: Props) => {
-  let dataList: TMonitorDataList = { data: [] };
+  let dataList;
 
   if (selectedMonitorRemove) {
     dataList = dataMonitorList(selectedMonitorRemove);
@@ -36,7 +48,7 @@ const DataMonitorModal = ({
     <Card>
       <TypographyTitle>Dados do(a) Monitor(a)</TypographyTitle>
       <MonitorContainer>
-        {dataList.data.map((data) => (
+        {dataList?.data.map((data) => (
           <DataContainer>
             <TypographyDataContainer>
               <TypographyData>{data.label}</TypographyData>

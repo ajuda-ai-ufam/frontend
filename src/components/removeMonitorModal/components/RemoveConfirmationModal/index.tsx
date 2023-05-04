@@ -1,4 +1,4 @@
-import { TSubjectMonitor } from '../../../service/requests/useGetSubject/types';
+import { TSubjectMonitor } from '../../../../service/requests/useGetSubject/types';
 import {
   RemoveMonitorCard,
   TypographyTitle,
@@ -6,7 +6,7 @@ import {
   RemoveButtonContainer,
   ConfirmCloseButton,
   ConfirmRemoveButton,
-} from '../styles';
+} from '../../styles';
 
 type Props = {
   selectedMonitorRemove?: TSubjectMonitor;
