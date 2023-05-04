@@ -28,7 +28,7 @@ const ImproveKnowledge = () => {
             onClick={() => navigate(SCREENS.LOGIN)}
             color="primary"
           >
-            Encontre seu monitor(a) agora!
+            Encontre seu(sua) monitor(a) agora!
           </ButtonFindMonitor>
         </MessageContainer>
         <GIFContainer>

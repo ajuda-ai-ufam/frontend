@@ -39,7 +39,7 @@ const Advantages = () => {
               <BookImage />
               <InfoBoxTypography variant="body1" color={'white'}>
                 Melhore seu desempenho com nossa plataforma ao tirar dúvidas e
-                receber feedback dos monitores(as).
+                receber feedback dos monitores.
               </InfoBoxTypography>
             </InfoBox>
             <InfoBox>
@@ -52,7 +52,7 @@ const Advantages = () => {
             <InfoBox>
               <HandsImage />
               <InfoBoxTypography variant="body1" color={'white'}>
-                Seja um monitor(a) e ajude outros estudantes a alcançar seu
+                Seja um(a) monitor(a) e ajude outros estudantes a alcançar seu
                 potencial acadêmico.
               </InfoBoxTypography>
             </InfoBox>

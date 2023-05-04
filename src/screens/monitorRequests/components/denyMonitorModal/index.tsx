@@ -50,7 +50,7 @@ const DenyMonitorModal = ({
           <ConfirmationTextContainer>
             <Typography variant="h4">Tudo certo!</Typography>
             <Typography variant="body1" textAlign={'center'}>
-              Removemos a solicitação que o aluno(a) fez para ser monitor(a)
+              Removemos a solicitação que o(a) aluno(a) fez para ser monitor(a)
               desta disciplina
             </Typography>
           </ConfirmationTextContainer>
@@ -71,8 +71,7 @@ const DenyMonitorModal = ({
         <StyledTypography variant="body1">
           Tem certeza que deseja recusar
           <strong>{' ' + monitor.student.user.name + ' '}</strong>
-          como monitor(a) da
-          disciplinasrc/screens/monitorRequests/components/MonitorsRequestList/index.tsx
+          como monitor(a) da disciplina
           <strong>{' ' + monitor.subject.name}</strong>?
         </StyledTypography>
 
