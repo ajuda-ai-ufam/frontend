@@ -64,7 +64,8 @@ const FormScheduleModalContent = ({
         ) : (
           <Typography>
             {subject.responsables.find(
-              (prof) => prof.id === Number(selected[0])
+              (responsables) =>
+                responsables.professor.user.id === Number(selected[0])
             )?.professor.user.name || ''}
           </Typography>
         )
