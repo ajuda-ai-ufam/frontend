@@ -66,14 +66,15 @@ const MonitorRequests = () => {
         <Card>
           <Typography variant="h3">Solicitações</Typography>
           <LegendTypography>
-            Aqui estão listados os pedidos de alunos que querem ser monitores
+            Aqui estão listados os pedidos de alunos(as) que querem ser
+            monitores
           </LegendTypography>
           <SearchField
             inputRef={searchFieldElement}
             placeholder={
               userTypeId === TypeUserEnum.COORDINATOR
-                ? 'Buscar aluno ou professor'
-                : 'Buscar aluno'
+                ? 'Buscar aluno(a) ou professor(a)'
+                : 'Buscar aluno(a)'
             }
             handleSearch={handleSearch}
           />

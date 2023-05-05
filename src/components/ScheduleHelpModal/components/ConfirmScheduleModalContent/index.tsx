@@ -40,7 +40,7 @@ const ConfirmScheduleModalContent = ({
 
     if (selectedProfessorId !== -1) {
       data.push({
-        label: 'Professor',
+        label: 'Professor(a)',
         value:
           subject.responsables.find(
             (subjectResponsible) =>
@@ -51,7 +51,7 @@ const ConfirmScheduleModalContent = ({
 
     if (selectedMonitorId !== -1) {
       data.push({
-        label: 'Monitor',
+        label: 'Monitor(a)',
         value:
           availableMonitors.find((monitor) => monitor.id === selectedMonitorId)
             ?.name || '',

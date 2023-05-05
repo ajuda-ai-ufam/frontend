@@ -72,7 +72,7 @@ const SubjectHeader = ({
             onClick={() => handleOpenAddMonitorModal(subject)}
             color="secondary"
           >
-            Quero ser monitor
+            Quero ser monitor(a)
           </Button>
         );
       } else {
@@ -91,7 +91,7 @@ const SubjectHeader = ({
     if (userType === TypeUserEnum.COORDINATOR) {
       return (
         <Button
-          width="204px"
+          width="auto"
           color="primary"
           startIcon={<EditRounded />}
           onClick={() => handleOpenAssignProfessorsModal(subject)}

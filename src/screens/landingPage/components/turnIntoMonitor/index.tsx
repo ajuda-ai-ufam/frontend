@@ -29,10 +29,10 @@ const TurnIntoMonitor = () => {
 
           <MessageContainer>
             <TitleTypography color={'white'}>
-              Seja monitor na nossa plataforma
+              Seja monitor(a) na nossa plataforma
             </TitleTypography>
             <InfoTypography sx={{ margin: '24px 0 48px 0' }}>
-              Cadastre-se agora na SuperMonitoria e encontre monitores
+              Cadastre-se agora na SuperMonitoria e encontre monitores(as)
               qualificados para suas disciplinas. Agende sessões de monitoria
               personalizadas e melhore seu desempenho acadêmico hoje mesmo.
             </InfoTypography>
@@ -40,7 +40,7 @@ const TurnIntoMonitor = () => {
               color="primary"
               onClick={() => navigate(SCREENS.REGISTER)}
             >
-              Quero ser monitor!
+              Quero ser monitor(a)!
             </MonitorButton>
           </MessageContainer>
 

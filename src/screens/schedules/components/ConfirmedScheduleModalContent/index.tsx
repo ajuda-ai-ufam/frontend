@@ -26,7 +26,7 @@ const ConfirmedScheduleModalContent = ({
   <>
     <Typography variant="h4">Horário agendado</Typography>
     <Typography variant="body1">
-      Entre em contato com o {isMonitor ? 'aluno' : 'monitor'}
+      Entre em contato com o(a) {isMonitor ? 'aluno' : 'monitor'}
       (a) para definirem a plataforma onde será feita a ajuda.
     </Typography>
 

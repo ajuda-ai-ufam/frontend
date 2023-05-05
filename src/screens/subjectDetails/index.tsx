@@ -96,8 +96,8 @@ const SubjectDetails = () => {
 
         <LegendTypography>
           {userType === TypeUserEnum.STUDENT
-            ? 'Clique em um monitor para iniciar um agendamento.'
-            : 'Aqui estão listados todos os professores e monitores desta disciplina'}
+            ? 'Clique em um(a) monitor(a) para iniciar um agendamento.'
+            : 'Aqui estão listados(as) todos(as) os(as) professores(as) e monitores(as) desta disciplina'}
         </LegendTypography>
       </>
     );
@@ -145,8 +145,8 @@ const SubjectDetails = () => {
             <FallbackTypography>
               Ops... Parece que não há nada por aqui.
               {userType === TypeUserEnum.COORDINATOR
-                ? ' Tente adicionar um novo professor.'
-                : ' Tente entrar em contato com o coordenador.'}
+                ? ' Tente adicionar um novo(a) professor(a).'
+                : ' Tente entrar em contato com o(a) coordenador(a).'}
             </FallbackTypography>
           </ProgressContainer>
         </>
@@ -160,7 +160,7 @@ const SubjectDetails = () => {
         <SearchField
           search={search}
           handleSearchChange={handleSearchChange}
-          placeholder="Buscar aluno"
+          placeholder="Buscar aluno(a)"
           handleSearch={handleSearch}
         />
 
