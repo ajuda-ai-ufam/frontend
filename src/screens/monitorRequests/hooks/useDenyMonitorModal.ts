@@ -35,7 +35,7 @@ const useDenyMonitorModal = () => {
     if (error) {
       handleCloseModal();
       resetStates();
-      showErrorSnackBar(`Erro ao rejeitar monitor. Erro: ${error}`);
+      showErrorSnackBar(`Erro ao rejeitar monitor(a). Erro: ${error}`);
     }
   }, [error]);
 

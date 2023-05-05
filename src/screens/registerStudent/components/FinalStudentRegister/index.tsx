@@ -64,7 +64,7 @@ const FinalStudentRegister = ({
   return (
     <>
       <TypographyTextRegister variant="h4">
-        Cadastro de Aluno
+        Cadastro de Aluno(a)
       </TypographyTextRegister>
       <TypographyTextRegister sx={{ mt: '12px' }} variant="body1">
         Por fim, deixe seu contato. Isso irá ajudar os outros usuários a

@@ -60,7 +60,7 @@ const FormScheduleModalContent = ({
       input={<TextField />}
       renderValue={(selected: string[]) =>
         Number(selected) === -1 ? (
-          <Placeholder>Selecionar Professor</Placeholder>
+          <Placeholder>Selecionar Professor(a)</Placeholder>
         ) : (
           <Typography>
             {subject.responsables.find(
@@ -73,7 +73,7 @@ const FormScheduleModalContent = ({
     >
       {[
         <MenuItem key={-1} value={-1}>
-          Selecionar Professor
+          Selecionar Professor(a)
         </MenuItem>,
         ...subject.responsables.map((subjectResponsible) => (
           <MenuItem
@@ -94,7 +94,7 @@ const FormScheduleModalContent = ({
       input={<TextField />}
       renderValue={(selected: string[]) =>
         Number(selected) === -1 ? (
-          <Placeholder>Selecionar Monitor</Placeholder>
+          <Placeholder>Selecionar Monitor(a)</Placeholder>
         ) : (
           <Typography>
             {availableMonitors.find(
@@ -106,7 +106,7 @@ const FormScheduleModalContent = ({
     >
       {[
         <MenuItem key={-1} value={-1}>
-          Selecionar Monitor
+          Selecionar Monitor(a)
         </MenuItem>,
         ...availableMonitors.map((monitor) => (
           <MenuItem key={monitor.id} value={monitor.id}>
@@ -155,7 +155,7 @@ const FormScheduleModalContent = ({
       >
         {[
           <MenuItem key={-1} value={-1}>
-            Selecionar Monitor
+            Selecionar Monitor(a)
           </MenuItem>,
           ...availableHours.map((hour, index) => (
             <MenuItem key={index} value={index}>

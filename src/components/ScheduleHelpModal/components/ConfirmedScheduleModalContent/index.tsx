@@ -12,7 +12,7 @@ const ConfirmedScheduleModalContent = ({ handleClose }: Props) => (
 
     <Typography variant="h4">Muito bem!</Typography>
     <Typography variant="body1" textAlign={'center'}>
-      Foi enviado ao monitor uma solicitação de agendamento.
+      Foi enviado ao(a) monitor(a) uma solicitação de agendamento.
     </Typography>
     <StyledButton sx={{ margin: '16px 0 8px 0' }} onClick={handleClose}>
       Voltar

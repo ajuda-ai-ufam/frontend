@@ -27,7 +27,7 @@ const EventItem = ({ schedule, handleEventClick }: Props) => {
     : schedule.monitor.student.user.name;
   const nameField = isMonitor ? 'Aluno(a)' : 'Monitor(a)';
 
-  const participation = isMonitor ? 'Vou ajudar' : 'Serei ajudado';
+  const participation = isMonitor ? 'Vou ajudar' : 'Serei ajudado(a)';
 
   const status =
     !isMonitor && schedule.id_status === SchedulesStatus.PENDING

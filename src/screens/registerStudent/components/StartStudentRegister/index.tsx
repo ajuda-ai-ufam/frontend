@@ -73,7 +73,7 @@ const StartStudentRegister = ({
   return (
     <>
       <TypographyTextRegister variant="h4">
-        Cadastro de Aluno
+        Cadastro de Aluno(a)
       </TypographyTextRegister>
       <TypographyTextRegister sx={{ mt: '12px' }} variant="body1">
         Preencha os campos abaixo para iniciar o seu cadastro.

@@ -40,7 +40,7 @@ const MonitorsRequestListItem = ({
           style={{ color: `${theme.palette.grey[600]}`, margin: '12px 0' }}
           variant="caption"
         >
-          Quer ser monitor da disciplina
+          Quer ser monitor(a) da disciplina
         </Typography>
         <Typography
           textAlign={'center'}
