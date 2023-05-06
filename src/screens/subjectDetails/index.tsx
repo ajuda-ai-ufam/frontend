@@ -17,8 +17,6 @@ import {
   LegendTypography,
   ProgressContainer,
 } from './styles';
-import useRemoveMonitorModal from '../../components/removeMonitorModal/hooks/useRemoveMonitorModal';
-import RemoveMonitorModal from '../../components/removeMonitorModal';
 
 const SubjectDetails = () => {
   const {
@@ -61,19 +59,6 @@ const SubjectDetails = () => {
     handleEditData,
     handleShowConfirmation,
   } = useScheduleHelpModal();
-
-  const {
-    isOpen: isOpenRemoveMonitor,
-    selectedMonitor: selectedMonitorRemove,
-    handleOpenRemoveMonitorModal,
-    handleClose: handleCloseRemoveMonitorModal,
-    showMonitorData: showRemoveMonitorData,
-    handleRemoveMonitorClick,
-    isSuccess: isSuccessRemoveMonitor,
-    isLoading: isLoadingRemoveMonitor,
-    handleEndingMonitoringClick,
-    isMyMonitor,
-  } = useRemoveMonitorModal();
 
   const renderPageTop = () => {
     if (!subject) return <></>;
@@ -168,10 +153,7 @@ const SubjectDetails = () => {
           monitors={monitors}
           selectedProfessorId={selectedProfessorId}
           subject={subject}
-          handleMonitorClick={getMonitorClickHandler(
-            handleOpenScheduleModal,
-            handleOpenRemoveMonitorModal
-          )}
+          handleMonitorClick={getMonitorClickHandler(handleOpenScheduleModal)}
           handleProfessorFilterClick={handleProfessorFilterClick}
         />
       </>
@@ -202,18 +184,6 @@ const SubjectDetails = () => {
         isOpen={isScheduleModalOpen}
         handleClose={handleCloseScheduleModal}
         handleConfirmSchedule={handleConfirmSchedule}
-      />
-
-      <RemoveMonitorModal
-        isOpen={isOpenRemoveMonitor}
-        selectedMonitorRemove={selectedMonitorRemove}
-        handleClose={handleCloseRemoveMonitorModal}
-        showMonitorData={showRemoveMonitorData}
-        handleRemoveMonitorClick={handleRemoveMonitorClick}
-        isLoading={isLoadingRemoveMonitor}
-        isSuccess={isSuccessRemoveMonitor}
-        handleEndingMonitoringClick={handleEndingMonitoringClick}
-        isMyMonitor={isMyMonitor}
       />
       <Container>
         <Card>{renderCardContent()}</Card>

@@ -34,8 +34,6 @@ export type TSubjectMonitor = {
     id: number;
     name: string;
   };
-  linkedin: string;
-  whatsapp: string;
 };
 
 export type TCompleteSubject = TSubject & {
@@ -81,9 +79,6 @@ export type TGetSubjectResponse = {
         id: number;
         name: string;
       };
-
-      linkedin: string;
-      whatsapp: string;
     };
     status: {
       id: number;
