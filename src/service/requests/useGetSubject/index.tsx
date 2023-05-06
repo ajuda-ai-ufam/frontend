@@ -36,8 +36,6 @@ const useGetSubject = () => {
           status: monitor.status.status as TypeMonitoringStatus,
           course: monitor.student.course,
           responsable: monitor.responsible_professor.user,
-          linkedin: monitor.student.linkedin,
-          whatsapp: monitor.student.whatsapp,
         })),
       };
 

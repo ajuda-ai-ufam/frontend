@@ -57,7 +57,7 @@ const AcceptMonitorModal = ({
         <StyledTypography variant="body1">
           Você deseja aceitar
           <strong>{' ' + monitor.student.user.name + ' '}</strong>
-          como monitor(a) da disciplina
+          como monitor da disciplina
           <strong>{' ' + monitor.subject.name}</strong>?
         </StyledTypography>
 

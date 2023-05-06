@@ -91,7 +91,7 @@ const FiltersForm = ({
     <Box sx={{ mt: '24px' }}>
       <StyledForm>
         <TextField
-          placeholder="Buscar aluno(a), monitor(a) ou matrícula"
+          placeholder="Buscar aluno, monitor ou matrícula"
           value={filters.nameOrEnrollFilter}
           onChange={handleChangeNameOrEnrollFilter}
           startAdornment={

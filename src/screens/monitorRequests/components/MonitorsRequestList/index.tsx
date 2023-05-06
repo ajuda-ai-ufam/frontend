@@ -49,7 +49,7 @@ const MonitorsRequestList = ({
       <Container>
         <FallbackContainer>
           <FallbackTypography>
-            Ops... Não foi encontrado(a) nenhum(a) monitor(a).
+            Ops... Não foi encontrado nenhum monitor.
           </FallbackTypography>
         </FallbackContainer>
       </Container>
@@ -62,8 +62,8 @@ const MonitorsRequestList = ({
         <FallbackContainer>
           <FallbackTypography>
             {userTypeId === TypeUserEnum.COORDINATOR
-              ? 'Hmm... Parece que você não tem nenhuma solicitação. Que tal adicionar um(a) professor(a)?'
-              : 'Hmm... Parece que você não tem nenhuma solicitação. Que tal convidar um(a) aluno(a) para a plataforma?'}
+              ? 'Hmm... Parece que você não tem nenhuma solicitação. Que tal adicionar um professor?'
+              : 'Hmm... Parece que você não tem nenhuma solicitação. Que tal convidar um aluno para a plataforma?'}
           </FallbackTypography>
         </FallbackContainer>
       </Container>
