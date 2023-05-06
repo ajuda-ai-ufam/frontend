@@ -33,8 +33,8 @@ const PendingScheduleModalContent = ({
     <Typography variant="h4">Requisição de agendamento</Typography>
     <Typography variant="body1">
       {isMonitor
-        ? 'Este agendamento encontra-se no status "Pendente". Ao aceitá-lo, o(a) aluno(a) receberá um e-mail informando que o agendamento está confirmado.'
-        : 'Este agendamento encontra-se no status "Aguardando confirmação". Quando o(a) monitor(a) aceitá-lo você receberá um e-mail informando que o agendamento está confirmado.'}
+        ? 'Este agendamento encontra-se no status "Pendente". Ao aceitá-lo, o aluno receberá um e-mail informando que o agendamento está confirmado.'
+        : 'Este agendamento encontra-se no status "Aguardando confirmação". Quando o monitor aceitá-lo você receberá um e-mail informando que o agendamento está confirmado'}
     </Typography>
 
     <DataContainer>

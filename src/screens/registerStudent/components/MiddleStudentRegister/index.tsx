@@ -66,7 +66,7 @@ const MiddleStudentRegister = ({
   return (
     <>
       <TypographyTextRegister variant="h4">
-        Cadastro de Aluno(a)
+        Cadastro de Aluno
       </TypographyTextRegister>
       <TypographyTextRegister sx={{ mt: '12px' }} variant="body1">
         Agora fale um pouco sobre você e nos informe seus dados acadêmicos.

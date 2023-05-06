@@ -52,7 +52,7 @@ const Advantages = () => {
             <InfoBox>
               <HandsImage />
               <InfoBoxTypography variant="body1" color={'white'}>
-                Seja um(a) monitor(a) e ajude outros estudantes a alcançar seu
+                Seja um monitor e ajude outros estudantes a alcançar seu
                 potencial acadêmico.
               </InfoBoxTypography>
             </InfoBox>
