@@ -1,40 +1,11 @@
 import { ReponsabilityProfessorStatus } from '../../../utils/constants';
 import { TCompleteSubject } from '../useGetSubject/types';
-import { TypeMonitoringStatus } from '../../../utils/constants';
 
 export type TSubject = {
   id: number;
   name: string;
   code: string;
   course_id: number;
-};
-
-export type TListSubjectMonitor = {
-  id: number;
-  name: string;
-  email: string;
-  studentId?: number;
-  status?: TypeMonitoringStatus;
-  responsable: {
-    id: number;
-    name: string;
-    email: string;
-  };
-  course: {
-    id: number;
-    name: string;
-  };
-};
-
-export type TListSubjectResponsible = {
-  id: number;
-  name: string;
-  email: string;
-};
-
-export type TListCompleteSubject = TSubject & {
-  responsables: TListSubjectResponsible[];
-  monitors: TListSubjectMonitor[];
 };
 
 export type TListSubjectsResponse = {
@@ -44,7 +15,7 @@ export type TListSubjectsResponse = {
     total_pages: number;
     total_items: number;
   };
-  data: TListCompleteSubject[];
+  data: TCompleteSubject[];
 };
 
 export type TListSubjectsHttpResponse = {
