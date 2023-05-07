@@ -34,8 +34,8 @@ export type TSubjectMonitor = {
     id: number;
     name: string;
   };
-  linkedin: string;
-  whatsapp: string;
+  linkedin?: string;
+  whatsapp?: string;
 };
 
 export type TCompleteSubject = TSubject & {
