@@ -86,6 +86,7 @@ const ScheduleDetailsModal = ({
           course={userData.course}
           subject={schedule.monitor.subject.name}
           start={schedule.start}
+          end={schedule.end}
           isMonitor={schedule.is_monitoring}
           handleAccept={handleAccept}
           handleClose={handleClose}
