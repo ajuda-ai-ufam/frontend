@@ -60,7 +60,7 @@ const DataMonitorModal = ({
       <ButtonContainer>
         {isMyMonitor ? (
           <RemoveButton onClick={handleRemoveMonitorClick}>
-            Remover Monitor
+            Remover Monitor(a)
           </RemoveButton>
         ) : (
           <></>

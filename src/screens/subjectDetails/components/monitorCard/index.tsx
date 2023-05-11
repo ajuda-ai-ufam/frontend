@@ -22,7 +22,7 @@ const MonitorCard = ({ monitor, handleMonitorClick }: Props) => (
         style={{ color: `${theme.palette.grey[600]}` }}
         variant="caption"
       >
-        Prof. {monitor.responsable.name}
+        Prof(a). {monitor.responsable.name}
       </Typography>
     </DataContainer>
   </Container>

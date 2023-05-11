@@ -42,7 +42,7 @@ const AcceptMonitorModal = ({
     if (isSuccess) {
       return (
         <ConfirmedActionContent
-          confirmationText="Um novo monitor foi adicionado à disciplina"
+          confirmationText="Um(a) novo(a) monitor(a) foi adicionado(a) à disciplina"
           handleClose={handleClose}
         />
       );
