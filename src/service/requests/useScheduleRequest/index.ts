@@ -8,7 +8,12 @@ const useScheduleRequest = () => {
   const [error, setError] = useState<string>();
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const schedule = async (monitorId: number, start: string, end: string) => {
+  const schedule = async (
+    monitorId: number,
+    start: string,
+    end: string,
+    description: string
+  ) => {
     setIsLoading(true);
     setIsSuccess(false);
     setError(undefined);
@@ -17,6 +22,7 @@ const useScheduleRequest = () => {
       await api.post(`/student/${monitorId}/schedule`, {
         start,
         end,
+        description,
       });
 
       setIsSuccess(true);

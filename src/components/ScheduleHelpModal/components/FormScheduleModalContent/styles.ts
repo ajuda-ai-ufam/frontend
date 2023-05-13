@@ -1,7 +1,8 @@
-import { TextField, Typography } from '@mui/material';
+import { TextField as MUITextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import styled from 'styled-components';
 import theme from '../../../../utils/theme';
+import { TextField } from '../../../textField';
 
 export const DateFieldsContainer = styled(Box).attrs({
   display: 'flex',
@@ -14,7 +15,7 @@ export const DateFieldsContainer = styled(Box).attrs({
   }
 `;
 
-export const DateTextField = styled(TextField).attrs({})`
+export const DateTextField = styled(MUITextField).attrs({})`
   width: 100%;
 
   fieldset {
@@ -35,4 +36,20 @@ export const FeedbackContainer = styled(Box).attrs({
   gap: '16px',
   padding: '0 20px',
   flexDirection: 'column',
+})``;
+
+export const DescriptionTextField = styled(TextField).attrs({
+  type: 'text',
+  name: 'description',
+  multiline: true,
+  placeholder:
+    'Descreva o motivo do agendamento, cite informações como:\n - Quais são suas dúvidas?\n - Você fará sozinho ou em grupo? (Caso seja em grupo, informe quem irá participar.)\n - Você prefere que seja presencial ou online?',
+  inputProps: { maxLength: 500 },
+})``;
+
+export const DescriptionContainer = styled(Box).attrs({
+  display: 'flex',
+  justifyContent: 'center',
+  flexDirection: 'column',
+  width: '100%',
 })``;

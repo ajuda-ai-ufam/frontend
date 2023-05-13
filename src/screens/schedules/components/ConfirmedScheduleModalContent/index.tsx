@@ -8,6 +8,7 @@ import {
 
 type Props = {
   email: string;
+  description: string;
   linkedin?: string;
   whatsapp?: string;
   isMonitor: boolean;
@@ -17,6 +18,7 @@ type Props = {
 
 const ConfirmedScheduleModalContent = ({
   email,
+  description,
   linkedin,
   whatsapp,
   isMonitor,
@@ -31,7 +33,7 @@ const ConfirmedScheduleModalContent = ({
     </Typography>
 
     <DataContainer>
-      <Label>E-mail:</Label>
+      <Label>E-mail</Label>
       <Typography variant="body2">{email}</Typography>
     </DataContainer>
 
@@ -43,6 +45,11 @@ const ConfirmedScheduleModalContent = ({
     <DataContainer>
       <Label>Whatsapp</Label>
       <Typography variant="body2">{whatsapp || '-'}</Typography>
+    </DataContainer>
+
+    <DataContainer>
+      <Label>Descrição</Label>
+      <Typography variant="body2">{description || '-'}</Typography>
     </DataContainer>
 
     <ButtonsContainer>

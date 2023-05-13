@@ -10,6 +10,7 @@ import { DataContainer, Label } from './styles';
 type Props = {
   availableHours: string[];
   availableMonitors: TSubjectMonitor[];
+  description: string;
   selectedDate: moment.Moment | null;
   selectedHourIndex: number;
   selectedProfessorId: number;
@@ -22,6 +23,7 @@ type Props = {
 const ConfirmScheduleModalContent = ({
   availableHours,
   availableMonitors,
+  description,
   selectedDate,
   selectedHourIndex,
   selectedMonitorId,
@@ -71,6 +73,11 @@ const ConfirmScheduleModalContent = ({
         value: availableHours[selectedHourIndex],
       });
     }
+
+    data.push({
+      label: 'Descrição',
+      value: description || '-',
+    });
 
     return data;
   }, [selectedProfessorId, selectedMonitorId, selectedDate, selectedHourIndex]);
