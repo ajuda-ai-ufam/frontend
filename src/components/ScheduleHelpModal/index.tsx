@@ -15,6 +15,7 @@ import { FeedbackContainer } from './styles';
 type Props = {
   availableHours: string[];
   availableMonitors: TSubjectMonitor[];
+  description: string;
   isLoadingMonitorAvailableTimes: boolean;
   isScheduleLoading: boolean;
   isScheduleSuccess: boolean;
@@ -28,6 +29,7 @@ type Props = {
   subject?: TCompleteSubject;
   handleClose(): void;
   handleChangeDate(value: moment.Moment | null): void;
+  handleChangeDescription(e: React.ChangeEvent<HTMLInputElement>): void;
   handleChangeHour(event: SelectChangeEvent<string[]>): void;
   handleChangeMonitor(event: SelectChangeEvent<string[]>): void;
   handleChangeProfessor(event: SelectChangeEvent<string[]>): void;
@@ -39,6 +41,7 @@ type Props = {
 const ScheduleHelpModal = ({
   availableHours,
   availableMonitors,
+  description,
   isLoadingMonitorAvailableTimes,
   isScheduleLoading,
   isScheduleSuccess,
@@ -51,6 +54,7 @@ const ScheduleHelpModal = ({
   subject,
   showConfirmation,
   handleChangeDate,
+  handleChangeDescription,
   handleChangeHour,
   handleChangeMonitor,
   handleChangeProfessor,
@@ -80,6 +84,7 @@ const ScheduleHelpModal = ({
           selectedDate={selectedDate}
           availableHours={availableHours}
           availableMonitors={availableMonitors}
+          description={description}
           selectedHourIndex={selectedHourIndex}
           selectedMonitorId={selectedMonitorId}
           selectedProfessorId={selectedProfessorId}
@@ -94,12 +99,14 @@ const ScheduleHelpModal = ({
       <FormScheduleModalContent
         availableHours={availableHours}
         availableMonitors={availableMonitors}
+        description={description}
         isLoadingMonitorAvailableTimes={isLoadingMonitorAvailableTimes}
         monitorAvailableTimes={monitorAvailableTimes}
         selectedDate={selectedDate}
         selectedHourIndex={selectedHourIndex}
         selectedMonitorId={selectedMonitorId}
         selectedProfessorId={selectedProfessorId}
+        handleChangeDescription={handleChangeDescription}
         handleChangeHour={handleChangeHour}
         handleChangeDate={handleChangeDate}
         handleChangeMonitor={handleChangeMonitor}

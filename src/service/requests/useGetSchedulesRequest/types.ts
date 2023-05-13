@@ -40,6 +40,7 @@ export type TSchedules = {
   id: number;
   start: Date;
   end: Date;
+  description: string;
   id_status: number;
   student_id: number;
   monitor_id: number;

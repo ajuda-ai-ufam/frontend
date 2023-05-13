@@ -31,6 +31,7 @@ const useScheduleHelpModal = () => {
   const [selectedMonitorId, setSelectedMonitorId] = useState(-1);
   const [selectedDate, setSelectedDate] = useState<moment.Moment | null>(null);
   const [selectedHourIndex, setSelectedHourIndex] = useState(-1);
+  const [description, setDescription] = useState('');
 
   const availableMonitors = useMemo(() => {
     if (!selectedSubject || selectedProfessorId === -1) return [];
@@ -66,6 +67,7 @@ const useScheduleHelpModal = () => {
     setSelectedDate(null);
     setSelectedMonitorId(-1);
     setSelectedProfessorId(-1);
+    setDescription('');
     setIsOpen(false);
   };
 
@@ -92,7 +94,7 @@ const useScheduleHelpModal = () => {
     const start = `${selectedDate.format('YYYY-MM-DD')} ${hour[0]}`;
     const end = `${selectedDate.format('YYYY-MM-DD')} ${hour[1]}`;
 
-    void schedule(selectedMonitorId, start, end);
+    void schedule(selectedMonitorId, start, end, description);
   };
 
   const handleShowConfirmation = () => setShowConfirmation(true);
@@ -136,6 +138,10 @@ const useScheduleHelpModal = () => {
     setSelectedHourIndex(Number(value));
   };
 
+  const handleChangeDescription = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setDescription(e.target.value);
+  };
+
   useEffect(() => {
     if (selectedMonitorId === -1) return;
 
@@ -152,6 +158,7 @@ const useScheduleHelpModal = () => {
   return {
     availableHours,
     availableMonitors,
+    description,
     isLoadingMonitorAvailableTimes,
     isScheduleLoading,
     isScheduleSuccess,
@@ -164,6 +171,7 @@ const useScheduleHelpModal = () => {
     selectedSubject,
     showConfirmation,
     handleChangeDate,
+    handleChangeDescription,
     handleChangeHour,
     handleChangeMonitor,
     handleChangeProfessor,
