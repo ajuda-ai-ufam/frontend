@@ -67,7 +67,7 @@ const MonitorRequests = () => {
           <Typography variant="h3">Solicitações</Typography>
           <LegendTypography>
             Aqui estão listados os pedidos de alunos(as) que querem ser
-            monitores
+            monitores(as)
           </LegendTypography>
           <SearchField
             inputRef={searchFieldElement}
