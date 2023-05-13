@@ -55,7 +55,7 @@ const MonitorsRequestListItem = ({
             style={{ color: `${theme.palette.grey[600]}` }}
             variant="caption"
           >
-            Prof. {request.responsible_professor.user.name}
+            Prof(a). {request.responsible_professor.user.name}
           </Typography>
         ) : null}
         <ButtonsContainer>

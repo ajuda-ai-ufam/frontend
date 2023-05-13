@@ -12,14 +12,22 @@ export const validateName = (name: string): string => {
 export const validateEmail = (email: string): string => {
   if (!email || email.indexOf('@') === -1) return 'E-mail inválido!';
 
-  if (email.indexOf('@icomp.ufam.edu.br') === -1)
-    return 'Este e-mail não pertence ao domínio do icomp!';
+  if (
+    email.indexOf('@icomp.ufam.edu.br') === -1 &&
+    email.indexOf('@super.ufam.edu.br') === -1 &&
+    email.indexOf('@ufam.edu.br') === -1
+  )
+    return 'Este e-mail não pertence ao domínio do IComp, SUPER ou UFAM!';
 
   if (email.split('@')[0].length < 3 || email.split('@')[0].length > 20)
     return 'Informe um e-mail válido!';
 
-  const re = /^([\w.]{3,20})@icomp.ufam.edu.br$/gm;
-  if (!re.test(email)) return 'Informe um e-mail icomp válido!';
+  const reIcomp = /^([\w.]{3,20})@icomp.ufam.edu.br$/gm;
+  const reSuper = /^([\w.]{3,20})@super.ufam.edu.br$/gm;
+  const reUfam = /^([\w.]{3,20})@ufam.edu.br$/gm;
+
+  if (!reIcomp.test(email) && !reSuper.test(email) && !reUfam.test(email))
+    return 'Informe um e-mail válido!';
 
   return '';
 };

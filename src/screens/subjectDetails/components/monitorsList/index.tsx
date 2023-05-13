@@ -43,7 +43,7 @@ const MonitorsList = ({
           isSelected={
             selectedProfessorId === subjectReponsables.professor.user.id
           }
-          label={`Prof. ${subjectReponsables.professor.user.name}`}
+          label={`Prof(a). ${subjectReponsables.professor.user.name}`}
           onClick={() =>
             handleProfessorFilterClick(subjectReponsables.professor.user.id)
           }
@@ -57,7 +57,7 @@ const MonitorsList = ({
       return (
         <FallbackContainer>
           <FallbackTypography>
-            Ops... Parece que nenhum monitor foi encontrado.
+            Ops... Parece que nenhum(a) monitor(a) foi encontrado.
           </FallbackTypography>
         </FallbackContainer>
       );

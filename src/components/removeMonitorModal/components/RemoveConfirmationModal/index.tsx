@@ -20,10 +20,10 @@ const RemoveConfirmationModal = ({
 }: Props) => {
   return (
     <RemoveMonitorCard>
-      <TypographyTitle>Remover Monitor</TypographyTitle>
+      <TypographyTitle>Remover Monitor(a)</TypographyTitle>
       <TypographySubTitle>
-        Caso você remova este monitor, não será possível que outros alunos o
-        encontre para agendar horários. Deseja Continuar?
+        Caso você remova este(a) monitor(a), não será possível que outros
+        alunos(as) o(a) encontre para agendar horários. Deseja Continuar?
       </TypographySubTitle>
       <RemoveButtonContainer>
         <ConfirmCloseButton onClick={handleClose}>
