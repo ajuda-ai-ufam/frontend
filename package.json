@@ -38,7 +38,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts --max_old_space_size=4096 build",
     "deploy": "git pull origin main && react-scripts build && cp -rfv ./build/* /var/www/html && systemctl restart apache2",
     "test": "jest --verbose --passWithNoTests --silent --maxWorkers=50%",
     "eject": "react-scripts eject",
