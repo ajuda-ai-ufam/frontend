@@ -93,7 +93,7 @@ const FormRegister = () => {
             <>
               <TypographyContainer>
                 <TypographyTextRegister variant="h4">
-                  Cadastro de Professor
+                  Cadastro de Professor(a)
                 </TypographyTextRegister>
                 <TypographyTextRegister variant="body1">
                   Preencha os campos abaixo para iniciar o seu cadastro.
@@ -118,7 +118,7 @@ const FormRegister = () => {
                     error={!!emailError}
                     id="email"
                     name="email"
-                    placeholder="E-mail do IComp"
+                    placeholder="E-mail do IComp, Super ou UFAM*"
                     onBlur={() => setEmailError(validateEmail(email))}
                     onChange={handleEmailChange}
                   />
@@ -187,8 +187,8 @@ const FormRegister = () => {
                 <ConsentContainer>
                   <TypographyConsent>
                     Ao clicar em “Finalizar”, você autoriza o recebimento de
-                    notificações pelo e-mail IComp cadastrado na plataforma, bem
-                    como Aceito os{' '}
+                    notificações pelo e-mail cadastrado na plataforma, bem como
+                    Aceito os{' '}
                     <TypographyGreen onClick={handleOpenModal}>
                       Termos de Consentimentos de Coleta de Dados e Política de
                       Privacidade.

@@ -22,9 +22,9 @@ export enum TypeUserEnum {
 }
 
 export const UserRole = {
-  [TypeUserEnum.STUDENT]: 'Aluno',
-  [TypeUserEnum.PROFESSOR]: 'Professor',
-  [TypeUserEnum.COORDINATOR]: 'Coordenador',
+  [TypeUserEnum.STUDENT]: 'Aluno(a)',
+  [TypeUserEnum.PROFESSOR]: 'Professor(a)',
+  [TypeUserEnum.COORDINATOR]: 'Coordenador(a)',
 };
 
 export enum TypeMonitoringStatus {
@@ -41,6 +41,12 @@ export enum SchedulesStatus {
   CANCELED = 3,
   REALIZED = 4,
   NOT_REALIZED = 5,
+}
+
+export enum ReponsabilityProfessorStatus {
+  PENDING = 'Pendente',
+  APPROVED = 'Aprovado',
+  ENDED = 'Finalizada',
 }
 
 export enum TypeMonitorStatus {
@@ -66,7 +72,7 @@ export enum SchedulesFilters {
   CANCELED = 'Cancelados',
   WAITING_APPROVAL = 'Aguardando confirmação',
   WILL_HELP = 'Vou ajudar',
-  RECEIVE_HELP = 'Serei ajudado',
+  RECEIVE_HELP = 'Serei ajudado(a)',
 }
 
 export const schedulesFiltersParamConverter = {

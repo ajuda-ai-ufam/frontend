@@ -71,6 +71,7 @@ const ScheduleDetailsModal = ({
       {modalType === ScheduleDetailsModalType.CONFIRMED ? (
         <ConfirmedScheduleModalContent
           email={userData.email}
+          description={schedule.description}
           linkedin={userData.linkedin}
           whatsapp={userData.whatsapp}
           isMonitor={schedule.is_monitoring}
@@ -83,9 +84,11 @@ const ScheduleDetailsModal = ({
       {modalType === ScheduleDetailsModalType.PENDING ? (
         <PendingScheduleModalContent
           name={userData.name}
+          description={schedule.description}
           course={userData.course}
           subject={schedule.monitor.subject.name}
           start={schedule.start}
+          end={schedule.end}
           isMonitor={schedule.is_monitoring}
           handleAccept={handleAccept}
           handleClose={handleClose}

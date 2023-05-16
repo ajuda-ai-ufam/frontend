@@ -34,13 +34,13 @@ const SelectRegisterType = () => {
           id={testId.typeRegister.iAmProfessorButton}
           onClick={handleClickProfessor}
         >
-          Sou Professor
+          Sou Professor(a)
         </ProfessorButton>
         <StudentButton
           id={testId.typeRegister.iAmStudentButton}
           onClick={handleClickStudent}
         >
-          Sou Aluno
+          Sou Aluno(a)
         </StudentButton>
       </ContainerBottom>
     </Container>

@@ -13,6 +13,8 @@ type Props = {
   course: string;
   subject: string;
   start: Date;
+  end: Date;
+  description: string;
   isMonitor: boolean;
   handleAccept(): void;
   handleClose(): void;
@@ -24,7 +26,9 @@ const PendingScheduleModalContent = ({
   course,
   subject,
   start,
+  end,
   isMonitor,
+  description,
   handleAccept,
   handleClose,
   handleRefuse,
@@ -33,8 +37,8 @@ const PendingScheduleModalContent = ({
     <Typography variant="h4">Requisição de agendamento</Typography>
     <Typography variant="body1">
       {isMonitor
-        ? 'Este agendamento encontra-se no status "Pendente". Ao aceitá-lo, o aluno receberá um e-mail informando que o agendamento está confirmado.'
-        : 'Este agendamento encontra-se no status "Aguardando confirmação". Quando o monitor aceitá-lo você receberá um e-mail informando que o agendamento está confirmado'}
+        ? 'Este agendamento encontra-se no status "Pendente". Ao aceitá-lo, o(a) aluno(a) receberá um e-mail informando que o agendamento está confirmado.'
+        : 'Este agendamento encontra-se no status "Aguardando confirmação". Quando o(a) monitor(a) aceitá-lo você receberá um e-mail informando que o agendamento está confirmado.'}
     </Typography>
 
     <DataContainer>
@@ -59,7 +63,12 @@ const PendingScheduleModalContent = ({
 
     <DataContainer>
       <Label>Horário</Label>
-      <Typography variant="body2">{start.toLocaleTimeString()}</Typography>
+      <Typography variant="body2">{`${start.toLocaleTimeString()} até ${end.toLocaleTimeString()}`}</Typography>
+    </DataContainer>
+
+    <DataContainer>
+      <Label>Descrição</Label>
+      <Typography variant="body2">{description || '-'}</Typography>
     </DataContainer>
 
     {isMonitor ? (

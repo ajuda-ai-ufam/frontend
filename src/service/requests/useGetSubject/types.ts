@@ -1,10 +1,22 @@
-import { TypeMonitoringStatus } from '../../../utils/constants';
+import {
+  ReponsabilityProfessorStatus,
+  TypeMonitoringStatus,
+} from '../../../utils/constants';
 import { TSubject } from '../useListSubjectsRequest/types';
 
 export type TSubjectResponsible = {
   id: number;
-  name: string;
-  email: string;
+  professor: {
+    user: {
+      id: number;
+      name: string;
+      email: string;
+    };
+  };
+  status: {
+    id: number;
+    status: ReponsabilityProfessorStatus;
+  };
 };
 
 export type TSubjectMonitor = {
@@ -22,6 +34,8 @@ export type TSubjectMonitor = {
     id: number;
     name: string;
   };
+  linkedin?: string;
+  whatsapp?: string;
 };
 
 export type TCompleteSubject = TSubject & {
@@ -35,12 +49,17 @@ export type TGetSubjectResponse = {
   code: string;
   course_id: number;
   SubjectResponsability: {
+    id: number;
     professor: {
       user: {
         id: number;
         name: string;
         email: string;
       };
+    };
+    status: {
+      id: number;
+      status: ReponsabilityProfessorStatus;
     };
   }[];
   Monitor: {
@@ -62,6 +81,9 @@ export type TGetSubjectResponse = {
         id: number;
         name: string;
       };
+
+      linkedin: string;
+      whatsapp: string;
     };
     status: {
       id: number;

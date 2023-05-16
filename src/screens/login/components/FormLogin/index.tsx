@@ -75,7 +75,7 @@ const FormLogin = () => {
               id="email"
               name="email"
               onChange={handleEmailChange}
-              placeholder="E-mail IComp"
+              placeholder="E-mail"
               startAdornment={
                 <InputAdornment position="start">
                   {!email ? <PersonOutlineOutlinedIcon /> : <PersonIcon />}

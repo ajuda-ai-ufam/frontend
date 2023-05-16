@@ -28,9 +28,7 @@ const useListSubjectsRequest = () => {
         name: subject.name,
         code: subject.code,
         course_id: subject.course_id,
-        responsables: subject.SubjectResponsability.map(
-          (resp) => resp.professor.user
-        ),
+        responsables: subject.SubjectResponsability,
         monitors: subject.Monitor.map((monitor) => ({
           ...monitor.student.user,
           id: monitor.id,

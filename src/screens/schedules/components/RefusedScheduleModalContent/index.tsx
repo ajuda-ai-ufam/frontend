@@ -10,8 +10,8 @@ const RefusedScheduleModalContent = ({ handleClose }: Props) => (
   <>
     <Typography variant="h4">Horário recusado</Typography>
     <Typography variant="body1">
-      O agendamento será removido da sua lista e estará disponível para outro
-      aluno.
+      O agendamento será removido da sua lista e estará disponível para outro(a)
+      aluno(a).
     </Typography>
 
     <ButtonContainer>

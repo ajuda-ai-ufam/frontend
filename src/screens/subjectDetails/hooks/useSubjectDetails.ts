@@ -6,18 +6,12 @@ import {
   TSubjectMonitor,
 } from '../../../service/requests/useGetSubject/types';
 import useGetLoggedUser from '../../../service/storage/getLoggedUser';
-import {
-  TypeMonitoringStatus,
-  TypeUserEnum,
-  UserRole,
-} from '../../../utils/constants';
-import { useSnackBar } from '../../../utils/renderSnackBar';
+import { TypeMonitoringStatus, TypeUserEnum } from '../../../utils/constants';
 import { SCREENS } from '../../../utils/screens';
 
 const useSubjectDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { showDefaultSnackBar } = useSnackBar();
 
   const { isLoading, data: subject, error, getSubject } = useGetSubject();
   const user = useGetLoggedUser();
@@ -66,22 +60,22 @@ const useSubjectDetails = () => {
     openScheduleModal: (
       subject: TCompleteSubject,
       monitor: TSubjectMonitor
-    ) => void
+    ) => void,
+    openRemoveMonitor: (monitor: TSubjectMonitor) => void
   ) => {
     return (monitor: TSubjectMonitor) => {
-      if (userType !== TypeUserEnum.STUDENT) {
-        showDefaultSnackBar(
-          `Como ${UserRole[
-            userType
-          ].toLowerCase()}, você não pode agendar uma monitoria.`
-        );
+      if (subject) {
+        userType !== TypeUserEnum.STUDENT
+          ? openRemoveMonitor(monitor)
+          : openScheduleModal(subject, monitor);
+      } else {
         return;
       }
-
-      if (!subject) return;
-
-      openScheduleModal(subject, monitor);
     };
+  };
+
+  const refetchSubject = () => {
+    if (id) getSubject(Number(id));
   };
 
   useEffect(() => {
@@ -109,6 +103,7 @@ const useSubjectDetails = () => {
     handleProfessorFilterClick,
     handleSearch,
     handleSearchChange,
+    refetchSubject,
   };
 };
 

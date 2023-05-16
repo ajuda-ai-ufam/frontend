@@ -10,6 +10,7 @@ import { DataContainer, Label } from './styles';
 type Props = {
   availableHours: string[];
   availableMonitors: TSubjectMonitor[];
+  description: string;
   selectedDate: moment.Moment | null;
   selectedHourIndex: number;
   selectedProfessorId: number;
@@ -22,6 +23,7 @@ type Props = {
 const ConfirmScheduleModalContent = ({
   availableHours,
   availableMonitors,
+  description,
   selectedDate,
   selectedHourIndex,
   selectedMonitorId,
@@ -40,16 +42,18 @@ const ConfirmScheduleModalContent = ({
 
     if (selectedProfessorId !== -1) {
       data.push({
-        label: 'Professor',
+        label: 'Professor(a)',
         value:
-          subject.responsables.find((prof) => prof.id === selectedProfessorId)
-            ?.name || '',
+          subject.responsables.find(
+            (subjectResponsible) =>
+              subjectResponsible.professor.user.id === selectedProfessorId
+          )?.professor.user.name || '',
       });
     }
 
     if (selectedMonitorId !== -1) {
       data.push({
-        label: 'Monitor',
+        label: 'Monitor(a)',
         value:
           availableMonitors.find((monitor) => monitor.id === selectedMonitorId)
             ?.name || '',
@@ -69,6 +73,11 @@ const ConfirmScheduleModalContent = ({
         value: availableHours[selectedHourIndex],
       });
     }
+
+    data.push({
+      label: 'Descrição',
+      value: description || '-',
+    });
 
     return data;
   }, [selectedProfessorId, selectedMonitorId, selectedDate, selectedHourIndex]);

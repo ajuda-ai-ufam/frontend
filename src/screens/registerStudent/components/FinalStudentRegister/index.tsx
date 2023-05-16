@@ -64,7 +64,7 @@ const FinalStudentRegister = ({
   return (
     <>
       <TypographyTextRegister variant="h4">
-        Cadastro de Aluno
+        Cadastro de Aluno(a)
       </TypographyTextRegister>
       <TypographyTextRegister sx={{ mt: '12px' }} variant="body1">
         Por fim, deixe seu contato. Isso irá ajudar os outros usuários a
@@ -112,8 +112,8 @@ const FinalStudentRegister = ({
         <ConsentContainer>
           <TypographyConsent>
             Ao clicar em “Finalizar”, você autoriza o recebimento de
-            notificações pelo e-mail IComp cadastrado na plataforma, bem como
-            Aceito os{' '}
+            notificações pelo e-mail cadastrado na plataforma, bem como Aceito
+            os{' '}
             <TypographyGreen onClick={handleOpenModal}>
               Termos de Consentimentos de Coleta de Dados e Política de
               Privacidade.

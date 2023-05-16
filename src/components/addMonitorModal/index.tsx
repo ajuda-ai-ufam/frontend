@@ -58,8 +58,8 @@ const AddMonitorModal = ({
           <ConfirmationTextContainer>
             <Typography variant="h4">Tudo certo!</Typography>
             <Typography variant="body1" textAlign={'center'}>
-              Sua solicitação foi enviada, aguarde a confirmação do professor
-              para concluir sua mudança de perfil.
+              Sua solicitação foi enviada, aguarde a confirmação do(a)
+              professor(a) para concluir sua mudança de perfil.
             </Typography>
           </ConfirmationTextContainer>
 
@@ -72,10 +72,10 @@ const AddMonitorModal = ({
 
     return (
       <>
-        <StyledTypography variant="h4">Quero ser Monitor</StyledTypography>
+        <StyledTypography variant="h4">Quero ser Monitor(a)</StyledTypography>
 
         <StyledTypography variant="body1">
-          Informe qual professor você desejar ser monitor da disciplina{' '}
+          Informe qual professor(a) você desejar ser monitor(a) da disciplina{' '}
           <strong>
             {subject.code} - {subject.name}
           </strong>
@@ -89,22 +89,27 @@ const AddMonitorModal = ({
           input={<TextField />}
           renderValue={(selected: string[]) =>
             Number(selected) === -1 ? (
-              <Placeholder>Selecionar Professor</Placeholder>
+              <Placeholder>Selecionar Professor(a)</Placeholder>
             ) : (
               <Typography>
-                {professors.find((prof) => prof.id === Number(selected[0]))
-                  ?.name || ''}
+                {professors.find(
+                  (subjectResponsible) =>
+                    subjectResponsible.professor.user.id === Number(selected[0])
+                )?.professor.user.name || ''}
               </Typography>
             )
           }
         >
           {[
             <MenuItem key={-1} value={-1}>
-              Selecionar Professor
+              Selecionar Professor(a)
             </MenuItem>,
-            ...professors.map((professor) => (
-              <MenuItem key={professor.id} value={professor.id}>
-                {professor.name}
+            ...professors.map((subjectResponsible) => (
+              <MenuItem
+                key={subjectResponsible.professor.user.id}
+                value={subjectResponsible.professor.user.id}
+              >
+                {subjectResponsible.professor.user.name}
               </MenuItem>
             )),
           ]}

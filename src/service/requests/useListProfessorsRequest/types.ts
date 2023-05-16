@@ -1,5 +1,12 @@
+import { ReponsabilityProfessorStatus } from '../../../utils/constants';
+
+export type TStatus = {
+  id: number;
+  status: ReponsabilityProfessorStatus;
+};
+
 export type TSubjectResponsability = {
-  status: 'Pendente';
+  status: TStatus;
   subject: {
     name: string;
     code: string;

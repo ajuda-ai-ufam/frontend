@@ -31,7 +31,7 @@ const ScheduleElement = ({
   return (
     <ScheduleContainer>
       <ElementContainer>
-        <Typography variant="caption">Aluno</Typography>
+        <Typography variant="caption">Aluno(a)</Typography>
         <Typography variant="subtitle1">{schedule.name}</Typography>
       </ElementContainer>
       <ElementContainer>

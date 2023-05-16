@@ -17,6 +17,8 @@ import {
   LegendTypography,
   ProgressContainer,
 } from './styles';
+import useRemoveMonitorModal from '../../components/removeMonitorModal/hooks/useRemoveMonitorModal';
+import RemoveMonitorModal from '../../components/removeMonitorModal';
 
 const SubjectDetails = () => {
   const {
@@ -32,11 +34,13 @@ const SubjectDetails = () => {
     handleProfessorFilterClick,
     handleSearch,
     handleSearchChange,
+    refetchSubject,
   } = useSubjectDetails();
 
   const {
     availableHours,
     availableMonitors,
+    description,
     isLoadingMonitorAvailableTimes,
     isScheduleLoading,
     isScheduleSuccess,
@@ -45,6 +49,7 @@ const SubjectDetails = () => {
     selectedDate,
     selectedMonitorId,
     selectedProfessorId: selectedScheduleProfessorId,
+    handleChangeDescription,
     handleChangeHour,
     handleChangeProfessor,
     handleChangeMonitor,
@@ -59,12 +64,26 @@ const SubjectDetails = () => {
     handleShowConfirmation,
   } = useScheduleHelpModal();
 
+  const {
+    isOpen: isOpenRemoveMonitor,
+    selectedMonitor: selectedMonitorRemove,
+    handleOpenRemoveMonitorModal,
+    handleClose: handleCloseRemoveMonitorModal,
+    showMonitorData: showRemoveMonitorData,
+    handleRemoveMonitorClick,
+    isSuccess: isSuccessRemoveMonitor,
+    isLoading: isLoadingRemoveMonitor,
+    handleEndingMonitoringClick,
+    isMyMonitor,
+  } = useRemoveMonitorModal();
+
   const renderPageTop = () => {
     if (!subject) return <></>;
 
     return (
       <>
         <SubjectHeader
+          refetchSubject={refetchSubject}
           subject={subject}
           userType={userType}
           handleGoBackClick={handleGoBackClick}
@@ -79,8 +98,8 @@ const SubjectDetails = () => {
 
         <LegendTypography>
           {userType === TypeUserEnum.STUDENT
-            ? 'Clique em um monitor para iniciar um agendamento.'
-            : 'Aqui estão listados todos os professores e monitores desta disciplina'}
+            ? 'Clique em um(a) monitor(a) para iniciar um agendamento.'
+            : 'Aqui estão listados(as) todos(as) os(as) professores(as) e monitores(as) desta disciplina'}
         </LegendTypography>
       </>
     );
@@ -91,6 +110,7 @@ const SubjectDetails = () => {
       return (
         <>
           <SubjectHeader
+            refetchSubject={refetchSubject}
             subject={subject}
             userType={userType}
             handleGoBackClick={handleGoBackClick}
@@ -127,8 +147,8 @@ const SubjectDetails = () => {
             <FallbackTypography>
               Ops... Parece que não há nada por aqui.
               {userType === TypeUserEnum.COORDINATOR
-                ? ' Tente adicionar um novo professor.'
-                : ' Tente entrar em contato com o coordenador.'}
+                ? ' Tente adicionar um novo(a) professor(a).'
+                : ' Tente entrar em contato com o(a) coordenador(a).'}
             </FallbackTypography>
           </ProgressContainer>
         </>
@@ -142,7 +162,7 @@ const SubjectDetails = () => {
         <SearchField
           search={search}
           handleSearchChange={handleSearchChange}
-          placeholder="Buscar aluno"
+          placeholder="Buscar aluno(a)"
           handleSearch={handleSearch}
         />
 
@@ -150,7 +170,10 @@ const SubjectDetails = () => {
           monitors={monitors}
           selectedProfessorId={selectedProfessorId}
           subject={subject}
-          handleMonitorClick={getMonitorClickHandler(handleOpenScheduleModal)}
+          handleMonitorClick={getMonitorClickHandler(
+            handleOpenScheduleModal,
+            handleOpenRemoveMonitorModal
+          )}
           handleProfessorFilterClick={handleProfessorFilterClick}
         />
       </>
@@ -162,11 +185,13 @@ const SubjectDetails = () => {
       <ScheduleHelpModal
         availableHours={availableHours}
         availableMonitors={availableMonitors}
+        description={description}
         isLoadingMonitorAvailableTimes={isLoadingMonitorAvailableTimes}
         isScheduleLoading={isScheduleLoading}
         isScheduleSuccess={isScheduleSuccess}
         monitorAvailableTimes={monitorAvailableTimes}
         selectedDate={selectedDate}
+        handleChangeDescription={handleChangeDescription}
         selectedHourIndex={selectedHourIndex}
         selectedMonitorId={selectedMonitorId}
         selectedProfessorId={selectedScheduleProfessorId}
@@ -181,6 +206,18 @@ const SubjectDetails = () => {
         isOpen={isScheduleModalOpen}
         handleClose={handleCloseScheduleModal}
         handleConfirmSchedule={handleConfirmSchedule}
+      />
+
+      <RemoveMonitorModal
+        isOpen={isOpenRemoveMonitor}
+        selectedMonitorRemove={selectedMonitorRemove}
+        handleClose={handleCloseRemoveMonitorModal}
+        showMonitorData={showRemoveMonitorData}
+        handleRemoveMonitorClick={handleRemoveMonitorClick}
+        isLoading={isLoadingRemoveMonitor}
+        isSuccess={isSuccessRemoveMonitor}
+        handleEndingMonitoringClick={handleEndingMonitoringClick}
+        isMyMonitor={isMyMonitor}
       />
       <Container>
         <Card>{renderCardContent()}</Card>

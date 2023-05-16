@@ -4,6 +4,7 @@ import useListSubjectsRequest from '../../../service/requests/useListSubjectsReq
 import useGetLoggedUser from '../../../service/storage/getLoggedUser';
 import { useSnackBar } from '../../../utils/renderSnackBar';
 import { SCREENS } from '../../../utils/screens';
+import { ReponsabilityProfessorStatus } from '../../../utils/constants';
 
 const useSubjects = () => {
   const navigate = useNavigate();
@@ -24,10 +25,19 @@ const useSubjects = () => {
     () => subjectsResponse?.meta.total_pages || 0,
     [subjectsResponse]
   );
-  const subjects = useMemo(
-    () => subjectsResponse?.data || [],
-    [subjectsResponse]
-  );
+  const subjects = useMemo(() => {
+    const subs = subjectsResponse?.data || [];
+
+    subs.forEach(
+      (subjects) =>
+        (subjects.responsables = subjects.responsables.filter(
+          (responsable) =>
+            responsable.status.status === ReponsabilityProfessorStatus.APPROVED
+        ))
+    );
+
+    return subs;
+  }, [subjectsResponse]);
 
   const handleSearch = (e: React.SyntheticEvent<EventTarget>) => {
     e.preventDefault();
@@ -55,6 +65,15 @@ const useSubjects = () => {
     navigate(SCREENS.SUBJECT_DETAILS.replace(':id', subjectId.toString()));
   };
 
+  const refetchSubjects = () => {
+    void listSubjects({
+      page: page,
+      search: searchFieldElement.current?.value
+        ? searchFieldElement.current?.value
+        : undefined,
+    });
+  };
+
   useEffect(() => {
     document.title = 'Disciplinas';
     if (!user) return navigate(SCREENS.LOGIN);
@@ -78,6 +97,7 @@ const useSubjects = () => {
     handleChangePage,
     handleSearch,
     handleSubjectClick,
+    refetchSubjects,
   };
 };
 
