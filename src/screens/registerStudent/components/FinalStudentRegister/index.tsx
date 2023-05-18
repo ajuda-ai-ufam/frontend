@@ -67,8 +67,8 @@ const FinalStudentRegister = ({
         Cadastro de Aluno(a)
       </TypographyTextRegister>
       <TypographyTextRegister sx={{ mt: '12px' }} variant="body1">
-        Por fim, deixe seu contato. Isso irá ajudar os outros usuários a
-        encontrar você com mais facilidade.
+        Por fim, deixe seu contato. Isso irá ajudar os(as) outros(as)
+        usuários(as) a encontrar você com mais facilidade.
       </TypographyTextRegister>
       <StyledForm onSubmit={handleFinalClick}>
         <StyledFormBox sx={{ mt: '32px' }}>
