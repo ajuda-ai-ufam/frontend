@@ -34,7 +34,7 @@ const useMonitorAvailabilityModal = () => {
       (weekDay) => weekDay.isSelected
     );
 
-    const availability: TAvailability[] = selectedWeekDays.map((weekDay) => ({
+    return selectedWeekDays.map((weekDay) => ({
       weekDay: weekDay.weekDay,
       hours: [
         {
@@ -47,28 +47,22 @@ const useMonitorAvailabilityModal = () => {
         },
       ],
     }));
-    return availability;
   }, [weekDayAvailability, sameAvailability]);
 
-  const dayIsSelected: boolean = useMemo(() => {
-    return availabilities.length ? true : false;
-  }, [availabilities]);
+  const dayIsSelected = useMemo(
+    () => !!availabilities.length,
+    [availabilities]
+  );
 
   const hoursIsSelected: boolean = useMemo(() => {
-    let hourMissing = true;
     if (dayIsSelected) {
-      availabilities.map((day) => {
-        if (
-          day.hours[0].start === undefined ||
-          day.hours[0].end === undefined
-        ) {
-          hourMissing = true;
-          return;
+      for (const day of availabilities) {
+        if (!day.hours[0].start || !day.hours[0].end) {
+          return false;
         }
-        hourMissing = false;
-      });
+      }
     }
-    return !hourMissing;
+    return true;
   }, [availabilities]);
 
   const handleOpenModal = () => {
