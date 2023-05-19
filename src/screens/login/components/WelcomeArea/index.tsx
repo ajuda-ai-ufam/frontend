@@ -26,7 +26,7 @@ const WelcomeArea = () => {
 
         <ContainerRegister>
           <ContainerRegisterText>
-            <Typography>Não é cadastrado?</Typography>
+            <Typography>Não é cadastrado(a)?</Typography>
           </ContainerRegisterText>
           <SignUpButton
             id={testId.login.registerButton}

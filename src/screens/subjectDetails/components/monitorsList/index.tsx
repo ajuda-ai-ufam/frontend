@@ -34,7 +34,7 @@ const MonitorsList = ({
       <StyledChip
         key={0}
         isSelected={selectedProfessorId === -1}
-        label="Ver todos"
+        label="Ver todos(as)"
         onClick={() => handleProfessorFilterClick()}
       />,
       ...subject.responsables.map((subjectReponsables) => (
@@ -57,7 +57,7 @@ const MonitorsList = ({
       return (
         <FallbackContainer>
           <FallbackTypography>
-            Ops... Parece que nenhum(a) monitor(a) foi encontrado.
+            Ops... Parece que nenhum(a) monitor(a) foi encontrado(a).
           </FallbackTypography>
         </FallbackContainer>
       );
