@@ -75,7 +75,7 @@ const FiltersForm = ({
         return <Placeholder>Selecionar disciplina</Placeholder>;
       }
 
-      return <Placeholder>Selecionar Professor</Placeholder>;
+      return <Placeholder>Selecionar professor(a)</Placeholder>;
     }
 
     return (

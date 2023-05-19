@@ -74,10 +74,10 @@ const EditProfessorsModal = ({
       <Modal isOpen={isOpen} handleClose={handleClose}>
         <Typography variant="h3">Editar Professores</Typography>
 
-        <Typography variant="h5">Adicionar novos</Typography>
+        <Typography variant="h5">Adicionar novos(as)</Typography>
 
         <Typography variant="body1">
-          Escolha abaixo os professores para torná-los responsáveis pela
+          Escolha abaixo quais professores você deseja tornar responsáveis pela
           disciplina{' '}
           <strong>
             {subject.code} - {subject.name}
@@ -93,7 +93,7 @@ const EditProfessorsModal = ({
           input={<TextField />}
           renderValue={(selected: string[]) =>
             selected.length === 0 ? (
-              <Placeholder>Selecionar Professor</Placeholder>
+              <Placeholder>Selecionar professor(a)</Placeholder>
             ) : (
               <ChipsContainer>
                 {selected.map((id: string) => (
@@ -130,8 +130,8 @@ const EditProfessorsModal = ({
         <Typography variant="h5">Professores Responsáveis</Typography>
 
         <Typography variant="body1">
-          Aqui estão listados os professores que já são responsáveis pela
-          disciplina{' '}
+          Aqui estão listados(as) os(as) professores(as) que já são responsáveis
+          pela disciplina{' '}
           <strong>
             {subject.code} - {subject.name}
           </strong>
