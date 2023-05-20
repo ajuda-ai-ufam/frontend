@@ -32,6 +32,8 @@ type Props = {
   isOpen: boolean;
   sameAvailability: TWeekDayAvailabilityState;
   weekDayAvailability: TWeekDayAvailabilityState[];
+  dayIsSelected: boolean;
+  hoursIsSelected: boolean;
   handleCloseModal(): void;
   handleFromHourChange(event: SelectChangeEvent<string>): void;
   handleFromSameHourChange(event: SelectChangeEvent<string>): void;
@@ -50,6 +52,8 @@ const MonitorAvailabilityModal = ({
   isOpen,
   sameAvailability,
   weekDayAvailability,
+  dayIsSelected,
+  hoursIsSelected,
   handleCloseModal,
   handleFromHourChange,
   handleFromSameHourChange,
@@ -129,7 +133,7 @@ const MonitorAvailabilityModal = ({
               />
             </SwitchContainer>
 
-            {sameAvailability.isSelected ? (
+            {sameAvailability.isSelected && dayIsSelected ? (
               <SelectContainer isSelected={sameAvailability.isSelected}>
                 <HourSelect
                   name={sameAvailability.name}
@@ -161,7 +165,12 @@ const MonitorAvailabilityModal = ({
 
         <ButtonContainer>
           <ButtonCancel onClick={handleCloseModal}>Cancelar</ButtonCancel>
-          <ButtonSave onClick={handleSaveAvailability}>Salvar</ButtonSave>
+          <ButtonSave
+            disabled={!(dayIsSelected && hoursIsSelected)}
+            onClick={handleSaveAvailability}
+          >
+            Salvar
+          </ButtonSave>
         </ButtonContainer>
       </CardContainer>
     );
