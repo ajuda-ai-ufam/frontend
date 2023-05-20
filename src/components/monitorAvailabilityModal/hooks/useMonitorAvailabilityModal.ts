@@ -1,5 +1,5 @@
 import { SelectChangeEvent } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useUpdateMonitorAvailabilityRequest from '../../../service/requests/useUpdateMonitorAvailabilityRequest';
 import { TAvailability } from '../../../service/requests/useUpdateMonitorAvailabilityRequest/types';
@@ -28,6 +28,42 @@ const useMonitorAvailabilityModal = () => {
   >(WEEK_DAY_AVAILABILITY_INITIAL_STATE);
   const [sameAvailability, setSameAvailability] =
     useState<TWeekDayAvailabilityState>(SAME_AVAILABILITY_INITIAL_STATE);
+
+  const availabilities: TAvailability[] = useMemo(() => {
+    const selectedWeekDays = weekDayAvailability.filter(
+      (weekDay) => weekDay.isSelected
+    );
+
+    return selectedWeekDays.map((weekDay) => ({
+      weekDay: weekDay.weekDay,
+      hours: [
+        {
+          start: sameAvailability.isSelected
+            ? HOUR_OPTIONS[sameAvailability.fromHourIndex]
+            : HOUR_OPTIONS[weekDay.fromHourIndex],
+          end: sameAvailability.isSelected
+            ? HOUR_OPTIONS[sameAvailability.toHourIndex]
+            : HOUR_OPTIONS[weekDay.toHourIndex],
+        },
+      ],
+    }));
+  }, [weekDayAvailability, sameAvailability]);
+
+  const dayIsSelected = useMemo(
+    () => !!availabilities.length,
+    [availabilities]
+  );
+
+  const hoursIsSelected: boolean = useMemo(() => {
+    if (dayIsSelected) {
+      for (const day of availabilities) {
+        if (!day.hours[0].start || !day.hours[0].end) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }, [availabilities]);
 
   const handleOpenModal = () => {
     setIsOpen(true);
@@ -101,30 +137,14 @@ const useMonitorAvailabilityModal = () => {
   };
 
   const handleSaveAvailability = () => {
-    const selectedWeekDays = weekDayAvailability.filter(
-      (weekDay) => weekDay.isSelected
-    );
-
-    const availabilities: TAvailability[] = selectedWeekDays.map((weekDay) => ({
-      weekDay: weekDay.weekDay,
-      hours: [
-        {
-          start: sameAvailability.isSelected
-            ? HOUR_OPTIONS[sameAvailability.fromHourIndex]
-            : HOUR_OPTIONS[weekDay.fromHourIndex],
-          end: sameAvailability.isSelected
-            ? HOUR_OPTIONS[sameAvailability.toHourIndex]
-            : HOUR_OPTIONS[weekDay.toHourIndex],
-        },
-      ],
-    }));
-
-    void updateMonitorAvailability(availabilities);
+    updateMonitorAvailability(availabilities);
   };
 
   useEffect(() => {
     if (error) {
-      showErrorSnackBar(`Erro desconhecido. Erro: ${error}`);
+      showErrorSnackBar(
+        `Não foi possível confirmar a disponibilidade, tente novamente mais tarde.`
+      );
     }
   }, [error]);
 
@@ -140,6 +160,8 @@ const useMonitorAvailabilityModal = () => {
     isOpen,
     sameAvailability,
     weekDayAvailability,
+    dayIsSelected,
+    hoursIsSelected,
     handleCloseModal,
     handleFromHourChange,
     handleFromSameHourChange,
