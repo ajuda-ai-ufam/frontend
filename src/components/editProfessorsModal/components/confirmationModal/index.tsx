@@ -24,9 +24,10 @@ const ConfirmationModal = ({
     <Modal isOpen={isOpen} handleClose={handleClose}>
       <Typography variant="h4">Remover Responsável</Typography>
       <Typography variant="body1">
-        Ao efetuar essa ação, os monitores associados a(o){' '}
+        Para realizar essa ação o(a) professor(a){' '}
         <strong>{responsible?.professor.user.name}</strong> da disciplina{' '}
-        <strong>{subject}</strong> serão removidos. Deseja continuar?
+        <strong>{subject}</strong> não deve possuir nenhum(a) monitor(a)
+        associado(a) ou pendente na sua disciplina. Deseja continuar?
       </Typography>
       <ButtonsContainer>
         <BackButton onClick={handleClose}>Não, desejo sair</BackButton>
