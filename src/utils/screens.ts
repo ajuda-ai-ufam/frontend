@@ -3,14 +3,14 @@ export const SCREENS = {
   SCHEDULES_HISTORIC: '/schedules-historic',
   CODE_VERIFICATION: '/code-verification',
   HOME: '/subjects',
-  LOGIN: '/',
+  LOGIN: '/login',
   REGISTER: '/register',
   CREATE_STUDENT: '/register/student',
   CREATE_PROFESSOR: '/register/professor',
   SUBJECTS: '/subjects',
   SUBJECT_DETAILS: '/subjects/:id',
   MONITOR_REQUESTS: '/monitor-requests',
-  LANDING_PAGE: '/about',
+  LANDING_PAGE: '/',
 };
 
 export const NOT_LOGGED_SCREENS = [
