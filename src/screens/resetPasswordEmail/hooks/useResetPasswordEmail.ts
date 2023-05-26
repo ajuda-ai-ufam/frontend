@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
-import useResetPasswordTokenRequest from '../../../service/requests/useResetPasswordTokenRequest';
+import useResetPasswordEmailRequest from '../../../service/requests/useResetPasswordEmailRequest';
 import { validateEmail } from '../../../utils/validateFields';
 import { SCREENS } from '../../../utils/screens';
 import { useNavigate } from 'react-router-dom';
 
-const useResetPassword = () => {
+const useResetPasswordEmail = () => {
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
 
   const navigate = useNavigate();
 
-  const { isLoading, isSuccess, resetPasswordToken, error } =
-    useResetPasswordTokenRequest();
+  const { isLoading, isSuccess, resetPasswordEmail, error } =
+    useResetPasswordEmailRequest();
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -25,18 +25,18 @@ const useResetPassword = () => {
     setEmailError('');
 
     const currentEmailError = validateEmail(email);
+
     if (currentEmailError) {
       setEmailError(currentEmailError);
+      return;
     }
 
-    if (!currentEmailError) {
-      resetPasswordToken(email);
-    }
+    resetPasswordEmail(email);
   };
 
   useEffect(() => {
     if (error == 'Usuário não encontrado!') {
-      setEmailError('Este E-mail não está cadastrado');
+      setEmailError('Este E-mail não está cadastrado.');
       return;
     }
 
@@ -46,6 +46,10 @@ const useResetPassword = () => {
       );
     }
   }, [error]);
+
+  useEffect(() => {
+    document.title = 'Recuperação de senha';
+  });
 
   return {
     email,
@@ -59,4 +63,4 @@ const useResetPassword = () => {
   };
 };
 
-export default useResetPassword;
+export default useResetPasswordEmail;

@@ -19,7 +19,7 @@ import 'moment/locale/pt';
 import SchedulesHistoric from './screens/schedulesHistoric';
 import NotFoundError from './screens/notFoundError';
 import LandingPage from './screens/landingPage';
-import ResetPassword from './screens/resetPassword';
+import ResetPasswordEmail from './screens/resetPasswordEmail';
 
 const App: React.FC = () => {
   return (
@@ -67,8 +67,8 @@ const App: React.FC = () => {
               <Route path={SCREENS.LANDING_PAGE} element={<LandingPage />} />
               <Route path="*" element={<NotFoundError />} />
               <Route
-                path={SCREENS.RESET_PASSWORD}
-                element={<ResetPassword />}
+                path={SCREENS.RESET_PASSWORD_EMAIL}
+                element={<ResetPasswordEmail />}
               />
             </Routes>
           </BrowserRouter>

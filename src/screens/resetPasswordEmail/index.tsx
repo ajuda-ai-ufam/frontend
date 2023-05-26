@@ -16,9 +16,9 @@ import RegisterHeader from '../../components/registerHeader';
 import ResetEmail from './components/resetEmail';
 import LoadingAnimation from '../../components/loadingAnimation';
 import CheckedAnimation from '../../components/checkedAnimation';
-import useResetPassword from './hooks/useResetPassword';
+import useResetPasswordEmail from './hooks/useResetPasswordEmail';
 
-const ResetPassword = () => {
+const ResetPasswordEmail = () => {
   const {
     email,
     emailError,
@@ -28,7 +28,7 @@ const ResetPassword = () => {
     handleEmailChange,
     handleConfirmEmailClick,
     handleLoginClick,
-  } = useResetPassword();
+  } = useResetPasswordEmail();
 
   const CardContent = () => {
     if (isLoading) {
@@ -83,4 +83,4 @@ const ResetPassword = () => {
   );
 };
 
-export default ResetPassword;
+export default ResetPasswordEmail;

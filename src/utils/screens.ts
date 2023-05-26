@@ -11,7 +11,7 @@ export const SCREENS = {
   SUBJECT_DETAILS: '/subjects/:id',
   MONITOR_REQUESTS: '/monitor-requests',
   LANDING_PAGE: '/',
-  RESET_PASSWORD: '/reset-password',
+  RESET_PASSWORD_EMAIL: '/reset-password/email',
 };
 
 export const NOT_LOGGED_SCREENS = [

@@ -1,4 +1,4 @@
-export type TResetPasswordTokenErrorResponse = {
+export type TResetPasswordEmailErrorResponse = {
   statusCode: number;
   message: string;
   error: string;

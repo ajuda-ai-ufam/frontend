@@ -50,10 +50,13 @@ const ResetEmail = ({
             </TypographySub>
           </TypographySubContainer>
         </TypographyContainer>
-        <InputContainer>
+        <InputContainer onSubmit={handleConfirmEmailClick}>
           <EmailTextFieldContainer>
             <EmailTextField
+              autoFocus
               name={email}
+              value={email}
+              type="email"
               placeholder="E-mail"
               error={!!emailError}
               onChange={handleEmailChange}
@@ -65,7 +68,7 @@ const ResetEmail = ({
             <ReturnButton onClick={handleLoginClick}>
               Voltar para o login
             </ReturnButton>
-            <ConfirmButton onClick={handleConfirmEmailClick}>
+            <ConfirmButton disabled={!!validateEmail(email)} type="submit">
               Confirmar E-mail
             </ConfirmButton>
           </ButtonContainer>

@@ -13,7 +13,7 @@ export const TypographyContainer = styled(Box).attrs({
 export const TypographySubContainer = styled(Box).attrs({
   display: 'flex',
   flexDirection: 'column',
-  width: '420px',
+  width: '80%',
   gap: '16px',
 })``;
 
@@ -25,17 +25,24 @@ export const TypographySub = styled(Typography).attrs({
   variant: 'body1',
 })``;
 
-export const InputContainer = styled(Box).attrs({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'flex-start',
-  gap: '32px',
-  width: '100%',
-})``;
+export const InputContainer = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  @media (max-width: ${theme.breakpoints.values.md}px) {
+    width: 80% !important;
+  }
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    width: 100% !important;
+  }
+`;
 
 export const EmailTextFieldContainer = styled(Box).attrs({
   width: '100%',
-  height: '72px',
+  height: '78px',
+  marginBottom: '32px',
 })``;
 
 export const EmailTextField = styled(TextField).attrs({})`
@@ -46,38 +53,42 @@ export const EmailTextField = styled(TextField).attrs({})`
 `;
 
 export const EmailError = styled(FormHelperText).attrs({})`
-  padding: 4px 16px 0px;
+  padding: 0px 16px 0px;
 `;
 
 export const CardContainer = styled(Box).attrs({
-  ddisplay: 'flex',
+  display: 'flex',
   flexDirection: 'column',
-  alignItems: 'flex-start',
-  padding: '72px 96px',
+  alignItems: 'center',
   gap: '24px',
+  padding: '72px 96px',
 })`
-  @media (min-width: ${theme.breakpoints.values.md}px) {
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1) !important;
-    border-radius: 24px !important;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 24px !important;
+
+  @media (max-width: ${theme.breakpoints.values.md}px){
+    padding: 40px 16px !important;
   }
+
   @media (max-width: ${theme.breakpoints.values.sm}px) {
-    justify-content: 'center' !important;
-    align-items: 'center' !important;
-    padding: 0 !important;
+    box-shadow: 0 0 0 0 !important;
+    border-radius: 0 !important;
+    justify-content: center !important;
+    align-items: center !important;
+    max-width: 100% !important;
   }
 })`;
 
 export const ContentContainer = styled(Box).attrs({
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'flex-start',
+  alignItems: 'center',
   gap: '56px',
   width: '552px',
   textAlign: 'center',
 })`
-  @media (min-width: ${theme.breakpoints.values.sm}px) {
-    justify-content: 'center' !important;
-    align-items: 'center' !important;
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    width: 100% !important;
   }
 `;
 

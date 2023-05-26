@@ -1,14 +1,14 @@
 import { AxiosError } from 'axios';
 import { useState } from 'react';
 import api from '../../api';
-import { TResetPasswordTokenErrorResponse } from './types';
+import { TResetPasswordEmailErrorResponse } from './types';
 
-const useResetPasswordTokenRequest = () => {
+const useResetPasswordEmailRequest = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string>();
 
-  const resetPasswordToken = async (emailToken: string) => {
+  const resetPasswordEmail = async (emailToken: string) => {
     setIsLoading(true);
     setIsSuccess(false);
     setError(undefined);
@@ -19,7 +19,7 @@ const useResetPasswordTokenRequest = () => {
       setIsSuccess(true);
     } catch (error) {
       const err = error as AxiosError;
-      const errorData = err.response?.data as TResetPasswordTokenErrorResponse;
+      const errorData = err.response?.data as TResetPasswordEmailErrorResponse;
       const errorMessage = errorData?.message || 'Error desconhecido';
 
       console.log(
@@ -33,7 +33,7 @@ const useResetPasswordTokenRequest = () => {
     }
   };
 
-  return { isLoading, isSuccess, error, resetPasswordToken };
+  return { isLoading, isSuccess, error, resetPasswordEmail };
 };
 
-export default useResetPasswordTokenRequest;
+export default useResetPasswordEmailRequest;

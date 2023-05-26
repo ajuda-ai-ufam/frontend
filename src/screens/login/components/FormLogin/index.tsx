@@ -119,7 +119,7 @@ const FormLogin = () => {
           </Box>
 
           <ContainerLogin sx={{ m: 4 }}>
-            <ForgotPasswordLink href={SCREENS.RESET_PASSWORD}>
+            <ForgotPasswordLink href={SCREENS.RESET_PASSWORD_EMAIL}>
               Esqueci minha senha
             </ForgotPasswordLink>
             <LoginButton type="submit" loading={isLoading}>
