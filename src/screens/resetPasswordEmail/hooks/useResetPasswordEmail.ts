@@ -3,12 +3,14 @@ import useResetPasswordEmailRequest from '../../../service/requests/useResetPass
 import { validateEmail } from '../../../utils/validateFields';
 import { SCREENS } from '../../../utils/screens';
 import { useNavigate } from 'react-router-dom';
+import { useSnackBar } from '../../../utils/renderSnackBar';
 
 const useResetPasswordEmail = () => {
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
 
   const navigate = useNavigate();
+  const { showErrorSnackBar } = useSnackBar();
 
   const { isLoading, isSuccess, resetPasswordEmail, error } =
     useResetPasswordEmailRequest();
@@ -44,6 +46,11 @@ const useResetPasswordEmail = () => {
       setEmailError(
         'Você deve aguardar 30 minutos antes de solicitar o e-mail novamente.'
       );
+      return;
+    }
+
+    if (error && !emailError) {
+      showErrorSnackBar(`Erro ao solicitar o e-mail de recuperação de senha.`);
     }
   }, [error]);
 

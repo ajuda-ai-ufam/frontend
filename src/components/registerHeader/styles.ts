@@ -12,7 +12,7 @@ export const ContainerUp = styled(Box).attrs({
   margin: '16px 40px 0 40px',
 })`
   @media (max-width: ${theme.breakpoints.values.sm}px) {
-    margin: 16px 40px 0 40px !important;
+    margin: 16px 16px 0 16px !important;
   }
 `;
 

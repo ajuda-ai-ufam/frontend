@@ -1,15 +1,11 @@
+import { Typography, FormHelperText } from '@mui/material';
 import { validateEmail } from '../../../../utils/validateFields';
 import {
-  CardContainer,
   ContentContainer,
   TypographyContainer,
-  TypographyHeader,
-  TypographySub,
-  TypographySubContainer,
   InputContainer,
   EmailTextFieldContainer,
   EmailTextField,
-  EmailError,
   ButtonContainer,
   ConfirmButton,
   ReturnButton,
@@ -34,47 +30,46 @@ const ResetEmail = ({
 }: Props) => {
   const EmailErrorHelper = () => {
     if (emailError) {
-      return <EmailError error>{emailError}</EmailError>;
+      return (
+        <FormHelperText error sx={{ paddingLeft: '16px' }}>
+          {emailError}
+        </FormHelperText>
+      );
     }
     return <></>;
   };
   return (
-    <CardContainer>
-      <ContentContainer>
-        <TypographyContainer>
-          <TypographySubContainer>
-            <TypographyHeader>Recuperação de Senha</TypographyHeader>
-            <TypographySub>
-              Digite abaixo seu e-mail para iniciarmos o processo de recuperação
-              de senha.
-            </TypographySub>
-          </TypographySubContainer>
-        </TypographyContainer>
-        <InputContainer onSubmit={handleConfirmEmailClick}>
-          <EmailTextFieldContainer>
-            <EmailTextField
-              autoFocus
-              name={email}
-              value={email}
-              type="email"
-              placeholder="E-mail"
-              error={!!emailError}
-              onChange={handleEmailChange}
-              onBlur={() => setEmailError(validateEmail(email))}
-            />
-            <EmailErrorHelper />
-          </EmailTextFieldContainer>
-          <ButtonContainer>
-            <ReturnButton onClick={handleLoginClick}>
-              Voltar para o login
-            </ReturnButton>
-            <ConfirmButton disabled={!!validateEmail(email)} type="submit">
-              Confirmar E-mail
-            </ConfirmButton>
-          </ButtonContainer>
-        </InputContainer>
-      </ContentContainer>
-    </CardContainer>
+    <ContentContainer>
+      <TypographyContainer>
+        <Typography variant="h4">Recuperação de Senha</Typography>
+        <Typography variant="body1">
+          Digite abaixo seu e-mail para iniciarmos o processo de recuperação de
+          senha.
+        </Typography>
+      </TypographyContainer>
+      <InputContainer onSubmit={handleConfirmEmailClick}>
+        <EmailTextFieldContainer>
+          <EmailTextField
+            name="email"
+            value={email}
+            type="email"
+            placeholder="E-mail"
+            error={!!emailError}
+            onChange={handleEmailChange}
+            onBlur={() => setEmailError(validateEmail(email))}
+          />
+          <EmailErrorHelper />
+        </EmailTextFieldContainer>
+        <ButtonContainer>
+          <ReturnButton onClick={handleLoginClick}>
+            Voltar para o login
+          </ReturnButton>
+          <ConfirmButton disabled={!!validateEmail(email)} type="submit">
+            Confirmar E-mail
+          </ConfirmButton>
+        </ButtonContainer>
+      </InputContainer>
+    </ContentContainer>
   );
 };
 

@@ -1,4 +1,3 @@
-import { Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import styled from 'styled-components';
 import theme from '../../utils/theme';
@@ -13,41 +12,59 @@ export const Container = styled(Box).attrs({
   width: 100% !important;
 `;
 
+export const MiddleContainer = styled(Box).attrs({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+})``;
+
 export const CardContainer = styled(Box).attrs({
   display: 'flex',
   flexDirection: 'column',
+  gap: '24px',
   alignItems: 'center',
-  gap: '16px',
-})``;
-
-export const LoadingContainer = styled(Box).attrs({
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  padding: '72px 122px',
+  padding: '72px 96px',
+  width: '552px',
 })`
-  @media (min-width: ${theme.breakpoints.values.md}px) {
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1) !important;
-    border-radius: 24px !important;
+  border-radius: 24px;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: ${theme.breakpoints.values.md}px) {
+    padding: 40px 16px !important;
+    gap: 24px !important;
+  }
+
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    border-radius: 0;
+    box-shadow: 0 0 0 0;
+    width: 100% !important;
+    padding: 0 16px !important;
   }
 `;
 
-export const SuccessContainer = styled(Box).attrs({
+export const SuccessCardContainer = styled(Box).attrs({
   display: 'flex',
   flexDirection: 'column',
+  gap: '32px',
   alignItems: 'center',
-  justifyContent: 'center',
-  padding: '110px 96px',
-  gap: '42px',
+  padding: '72px 96px',
+  width: '552px',
 })`
-    @media (min-width: ${theme.breakpoints.values.md}px) {
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1) !important;
-      border-radius: 24px !important;
-    }
-    @media (max-width: ${theme.breakpoints.values.sm}px) {
-      padding: 0 !important;
-    }
-  })`;
+  border-radius: 24px;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: ${theme.breakpoints.values.md}px) {
+    padding: 81.5px 16px !important;
+    gap: 24px !important;
+  }
+
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    border-radius: 0;
+    box-shadow: 0 0 0 0;
+    width: 100% !important;
+    padding: 0 16px !important;
+  }
+`;
 
 export const SuccessContentContainer = styled(Box).attrs({
   display: 'flex',
@@ -57,41 +74,38 @@ export const SuccessContentContainer = styled(Box).attrs({
 })``;
 
 export const SuccessTypographyContainer = styled(Box).attrs({
+  width: '100%',
   display: 'flex',
   flexDirection: 'column',
-  width: '552px',
   gap: '16px',
-})``;
-
-export const SuccessTypographyHeader = styled(Typography).attrs({
-  variant: 'h4',
   textAlign: 'center',
-})``;
+})`
+  @media (max-width: ${theme.breakpoints.values.md}px) {
+    width: 424px !important;
+  }
 
-export const SuccessTypographySub = styled(Typography).attrs({
-  variant: 'body1',
-  textAlign: 'center',
-})``;
-
-export const SuccessButtonContainer = styled(Box).attrs({
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  width: '100%',
-})``;
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    width: 100% !important;
+  }
+`;
 
 export const LoginButton = styled(Button).attrs({
   color: 'primary',
   variant: 'contained',
-  width: '80%',
-})``;
+  width: '508px',
+})`
+  @media (max-width: ${theme.breakpoints.values.md}px) {
+    width: 194px !important;
+  }
+
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    width: 100% !important;
+  }
+`;
 
 export const Bottom = styled(Box).attrs({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   padding: '24px',
-})``;
-export const TypographyCaption = styled(Typography).attrs({
-  variant: 'caption',
 })``;

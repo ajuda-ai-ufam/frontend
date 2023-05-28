@@ -1,22 +1,19 @@
 import {
   Container,
   Bottom,
-  TypographyCaption,
-  CardContainer,
-  LoadingContainer,
-  SuccessContainer,
-  SuccessButtonContainer,
+  MiddleContainer,
+  SuccessCardContainer,
   SuccessContentContainer,
   SuccessTypographyContainer,
-  SuccessTypographyHeader,
-  SuccessTypographySub,
   LoginButton,
+  CardContainer,
 } from './styles';
 import RegisterHeader from '../../components/registerHeader';
 import ResetEmail from './components/resetEmail';
 import LoadingAnimation from '../../components/loadingAnimation';
 import CheckedAnimation from '../../components/checkedAnimation';
 import useResetPasswordEmail from './hooks/useResetPasswordEmail';
+import { Typography } from '@mui/material';
 
 const ResetPasswordEmail = () => {
   const {
@@ -33,51 +30,49 @@ const ResetPasswordEmail = () => {
   const CardContent = () => {
     if (isLoading) {
       return (
-        <LoadingContainer>
+        <CardContainer>
           <LoadingAnimation />
-        </LoadingContainer>
+        </CardContainer>
       );
     }
 
     if (isSuccess) {
       return (
-        <SuccessContainer>
+        <SuccessCardContainer>
           <SuccessContentContainer>
             <CheckedAnimation />
             <SuccessTypographyContainer>
-              <SuccessTypographyHeader>Tudo certo!</SuccessTypographyHeader>
-              <SuccessTypographySub>
+              <Typography variant="h4">Tudo certo!</Typography>
+              <Typography variant="body1">
                 Em instantes você receberá um e-mail com o link de recuperação
                 de senha
-              </SuccessTypographySub>
+              </Typography>
             </SuccessTypographyContainer>
-            <SuccessButtonContainer>
-              <LoginButton onClick={handleLoginClick}>
-                Voltar ao login
-              </LoginButton>
-            </SuccessButtonContainer>
           </SuccessContentContainer>
-        </SuccessContainer>
+          <LoginButton onClick={handleLoginClick}>Voltar ao login</LoginButton>
+        </SuccessCardContainer>
       );
     }
     return (
-      <ResetEmail
-        email={email}
-        emailError={emailError}
-        handleEmailChange={handleEmailChange}
-        handleConfirmEmailClick={handleConfirmEmailClick}
-        setEmailError={setEmailError}
-        handleLoginClick={handleLoginClick}
-      />
+      <CardContainer>
+        <ResetEmail
+          email={email}
+          emailError={emailError}
+          handleEmailChange={handleEmailChange}
+          handleConfirmEmailClick={handleConfirmEmailClick}
+          setEmailError={setEmailError}
+          handleLoginClick={handleLoginClick}
+        />
+      </CardContainer>
     );
   };
 
   return (
     <Container>
       <RegisterHeader />
-      <CardContainer>{CardContent()}</CardContainer>
+      <MiddleContainer>{CardContent()}</MiddleContainer>
       <Bottom>
-        <TypographyCaption>Super Monitoria, 2023</TypographyCaption>
+        <Typography variant="caption">Super Monitoria, 2023</Typography>
       </Bottom>
     </Container>
   );
