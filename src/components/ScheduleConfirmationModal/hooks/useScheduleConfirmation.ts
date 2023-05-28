@@ -75,8 +75,8 @@ const useScheduleConfirmation = (): TScheduleConfirmationHook => {
   useEffect(() => {
     if (isSuccessUpdate) {
       realized
-        ? showSuccessSnackBar('Monitora realizada.')
-        : showSuccessSnackBar('Monitora não realizada.');
+        ? showSuccessSnackBar('Monitoria realizada.')
+        : showSuccessSnackBar('Monitoria não realizada.');
 
       if (selectedSchedule) {
         const index = scheduleState.indexOf(selectedSchedule);
