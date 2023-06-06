@@ -8,7 +8,7 @@ import {
   LoginButton,
   CardContainer,
 } from './styles';
-import RegisterHeader from '../../components/registerHeader';
+import RegisterHeader from './components/registerHeader';
 import ResetEmail from './components/resetEmail';
 import LoadingAnimation from '../../components/loadingAnimation';
 import CheckedAnimation from '../../components/checkedAnimation';
