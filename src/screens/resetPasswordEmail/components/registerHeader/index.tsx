@@ -6,9 +6,9 @@ import {
   SignUpButton,
   TypographyRegister,
 } from './styles';
-import HeaderLogo from '../../assets/header-logo.svg';
+import HeaderLogo from '../../../../assets/header-logo.svg';
 import { Link } from '@mui/material';
-import { SCREENS } from '../../utils/screens';
+import { SCREENS } from '../../../../utils/screens';
 import { useNavigate } from 'react-router-dom';
 
 const RegisterHeader = () => {
@@ -16,7 +16,7 @@ const RegisterHeader = () => {
   return (
     <ContainerUp>
       <ContainerLogo>
-        <Link href={SCREENS.HOME}>
+        <Link href={SCREENS.LOGIN}>
           <img src={HeaderLogo} alt={'Super Monitoria'} />
         </Link>
       </ContainerLogo>
