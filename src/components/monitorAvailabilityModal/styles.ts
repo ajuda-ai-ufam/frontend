@@ -194,4 +194,9 @@ export const Placeholder = styled(Typography).attrs({
 
 export const StyledSwitch = styled(Switch).attrs({
   color: 'primary',
+  sx: {
+    '& .MuiSwitch-switchBase': {
+      color: theme.palette.grey[300],
+    },
+  },
 })``;

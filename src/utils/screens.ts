@@ -12,13 +12,17 @@ export const SCREENS = {
   MONITOR_REQUESTS: '/monitor-requests',
   LANDING_PAGE: '/',
   RESET_PASSWORD_EMAIL: '/reset-password/email',
+  RESET_PASSWORD: '/reset-password',
 };
 
 export const NOT_LOGGED_SCREENS = [
   '/code-verification',
   '/',
+  '/login',
   '/register',
   '/register/student',
   '/register/professor',
   '/about',
+  '/reset-password/email',
+  '/reset-password',
 ];

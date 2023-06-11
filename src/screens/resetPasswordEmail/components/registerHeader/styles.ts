@@ -1,7 +1,7 @@
 import { Box } from '@mui/system';
 import styled from 'styled-components';
-import { Button } from '../button';
-import theme from '../../utils/theme';
+import { Button } from '../../../../components/button';
+import theme from '../../../../utils/theme';
 import { Typography } from '@mui/material';
 
 export const ContainerUp = styled(Box).attrs({
