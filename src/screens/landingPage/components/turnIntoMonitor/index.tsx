@@ -50,7 +50,7 @@ const TurnIntoMonitor = () => {
         <FooterContainer>
           <DoubtsTypography variant="body1" color={'white'}>
             Em caso de dúvidas, reclamações ou sugestões, entre em contato
-            conosco através do e-mail: noreply-monitoria@icomp.ufam.edu.br
+            conosco através do e-mail: suportemonitoria@icomp.ufam.edu.br
           </DoubtsTypography>
           <Typography variant="body1" color={'white'}>
             Super Monitoria, 2023
