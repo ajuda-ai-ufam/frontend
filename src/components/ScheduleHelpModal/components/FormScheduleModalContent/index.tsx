@@ -195,8 +195,6 @@ const FormScheduleModalContent = ({
         onChange={handleChangeTopicValue}
       />
 
-      {console.log(selectedTopic, topicInputValue, options)}
-
       <DescriptionContainer>
         <DescriptionTextField
           value={description}
