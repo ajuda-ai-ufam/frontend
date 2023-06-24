@@ -1,21 +1,18 @@
 import {
+  Autocomplete,
+  CircularProgress,
   FormHelperText,
   MenuItem,
   Select,
-  SelectChangeEvent,
+  TextField as TextFieldMUI,
   Typography,
   useMediaQuery,
 } from '@mui/material';
 import { DesktopDatePicker } from '@mui/x-date-pickers';
-import moment from 'moment';
-import { TMonitorAvailableTime } from '../../../../service/requests/useGetMonitorAvailableTimesRequest/types';
-import {
-  TCompleteSubject,
-  TSubjectMonitor,
-} from '../../../../service/requests/useGetSubject/types';
 import theme from '../../../../utils/theme';
 import { TextField } from '../../../textField';
 import { ButtonsContainer, StyledButton } from '../../styles';
+import { TUseSchedulesHook } from '../../types';
 import {
   DateFieldsContainer,
   DateTextField,
@@ -23,26 +20,6 @@ import {
   DescriptionTextField,
   Placeholder,
 } from './styles';
-
-type Props = {
-  availableHours: string[];
-  availableMonitors: TSubjectMonitor[];
-  description: string;
-  isLoadingMonitorAvailableTimes: boolean;
-  monitorAvailableTimes?: TMonitorAvailableTime[];
-  selectedDate: moment.Moment | null;
-  selectedHourIndex: number;
-  selectedProfessorId: number;
-  selectedMonitorId: number;
-  subject: TCompleteSubject;
-  handleClose(): void;
-  handleChangeDate(value: moment.Moment | null): void;
-  handleChangeDescription(e: React.ChangeEvent<HTMLInputElement>): void;
-  handleChangeHour(event: SelectChangeEvent<string[]>): void;
-  handleChangeMonitor(event: SelectChangeEvent<string[]>): void;
-  handleChangeProfessor(event: SelectChangeEvent<string[]>): void;
-  handleShowConfirmation(): void;
-};
 
 const FormScheduleModalContent = ({
   availableHours,
@@ -55,6 +32,12 @@ const FormScheduleModalContent = ({
   selectedMonitorId,
   selectedProfessorId,
   subject,
+  options,
+  selectedTopic,
+  topicInputValue,
+  isLoadingTopics,
+  handleChangeTopicInput,
+  handleChangeTopicValue,
   handleChangeDate,
   handleChangeDescription,
   handleChangeHour,
@@ -62,7 +45,7 @@ const FormScheduleModalContent = ({
   handleChangeProfessor,
   handleClose,
   handleShowConfirmation,
-}: Props) => {
+}: TUseSchedulesHook) => {
   const shouldExpandDescriptionLines = useMediaQuery(
     theme.breakpoints.down('sm')
   );
@@ -184,11 +167,40 @@ const FormScheduleModalContent = ({
           ]}
         </Select>
       </DateFieldsContainer>
+      <Autocomplete
+        options={options}
+        getOptionLabel={(option) => option.label}
+        disabled={selectedHourIndex === -1}
+        renderInput={(params) => (
+          <TextFieldMUI
+            {...params}
+            placeholder="Buscar assunto"
+            InputProps={{
+              ...params.InputProps,
+              endAdornment: (
+                <>
+                  {isLoadingTopics && (
+                    <CircularProgress color="primary" size={20} />
+                  )}{' '}
+                  {params.InputProps.endAdornment}
+                </>
+              ),
+            }}
+          />
+        )}
+        noOptionsText="Carregando..."
+        value={selectedTopic}
+        inputValue={topicInputValue}
+        onInputChange={handleChangeTopicInput}
+        onChange={handleChangeTopicValue}
+      />
+
+      {console.log(selectedTopic, topicInputValue, options)}
 
       <DescriptionContainer>
         <DescriptionTextField
-          disabled={selectedHourIndex === -1}
           value={description}
+          disabled={selectedHourIndex === -1}
           onChange={handleChangeDescription}
           minRows={shouldExpandDescriptionLines ? 10 : 4}
         />
