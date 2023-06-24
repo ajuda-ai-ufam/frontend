@@ -57,7 +57,7 @@ const TermConsentModal = ({ isOpen, handleCloseModal }: Props) => {
             </StyledTypography>
             <StyledTypography>
               Estamos disponíveis para contato através do e-mail:
-              noreply-monitoria@icomp.ufam.edu.br
+              suportemonitoria@icomp.ufam.edu.br
             </StyledTypography>
             <StyledTypography>
               Utilizamos tais dados com os seguintes objetivos: <br />· Para o
