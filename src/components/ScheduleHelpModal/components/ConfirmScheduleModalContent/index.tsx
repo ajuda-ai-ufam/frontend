@@ -6,6 +6,7 @@ import {
 } from '../../../../service/requests/useGetSubject/types';
 import { ButtonsContainer, StyledButton } from '../../styles';
 import { DataContainer, Label } from './styles';
+import { TTopicValue } from '../../types';
 
 type Props = {
   availableHours: string[];
@@ -16,6 +17,7 @@ type Props = {
   selectedProfessorId: number;
   selectedMonitorId: number;
   subject: TCompleteSubject;
+  topic: TTopicValue | null;
   handleConfirmSchedule(): void;
   handleEditData(): void;
 };
@@ -29,6 +31,7 @@ const ConfirmScheduleModalContent = ({
   selectedMonitorId,
   selectedProfessorId,
   subject,
+  topic,
   handleConfirmSchedule,
   handleEditData,
 }: Props) => {
@@ -73,6 +76,11 @@ const ConfirmScheduleModalContent = ({
         value: availableHours[selectedHourIndex],
       });
     }
+
+    data.push({
+      label: 'Assunto',
+      value: topic?.label || '-',
+    });
 
     data.push({
       label: 'Descrição',
