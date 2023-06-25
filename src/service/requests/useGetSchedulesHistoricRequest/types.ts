@@ -47,7 +47,7 @@ export type TSchedules = {
   student: TStudent;
   responsibleProfessor: TResponsibleProfessor;
   subject: TSubject;
-  topic: TScheduleTopic;
+  topic?: TScheduleTopic;
   description: string;
 };
 
