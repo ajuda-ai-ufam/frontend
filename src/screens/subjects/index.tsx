@@ -59,6 +59,10 @@ const Subjects = () => {
     selectedDate,
     selectedMonitorId,
     selectedProfessorId,
+    options,
+    selectedTopic,
+    isLoadingTopics,
+    handleChangeTopicValue,
     handleChangeDescription,
     handleChangeHour,
     handleChangeProfessor,
@@ -72,6 +76,8 @@ const Subjects = () => {
     handleConfirmSchedule,
     handleEditData,
     handleShowConfirmation,
+    topicInputValue,
+    handleChangeTopicInput,
   } = useScheduleHelpModal();
 
   return (
@@ -95,6 +101,12 @@ const Subjects = () => {
         isRemoveProfessorModalOpen={isRemoveProfessorModalOpen}
       />
       <ScheduleHelpModal
+        isLoadingTopics={isLoadingTopics}
+        selectedTopic={selectedTopic}
+        topicInputValue={topicInputValue}
+        handleChangeTopicInput={handleChangeTopicInput}
+        handleChangeTopicValue={handleChangeTopicValue}
+        options={options}
         availableHours={availableHours}
         availableMonitors={availableMonitors}
         description={description}

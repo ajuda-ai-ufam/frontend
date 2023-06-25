@@ -70,6 +70,7 @@ const ScheduleDetailsModal = ({
       )}
       {modalType === ScheduleDetailsModalType.CONFIRMED ? (
         <ConfirmedScheduleModalContent
+          topic={schedule.ScheduleTopics?.name}
           email={userData.email}
           description={schedule.description}
           linkedin={userData.linkedin}
@@ -90,6 +91,7 @@ const ScheduleDetailsModal = ({
           start={schedule.start}
           end={schedule.end}
           isMonitor={schedule.is_monitoring}
+          topic={schedule.ScheduleTopics?.name}
           handleAccept={handleAccept}
           handleClose={handleClose}
           handleRefuse={handleRefuse}

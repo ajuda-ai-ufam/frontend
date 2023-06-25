@@ -10,6 +10,8 @@ type Props = {
   student: string;
   course: string;
   subject: string;
+  topic?: string;
+  description: string;
   monitor: string;
   professor: string;
   date: string;
@@ -21,6 +23,8 @@ const ScheduleHistoricModal = ({
   course,
   date,
   monitor,
+  topic,
+  description,
   professor,
   schedule,
   student,
@@ -46,6 +50,16 @@ const ScheduleHistoricModal = ({
     <DataContainer>
       <Label>Disciplina</Label>
       <Typography variant="body2">{subject}</Typography>
+    </DataContainer>
+
+    <DataContainer>
+      <Label>Assunto</Label>
+      <Typography variant="body2">{topic || '-'}</Typography>
+    </DataContainer>
+
+    <DataContainer>
+      <Label>Descrição</Label>
+      <Typography variant="body2">{description || '-'}</Typography>
     </DataContainer>
 
     <DataContainer>

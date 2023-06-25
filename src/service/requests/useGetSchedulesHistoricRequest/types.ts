@@ -47,6 +47,13 @@ export type TSchedules = {
   student: TStudent;
   responsibleProfessor: TResponsibleProfessor;
   subject: TSubject;
+  topic?: TScheduleTopic;
+  description: string;
+};
+
+export type TScheduleTopic = {
+  id: number;
+  name: string;
 };
 
 export type TGetSchedulesHistoricRequestResponse = {

@@ -15,6 +15,31 @@ const breakpoints = {
 };
 
 const components = {
+  MuiAutocomplete: {
+    styleOverrides: {
+      inputRoot: {
+        borderRadius: '12px',
+      },
+      noOptions: {
+        backgroundColor: 'white',
+      },
+      listbox: {
+        maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+        backgroundColor: 'white',
+      },
+      popper: {
+        boxShadow: '0px 0px 12px rgba(0, 0, 0, 0.1)',
+      },
+      option: {
+        '&[aria-selected="true"]': {
+          backgroundColor: '#eeeeee !important',
+          '&:hover': {
+            backgroundColor: '#e0e0e0 !important',
+          },
+        },
+      },
+    },
+  },
   MuiSelect: {
     defaultProps: {
       MenuProps: {

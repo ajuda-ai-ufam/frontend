@@ -118,7 +118,7 @@ const FormRegister = () => {
                     error={!!emailError}
                     id="email"
                     name="email"
-                    placeholder="E-mail do IComp, Super ou UFAM*"
+                    placeholder="E-mail*"
                     onBlur={() => setEmailError(validateEmail(email))}
                     onChange={handleEmailChange}
                   />

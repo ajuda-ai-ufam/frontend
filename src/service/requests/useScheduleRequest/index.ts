@@ -12,7 +12,8 @@ const useScheduleRequest = () => {
     monitorId: number,
     start: string,
     end: string,
-    description: string
+    description: string,
+    topicId?: number
   ) => {
     setIsLoading(true);
     setIsSuccess(false);
@@ -22,6 +23,7 @@ const useScheduleRequest = () => {
       await api.post(`/student/${monitorId}/schedule`, {
         start,
         end,
+        topicId,
         description,
       });
 

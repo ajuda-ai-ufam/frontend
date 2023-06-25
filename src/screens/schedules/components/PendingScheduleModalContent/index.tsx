@@ -16,6 +16,7 @@ type Props = {
   end: Date;
   description: string;
   isMonitor: boolean;
+  topic?: string;
   handleAccept(): void;
   handleClose(): void;
   handleRefuse(): void;
@@ -29,6 +30,7 @@ const PendingScheduleModalContent = ({
   end,
   isMonitor,
   description,
+  topic,
   handleAccept,
   handleClose,
   handleRefuse,
@@ -57,6 +59,16 @@ const PendingScheduleModalContent = ({
     </DataContainer>
 
     <DataContainer>
+      <Label>Assunto</Label>
+      <Typography variant="body2">{topic || '-'}</Typography>
+    </DataContainer>
+
+    <DataContainer>
+      <Label>Descrição</Label>
+      <Typography variant="body2">{description || '-'}</Typography>
+    </DataContainer>
+
+    <DataContainer>
       <Label>Data</Label>
       <Typography variant="body2">{start.toLocaleDateString()}</Typography>
     </DataContainer>
@@ -64,11 +76,6 @@ const PendingScheduleModalContent = ({
     <DataContainer>
       <Label>Horário</Label>
       <Typography variant="body2">{`${start.toLocaleTimeString()} até ${end.toLocaleTimeString()}`}</Typography>
-    </DataContainer>
-
-    <DataContainer>
-      <Label>Descrição</Label>
-      <Typography variant="body2">{description || '-'}</Typography>
     </DataContainer>
 
     {isMonitor ? (
