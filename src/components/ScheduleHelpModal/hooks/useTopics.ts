@@ -85,8 +85,6 @@ const useTopics = () => {
   };
 
   useEffect(() => {
-    if (!topicInputValue) return;
-
     const delayDebounceFn = setTimeout(() => {
       void getTopics({ name: topicInputValue });
     }, 1000);
