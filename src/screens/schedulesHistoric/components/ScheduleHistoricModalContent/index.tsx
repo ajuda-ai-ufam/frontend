@@ -10,7 +10,7 @@ type Props = {
   student: string;
   course: string;
   subject: string;
-  topic: string;
+  topic?: string;
   description: string;
   monitor: string;
   professor: string;

@@ -16,7 +16,7 @@ type Props = {
   end: Date;
   description: string;
   isMonitor: boolean;
-  topic: string;
+  topic?: string;
   handleAccept(): void;
   handleClose(): void;
   handleRefuse(): void;
