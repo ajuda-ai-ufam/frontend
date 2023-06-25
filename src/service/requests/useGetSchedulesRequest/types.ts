@@ -47,8 +47,8 @@ export type TSchedules = {
   monitor: TMonitor;
   student: TStudent;
   is_monitoring: boolean;
-  schedule_topic_id: number;
-  ScheduleTopics: TScheduleTopic;
+  schedule_topic_id?: number;
+  ScheduleTopics?: TScheduleTopic;
 };
 
 export type TScheduleTopic = {

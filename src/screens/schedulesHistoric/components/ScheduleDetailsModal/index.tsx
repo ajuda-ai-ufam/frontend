@@ -20,7 +20,7 @@ const ScheduleDetailsModal = ({ schedule, isOpen, handleClose }: Props) => {
         student={`${schedule.student.enrollment} - ${schedule.student.name}`}
         course={schedule.subject.course.name}
         subject={schedule.subject.name}
-        topic={schedule.topic.name}
+        topic={schedule.topic?.name}
         description={schedule.description}
         monitor={`${schedule.monitor.enrollment} - ${schedule.monitor.name}`}
         professor={schedule.responsibleProfessor.name}

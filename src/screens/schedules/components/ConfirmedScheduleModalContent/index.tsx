@@ -8,7 +8,7 @@ import {
 
 type Props = {
   email: string;
-  topic: string;
+  topic?: string;
   description: string;
   linkedin?: string;
   whatsapp?: string;
