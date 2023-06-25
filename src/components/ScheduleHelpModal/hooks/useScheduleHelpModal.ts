@@ -1,6 +1,7 @@
 import { SelectChangeEvent } from '@mui/material';
 import moment from 'moment';
 import { useEffect, useMemo, useState } from 'react';
+import useAddTopicRequest from '../../../service/requests/useAddTopicRequest';
 import useGetMonitorAvailableTimesRequest from '../../../service/requests/useGetMonitorAvailableTimesRequest';
 import {
   TCompleteSubject,
@@ -8,14 +9,17 @@ import {
 } from '../../../service/requests/useGetSubject/types';
 import useScheduleRequest from '../../../service/requests/useScheduleRequest';
 import { useSnackBar } from '../../../utils/renderSnackBar';
+import useTopics from './useTopics';
 
 const useScheduleHelpModal = () => {
   const { showErrorSnackBar } = useSnackBar();
+
   const {
     data: monitorAvailableTimes,
     isLoading: isLoadingMonitorAvailableTimes,
     getMonitorAvailableTimes,
   } = useGetMonitorAvailableTimesRequest();
+
   const {
     schedule,
     isLoading: isScheduleLoading,
@@ -23,6 +27,23 @@ const useScheduleHelpModal = () => {
     error: scheduleError,
     resetStates: resetScheduleStates,
   } = useScheduleRequest();
+
+  const {
+    handleChangeTopicInput,
+    handleChangeTopicValue,
+    resetStates: resetTopicsStates,
+    isLoadingTopics,
+    options,
+    topicInputValue,
+    selectedTopic,
+  } = useTopics();
+
+  const {
+    addTopic,
+    error: topicAddError,
+    data: addedTopic,
+    resetStates: resetAddTopicStates,
+  } = useAddTopicRequest();
 
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -62,6 +83,7 @@ const useScheduleHelpModal = () => {
 
   const handleClose = () => {
     resetScheduleStates();
+    resetTopicsStates();
     setShowConfirmation(false);
     setSelectedHourIndex(-1);
     setSelectedDate(null);
@@ -86,15 +108,37 @@ const useScheduleHelpModal = () => {
     setIsOpen(true);
   };
 
+  const formatStartAndEndDate = () => {
+    const hour = availableHours[selectedHourIndex].split(' às ');
+    let start = '';
+    let end = '';
+
+    if (selectedDate) {
+      start = `${selectedDate.format('YYYY-MM-DD')} ${hour[0]}`;
+      end = `${selectedDate.format('YYYY-MM-DD')} ${hour[1]}`;
+    }
+
+    return { start, end };
+  };
+
   const handleConfirmSchedule = () => {
     if (selectedMonitorId === -1 || selectedHourIndex === -1 || !selectedDate)
       return;
 
-    const hour = availableHours[selectedHourIndex].split(' às ');
-    const start = `${selectedDate.format('YYYY-MM-DD')} ${hour[0]}`;
-    const end = `${selectedDate.format('YYYY-MM-DD')} ${hour[1]}`;
+    if (selectedTopic?.isNew) {
+      void addTopic({ name: selectedTopic.inputValue });
+      return;
+    }
 
-    void schedule(selectedMonitorId, start, end, description);
+    const formatedDates = formatStartAndEndDate();
+
+    void schedule(
+      selectedMonitorId,
+      formatedDates.start,
+      formatedDates.end,
+      description,
+      selectedTopic?.id
+    );
   };
 
   const handleShowConfirmation = () => setShowConfirmation(true);
@@ -155,6 +199,36 @@ const useScheduleHelpModal = () => {
     resetScheduleStates();
   }, [scheduleError]);
 
+  useEffect(() => {
+    if (
+      !addedTopic ||
+      selectedMonitorId === -1 ||
+      selectedHourIndex === -1 ||
+      !selectedDate
+    )
+      return;
+
+    const formatedDates = formatStartAndEndDate();
+
+    void schedule(
+      selectedMonitorId,
+      formatedDates.start,
+      formatedDates.end,
+      description,
+      addedTopic.id
+    );
+    resetAddTopicStates();
+  }, [addedTopic]);
+
+  useEffect(() => {
+    if (!topicAddError) return;
+
+    showErrorSnackBar(
+      `Não foi possível adicionar novo assunto, tente outro termo ou tente novamente mais tarde. Erro: ${topicAddError}`
+    );
+    resetAddTopicStates();
+  }, [topicAddError]);
+
   return {
     availableHours,
     availableMonitors,
@@ -170,6 +244,12 @@ const useScheduleHelpModal = () => {
     selectedProfessorId,
     selectedSubject,
     showConfirmation,
+    selectedTopic,
+    options,
+    topicInputValue,
+    isLoadingTopics,
+    handleChangeTopicInput,
+    handleChangeTopicValue,
     handleChangeDate,
     handleChangeDescription,
     handleChangeHour,

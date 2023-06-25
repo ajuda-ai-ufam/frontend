@@ -49,6 +49,10 @@ const SubjectDetails = () => {
     selectedDate,
     selectedMonitorId,
     selectedProfessorId: selectedScheduleProfessorId,
+    options,
+    selectedTopic,
+    isLoadingTopics,
+    handleChangeTopicValue,
     handleChangeDescription,
     handleChangeHour,
     handleChangeProfessor,
@@ -62,6 +66,8 @@ const SubjectDetails = () => {
     handleConfirmSchedule,
     handleEditData,
     handleShowConfirmation,
+    topicInputValue,
+    handleChangeTopicInput,
   } = useScheduleHelpModal();
 
   const {
@@ -183,6 +189,12 @@ const SubjectDetails = () => {
   return (
     <ContainerWithSidebar selectedSidebarItem={SidebarItemEnum.SUBJECTS}>
       <ScheduleHelpModal
+        isLoadingTopics={isLoadingTopics}
+        selectedTopic={selectedTopic}
+        topicInputValue={topicInputValue}
+        handleChangeTopicInput={handleChangeTopicInput}
+        handleChangeTopicValue={handleChangeTopicValue}
+        options={options}
         availableHours={availableHours}
         availableMonitors={availableMonitors}
         description={description}

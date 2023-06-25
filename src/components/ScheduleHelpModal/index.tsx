@@ -1,42 +1,10 @@
-import { SelectChangeEvent } from '@mui/material';
-import moment from 'moment';
-import { TMonitorAvailableTime } from '../../service/requests/useGetMonitorAvailableTimesRequest/types';
-import {
-  TCompleteSubject,
-  TSubjectMonitor,
-} from '../../service/requests/useGetSubject/types';
 import LoadingAnimation from '../loadingAnimation';
 import Modal from '../modal';
-import ConfirmedScheduleModalContent from './components/ConfirmedScheduleModalContent';
 import ConfirmScheduleModalContent from './components/ConfirmScheduleModalContent';
+import ConfirmedScheduleModalContent from './components/ConfirmedScheduleModalContent';
 import FormScheduleModalContent from './components/FormScheduleModalContent';
 import { FeedbackContainer } from './styles';
-
-type Props = {
-  availableHours: string[];
-  availableMonitors: TSubjectMonitor[];
-  description: string;
-  isLoadingMonitorAvailableTimes: boolean;
-  isScheduleLoading: boolean;
-  isScheduleSuccess: boolean;
-  isOpen: boolean;
-  monitorAvailableTimes?: TMonitorAvailableTime[];
-  selectedDate: moment.Moment | null;
-  selectedHourIndex: number;
-  selectedProfessorId: number;
-  selectedMonitorId: number;
-  showConfirmation: boolean;
-  subject?: TCompleteSubject;
-  handleClose(): void;
-  handleChangeDate(value: moment.Moment | null): void;
-  handleChangeDescription(e: React.ChangeEvent<HTMLInputElement>): void;
-  handleChangeHour(event: SelectChangeEvent<string[]>): void;
-  handleChangeMonitor(event: SelectChangeEvent<string[]>): void;
-  handleChangeProfessor(event: SelectChangeEvent<string[]>): void;
-  handleConfirmSchedule(): void;
-  handleEditData(): void;
-  handleShowConfirmation(): void;
-};
+import { TScheduleHelpModalProps } from './types';
 
 const ScheduleHelpModal = ({
   availableHours,
@@ -53,6 +21,12 @@ const ScheduleHelpModal = ({
   selectedProfessorId,
   subject,
   showConfirmation,
+  options,
+  selectedTopic,
+  topicInputValue,
+  isLoadingTopics,
+  handleChangeTopicInput,
+  handleChangeTopicValue,
   handleChangeDate,
   handleChangeDescription,
   handleChangeHour,
@@ -62,7 +36,7 @@ const ScheduleHelpModal = ({
   handleConfirmSchedule,
   handleEditData,
   handleShowConfirmation,
-}: Props) => {
+}: TScheduleHelpModalProps) => {
   if (!subject) return <></>;
 
   const renderContent = () => {
@@ -89,6 +63,7 @@ const ScheduleHelpModal = ({
           selectedMonitorId={selectedMonitorId}
           selectedProfessorId={selectedProfessorId}
           handleEditData={handleEditData}
+          topic={selectedTopic}
           subject={subject}
           handleConfirmSchedule={handleConfirmSchedule}
         />
@@ -97,6 +72,12 @@ const ScheduleHelpModal = ({
 
     return (
       <FormScheduleModalContent
+        isLoadingTopics={isLoadingTopics}
+        topicInputValue={topicInputValue}
+        handleChangeTopicInput={handleChangeTopicInput}
+        selectedTopic={selectedTopic}
+        handleChangeTopicValue={handleChangeTopicValue}
+        options={options}
         availableHours={availableHours}
         availableMonitors={availableMonitors}
         description={description}
