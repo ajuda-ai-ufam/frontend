@@ -5,5 +5,6 @@ export type TSidebarItem = {
   key: SidebarItemEnum;
   text: string;
   icon: SvgIconComponent;
+  subtext?: string;
   handleClick(): void;
 };

@@ -24,9 +24,7 @@ export const ProfileTextContainer = styled(Box).attrs({
 
 export const StyledDivider = styled(Divider).attrs({
   color: theme.palette.secondary.light,
-})`
-  margin: 8px 0 !important;
-`;
+})``;
 
 export const LogoContainer = styled(Box)`
   @media (max-width: ${theme.breakpoints.values.md}px) {
