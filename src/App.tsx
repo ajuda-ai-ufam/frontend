@@ -21,6 +21,7 @@ import NotFoundError from './screens/notFoundError';
 import LandingPage from './screens/landingPage';
 import ResetPasswordEmail from './screens/resetPasswordEmail';
 import ResetPassword from './screens/resetPassword';
+import EditProfile from './screens/editProfile';
 
 const App: React.FC = () => {
   return (
@@ -75,6 +76,7 @@ const App: React.FC = () => {
                 path={SCREENS.RESET_PASSWORD}
                 element={<ResetPassword />}
               />
+              <Route path={SCREENS.EDIT_PROFILE} element={<EditProfile />} />
             </Routes>
           </BrowserRouter>
         </ThemeProvider>
