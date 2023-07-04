@@ -4,6 +4,7 @@ import {
   LogoutRounded,
   SchoolRounded,
   HistoryRounded,
+  AccountCircle,
 } from '@mui/icons-material';
 import { useMediaQuery } from '@mui/material';
 import { useEffect, useMemo, useState } from 'react';
@@ -34,6 +35,16 @@ const useSidebar = () => {
     () => (user ? UserRole[user.type_user_id] : 'Usuário'),
     [user]
   );
+
+  const editProfileItem: TSidebarItem = {
+    key: SidebarItemEnum.EDIT_PROFILE,
+    text: userName,
+    subtext: userRole,
+    icon: AccountCircle,
+    handleClick: () => {
+      navigate(SCREENS.EDIT_PROFILE);
+    },
+  };
 
   const subjectsItem: TSidebarItem = {
     key: SidebarItemEnum.SUBJECTS,
@@ -93,9 +104,15 @@ const useSidebar = () => {
     if (!user) return [subjectsItem, logoutItem];
 
     if (user?.type_user_id === TypeUserEnum.STUDENT)
-      return [subjectsItem, schedulesItem, logoutItem];
+      return [editProfileItem, subjectsItem, schedulesItem, logoutItem];
 
-    return [subjectsItem, monitorRequestsItem, schedulesHistoric, logoutItem];
+    return [
+      editProfileItem,
+      subjectsItem,
+      monitorRequestsItem,
+      schedulesHistoric,
+      logoutItem,
+    ];
   }, [user]);
 
   return {

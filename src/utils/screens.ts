@@ -13,6 +13,7 @@ export const SCREENS = {
   LANDING_PAGE: '/',
   RESET_PASSWORD_EMAIL: '/reset-password/email',
   RESET_PASSWORD: '/reset-password',
+  EDIT_PROFILE: '/edit-profile',
 };
 
 export const NOT_LOGGED_SCREENS = [
