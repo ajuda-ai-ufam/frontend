@@ -36,7 +36,7 @@ const ContactSection = ({
         </InfoContainer>
         <InfoContainer>
           <InfoLegendContainer>
-            <Typography variant="subtitle1">Linkedin</Typography>
+            <Typography variant="subtitle1">LinkedIn</Typography>
             <LegendTypography>
               O link do seu perfil no LinkedIn.
             </LegendTypography>
