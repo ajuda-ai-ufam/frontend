@@ -176,6 +176,9 @@ const theme = createTheme({
       fontSize: 16,
       lineHeight: '24px',
       letterSpacing: '0.1px',
+      [`@media (max-width:${breakpoints.values.sm}px)`]: {
+        fontSize: '14px',
+      },
     },
     subtitle2: {
       fontWeight: 400,
