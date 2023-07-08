@@ -10,6 +10,7 @@ import { TypeUserEnum } from '../../../../utils/constants';
 import { Container } from './styles';
 import MonitorAvailabilityModal from '../../../../components/monitorAvailabilityModal';
 import EditProfessorsModal from '../../../../components/editProfessorsModal';
+import { ManageHistoryRounded } from '@mui/icons-material';
 
 type Props = {
   subject?: TCompleteSubject;
@@ -78,6 +79,7 @@ const SubjectHeader = ({
       } else {
         return (
           <Button
+            startIcon={<ManageHistoryRounded />}
             onClick={() => monitorAvailabilityModal.handleOpenModal()}
             color="secondary"
             width="auto"
