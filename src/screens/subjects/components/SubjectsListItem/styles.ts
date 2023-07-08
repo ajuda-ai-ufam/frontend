@@ -6,6 +6,7 @@ import theme from '../../../../utils/theme';
 
 type Props = {
   wid: string;
+  color: string;
 };
 
 export const StyledCard = styled(Card).attrs({
@@ -38,13 +39,16 @@ export const Container = styled(Box).attrs({
   }
 `;
 
-export const ActionButton = styled(Button).attrs(({ wid }: Props) => ({
-  color: 'primary',
+export const ActionButton = styled(Button).attrs(({ wid, color }: Props) => ({
+  color: color,
   variant: 'outlined',
   width: wid,
 }))<Props>`
   :hover {
-    background-color: ${theme.palette.primary.main} !important;
+    background-color: ${(props) =>
+      props.color === 'primary'
+        ? theme.palette.primary.main
+        : theme.palette.secondary.main} !important;
     color: white;
   }
 
