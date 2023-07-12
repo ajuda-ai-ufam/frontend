@@ -1,4 +1,7 @@
-import { ReponsabilityProfessorStatus } from '../../../utils/constants';
+import {
+  ReponsabilityProfessorStatus,
+  TypeMonitoringStatus,
+} from '../../../utils/constants';
 import { TCompleteSubject } from '../useGetSubject/types';
 
 export type TSubject = {
@@ -52,6 +55,10 @@ export type TListSubjectsHttpResponse = {
           name: string;
           email: string;
         };
+      };
+      status: {
+        id: number;
+        status: TypeMonitoringStatus;
       };
       student: {
         user: {
