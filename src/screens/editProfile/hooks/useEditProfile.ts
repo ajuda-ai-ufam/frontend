@@ -14,10 +14,15 @@ import {
 } from '../../../utils/validateFields';
 import useUpdateUserRequest from '../../../service/requests/useUpdateUserRequest';
 import { TUpdateUserRequestBody } from '../../../service/requests/useUpdateUserRequest/types';
-const useEditProfile = () => {
-  const user = useGetLoggedUser();
+import useQuery from '../../../utils/useQuery';
+import { useNavigate } from 'react-router-dom';
+import { SCREENS } from '../../../utils/screens';
 
+const useEditProfile = () => {
+  const query = useQuery();
+  const user = useGetLoggedUser();
   const { showErrorSnackBar, showSuccessSnackBar } = useSnackBar();
+  const navigate = useNavigate();
 
   const {
     data: userInfo,
@@ -25,14 +30,12 @@ const useEditProfile = () => {
     getInfo,
     isLoading: isLoadingUser,
   } = useGetUserInfoRequest();
-
   const {
     coursesFetch,
     data: courses,
     error: courseFetchError,
     isLoading: isLoadingCourses,
   } = useCourseRequest();
-
   const {
     updateUser,
     error: errorUpdateUser,
@@ -202,6 +205,8 @@ const useEditProfile = () => {
 
   const fillFormInputsWithUserInfo = () => {
     if (userInfo) {
+      const isOnEditMode = query.get('edit');
+
       if (nameRef.current) nameRef.current.value = userInfo.name;
 
       if (emailRef.current) emailRef.current.value = userInfo.email;
@@ -219,7 +224,10 @@ const useEditProfile = () => {
 
       if (whatsappRef.current) whatsappRef.current.value = userInfo.whatsapp;
 
-      if (passwordRef.current) passwordRef.current.value = 'SenhaExemplo';
+      if (passwordRef.current) {
+        if (isOnEditMode) passwordRef.current.value = '';
+        else passwordRef.current.value = 'SenhaExemplo';
+      }
 
       if (newPasswordRef.current) newPasswordRef.current.value = '';
 
@@ -227,6 +235,11 @@ const useEditProfile = () => {
         confirmNewPasswordRef.current.value = '';
 
       setCourse(userInfo.course.name);
+
+      if (isOnEditMode) {
+        handleEditProfileClick();
+        navigate(SCREENS.EDIT_PROFILE);
+      }
     }
   };
 
@@ -251,7 +264,7 @@ const useEditProfile = () => {
   }, [isSuccessUpdateUser]);
 
   useEffect(() => {
-    if (!userInfo) return;
+    if (!userInfo || !courses) return;
 
     fillFormInputsWithUserInfo();
   }, [userInfo, courses]);
