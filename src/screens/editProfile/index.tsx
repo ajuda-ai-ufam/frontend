@@ -4,6 +4,7 @@ import ContainerWithSidebar from '../../components/containerWithSidebar';
 import { SidebarItemEnum } from '../../utils/constants';
 
 import {
+  ButtonsContainer,
   Card,
   Container,
   EditButton,
@@ -15,25 +16,43 @@ import useEditProfile from './hooks/useEditProfile';
 import AccountSection from './components/accountSection';
 import ContactSection from './components/contactSection';
 import LoadingAnimation from '../../components/loadingAnimation';
+import { Button } from '../../components/button';
 
 const EditProfile = () => {
   const {
     contactEmailRef,
-    courseRef,
+    course,
     descriptionRef,
     emailRef,
     enrollmentRef,
     linkedinRef,
     nameRef,
     passwordRef,
+    newPasswordRef,
+    confirmNewPasswordRef,
     whatsappRef,
     isStudent,
     isLoading,
+    isLoadingCourses,
+    isLoadingUpdateUser,
+    isEditModeDisabled,
+    editProfileTitle,
+    showPassword,
+    courses,
+    contactEmailError,
+    enrollmentError,
+    nameError,
+    passwordError,
+    handleSaveClick,
+    handleClickShowPassword,
+    handleMouseDownPassword,
     handleEditProfileClick,
+    handleCancelClick,
+    handleCourseChange,
   } = useEditProfile();
 
   const renderContent = () => {
-    if (isLoading)
+    if (isLoading || isLoadingCourses)
       return (
         <FallbackContainer>
           <LoadingAnimation />
@@ -46,11 +65,22 @@ const EditProfile = () => {
         <AccountSection
           isStudent={isStudent}
           nameRef={nameRef}
-          courseRef={courseRef}
+          course={course}
+          courses={courses}
           descriptionRef={descriptionRef}
           emailRef={emailRef}
           enrollmentRef={enrollmentRef}
           passwordRef={passwordRef}
+          newPasswordRef={newPasswordRef}
+          confirmNewPasswordRef={confirmNewPasswordRef}
+          isEditModeDisabled={isEditModeDisabled}
+          showPassword={showPassword}
+          enrollmentError={enrollmentError}
+          nameError={nameError}
+          passwordError={passwordError}
+          handleCourseChange={handleCourseChange}
+          handleClickShowPassword={handleClickShowPassword}
+          handleMouseDownPassword={handleMouseDownPassword}
         />
 
         {isStudent ? (
@@ -58,13 +88,37 @@ const EditProfile = () => {
             <Divider />
             <SectionTitleTypography>Dados de contato</SectionTitleTypography>
             <ContactSection
+              contactEmailError={contactEmailError}
               contactEmailRef={contactEmailRef}
               linkedinRef={linkedinRef}
               whatsappRef={whatsappRef}
+              isEditModeDisabled={isEditModeDisabled}
             />
           </>
         ) : (
           <></>
+        )}
+
+        {isEditModeDisabled ? (
+          <></>
+        ) : (
+          <ButtonsContainer>
+            <Button
+              variant="text"
+              color="primary"
+              onClick={handleCancelClick}
+              disabled={isLoadingUpdateUser}
+            >
+              Cancelar
+            </Button>
+            <Button
+              color="primary"
+              onClick={handleSaveClick}
+              loading={isLoadingUpdateUser}
+            >
+              Salvar
+            </Button>
+          </ButtonsContainer>
         )}
       </>
     );
@@ -75,8 +129,8 @@ const EditProfile = () => {
       <Container>
         <Card>
           <InfoContainer keepAsRow={true}>
-            <Typography variant="h3">Meu Perfil</Typography>
-            {isLoading ? (
+            <Typography variant="h3">{editProfileTitle}</Typography>
+            {isLoading || isLoadingCourses || !isEditModeDisabled ? (
               <></>
             ) : (
               <EditButton

@@ -1,7 +1,7 @@
 import { Box } from '@mui/system';
 import styled from 'styled-components';
 import theme from '../../utils/theme';
-import { Typography } from '@mui/material';
+import { Select, Typography } from '@mui/material';
 import { TextField } from '../../components/textField';
 import { Button } from '../../components/button';
 
@@ -15,6 +15,23 @@ export const Container = styled(Box).attrs({
 })`
   @media (max-width: ${theme.breakpoints.values.sm}px) {
     margin: 0 16px !important;
+  }
+`;
+
+export const SelectField = styled(Select).attrs({
+  sx: {
+    '&.Mui-disabled': {
+      backgroundColor: `#F6F7F6 !important`,
+      '& > fieldset': {
+        borderColor: '#F6F7F6 !important',
+      },
+    },
+  },
+})`
+  margin-top: '16px';
+  width: 100%;
+  fieldset {
+    border-radius: 12px;
   }
 `;
 
@@ -90,7 +107,11 @@ export const InfoLegendContainer = styled(Box).attrs({
   }
 `;
 
-export const TextFieldContainer = styled(Box)`
+export const TextFieldContainer = styled(Box).attrs({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: `16px`,
+})`
   width: 50%;
 
   @media (max-width: ${theme.breakpoints.values.sm}px) {
@@ -145,3 +166,10 @@ export const SectionTitleTypography = styled(Typography).attrs({
     margin-top: 16px !important;
   }
 `;
+
+export const ButtonsContainer = styled(Box).attrs({
+  display: 'flex',
+  flexDirection: `row`,
+  justifyContent: `flex-end`,
+  gap: '24px',
+})``;
