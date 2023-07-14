@@ -43,7 +43,7 @@ const CancelScheduleModalContent = ({
           hoverBorderColor="#2D2D2C29"
           onClick={handleCloseCancelModal}
         >
-          Não, desejo sair
+          Cancelar
         </ActionButton>
         <ActionButton
           color="error"
@@ -51,7 +51,7 @@ const CancelScheduleModalContent = ({
           hoverBackGroundColor="#F55858"
           onClick={handleCancelSchedule}
         >
-          Sim, continuar
+          Desmarcar
         </ActionButton>
       </ButtonsContainer>
     </>

@@ -31,6 +31,7 @@ const useListSubjectsRequest = () => {
         responsables: subject.SubjectResponsability,
         monitors: subject.Monitor.map((monitor) => ({
           ...monitor.student.user,
+          status: monitor.status.status,
           id: monitor.id,
           studentId: monitor.student.user.id,
           course: monitor.student.course,
