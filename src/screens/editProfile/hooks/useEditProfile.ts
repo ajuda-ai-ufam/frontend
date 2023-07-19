@@ -58,6 +58,8 @@ const useEditProfile = () => {
   const [course, setCourse] = useState<string>('');
   const [isEditModeDisabled, setIsEditModeDisabled] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showConfirmNewPassword, setShowConfirmNewPassword] = useState(false);
 
   const [nameError, setNameError] = useState('');
   const [contactEmailError, setContactEmailError] = useState('');
@@ -176,9 +178,10 @@ const useEditProfile = () => {
     event.preventDefault();
   };
 
-  const handleClickShowPassword = () => {
-    setShowPassword(!showPassword);
-  };
+  const handleClickShowPassword = () => setShowPassword(!showPassword);
+  const handleClickShowNewPassword = () => setShowNewPassword(!showNewPassword);
+  const handleClickShowConfirmNewPassword = () =>
+    setShowConfirmNewPassword(!showConfirmNewPassword);
 
   const handleCancelClick = () => {
     setIsEditModeDisabled(true);
@@ -298,6 +301,8 @@ const useEditProfile = () => {
     linkedinRef,
     whatsappRef,
     showPassword,
+    showNewPassword,
+    showConfirmNewPassword,
     course,
     courses,
     contactEmailError,
@@ -313,6 +318,8 @@ const useEditProfile = () => {
     handleCancelClick,
     handleCourseChange,
     handleClickShowPassword,
+    handleClickShowNewPassword,
+    handleClickShowConfirmNewPassword,
     handleMouseDownPassword,
     handleSaveClick,
   };
