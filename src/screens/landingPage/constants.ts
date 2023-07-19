@@ -7,6 +7,11 @@ import IgorPhoto from '../../assets/landingPageImages/profilePictures/igor.png';
 import LuizPhoto from '../../assets/landingPageImages/profilePictures/luiz.png';
 import NabsonPhoto from '../../assets/landingPageImages/profilePictures/nabson.png';
 import NahanPhoto from '../../assets/landingPageImages/profilePictures/nahan.png';
+import AmandaPhoto from '../../assets/landingPageImages/profilePictures/amanda.png';
+import DaviPhoto from '../../assets/landingPageImages/profilePictures/davi.png';
+import JorgePhoto from '../../assets/landingPageImages/profilePictures/jorge.png';
+import MayconPhoto from '../../assets/landingPageImages/profilePictures/maycon.png';
+import RavellaPhoto from '../../assets/landingPageImages/profilePictures/ravella.png';
 
 // We're going to storage only 6 colaborators in each storage
 export const collaborators: TCollaborator[][] = [
@@ -60,6 +65,38 @@ export const collaborators: TCollaborator[][] = [
       role: 'QA Assurance',
       linkedin: 'https://www.linkedin.com/in/fabiana-bezerra',
       photo: FabiPhoto,
+    },
+    {
+      name: 'Jorge Frota',
+      role: 'Back-end Developer',
+      linkedin: 'https://www.linkedin.com/in/jpafrota',
+      photo: JorgePhoto,
+    },
+    {
+      name: 'Maycon Azevedo',
+      role: 'Back-end Developer',
+      linkedin: 'https://www.linkedin.com/in/maycondeazevedo/',
+      photo: MayconPhoto,
+    },
+    {
+      name: 'Amanda Antunes',
+      role: 'Designer UX/UI',
+      linkedin: 'https://www.linkedin.com/in/amanda-antunes-a235011ba/',
+      photo: AmandaPhoto,
+    },
+    {
+      name: 'Ravella Rodrigues',
+      role: 'QA Assurance',
+      linkedin: 'https://www.linkedin.com/in/ravellarodrigues',
+      photo: RavellaPhoto,
+    },
+  ],
+  [
+    {
+      name: 'Davi Nascimento',
+      role: 'QA Assurance',
+      linkedin: 'https://www.linkedin.com/in/davi-nascimento-66853b15b',
+      photo: DaviPhoto,
     },
   ],
 ];
