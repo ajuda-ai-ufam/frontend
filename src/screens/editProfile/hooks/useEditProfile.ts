@@ -143,11 +143,11 @@ const useEditProfile = () => {
       const user: TUpdateUserRequestBody = {
         name: nameRef.current?.value || '',
         enrollment: enrollmentRef.current?.value || '',
+        description: descriptionRef.current?.value || '',
+        whatsapp: whatsappRef.current?.value,
+        linkedin: linkedinRef.current?.value,
+        contactEmail: contactEmailRef.current?.value,
       };
-
-      if (contactEmailRef.current?.value) {
-        user.contactEmail = contactEmailRef.current?.value;
-      }
 
       if (newPasswordRef.current?.value)
         user.password = newPasswordRef.current?.value;
@@ -155,19 +155,10 @@ const useEditProfile = () => {
       if (passwordRef.current?.value)
         user.oldPassword = passwordRef.current?.value;
 
-      if (descriptionRef.current?.value)
-        user.description = descriptionRef.current?.value;
-
       const courseId = courses.find((crs) => crs.name === course)?.id;
       if (userInfo?.course.id !== courseId) {
         user.courseId = courseId;
       }
-
-      if (whatsappRef.current?.value)
-        user.whatsapp = whatsappRef.current?.value;
-
-      if (linkedinRef.current?.value)
-        user.linkedin = linkedinRef.current?.value;
 
       void updateUser(user);
     }
