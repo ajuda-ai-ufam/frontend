@@ -168,7 +168,7 @@ const SubjectDetails = () => {
         <SearchField
           search={search}
           handleSearchChange={handleSearchChange}
-          placeholder="Buscar aluno(a)"
+          placeholder="Buscar monitor(a)"
           handleSearch={handleSearch}
         />
 
