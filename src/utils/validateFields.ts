@@ -90,7 +90,7 @@ export const validateEnrollment = (enrollment: string): string => {
 
 export const validateLinkedin = (linkedin: string): string => {
   const re =
-    /^(https:(?:\/\/)www.linkedin.com(\/)in(\/)([\w.#&-]{5,60}))(\/)$/gm;
+    /^(http(s)?:\/\/)?([\w]+\.)?linkedin\.com\/(pub|in|profile)\/([-a-zA-Z0-9]+)\/*/gm;
 
   if (!linkedin) return '';
 
