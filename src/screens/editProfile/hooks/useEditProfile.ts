@@ -58,6 +58,8 @@ const useEditProfile = () => {
   const [course, setCourse] = useState<string>('');
   const [isEditModeDisabled, setIsEditModeDisabled] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showConfirmNewPassword, setShowConfirmNewPassword] = useState(false);
 
   const [nameError, setNameError] = useState('');
   const [contactEmailError, setContactEmailError] = useState('');
@@ -143,11 +145,11 @@ const useEditProfile = () => {
       const user: TUpdateUserRequestBody = {
         name: nameRef.current?.value || '',
         enrollment: enrollmentRef.current?.value || '',
+        description: descriptionRef.current?.value || '',
+        whatsapp: whatsappRef.current?.value,
+        linkedin: linkedinRef.current?.value,
+        contactEmail: contactEmailRef.current?.value,
       };
-
-      if (contactEmailRef.current?.value) {
-        user.contactEmail = contactEmailRef.current?.value;
-      }
 
       if (newPasswordRef.current?.value)
         user.password = newPasswordRef.current?.value;
@@ -155,19 +157,10 @@ const useEditProfile = () => {
       if (passwordRef.current?.value)
         user.oldPassword = passwordRef.current?.value;
 
-      if (descriptionRef.current?.value)
-        user.description = descriptionRef.current?.value;
-
       const courseId = courses.find((crs) => crs.name === course)?.id;
       if (userInfo?.course.id !== courseId) {
         user.courseId = courseId;
       }
-
-      if (whatsappRef.current?.value)
-        user.whatsapp = whatsappRef.current?.value;
-
-      if (linkedinRef.current?.value)
-        user.linkedin = linkedinRef.current?.value;
 
       void updateUser(user);
     }
@@ -185,9 +178,10 @@ const useEditProfile = () => {
     event.preventDefault();
   };
 
-  const handleClickShowPassword = () => {
-    setShowPassword(!showPassword);
-  };
+  const handleClickShowPassword = () => setShowPassword(!showPassword);
+  const handleClickShowNewPassword = () => setShowNewPassword(!showNewPassword);
+  const handleClickShowConfirmNewPassword = () =>
+    setShowConfirmNewPassword(!showConfirmNewPassword);
 
   const handleCancelClick = () => {
     setIsEditModeDisabled(true);
@@ -307,6 +301,8 @@ const useEditProfile = () => {
     linkedinRef,
     whatsappRef,
     showPassword,
+    showNewPassword,
+    showConfirmNewPassword,
     course,
     courses,
     contactEmailError,
@@ -322,6 +318,8 @@ const useEditProfile = () => {
     handleCancelClick,
     handleCourseChange,
     handleClickShowPassword,
+    handleClickShowNewPassword,
+    handleClickShowConfirmNewPassword,
     handleMouseDownPassword,
     handleSaveClick,
   };

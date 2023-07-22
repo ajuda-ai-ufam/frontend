@@ -33,11 +33,15 @@ type Props = {
   course: string;
   isEditModeDisabled: boolean;
   showPassword: boolean;
+  showNewPassword: boolean;
+  showConfirmNewPassword: boolean;
   courses: TCourseData[];
   enrollmentError: string;
   nameError: string;
   passwordError: string;
   handleClickShowPassword(): void;
+  handleClickShowNewPassword(): void;
+  handleClickShowConfirmNewPassword(): void;
   handleMouseDownPassword(e: MouseEvent<HTMLButtonElement>): void;
   handleCourseChange(e: SelectChangeEvent<unknown>): void;
 };
@@ -54,11 +58,15 @@ const AccountSection = ({
   enrollmentRef,
   isEditModeDisabled,
   showPassword,
+  showNewPassword,
+  showConfirmNewPassword,
   courses,
   nameError,
   enrollmentError,
   passwordError,
   handleClickShowPassword,
+  handleClickShowNewPassword,
+  handleClickShowConfirmNewPassword,
   handleMouseDownPassword,
   handleCourseChange,
 }: Props) => (
@@ -125,18 +133,18 @@ const AccountSection = ({
           <>
             <Box>
               <StyledTextField
-                type={showPassword ? 'text' : 'password'}
+                type={showNewPassword ? 'text' : 'password'}
                 inputRef={newPasswordRef}
                 error={!!passwordError}
                 placeholder={'Nova senha'}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
-                      onClick={handleClickShowPassword}
+                      onClick={handleClickShowNewPassword}
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                      {showNewPassword ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
                   </InputAdornment>
                 }
@@ -147,18 +155,22 @@ const AccountSection = ({
             </Box>
             <Box>
               <StyledTextField
-                type={showPassword ? 'text' : 'password'}
+                type={showConfirmNewPassword ? 'text' : 'password'}
                 inputRef={confirmNewPasswordRef}
                 error={!!passwordError}
                 placeholder={'Confirmar senha'}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
-                      onClick={handleClickShowPassword}
+                      onClick={handleClickShowConfirmNewPassword}
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                      {showConfirmNewPassword ? (
+                        <VisibilityOff />
+                      ) : (
+                        <Visibility />
+                      )}
                     </IconButton>
                   </InputAdornment>
                 }
