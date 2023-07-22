@@ -38,6 +38,8 @@ const EditProfile = () => {
     isEditModeDisabled,
     editProfileTitle,
     showPassword,
+    showNewPassword,
+    showConfirmNewPassword,
     courses,
     contactEmailError,
     enrollmentError,
@@ -45,6 +47,8 @@ const EditProfile = () => {
     passwordError,
     handleSaveClick,
     handleClickShowPassword,
+    handleClickShowNewPassword,
+    handleClickShowConfirmNewPassword,
     handleMouseDownPassword,
     handleEditProfileClick,
     handleCancelClick,
@@ -75,11 +79,15 @@ const EditProfile = () => {
           confirmNewPasswordRef={confirmNewPasswordRef}
           isEditModeDisabled={isEditModeDisabled}
           showPassword={showPassword}
+          showNewPassword={showNewPassword}
+          showConfirmNewPassword={showConfirmNewPassword}
           enrollmentError={enrollmentError}
           nameError={nameError}
           passwordError={passwordError}
           handleCourseChange={handleCourseChange}
           handleClickShowPassword={handleClickShowPassword}
+          handleClickShowNewPassword={handleClickShowNewPassword}
+          handleClickShowConfirmNewPassword={handleClickShowConfirmNewPassword}
           handleMouseDownPassword={handleMouseDownPassword}
         />
 
