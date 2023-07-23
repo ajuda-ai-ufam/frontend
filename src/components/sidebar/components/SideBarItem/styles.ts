@@ -9,7 +9,7 @@ export const ItemButton = styled(ListItemButton).attrs({
     },
   },
 })`
-  border-radius: 24px !important;
+  border-radius: 100px !important;
   background-color: ${(props) =>
     props.selected
       ? alpha(theme.palette.background.paper, 0.16)

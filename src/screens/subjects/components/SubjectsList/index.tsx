@@ -1,5 +1,5 @@
 import { CircularProgress, Pagination } from '@mui/material';
-import { TSubject } from '../../../../service/requests/useListSubjectsRequest/types';
+import { TCompleteSubject as TSubject } from '../../../../service/requests/useGetSubject/types';
 import SubjectsListItem from '../SubjectsListItem';
 import {
   Container,

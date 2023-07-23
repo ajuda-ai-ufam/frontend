@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState, useEffect, useMemo } from 'react';
 import jwt from 'jwt-decode';
 import { TResetPasswordToken } from './types';
@@ -9,11 +9,7 @@ import {
 } from '../../../utils/validateFields';
 import { useSnackBar } from '../../../utils/renderSnackBar';
 import { SCREENS } from '../../../utils/screens';
-
-const useQuery = () => {
-  const { search } = useLocation();
-  return useMemo(() => new URLSearchParams(search), [search]);
-};
+import useQuery from '../../../utils/useQuery';
 
 const useResetPassword = () => {
   const query = useQuery();

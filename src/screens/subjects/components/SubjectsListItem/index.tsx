@@ -1,8 +1,14 @@
-import { CalendarMonthRounded, EditRounded } from '@mui/icons-material';
 import { CardContent } from '@mui/material';
 import React from 'react';
 import { TSubject } from '../../../../service/requests/useListSubjectsRequest/types';
 import { TypeUserEnum } from '../../../../utils/constants';
+import { TCompleteSubject } from '../../../../service/requests/useGetSubject/types';
+import useGetLoggedUser from '../../../../service/storage/getLoggedUser';
+import {
+  CalendarMonthRounded,
+  EditRounded,
+  ManageHistoryRounded,
+} from '@mui/icons-material';
 import {
   ActionButton,
   ButtonContainer,
@@ -10,9 +16,11 @@ import {
   StyledCard,
   SubjectName,
 } from './styles';
+import MonitorAvailabilityModal from '../../../../components/monitorAvailabilityModal';
+import useMonitorAvailabilityModal from '../../../../components/monitorAvailabilityModal/hooks/useMonitorAvailabilityModal';
 
 type Props = {
-  subject: TSubject;
+  subject: TCompleteSubject;
   userTypeId?: number;
   handleAssignProfessors(subject: TSubject): void;
   handleConfirmSchedule(subject: TSubject): void;
@@ -26,14 +34,34 @@ const SubjectsListItem = ({
   handleConfirmSchedule,
   handleSubjectClick,
 }: Props) => {
+  const userId = useGetLoggedUser()?.sub;
+  const monitorAvailabilityModal = useMonitorAvailabilityModal();
   const renderButton = () => {
     if (userTypeId === TypeUserEnum.STUDENT) {
+      if (!!subject.monitors.length) {
+        if (subject.monitors.find((monitor) => monitor.studentId === userId)) {
+          return (
+            <ButtonContainer>
+              <ActionButton
+                onClick={monitorAvailabilityModal.handleOpenModal}
+                startIcon={<ManageHistoryRounded />}
+                wid="140px"
+                color="secondary"
+              >
+                Gerenciar
+              </ActionButton>
+            </ButtonContainer>
+          );
+        }
+      }
+
       return (
         <ButtonContainer>
           <ActionButton
             onClick={() => handleConfirmSchedule(subject)}
             startIcon={<CalendarMonthRounded />}
             wid="140px"
+            color="primary"
           >
             Agendar
           </ActionButton>
@@ -70,15 +98,21 @@ const SubjectsListItem = ({
   };
 
   return (
-    <StyledCard onClick={handleCardClick}>
-      <Container>
-        <CardContent>
-          <SubjectName>{subject.name}</SubjectName>
-        </CardContent>
+    <>
+      <MonitorAvailabilityModal
+        subject={subject}
+        {...monitorAvailabilityModal}
+      ></MonitorAvailabilityModal>
+      <StyledCard onClick={handleCardClick}>
+        <Container>
+          <CardContent>
+            <SubjectName>{subject.name}</SubjectName>
+          </CardContent>
 
-        {renderButton()}
-      </Container>
-    </StyledCard>
+          {renderButton()}
+        </Container>
+      </StyledCard>
+    </>
   );
 };
 

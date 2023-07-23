@@ -19,6 +19,8 @@ const Subjects = () => {
     isLoadingSubjects,
     searchFieldElement,
     userTypeId,
+    search,
+    handleSearchChange,
     handleChangePage,
     handleSearch,
     handleSubjectClick,
@@ -149,6 +151,8 @@ const Subjects = () => {
             inputRef={searchFieldElement}
             placeholder="Buscar disciplina"
             handleSearch={handleSearch}
+            search={search}
+            handleSearchChange={handleSearchChange}
           />
 
           <SubjectsList

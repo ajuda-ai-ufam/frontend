@@ -10,6 +10,7 @@ import {
 import useScheduleRequest from '../../../service/requests/useScheduleRequest';
 import { useSnackBar } from '../../../utils/renderSnackBar';
 import useTopics from './useTopics';
+import { TypeMonitoringStatus } from '../../../utils/constants';
 
 const useScheduleHelpModal = () => {
   const { showErrorSnackBar } = useSnackBar();
@@ -58,7 +59,9 @@ const useScheduleHelpModal = () => {
     if (!selectedSubject || selectedProfessorId === -1) return [];
 
     return selectedSubject.monitors.filter(
-      (monitor) => monitor.responsable.id === selectedProfessorId
+      (monitor) =>
+        monitor.responsable.id === selectedProfessorId &&
+        monitor.status === TypeMonitoringStatus.AVAILABLE
     );
   }, [selectedProfessorId, selectedSubject]);
 

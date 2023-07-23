@@ -30,9 +30,9 @@ const CancelScheduleModalContent = ({
     <>
       <Typography variant="h4">Desmarcar horário</Typography>
       <Typography variant="body1">
-        Caso você cancele o horário agendado, você não o verá mais na lista de
-        agendamentos. Ao desmarcar o(a) {isMonitor ? 'aluno(a)' : 'monitor(a)'}{' '}
-        receberá um e-mail informando a ação. Deseja continuar?
+        Ao cancelar um horário agendado, o(a){' '}
+        {isMonitor ? 'aluno(a)' : 'monitor(a)'} será informado(a) por e-mail e o
+        horário mudará para o status de cancelado.
       </Typography>
       <ButtonsContainer>
         <ActionButton
@@ -43,7 +43,7 @@ const CancelScheduleModalContent = ({
           hoverBorderColor="#2D2D2C29"
           onClick={handleCloseCancelModal}
         >
-          Não, desejo sair
+          Cancelar
         </ActionButton>
         <ActionButton
           color="error"
@@ -51,7 +51,7 @@ const CancelScheduleModalContent = ({
           hoverBackGroundColor="#F55858"
           onClick={handleCancelSchedule}
         >
-          Sim, continuar
+          Desmarcar
         </ActionButton>
       </ButtonsContainer>
     </>

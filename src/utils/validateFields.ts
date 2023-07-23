@@ -30,6 +30,19 @@ export const validateContactEmail = (email: string): string => {
   return '';
 };
 
+export const validateMandatoryContactEmail = (email: string): string => {
+  if (!email) return 'Você precisa informar um e-mail de contato!';
+
+  if (
+    email.indexOf('@') === -1 ||
+    email.split('@')[0].length < 3 ||
+    email.split('@')[0].length > 20
+  )
+    return 'Informe um e-mail válido!';
+
+  return '';
+};
+
 export const validatePassword = (name: string, password: string): string => {
   if (!password) return 'Informe uma senha!';
 
@@ -52,9 +65,9 @@ export const validateConfirmPassword = (
   password: string,
   confirmPassword: string
 ): string => {
-  if (!confirmPassword) return 'Campo obrigatório!';
+  if (password && !confirmPassword) return 'Campo obrigatório!';
 
-  if (password !== confirmPassword)
+  if (password && password !== confirmPassword)
     return 'A senha e a confirmação devem ser iguais!';
 
   return '';
@@ -77,7 +90,7 @@ export const validateEnrollment = (enrollment: string): string => {
 
 export const validateLinkedin = (linkedin: string): string => {
   const re =
-    /^(https:(?:\/\/)www.linkedin.com(\/)in(\/)([\w.#&-]{5,60}))(\/)$/gm;
+    /^(http(s)?:\/\/)?([\w]+\.)?linkedin\.com\/(pub|in|profile)\/([-a-zA-Z0-9]+)\/*/gm;
 
   if (!linkedin) return '';
 

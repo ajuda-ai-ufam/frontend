@@ -5,8 +5,12 @@ import useGetLoggedUser from '../../../service/storage/getLoggedUser';
 import { useSnackBar } from '../../../utils/renderSnackBar';
 import { SCREENS } from '../../../utils/screens';
 import { ReponsabilityProfessorStatus } from '../../../utils/constants';
+import useQuery from '../../../utils/useQuery';
 
 const useSubjects = () => {
+  const query = useQuery();
+  const querySearch = query.get('search');
+  const queryPage = query.get('page');
   const navigate = useNavigate();
   const user = useGetLoggedUser();
   const { showErrorSnackBar } = useSnackBar();
@@ -20,6 +24,7 @@ const useSubjects = () => {
 
   const searchFieldElement = useRef<HTMLInputElement>();
   const [page, setPage] = useState(1);
+  const [search, setSearch] = useState('');
 
   const totalPages = useMemo(
     () => subjectsResponse?.meta.total_pages || 0,
@@ -39,10 +44,15 @@ const useSubjects = () => {
     return subs;
   }, [subjectsResponse]);
 
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+  };
+
   const handleSearch = (e: React.SyntheticEvent<EventTarget>) => {
     e.preventDefault();
+    navigate(`/subjects?search=${search}&page=1`);
 
-    void listSubjects({ page: 1, search: searchFieldElement.current?.value });
+    void listSubjects({ page: 1, search: search });
     setPage(1);
   };
 
@@ -52,11 +62,10 @@ const useSubjects = () => {
   ) => {
     if (newPage === page) return;
 
+    navigate(`/subjects?search=${search}&page=${newPage}`);
     void listSubjects({
       page: newPage,
-      search: searchFieldElement.current?.value
-        ? searchFieldElement.current?.value
-        : undefined,
+      search: search ? search : undefined,
     });
     setPage(newPage);
   };
@@ -68,15 +77,21 @@ const useSubjects = () => {
   const refetchSubjects = () => {
     void listSubjects({
       page: page,
-      search: searchFieldElement.current?.value
-        ? searchFieldElement.current?.value
-        : undefined,
+      search: search ? search : undefined,
     });
   };
 
   useEffect(() => {
     document.title = 'Disciplinas';
     if (!user) return navigate(SCREENS.LOGIN);
+
+    if (querySearch) {
+      setSearch(querySearch);
+      void listSubjects({ page: Number(queryPage), search: querySearch });
+      setPage(Number(queryPage));
+
+      return;
+    }
 
     void listSubjects();
   }, []);
@@ -89,11 +104,13 @@ const useSubjects = () => {
 
   return {
     userTypeId: user?.type_user_id,
+    search,
     page,
     totalPages,
     subjects,
     isLoadingSubjects,
     searchFieldElement,
+    handleSearchChange,
     handleChangePage,
     handleSearch,
     handleSubjectClick,
