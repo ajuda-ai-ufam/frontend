@@ -99,7 +99,7 @@ const StartStudentRegister = ({
             id="email"
             name="email"
             onChange={handleEmailChange}
-            placeholder="E-mail*"
+            placeholder="E-mail IComp, Super ou UFAM*"
           />
           <EmailError />
         </StyledFormBox>
