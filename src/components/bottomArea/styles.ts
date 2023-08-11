@@ -30,3 +30,11 @@ export const PatternBox = styled(Box).attrs({
     display: none !important;
   }
 `;
+
+export const ContainerText = styled(Box).attrs({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexDirection: 'row',
+  gap: '4px',
+})``;
