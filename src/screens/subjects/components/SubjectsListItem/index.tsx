@@ -106,7 +106,9 @@ const SubjectsListItem = ({
       <StyledCard onClick={handleCardClick}>
         <Container>
           <CardContent>
-            <SubjectName>{subject.name}</SubjectName>
+            <SubjectName>
+              {subject.code} - {subject.name}
+            </SubjectName>
           </CardContent>
 
           {renderButton()}
