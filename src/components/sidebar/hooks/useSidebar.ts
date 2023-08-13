@@ -5,6 +5,7 @@ import {
   SchoolRounded,
   HistoryRounded,
   AccountCircle,
+  ManageHistoryRounded,
 } from '@mui/icons-material';
 import { useMediaQuery } from '@mui/material';
 import { useEffect, useMemo, useState } from 'react';
@@ -43,6 +44,15 @@ const useSidebar = () => {
     icon: AccountCircle,
     handleClick: () => {
       navigate(SCREENS.EDIT_PROFILE);
+    },
+  };
+
+  const editMonitoringItem: TSidebarItem = {
+    key: SidebarItemEnum.EDIT_MONITORING,
+    text: 'Editar Monitoria',
+    icon: ManageHistoryRounded,
+    handleClick: () => {
+      navigate(SCREENS.EDIT_MONITORING);
     },
   };
 
@@ -103,8 +113,19 @@ const useSidebar = () => {
   const items = useMemo(() => {
     if (!user) return [subjectsItem, logoutItem];
 
-    if (user?.type_user_id === TypeUserEnum.STUDENT)
-      return [editProfileItem, subjectsItem, schedulesItem, logoutItem];
+    if (user?.type_user_id === TypeUserEnum.STUDENT) {
+      if (user?.monitor) {
+        return [
+          editProfileItem,
+          subjectsItem,
+          editMonitoringItem,
+          schedulesItem,
+          logoutItem,
+        ];
+      } else {
+        return [editProfileItem, subjectsItem, schedulesItem, logoutItem];
+      }
+    }
 
     return [
       editProfileItem,
