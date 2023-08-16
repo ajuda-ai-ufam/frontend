@@ -19,7 +19,7 @@ const useGetMonitorAvailableTimesRequest = () => {
 
     try {
       const response = (await api.get(
-        `/monitor/availability/${monitorId}`
+        `/monitor/${monitorId}`
       )) as TGetMonitorAvailableTimesRequestResponse;
 
       setData(response.data);
