@@ -22,9 +22,9 @@ export const validateEmail = (email: string): string => {
   if (email.split('@')[0].length < 3 || email.split('@')[0].length > 20)
     return 'Informe um e-mail válido!';
 
-  const reIcomp = /^([\w.]{3,20})@icomp.ufam.edu.br$/gm;
-  const reSuper = /^([\w.]{3,20})@super.ufam.edu.br$/gm;
-  const reUfam = /^([\w.]{3,20})@ufam.edu.br$/gm;
+  const reIcomp = /^([\w.-]{3,20})@icomp.ufam.edu.br$/gm;
+  const reSuper = /^([\w.-]{3,20})@super.ufam.edu.br$/gm;
+  const reUfam = /^([\w.-]{3,20})@ufam.edu.br$/gm;
 
   if (!reIcomp.test(email) && !reSuper.test(email) && !reUfam.test(email))
     return 'Informe um e-mail válido!';
