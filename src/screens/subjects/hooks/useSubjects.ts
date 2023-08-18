@@ -93,6 +93,12 @@ const useSubjects = () => {
       return;
     }
 
+    if (queryPage) {
+      void listSubjects({ page: Number(queryPage) });
+      setPage(Number(queryPage));
+
+      return;
+    }
     void listSubjects();
   }, []);
 
