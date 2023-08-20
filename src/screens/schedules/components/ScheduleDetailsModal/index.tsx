@@ -3,7 +3,10 @@ import { useMemo } from 'react';
 import LoadingAnimation from '../../../../components/loadingAnimation';
 import Modal from '../../../../components/modal';
 import { TSchedules } from '../../../../service/requests/useGetSchedulesRequest/types';
-import { ScheduleDetailsModalType } from '../../hooks/types';
+import {
+  ScheduleDetailsModalType,
+  TPreferentialPlaceProperties,
+} from '../../hooks/types';
 import CancelScheduleModalContent from '../CancelScheduleModalContent';
 import ConfirmedScheduleModalContent from '../ConfirmedScheduleModalContent';
 import PendingScheduleModalContent from '../PendingScheduleModalContent';
@@ -20,6 +23,7 @@ type Props = {
   handleCancelSchedule(): void;
   handleClose(): void;
   handleRefuse(): void;
+  preferentialPlaceProperties?: TPreferentialPlaceProperties;
 };
 
 const ScheduleDetailsModal = ({
@@ -33,6 +37,7 @@ const ScheduleDetailsModal = ({
   handleAccept,
   handleClose,
   handleRefuse,
+  preferentialPlaceProperties,
 }: Props) => {
   if (!schedule || modalType === ScheduleDetailsModalType.DEFAULT) return <></>;
 
@@ -76,6 +81,7 @@ const ScheduleDetailsModal = ({
           linkedin={userData.linkedin}
           whatsapp={userData.whatsapp}
           isMonitor={schedule.is_monitoring}
+          preferentialPlaceProperties={preferentialPlaceProperties}
           handleClose={handleClose}
           handleOpenCancelModal={handleOpenCancelModal}
         />
@@ -92,6 +98,7 @@ const ScheduleDetailsModal = ({
           end={schedule.end}
           isMonitor={schedule.is_monitoring}
           topic={schedule.ScheduleTopics?.name}
+          preferentialPlaceProperties={preferentialPlaceProperties}
           handleAccept={handleAccept}
           handleClose={handleClose}
           handleRefuse={handleRefuse}
