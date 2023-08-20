@@ -1,5 +1,11 @@
 import { TSchedules } from '../../../service/requests/useGetSchedulesRequest/types';
 
+export type TPreferentialPlaceProperties = {
+  isWarning?: boolean;
+  message?: string;
+  preferentialPlace?: string;
+};
+
 export type TFormatedSchedules = {
   month: string;
   day: number;

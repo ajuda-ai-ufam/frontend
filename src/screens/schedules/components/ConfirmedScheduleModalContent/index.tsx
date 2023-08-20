@@ -5,6 +5,8 @@ import {
   DataContainer,
   Label,
 } from '../ScheduleDetailsModal/styles';
+import PreferentialPlaceAlert from '../PreferentialPlaceAlert';
+import { TPreferentialPlaceProperties } from '../../hooks/types';
 
 type Props = {
   email: string;
@@ -15,6 +17,7 @@ type Props = {
   isMonitor: boolean;
   handleClose(): void;
   handleOpenCancelModal(): void;
+  preferentialPlaceProperties?: TPreferentialPlaceProperties;
 };
 
 const ConfirmedScheduleModalContent = ({
@@ -26,6 +29,7 @@ const ConfirmedScheduleModalContent = ({
   isMonitor,
   handleClose,
   handleOpenCancelModal,
+  preferentialPlaceProperties,
 }: Props) => (
   <>
     <Typography variant="h4">Horário agendado</Typography>
@@ -33,6 +37,12 @@ const ConfirmedScheduleModalContent = ({
       Entre em contato com o(a) {isMonitor ? 'aluno' : 'monitor'}
       (a) para definirem a plataforma onde será feita a ajuda.
     </Typography>
+
+    <PreferentialPlaceAlert
+      isWarning={preferentialPlaceProperties?.isWarning}
+      message={preferentialPlaceProperties?.message}
+      preferentialPlace={preferentialPlaceProperties?.preferentialPlace}
+    />
 
     <DataContainer>
       <Label>Assunto</Label>
