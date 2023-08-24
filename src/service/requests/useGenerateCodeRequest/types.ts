@@ -3,7 +3,7 @@ import { CodeTypeEnum } from '../../../utils/constants';
 export type TGenerateCodeRequestHook = {
   isLoading: boolean;
   isSuccess: boolean;
-  error?: string;
+  error?: TGenerateCodeErrorResponse;
   generateCode(email: string, codeType: CodeTypeEnum): void;
 };
 
