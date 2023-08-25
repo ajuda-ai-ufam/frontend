@@ -1,3 +1,5 @@
+import { TLoginErrorResponse } from '../../../service/requests/useLoginRequest/types';
+
 export type TLoginHook = {
   handlePasswordChange(e: React.ChangeEvent<HTMLInputElement>): void;
   handleEmailChange(e: React.ChangeEvent<HTMLInputElement>): void;
@@ -8,7 +10,7 @@ export type TLoginHook = {
   email: string;
   password: string;
   showPassword: boolean;
-  error?: string;
+  error?: TLoginErrorResponse;
   isLoading: boolean;
   emailError: string;
   passwordError: string;

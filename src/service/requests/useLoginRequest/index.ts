@@ -11,7 +11,7 @@ import {
 
 const useLoginRequest = (): TLoginRequestHook => {
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string>();
+  const [error, setError] = useState<TLoginErrorResponse>();
   const [isSuccess, setIsSuccess] = useState(false);
 
   const login = async (email: string, password: string) => {
@@ -35,7 +35,7 @@ const useLoginRequest = (): TLoginRequestHook => {
 
       console.error('Error during login. Error:', errorMessage);
 
-      setError(errorMessage);
+      setError(errorData);
     } finally {
       setIsLoading(false);
     }

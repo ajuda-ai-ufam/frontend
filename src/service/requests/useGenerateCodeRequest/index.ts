@@ -10,7 +10,7 @@ import {
 
 const useGenerateCodeRequest = (): TGenerateCodeRequestHook => {
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string>();
+  const [error, setError] = useState<TGenerateCodeErrorResponse>();
   const [isSuccess, setIsSuccess] = useState(false);
 
   const generateCode = async (email: string, codeType: CodeTypeEnum) => {
@@ -30,7 +30,7 @@ const useGenerateCodeRequest = (): TGenerateCodeRequestHook => {
 
       console.error('Error during code generate. Error:', errorMessage);
 
-      setError(errorMessage);
+      setError(errorData);
     } finally {
       setIsLoading(false);
     }
