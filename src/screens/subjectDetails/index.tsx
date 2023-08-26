@@ -35,6 +35,7 @@ const SubjectDetails = () => {
     handleSearch,
     handleSearchChange,
     refetchSubject,
+    handleManageMonitoringClick,
   } = useSubjectDetails();
 
   const {
@@ -93,6 +94,7 @@ const SubjectDetails = () => {
           subject={subject}
           userType={userType}
           handleGoBackClick={handleGoBackClick}
+          handleManageMonitoringClick={handleManageMonitoringClick}
         />
 
         <Breadcrumbs
@@ -120,6 +122,7 @@ const SubjectDetails = () => {
             subject={subject}
             userType={userType}
             handleGoBackClick={handleGoBackClick}
+            handleManageMonitoringClick={handleManageMonitoringClick}
           />
 
           <ProgressContainer>
