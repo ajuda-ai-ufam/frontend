@@ -5,6 +5,7 @@ import { useSnackBar } from '../../../utils/renderSnackBar';
 import useScheduleDetailsModal from './useScheduleDetailsModal';
 import useFilterParams from './useFilterParams';
 import useFormatSchedules from './useFormatSchedules';
+import { TPreferentialPlaceProperties } from './types';
 
 const useSchedules = () => {
   const { showErrorSnackBar } = useSnackBar();
@@ -23,6 +24,33 @@ const useSchedules = () => {
     handleCancelSchedule,
     isCancelSuccess,
   } = useScheduleDetailsModal();
+
+  const preferentialPlaceProperties = useMemo(() => {
+    const properties: TPreferentialPlaceProperties = {
+      isWarning: false,
+      message: '',
+      preferentialPlace: selectedSchedule?.monitor_settings?.preferential_place,
+    };
+
+    if (!selectedSchedule) return undefined;
+
+    if (selectedSchedule.is_monitoring) {
+      if (
+        selectedSchedule.monitor.MonitorSettings[0].preferential_place !==
+        selectedSchedule.monitor_settings?.preferential_place
+      ) {
+        properties.isWarning = true;
+        properties.message =
+          'Quando o agendamento foi requisitado, seu local de preferência era: ';
+      } else {
+        properties.message = 'Seu local de preferência de atendimento é em: ';
+      }
+    } else {
+      properties.message = 'Este(a) monitor(a) costuma atender em: ';
+    }
+
+    return properties;
+  }, [selectedSchedule]);
 
   const [page, setPage] = useState(1);
   const [selectedFilter, setSelectedFilter] = useState(
@@ -90,6 +118,7 @@ const useSchedules = () => {
     handleCloseCancelModal,
     handleOpenCancelModal,
     handleCancelSchedule,
+    preferentialPlaceProperties,
   };
 };
 

@@ -74,6 +74,10 @@ const useSubjects = () => {
     navigate(SCREENS.SUBJECT_DETAILS.replace(':id', subjectId.toString()));
   };
 
+  const handleManageMonitoringClick = () => {
+    navigate('/edit-monitoring?edit=true');
+  };
+
   const refetchSubjects = () => {
     void listSubjects({
       page: page,
@@ -93,6 +97,12 @@ const useSubjects = () => {
       return;
     }
 
+    if (queryPage) {
+      void listSubjects({ page: Number(queryPage) });
+      setPage(Number(queryPage));
+
+      return;
+    }
     void listSubjects();
   }, []);
 
@@ -111,6 +121,7 @@ const useSubjects = () => {
     isLoadingSubjects,
     searchFieldElement,
     handleSearchChange,
+    handleManageMonitoringClick,
     handleChangePage,
     handleSearch,
     handleSubjectClick,

@@ -25,6 +25,7 @@ const Subjects = () => {
     handleSearch,
     handleSubjectClick,
     refetchSubjects,
+    handleManageMonitoringClick,
   } = useSubjects();
 
   const {
@@ -165,6 +166,7 @@ const Subjects = () => {
             handleChangePage={handleChangePage}
             handleConfirmSchedule={handleOpenScheduleModal}
             handleSubjectClick={handleSubjectClick}
+            handleManageMonitoringClick={handleManageMonitoringClick}
           />
         </Card>
       </Container>

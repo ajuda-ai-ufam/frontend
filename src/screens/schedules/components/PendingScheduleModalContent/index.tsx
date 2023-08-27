@@ -7,6 +7,8 @@ import {
   Label,
 } from '../ScheduleDetailsModal/styles';
 import { ChangeStatusButton } from './styles';
+import PreferentialPlaceAlert from '../PreferentialPlaceAlert';
+import { TPreferentialPlaceProperties } from '../../hooks/types';
 
 type Props = {
   name: string;
@@ -20,6 +22,7 @@ type Props = {
   handleAccept(): void;
   handleClose(): void;
   handleRefuse(): void;
+  preferentialPlaceProperties?: TPreferentialPlaceProperties;
 };
 
 const PendingScheduleModalContent = ({
@@ -34,6 +37,7 @@ const PendingScheduleModalContent = ({
   handleAccept,
   handleClose,
   handleRefuse,
+  preferentialPlaceProperties,
 }: Props) => (
   <>
     <Typography variant="h4">Requisição de agendamento</Typography>
@@ -42,6 +46,12 @@ const PendingScheduleModalContent = ({
         ? 'Este agendamento encontra-se no status "Pendente". Ao aceitá-lo, o(a) aluno(a) receberá um e-mail informando que o agendamento está confirmado.'
         : 'Este agendamento encontra-se no status "Aguardando confirmação". Quando o(a) monitor(a) aceitá-lo você receberá um e-mail informando que o agendamento está confirmado.'}
     </Typography>
+
+    <PreferentialPlaceAlert
+      isWarning={preferentialPlaceProperties?.isWarning}
+      message={preferentialPlaceProperties?.message}
+      preferentialPlace={preferentialPlaceProperties?.preferentialPlace}
+    />
 
     <DataContainer>
       <Label>{isMonitor ? 'Aluno' : 'Monitor'}(a)</Label>

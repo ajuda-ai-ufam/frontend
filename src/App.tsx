@@ -22,6 +22,7 @@ import LandingPage from './screens/landingPage';
 import ResetPasswordEmail from './screens/resetPasswordEmail';
 import ResetPassword from './screens/resetPassword';
 import EditProfile from './screens/editProfile';
+import EditMonitoring from './screens/editMonitoring';
 
 const App: React.FC = () => {
   return (
@@ -77,6 +78,10 @@ const App: React.FC = () => {
                 element={<ResetPassword />}
               />
               <Route path={SCREENS.EDIT_PROFILE} element={<EditProfile />} />
+              <Route
+                path={SCREENS.EDIT_MONITORING}
+                element={<EditMonitoring />}
+              />
             </Routes>
           </BrowserRouter>
         </ThemeProvider>

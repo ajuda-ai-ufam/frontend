@@ -61,7 +61,7 @@ const useLogin = (): TLoginHook => {
 
   useEffect(() => {
     if (error) {
-      if (error === 'Usuário não verificado.') {
+      if (error.statusCode === 403) {
         navigate(SCREENS.CODE_VERIFICATION, { state: { email } });
         return;
       }

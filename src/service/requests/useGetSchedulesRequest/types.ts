@@ -1,6 +1,12 @@
 import { SchedulesStatus } from '../../../utils/constants';
 import { TUser } from '../useGetAllMonitorRequests/types';
 
+export type TMonitorSettings = {
+  id: number;
+  preferential_place: string;
+  is_active: boolean;
+};
+
 export type TCourse = {
   id: number;
   name: string;
@@ -34,6 +40,7 @@ export type TMonitor = {
   subject_id: number;
   student: TStudent;
   subject: TSubject;
+  MonitorSettings: TMonitorSettings[];
 };
 
 export type TSchedules = {
@@ -49,6 +56,8 @@ export type TSchedules = {
   is_monitoring: boolean;
   schedule_topic_id?: number;
   ScheduleTopics?: TScheduleTopic;
+  monitor_settings_id?: number;
+  monitor_settings?: TMonitorSettings;
 };
 
 export type TScheduleTopic = {

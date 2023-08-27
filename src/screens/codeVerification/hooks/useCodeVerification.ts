@@ -69,14 +69,10 @@ const useCodeVerification = (): TCodeVerificationHook => {
   }, [verifyCodeError]);
 
   useEffect(() => {
-    if (generateCodeError)
-      if (
-        generateCodeError !==
-        'Você possui um código ativo,so pode ser gerado outro após 1 minuto.'
-      )
-        setErrorMessage(
-          'Falha ao enviar o código. Volte ao login e tente novamente.'
-        );
+    if (generateCodeError && generateCodeError.statusCode !== 400)
+      setErrorMessage(
+        'Falha ao enviar o código. Volte ao login e tente novamente.'
+      );
   }, [generateCodeError]);
 
   return {

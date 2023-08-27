@@ -74,6 +74,10 @@ const useSubjectDetails = () => {
     };
   };
 
+  const handleManageMonitoringClick = () => {
+    navigate('/edit-monitoring?edit=true');
+  };
+
   const refetchSubject = () => {
     if (id) getSubject(Number(id));
   };
@@ -99,6 +103,7 @@ const useSubjectDetails = () => {
     subject,
     userType,
     handleGoBackClick,
+    handleManageMonitoringClick,
     getMonitorClickHandler,
     handleProfessorFilterClick,
     handleSearch,

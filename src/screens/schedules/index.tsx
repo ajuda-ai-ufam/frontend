@@ -33,6 +33,7 @@ const Schedules = () => {
     handleRefuseSchedule,
     totalPages,
     handleCloseScheduleDetailsModal,
+    preferentialPlaceProperties,
   } = useSchedules();
 
   const renderFilterChips = () => {
@@ -54,6 +55,7 @@ const Schedules = () => {
         schedule={selectedSchedule}
         isOpen={isScheduleDetailsModalOpen}
         isCancelSuccess={isCancelSuccess}
+        preferentialPlaceProperties={preferentialPlaceProperties}
         handleOpenCancelModal={handleOpenCancelModal}
         handleCloseCancelModal={handleCloseCancelModal}
         handleAccept={handleAcceptSchedule}
