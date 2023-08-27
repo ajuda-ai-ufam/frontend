@@ -20,6 +20,7 @@ type Props = {
   handleChangePage(event: React.ChangeEvent<unknown>, page: number): void;
   handleSubjectClick(id: number): void;
   handleConfirmSchedule(subject: TSubject): void;
+  handleManageMonitoringClick(): void;
 };
 
 const SubjectsList = ({
@@ -32,6 +33,7 @@ const SubjectsList = ({
   handleChangePage,
   handleConfirmSchedule,
   handleSubjectClick,
+  handleManageMonitoringClick,
 }: Props) => {
   if (isLoading || subjects === undefined) {
     return (
@@ -67,6 +69,7 @@ const SubjectsList = ({
             handleAssignProfessors={handleAssignProfessors}
             handleConfirmSchedule={handleConfirmSchedule}
             handleSubjectClick={handleSubjectClick}
+            handleManageMonitoringClick={handleManageMonitoringClick}
           />
         ))}
       </ListContainer>

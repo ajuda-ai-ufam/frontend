@@ -6,7 +6,7 @@ import {
   END_HOURS_OPTIONS,
   START_HOURS_OPTIONS,
 } from './contants';
-import { TAvailability } from '../../../service/requests/useUpdateMonitorAvailabilityRequest/types';
+import { TAvailability } from '../../../service/requests/usePatchMonitorRequest/types';
 import useGetMonitorRequest from '../../../service/requests/useGetMonitorRequest';
 import { SelectChangeEvent } from '@mui/material';
 import usePatchMonitorRequest from '../../../service/requests/usePatchMonitorRequest';
