@@ -16,8 +16,6 @@ import {
   StyledCard,
   SubjectName,
 } from './styles';
-import MonitorAvailabilityModal from '../../../../components/monitorAvailabilityModal';
-import useMonitorAvailabilityModal from '../../../../components/monitorAvailabilityModal/hooks/useMonitorAvailabilityModal';
 
 type Props = {
   subject: TCompleteSubject;
@@ -25,6 +23,7 @@ type Props = {
   handleAssignProfessors(subject: TSubject): void;
   handleConfirmSchedule(subject: TSubject): void;
   handleSubjectClick(id: number): void;
+  handleManageMonitoringClick(): void;
 };
 
 const SubjectsListItem = ({
@@ -33,9 +32,9 @@ const SubjectsListItem = ({
   handleAssignProfessors,
   handleConfirmSchedule,
   handleSubjectClick,
+  handleManageMonitoringClick,
 }: Props) => {
   const userId = useGetLoggedUser()?.sub;
-  const monitorAvailabilityModal = useMonitorAvailabilityModal();
   const renderButton = () => {
     if (userTypeId === TypeUserEnum.STUDENT) {
       if (!!subject.monitors.length) {
@@ -43,7 +42,7 @@ const SubjectsListItem = ({
           return (
             <ButtonContainer>
               <ActionButton
-                onClick={monitorAvailabilityModal.handleOpenModal}
+                onClick={handleManageMonitoringClick}
                 startIcon={<ManageHistoryRounded />}
                 wid="140px"
                 color="secondary"
@@ -98,23 +97,17 @@ const SubjectsListItem = ({
   };
 
   return (
-    <>
-      <MonitorAvailabilityModal
-        subject={subject}
-        {...monitorAvailabilityModal}
-      ></MonitorAvailabilityModal>
-      <StyledCard onClick={handleCardClick}>
-        <Container>
-          <CardContent>
-            <SubjectName>
-              {subject.code} - {subject.name}
-            </SubjectName>
-          </CardContent>
+    <StyledCard onClick={handleCardClick}>
+      <Container>
+        <CardContent>
+          <SubjectName>
+            {subject.code} - {subject.name}
+          </SubjectName>
+        </CardContent>
 
-          {renderButton()}
-        </Container>
-      </StyledCard>
-    </>
+        {renderButton()}
+      </Container>
+    </StyledCard>
   );
 };
 
