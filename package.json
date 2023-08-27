@@ -39,7 +39,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts --max_old_space_size=4096 build",
-    "deploy": "git pull origin main && react-scripts build && cp -rfv ./build/* /var/www/html && systemctl restart apache2",
+    "deploy": "git pull origin main && react-scripts --max_old_space_size=4096 build && cp -rfv ./build/* /var/www/html && systemctl restart apache2",
     "test": "jest --verbose --passWithNoTests --silent --maxWorkers=50%",
     "eject": "react-scripts eject",
     "lint": "npx eslint ./src && echo \"> No lint errors found in src/.\"",
