@@ -30,10 +30,16 @@ const useLoginRequest = (): TLoginRequestHook => {
       setIsSuccess(true);
     } catch (error) {
       const err = error as AxiosError;
-      const errorData = err.response?.data as TLoginErrorResponse;
-      const errorMessage = errorData?.message || 'Erro desconhecido';
 
-      console.error('Error during login. Error:', errorMessage);
+      const defaultErr: TLoginErrorResponse = {
+        statusCode: 500,
+        message: 'Erro desconhecido',
+      };
+
+      const errorData =
+        (err.response?.data as TLoginErrorResponse) || defaultErr;
+
+      console.error('Error during login. Error:', errorData.message);
 
       setError(errorData);
     } finally {
