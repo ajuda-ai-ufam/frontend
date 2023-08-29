@@ -4,11 +4,15 @@ import useLoginRequest from '../../../service/requests/useLoginRequest';
 import useGetLoggedUser from '../../../service/storage/getLoggedUser';
 import { SCREENS } from '../../../utils/screens';
 import { TLoginHook } from './types';
+import { useSnackBar } from '../../../utils/renderSnackBar';
 
 const useLogin = (): TLoginHook => {
   const navigate = useNavigate();
-  const { error, isLoading, isSuccess, login, resetError } = useLoginRequest();
   const user = useGetLoggedUser();
+
+  const { showErrorSnackBar } = useSnackBar();
+
+  const { error, isLoading, isSuccess, login, resetError } = useLoginRequest();
 
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
@@ -63,10 +67,11 @@ const useLogin = (): TLoginHook => {
     if (error) {
       if (error.statusCode === 403) {
         navigate(SCREENS.CODE_VERIFICATION, { state: { email } });
-        return;
+      } else if (error.statusCode == 401) {
+        setPasswordError('E-mail ou senha inválidos.');
+      } else {
+        showErrorSnackBar('Erro desconhecido. Tente novamente.');
       }
-
-      setPasswordError('E-mail ou senha incorreto. Tente novamente.');
     }
   }, [error]);
 
