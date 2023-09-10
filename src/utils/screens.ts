@@ -2,7 +2,7 @@ export const SCREENS = {
   SCHEDULES: '/schedules',
   SCHEDULES_HISTORIC: '/schedules-historic',
   CODE_VERIFICATION: '/code-verification',
-  HOME: '/subjects',
+  HOME: '/home',
   LOGIN: '/login',
   REGISTER: '/register',
   CREATE_STUDENT: '/register/student',
