@@ -24,11 +24,16 @@ export const StatusValueContainer = styled(Box).attrs({
 
 export const DataContainer = styled(Box).attrs({
   display: 'grid',
-  gridTemplateColumns: 'repeat(3, 1fr)',
+  gridTemplateColumns: 'repeat(3, 33.33%)',
   width: '100%',
   marginLeft: '16px',
   padding: '16px 8px',
+  alignItems: 'center',
 })`
+  @media (max-width: 1400px) {
+    grid-template-columns: 30% 30% 40% !important;
+  }
+
   @media (max-width: ${theme.breakpoints.values.xl}px) {
     display: flex !important;
     flex-direction: column;
@@ -77,7 +82,6 @@ export const ButtonsContainer = styled(Box).attrs({
   flexDirection: 'row',
   gap: '16px',
   justifyContent: 'flex-end',
-  marginTop: '4px',
 })`
   @media (max-width: ${theme.breakpoints.values.sm}px) {
     flex-direction: column !important;
