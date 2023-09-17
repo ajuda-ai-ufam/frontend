@@ -6,6 +6,7 @@ import {
   HistoryRounded,
   AccountCircle,
   ManageHistoryRounded,
+  HomeRounded,
 } from '@mui/icons-material';
 import { useMediaQuery } from '@mui/material';
 import { useEffect, useMemo, useState } from 'react';
@@ -65,7 +66,16 @@ const useSidebar = () => {
     },
   };
 
-  const schedulesHistoric: TSidebarItem = {
+  const professorHomeItem: TSidebarItem = {
+    key: SidebarItemEnum.PROFESSOR_HOME,
+    text: 'Início',
+    icon: HomeRounded,
+    handleClick: () => {
+      navigate(SCREENS.HOME);
+    },
+  };
+
+  const schedulesHistoricItem: TSidebarItem = {
     key: SidebarItemEnum.SCHEDULES_HISTORIC,
     text: 'Histórico',
     icon: HistoryRounded,
@@ -125,13 +135,21 @@ const useSidebar = () => {
       } else {
         return [editProfileItem, subjectsItem, schedulesItem, logoutItem];
       }
+    } else if (user.type_user_id === TypeUserEnum.PROFESSOR) {
+      return [
+        editProfileItem,
+        professorHomeItem,
+        subjectsItem,
+        schedulesHistoricItem,
+        logoutItem,
+      ];
     }
 
     return [
       editProfileItem,
       subjectsItem,
       monitorRequestsItem,
-      schedulesHistoric,
+      schedulesHistoricItem,
       logoutItem,
     ];
   }, [user]);

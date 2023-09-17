@@ -1,28 +1,29 @@
 import { ThemeProvider } from '@mui/system';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
+import 'moment/locale/pt';
 import { SnackbarProvider } from 'notistack';
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Schedules from './screens/schedules';
 import CodeVerificationScreen from './screens/codeVerification';
+import EditMonitoring from './screens/editMonitoring';
+import EditProfile from './screens/editProfile';
+import Home from './screens/home';
+import LandingPage from './screens/landingPage';
 import Login from './screens/login';
 import MonitorRequests from './screens/monitorRequests';
+import NotFoundError from './screens/notFoundError';
 import RegisterProfessor from './screens/registerProfessor';
 import RegisterStudent from './screens/registerStudent';
 import Register from './screens/registerType';
+import ResetPassword from './screens/resetPassword';
+import ResetPasswordEmail from './screens/resetPasswordEmail';
+import Schedules from './screens/schedules';
+import SchedulesHistoric from './screens/schedulesHistoric';
 import SubjectDetails from './screens/subjectDetails';
 import Subjects from './screens/subjects';
 import { SCREENS } from './utils/screens';
 import theme from './utils/theme';
-import { LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
-import 'moment/locale/pt';
-import SchedulesHistoric from './screens/schedulesHistoric';
-import NotFoundError from './screens/notFoundError';
-import LandingPage from './screens/landingPage';
-import ResetPasswordEmail from './screens/resetPasswordEmail';
-import ResetPassword from './screens/resetPassword';
-import EditProfile from './screens/editProfile';
-import EditMonitoring from './screens/editMonitoring';
 
 const App: React.FC = () => {
   return (
@@ -82,6 +83,7 @@ const App: React.FC = () => {
                 path={SCREENS.EDIT_MONITORING}
                 element={<EditMonitoring />}
               />
+              <Route path={SCREENS.HOME} element={<Home />} />
             </Routes>
           </BrowserRouter>
         </ThemeProvider>
