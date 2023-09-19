@@ -106,6 +106,9 @@ const useSidebar = () => {
     setIsOpen((prev) => !prev);
   };
 
+  const handleFeedbackClick = () => {
+    window.open('https://forms.gle/6YeiNgmw2KMdTzxL8');
+  };
   useEffect(() => {
     setIsOpen(!showTemporarySidebar);
   }, [showTemporarySidebar]);
@@ -143,6 +146,7 @@ const useSidebar = () => {
     userName,
     userRole,
     handleToogleSidebar,
+    handleFeedbackClick,
   };
 };
 
