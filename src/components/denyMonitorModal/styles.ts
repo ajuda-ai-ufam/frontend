@@ -1,8 +1,8 @@
 import { Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import styled from 'styled-components';
-import theme from '../../../../utils/theme';
-import { Button } from '../../../../components/button';
+import theme from '../../utils/theme';
+import { Button } from '../button';
 
 export const StyledTypography = styled(Typography).attrs({})`
   @media (max-width: ${theme.breakpoints.values.sm}px) {
@@ -46,10 +46,21 @@ export const ConfirmationTextContainer = styled(Box).attrs({
   gap: '8px',
 })``;
 
-export const ConfirmButton = styled(Button).attrs({
-  color: 'primary',
+export const ConfirmRemoveButton = styled(Button).attrs({
+  variant: 'contained',
+  color: 'error',
+  width: '160px',
 })`
   @media (max-width: ${theme.breakpoints.values.sm}px) {
-    width: 250px !important;
+    width: 100% !important;
+  }
+`;
+
+export const ConfirmCloseButton = styled(Button).attrs({
+  variant: 'outlined',
+  color: 'secondary',
+})`
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    width: 100% !important;
   }
 `;
