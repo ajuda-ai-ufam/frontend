@@ -1,3 +1,4 @@
+import { TMonitorRequest } from '../../../../service/requests/useGetAllMonitorRequests/types';
 import { TSubjectMonitor } from '../../../../service/requests/useGetSubject/types';
 import MonitorListItem from '../monitorListItem';
 import {
@@ -8,9 +9,26 @@ import {
 
 type Props = {
   monitors: TSubjectMonitor[];
+  subject: string;
+  handleOpenAcceptModal(monitor: TMonitorRequest): void;
+  handleOpenDenyModal(monitor: TMonitorRequest): void;
+  handleSearchMonitorRequest(
+    subject_id: number,
+    student_id?: number
+  ): TMonitorRequest | undefined;
+  handleOpenRemoveMonitorModal(monitor: TSubjectMonitor): void;
+  handleSeeHistoric(name: string, subject: string): void;
 };
 
-const MonitorsList = ({ monitors }: Props) => {
+const MonitorsList = ({
+  monitors,
+  handleOpenAcceptModal,
+  handleOpenDenyModal,
+  handleSearchMonitorRequest,
+  handleOpenRemoveMonitorModal,
+  handleSeeHistoric,
+  subject,
+}: Props) => {
   if (!monitors.length) {
     return (
       <Container>
@@ -28,7 +46,15 @@ const MonitorsList = ({ monitors }: Props) => {
         Seus monitores
       </MonitorsListHeaderTypography>
       {monitors.map((monitor) => (
-        <MonitorListItem monitor={monitor} />
+        <MonitorListItem
+          handleOpenAcceptModal={handleOpenAcceptModal}
+          handleOpenDenyModal={handleOpenDenyModal}
+          handleOpenRemoveMonitorModal={handleOpenRemoveMonitorModal}
+          subject={subject}
+          handleSeeHistoric={handleSeeHistoric}
+          handleSearchMonitorRequest={handleSearchMonitorRequest}
+          monitor={monitor}
+        />
       ))}
     </Container>
   );

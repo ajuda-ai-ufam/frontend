@@ -44,9 +44,7 @@ const RemoveMonitorModal = ({
 
           <ConfirmationTextContainer>
             <Typography variant="h4">Tudo certo!</Typography>
-            <Typography variant="body1">
-              O(A) monitor(a) foi removido(a)
-            </Typography>
+            <Typography variant="body1">Monitor(a) removido(a)</Typography>
           </ConfirmationTextContainer>
 
           <Button onClick={handleClose} color="primary">

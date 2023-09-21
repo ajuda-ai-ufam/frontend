@@ -93,4 +93,9 @@ export const StatusLabelContainer = styled(Box).attrs({
   flexDirection: 'row',
   alignItems: 'center',
   gap: '2px',
+  sx: {
+    ':hover': {
+      cursor: 'pointer',
+    },
+  },
 })``;
