@@ -1,8 +1,8 @@
-import { blue, amber } from '@mui/material/colors';
-import { Box } from '@mui/system';
 import styled from 'styled-components';
 import { TypeMonitoringStatus } from '../../../../utils/constants';
 import theme from '../../../../utils/theme';
+import { Box } from '@mui/material';
+import { amber, blue } from '@mui/material/colors';
 
 type StatusIconProps = {
   status: TypeMonitoringStatus;
