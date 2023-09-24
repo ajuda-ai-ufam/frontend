@@ -1,18 +1,18 @@
 import { Typography } from '@mui/material';
-import { TMonitorRequest } from '../../../../service/requests/useGetAllMonitorRequests/types';
-
-import { Button } from '../../../../components/button';
-import CheckedAnimation from '../../../../components/checkedAnimation';
-import LoadingAnimation from '../../../../components/loadingAnimation';
-import Modal from '../../../../components/modal';
 import {
   ButtonsContainer,
   ConfirmationContainer,
   ConfirmationTextContainer,
-  ConfirmButton,
+  ConfirmCloseButton,
+  ConfirmRemoveButton,
   LoadingContainer,
   StyledTypography,
 } from './styles';
+import { TMonitorRequest } from '../../service/requests/useGetAllMonitorRequests/types';
+import LoadingAnimation from '../loadingAnimation';
+import CheckedAnimation from '../checkedAnimation';
+import { Button } from '../button';
+import Modal from '../modal';
 
 type Props = {
   monitor?: TMonitorRequest;
@@ -50,8 +50,7 @@ const DenyMonitorModal = ({
           <ConfirmationTextContainer>
             <Typography variant="h4">Tudo certo!</Typography>
             <Typography variant="body1" textAlign={'center'}>
-              Removemos a solicitação que o(a) aluno(a) fez para ser monitor(a)
-              desta disciplina
+              Removemos esta solicitação de monitoria
             </Typography>
           </ConfirmationTextContainer>
 
@@ -64,24 +63,23 @@ const DenyMonitorModal = ({
 
     return (
       <>
-        <StyledTypography variant="h4">
-          Solicitação de Monitoria
-        </StyledTypography>
+        <StyledTypography variant="h4">Recusar monitor(a)</StyledTypography>
 
         <StyledTypography variant="body1">
-          Tem certeza que deseja recusar
-          <strong>{' ' + monitor.student.user.name + ' '}</strong>
+          Você tem certeza que deseja recusar
+          <strong>{` ${monitor.student.user.name} `}</strong>
           como monitor(a) da disciplina
-          <strong>{' ' + monitor.subject.name}</strong>?
+          <strong>{`${monitor.subject.code} - ${monitor.subject.name}`}</strong>
+          ?
         </StyledTypography>
 
         <ButtonsContainer>
-          <Button variant="text" color="primary" onClick={handleClose}>
-            Não, quero voltar
-          </Button>
-          <ConfirmButton color="primary" onClick={handleDenyMonitorClick}>
+          <ConfirmCloseButton onClick={handleClose}>
+            Não, desejo sair
+          </ConfirmCloseButton>
+          <ConfirmRemoveButton onClick={handleDenyMonitorClick}>
             Sim, recusar
-          </ConfirmButton>
+          </ConfirmRemoveButton>
         </ButtonsContainer>
       </>
     );

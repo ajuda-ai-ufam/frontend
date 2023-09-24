@@ -38,6 +38,7 @@ const useGetSubject = () => {
           responsable: monitor.responsible_professor.user,
           linkedin: monitor.student.linkedin,
           whatsapp: monitor.student.whatsapp,
+          enrollment: monitor.student.enrollment,
         })),
       };
 

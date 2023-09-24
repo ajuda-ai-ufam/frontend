@@ -36,6 +36,7 @@ const useListSubjectsRequest = () => {
           studentId: monitor.student.user.id,
           course: monitor.student.course,
           responsable: monitor.responsible_professor.user,
+          enrollment: monitor.student.enrollment,
         })),
       }));
 

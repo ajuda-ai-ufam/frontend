@@ -1,8 +1,8 @@
 import { Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import styled from 'styled-components';
-import { Button } from '../../../../components/button';
-import theme from '../../../../utils/theme';
+import theme from '../../utils/theme';
+import { Button } from '../button';
 
 export const StyledTypography = styled(Typography).attrs({})`
   @media (max-width: ${theme.breakpoints.values.sm}px) {
