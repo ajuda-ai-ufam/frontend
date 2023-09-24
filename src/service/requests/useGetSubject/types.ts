@@ -36,6 +36,7 @@ export type TSubjectMonitor = {
   };
   linkedin?: string;
   whatsapp?: string;
+  enrollment: string;
 };
 
 export type TCompleteSubject = TSubject & {
@@ -81,7 +82,7 @@ export type TGetSubjectResponse = {
         id: number;
         name: string;
       };
-
+      enrollment: string;
       linkedin: string;
       whatsapp: string;
     };

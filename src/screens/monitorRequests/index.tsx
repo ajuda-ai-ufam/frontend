@@ -1,14 +1,14 @@
 import { Typography } from '@mui/material';
-import AcceptMonitorModal from './components/acceptMonitorModal';
-import useAcceptMonitorModal from './hooks/useAcceptMonitorModal';
+import AcceptMonitorModal from '../../components/acceptMonitorModal';
+import useAcceptMonitorModal from '../../components/acceptMonitorModal/hooks/useAcceptMonitorModal';
 import ContainerWithSidebar from '../../components/containerWithSidebar';
 import SearchField from '../../components/searchField';
 import { SidebarItemEnum, TypeUserEnum } from '../../utils/constants';
 import MonitorsRequestList from './components/MonitorsRequestList';
 import useMonitorRequests from './hooks/useMonitorRequests';
 import { Card, Container, LegendTypography } from './styles';
-import useDenyMonitorModal from './hooks/useDenyMonitorModal';
-import DenyMonitorModal from './components/denyMonitorModal';
+import useDenyMonitorModal from '../../components/denyMonitorModal/hooks/useDenyMonitorModal';
+import DenyMonitorModal from '../../components/denyMonitorModal';
 
 const MonitorRequests = () => {
   const {

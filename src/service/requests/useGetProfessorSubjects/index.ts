@@ -3,7 +3,7 @@ import { useState } from 'react';
 import api from '../../api';
 import { TGetProfessorSubjectsErrorResponse, TSubject } from './types';
 
-const useGetSchedulesHistoricRequest = () => {
+const useGetProfessorSubjects = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string>();
   const [response, setData] = useState<TSubject[]>();
@@ -39,4 +39,4 @@ const useGetSchedulesHistoricRequest = () => {
   };
 };
 
-export default useGetSchedulesHistoricRequest;
+export default useGetProfessorSubjects;
