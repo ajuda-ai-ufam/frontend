@@ -1,6 +1,8 @@
 export const validateName = (name: string): string => {
   if (!name || name.indexOf('') === -1) return 'Nome inválido!';
 
+  if (/\d/.test(name)) return 'O nome não pode conter números!';
+
   if (name.indexOf(' ') === -1 || !name.split(' ')[1])
     return 'Digite pelo menos nome e sobrenome!';
 
