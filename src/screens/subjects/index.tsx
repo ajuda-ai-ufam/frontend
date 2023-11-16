@@ -10,6 +10,8 @@ import { SidebarItemEnum, TypeUserEnum } from '../../utils/constants';
 import SubjectsList from './components/SubjectsList';
 import useSubjects from './hooks/useSubjects';
 import { Card, Container } from './styles';
+import EnrollmentModal from '../../components/enrollmentModal';
+import useEnrollmentModal from '../../components/enrollmentModal/hooks/useEnrollmentModal';
 
 const Subjects = () => {
   const {
@@ -83,6 +85,16 @@ const Subjects = () => {
     handleChangeTopicInput,
   } = useScheduleHelpModal();
 
+  const {
+    isLoading: isLoadingEnrollModal,
+    isOpen: isOpenEnrollModal,
+    isSuccess: isSuccessEnrollModal,
+    handleConfirmEnrollmentClick,
+    handleCloseModal: handleCloseEnrollModal,
+    handleOpenModal: handleOpenEnrollModal,
+    handleReturnEnrollModal,
+  } = useEnrollmentModal();
+
   return (
     <ContainerWithSidebar selectedSidebarItem={SidebarItemEnum.SUBJECTS}>
       <EditProfessorsModal
@@ -135,12 +147,20 @@ const Subjects = () => {
         handleConfirmSchedule={handleConfirmSchedule}
       />
 
+      <EnrollmentModal
+        isOpen={isOpenEnrollModal}
+        handleCloseModal={handleCloseEnrollModal}
+        isLoading={isLoadingEnrollModal}
+        isSuccess={isSuccessEnrollModal}
+        handleConfirmEnrollmentClick={handleConfirmEnrollmentClick}
+        handleReturnEnrollModal={handleReturnEnrollModal}
+      />
+
       {userTypeId === TypeUserEnum.STUDENT ? (
         <ScheduleConfirmationModal />
       ) : (
         <></>
       )}
-
       <Container>
         <Card>
           <Typography variant="h3">Disciplinas</Typography>
@@ -167,6 +187,7 @@ const Subjects = () => {
             handleConfirmSchedule={handleOpenScheduleModal}
             handleSubjectClick={handleSubjectClick}
             handleManageMonitoringClick={handleManageMonitoringClick}
+            handleOpenEnrollModal={handleOpenEnrollModal}
           />
         </Card>
       </Container>

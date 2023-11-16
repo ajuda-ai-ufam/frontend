@@ -42,6 +42,7 @@ export type TSubjectMonitor = {
 export type TCompleteSubject = TSubject & {
   responsables: TSubjectResponsible[];
   monitors: TSubjectMonitor[];
+  isStudentEnrolled?: boolean;
 };
 
 export type TGetSubjectResponse = {
@@ -49,6 +50,7 @@ export type TGetSubjectResponse = {
   name: string;
   code: string;
   course_id: number;
+  isStudentEnrolled: boolean;
   SubjectResponsability: {
     id: number;
     professor: {

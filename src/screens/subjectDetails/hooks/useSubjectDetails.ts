@@ -8,10 +8,12 @@ import {
 import useGetLoggedUser from '../../../service/storage/getLoggedUser';
 import { TypeMonitoringStatus, TypeUserEnum } from '../../../utils/constants';
 import { SCREENS } from '../../../utils/screens';
+import { useSnackBar } from '../../../utils/renderSnackBar';
 
 const useSubjectDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { showDefaultSnackBar } = useSnackBar();
 
   const { isLoading, data: subject, error, getSubject } = useGetSubject();
   const user = useGetLoggedUser();
@@ -64,11 +66,14 @@ const useSubjectDetails = () => {
     openRemoveMonitor: (monitor: TSubjectMonitor) => void
   ) => {
     return (monitor: TSubjectMonitor) => {
-      if (subject) {
+      if (subject && subject.isStudentEnrolled) {
         userType !== TypeUserEnum.STUDENT
           ? openRemoveMonitor(monitor)
           : openScheduleModal(subject, monitor);
       } else {
+        showDefaultSnackBar(
+          'Você precisa estar matriculado(a) nesta disciplina para agendar um horário.'
+        );
         return;
       }
     };
