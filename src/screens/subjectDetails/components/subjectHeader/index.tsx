@@ -121,14 +121,16 @@ const SubjectHeader = ({
               </>
             );
           } else {
-            <Button
-              startIcon={<ManageHistoryRounded />}
-              onClick={handleManageMonitoringClick}
-              color="secondary"
-              width="auto"
-            >
-              Gerenciar Disponibilidade
-            </Button>;
+            return (
+              <Button
+                startIcon={notMobile ? <ManageHistoryRounded /> : null}
+                onClick={handleManageMonitoringClick}
+                color="secondary"
+                width="auto"
+              >
+                {notMobile ? 'Editar Monitoria' : <ManageHistoryRounded />}
+              </Button>
+            );
           }
         } else {
           return (
