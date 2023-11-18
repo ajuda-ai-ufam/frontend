@@ -73,6 +73,7 @@ export type TListSubjectsHttpResponse = {
         };
       };
     }[];
+    isStudentEnrolled: boolean;
   }[];
 };
 
