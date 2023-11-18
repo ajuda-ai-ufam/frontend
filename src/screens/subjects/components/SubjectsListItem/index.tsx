@@ -8,6 +8,7 @@ import {
   CalendarMonthRounded,
   EditRounded,
   ManageHistoryRounded,
+  PostAddRounded,
 } from '@mui/icons-material';
 import {
   ActionButton,
@@ -24,6 +25,7 @@ type Props = {
   handleConfirmSchedule(subject: TSubject): void;
   handleSubjectClick(id: number): void;
   handleManageMonitoringClick(): void;
+  handleOpenEnrollModal(id: number): void;
 };
 
 const SubjectsListItem = ({
@@ -33,6 +35,7 @@ const SubjectsListItem = ({
   handleConfirmSchedule,
   handleSubjectClick,
   handleManageMonitoringClick,
+  handleOpenEnrollModal,
 }: Props) => {
   const userId = useGetLoggedUser()?.sub;
   const renderButton = () => {
@@ -53,8 +56,7 @@ const SubjectsListItem = ({
           );
         }
       }
-
-      return (
+      return subject.isStudentEnrolled ? (
         <ButtonContainer>
           <ActionButton
             onClick={() => handleConfirmSchedule(subject)}
@@ -63,6 +65,17 @@ const SubjectsListItem = ({
             color="primary"
           >
             Agendar
+          </ActionButton>
+        </ButtonContainer>
+      ) : (
+        <ButtonContainer>
+          <ActionButton
+            onClick={() => handleOpenEnrollModal(subject.id)}
+            startIcon={<PostAddRounded />}
+            wid="140px"
+            color="secondary"
+          >
+            Matricular
           </ActionButton>
         </ButtonContainer>
       );

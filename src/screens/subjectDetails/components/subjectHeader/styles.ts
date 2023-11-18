@@ -6,3 +6,8 @@ export const Container = styled(Box).attrs({
   justifyContent: 'space-between',
   marginBottom: '16px',
 })``;
+
+export const HeaderButtonContainer = styled(Box).attrs({
+  display: 'flex',
+  gap: '16px',
+})``;

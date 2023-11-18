@@ -19,6 +19,10 @@ import {
 } from './styles';
 import useRemoveMonitorModal from '../../components/removeMonitorModal/hooks/useRemoveMonitorModal';
 import RemoveMonitorModal from '../../components/removeMonitorModal';
+import useCancelEnrollmentModal from '../../components/cancelEnrollModal/hooks/useCancelEnrollmentModal';
+import CancelEnrollmentModal from '../../components/cancelEnrollModal';
+import EnrollmentModal from '../../components/enrollmentModal';
+import useEnrollmentModal from '../../components/enrollmentModal/hooks/useEnrollmentModal';
 
 const SubjectDetails = () => {
   const {
@@ -84,6 +88,26 @@ const SubjectDetails = () => {
     isMyMonitor,
   } = useRemoveMonitorModal();
 
+  const {
+    handleCloseModal: handleCloseCancelEnrollment,
+    handleConfirmCancelEnrollmentClick,
+    handleOpenModal: handleOpenCancelEnrollment,
+    isLoading: isLoadingCancelEnrollment,
+    isOpen: isOpenCancelEnrollment,
+    isSuccess: isSuccessCancelEnrollment,
+    handleReturnEnrollModal: handleReturnCancelEnrollment,
+  } = useCancelEnrollmentModal();
+
+  const {
+    handleCloseModal: handleCloseEnrollment,
+    handleConfirmEnrollmentClick,
+    handleOpenModal: handleOpenEnrollModal,
+    handleReturnEnrollModal,
+    isLoading: isLoadingEnrollModal,
+    isOpen: isOpenEnrollModal,
+    isSuccess: isSuccessEnrollModal,
+  } = useEnrollmentModal();
+
   const renderPageTop = () => {
     if (!subject) return <></>;
 
@@ -95,6 +119,8 @@ const SubjectDetails = () => {
           userType={userType}
           handleGoBackClick={handleGoBackClick}
           handleManageMonitoringClick={handleManageMonitoringClick}
+          handleCancelEnrollClick={handleOpenCancelEnrollment}
+          handleEnrollmentModal={handleOpenEnrollModal}
         />
 
         <Breadcrumbs
@@ -123,6 +149,8 @@ const SubjectDetails = () => {
             userType={userType}
             handleGoBackClick={handleGoBackClick}
             handleManageMonitoringClick={handleManageMonitoringClick}
+            handleCancelEnrollClick={handleOpenCancelEnrollment}
+            handleEnrollmentModal={handleOpenEnrollModal}
           />
 
           <ProgressContainer>
@@ -233,6 +261,24 @@ const SubjectDetails = () => {
         isSuccess={isSuccessRemoveMonitor}
         handleEndingMonitoringClick={handleEndingMonitoringClick}
         isMyMonitor={isMyMonitor}
+      />
+
+      <CancelEnrollmentModal
+        isOpen={isOpenCancelEnrollment}
+        handleCloseModal={handleCloseCancelEnrollment}
+        handleConfirmCancelEnrollmentClick={handleConfirmCancelEnrollmentClick}
+        handleReturnCancelEnrollModal={handleReturnCancelEnrollment}
+        isLoading={isLoadingCancelEnrollment}
+        isSuccess={isSuccessCancelEnrollment}
+      />
+
+      <EnrollmentModal
+        isOpen={isOpenEnrollModal}
+        handleCloseModal={handleCloseEnrollment}
+        handleConfirmEnrollmentClick={handleConfirmEnrollmentClick}
+        handleReturnEnrollModal={handleReturnEnrollModal}
+        isLoading={isLoadingEnrollModal}
+        isSuccess={isSuccessEnrollModal}
       />
       <Container>
         <Card>{renderCardContent()}</Card>

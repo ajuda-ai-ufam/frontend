@@ -21,6 +21,7 @@ type Props = {
   handleSubjectClick(id: number): void;
   handleConfirmSchedule(subject: TSubject): void;
   handleManageMonitoringClick(): void;
+  handleOpenEnrollModal(id: number): void;
 };
 
 const SubjectsList = ({
@@ -34,6 +35,7 @@ const SubjectsList = ({
   handleConfirmSchedule,
   handleSubjectClick,
   handleManageMonitoringClick,
+  handleOpenEnrollModal,
 }: Props) => {
   if (isLoading || subjects === undefined) {
     return (
@@ -70,6 +72,7 @@ const SubjectsList = ({
             handleConfirmSchedule={handleConfirmSchedule}
             handleSubjectClick={handleSubjectClick}
             handleManageMonitoringClick={handleManageMonitoringClick}
+            handleOpenEnrollModal={handleOpenEnrollModal}
           />
         ))}
       </ListContainer>
