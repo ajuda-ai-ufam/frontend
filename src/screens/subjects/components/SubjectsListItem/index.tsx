@@ -47,10 +47,10 @@ const SubjectsListItem = ({
               <ActionButton
                 onClick={handleManageMonitoringClick}
                 startIcon={<ManageHistoryRounded />}
-                wid="140px"
+                wid="180px"
                 color="secondary"
               >
-                Gerenciar
+                Editar Monitoria
               </ActionButton>
             </ButtonContainer>
           );
