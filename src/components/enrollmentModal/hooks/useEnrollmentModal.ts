@@ -1,13 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useEnroll from '../../../service/requests/useEnroll';
+import { useSnackBar } from '../../../utils/renderSnackBar';
 
 const useEnrollmentModal = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [id, setId] = useState<number>();
+  const { showErrorSnackBar } = useSnackBar();
 
-  const { enroll, isLoading, isSuccess } = useEnroll();
+  const { enroll, isLoading, isSuccess, error, resetState } = useEnroll();
 
   const handleCloseModal = () => {
     setIsOpen(false);
@@ -33,6 +35,14 @@ const useEnrollmentModal = () => {
     setIsOpen(false);
     navigate(0);
   };
+
+  useEffect(() => {
+    if (error) {
+      handleCloseModal();
+      resetState();
+      showErrorSnackBar(`Erro ao tentar se matricular. Erro: ${error}`);
+    }
+  }, [error]);
 
   return {
     isOpen,
