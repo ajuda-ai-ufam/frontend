@@ -28,8 +28,14 @@ const useEnroll = () => {
     }
   };
 
+  const resetState = () => {
+    setError(undefined);
+    setIsSuccess(false);
+  };
+
   return {
     enroll,
+    resetState,
     isLoading,
     isSuccess,
     error,

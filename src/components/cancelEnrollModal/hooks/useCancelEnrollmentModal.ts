@@ -1,13 +1,16 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useCancelEnroll from '../../../service/requests/useCancelEnroll';
+import { useSnackBar } from '../../../utils/renderSnackBar';
 
 const useCancelEnrollmentModal = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [id, setId] = useState<number>();
+  const { showErrorSnackBar } = useSnackBar();
 
-  const { cancelEnroll, isLoading, isSuccess } = useCancelEnroll();
+  const { cancelEnroll, isLoading, isSuccess, error, resetState } =
+    useCancelEnroll();
 
   const handleCloseModal = () => {
     setIsOpen(false);
@@ -33,6 +36,14 @@ const useCancelEnrollmentModal = () => {
     setIsOpen(false);
     navigate(0);
   };
+
+  useEffect(() => {
+    if (error) {
+      handleCloseModal();
+      resetState();
+      showErrorSnackBar(`Erro ao tentar se desmatricular. Erro: ${error}`);
+    }
+  }, [error]);
 
   return {
     isOpen,
