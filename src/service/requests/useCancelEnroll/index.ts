@@ -30,8 +30,14 @@ const useCancelEnroll = () => {
     }
   };
 
+  const resetState = () => {
+    setError(undefined);
+    setIsSuccess(false);
+  };
+
   return {
     cancelEnroll,
+    resetState,
     isLoading,
     isSuccess,
     error,
