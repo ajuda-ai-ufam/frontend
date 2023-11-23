@@ -29,6 +29,7 @@ const useListSubjectsRequest = () => {
         code: subject.code,
         course_id: subject.course_id,
         responsables: subject.SubjectResponsability,
+        isStudentEnrolled: subject.isStudentEnrolled,
         monitors: subject.Monitor.map((monitor) => ({
           ...monitor.student.user,
           status: monitor.status.status,
@@ -36,6 +37,7 @@ const useListSubjectsRequest = () => {
           studentId: monitor.student.user.id,
           course: monitor.student.course,
           responsable: monitor.responsible_professor.user,
+          enrollment: monitor.student.enrollment,
         })),
       }));
 

@@ -29,6 +29,7 @@ const useGetSubject = () => {
         code: data.code,
         course_id: data.course_id,
         responsables: data.SubjectResponsability,
+        isStudentEnrolled: data.isStudentEnrolled,
         monitors: data.Monitor.map((monitor) => ({
           ...monitor.student.user,
           id: monitor.id,
@@ -38,6 +39,7 @@ const useGetSubject = () => {
           responsable: monitor.responsible_professor.user,
           linkedin: monitor.student.linkedin,
           whatsapp: monitor.student.whatsapp,
+          enrollment: monitor.student.enrollment,
         })),
       };
 

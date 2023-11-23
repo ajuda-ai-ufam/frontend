@@ -4,12 +4,17 @@ import { TGetSchedulesHistoricRequestParams } from '../../../service/requests/us
 import useGetLoggedUser from '../../../service/storage/getLoggedUser';
 import { SchedulesStatus, TypeUserEnum } from '../../../utils/constants';
 import { useSnackBar } from '../../../utils/renderSnackBar';
+import useQuery from '../../../utils/useQuery';
 import useFiltersForm from './useFiltersForm';
 import useFormatSchedules from './useFormatSchedules';
 import useScheduleDetailsModal from './useScheduleDetailsModal';
 
 const useSchedulesHistoric = () => {
   const user = useGetLoggedUser();
+
+  const query = useQuery();
+  const queryName = query.get('name');
+  const querySubject = query.get('subject');
 
   const { showErrorSnackBar } = useSnackBar();
 
@@ -19,6 +24,8 @@ const useSchedulesHistoric = () => {
   const { schedules } = useFormatSchedules(response);
 
   const [page, setPage] = useState(1);
+
+  const [isNavigationFromHome, setIsNavigationFromHome] = useState(false);
 
   const totalPages = useMemo(() => response?.meta.totalPages || 0, [response]);
 
@@ -33,6 +40,7 @@ const useSchedulesHistoric = () => {
     handleChangeNameOrEnrollFilter,
     handleChangeResponsiblesOrSubjectsFilter,
     handleFilterClick,
+    handleFiltersChange,
     getNameAndEnrollment,
   } = useFiltersForm({ getSchedules, setPage });
 
@@ -76,8 +84,27 @@ const useSchedulesHistoric = () => {
   useEffect(() => {
     document.title = 'Histórico de Agendamentos';
 
+    if (queryName && querySubject) {
+      handleFiltersChange({
+        ...filters,
+        nameOrEnrollFilter: queryName,
+        responsiblesOrSubjectsFilter: [querySubject],
+      });
+
+      setIsNavigationFromHome(true);
+
+      return;
+    }
+
     void getSchedules({ page, status: SchedulesStatus.REALIZED });
   }, []);
+
+  useEffect(() => {
+    if (isNavigationFromHome) {
+      void handleFilterClick();
+      setIsNavigationFromHome(false);
+    }
+  }, [filters, isNavigationFromHome]);
 
   useEffect(() => {
     if (!error) return;

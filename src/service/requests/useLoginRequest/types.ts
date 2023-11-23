@@ -18,5 +18,5 @@ export type TLoginResponse = {
 export type TLoginErrorResponse = {
   statusCode: number;
   message: string;
-  error: string;
+  error?: string;
 };

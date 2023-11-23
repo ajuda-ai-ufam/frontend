@@ -107,8 +107,8 @@ const useSchedulesHistoric = ({ getSchedules, setPage }: Props) => {
     };
   };
 
-  const handleFilterClick = (e: React.SyntheticEvent<EventTarget>) => {
-    e.preventDefault();
+  const handleFilterClick = async (e?: React.SyntheticEvent<EventTarget>) => {
+    e?.preventDefault();
 
     const getValues = getNameAndEnrollment(filters.nameOrEnrollFilter);
 
@@ -168,6 +168,7 @@ const useSchedulesHistoric = ({ getSchedules, setPage }: Props) => {
     handleFilterClick,
     handleChangeNameOrEnrollFilter,
     handleChangeResponsiblesOrSubjectsFilter,
+    handleFiltersChange,
   };
 };
 

@@ -66,12 +66,14 @@ export type TListSubjectsHttpResponse = {
           name: string;
           email: string;
         };
+        enrollment: string;
         course: {
           id: number;
           name: string;
         };
       };
     }[];
+    isStudentEnrolled: boolean;
   }[];
 };
 
@@ -82,6 +84,8 @@ export type TListSubjectsParams = {
   field?: string;
   order?: 'asc' | 'desc';
   search?: string;
+  teacherId?: number;
+  monitorStatus?: number[];
 };
 
 export type TListSubjectsErrorResponse = {

@@ -15,6 +15,7 @@ export enum SidebarItemEnum {
   SCHEDULES_HISTORIC = 'schedules-historic',
   EDIT_PROFILE = 'edit-profile',
   EDIT_MONITORING = 'edit-monitoring',
+  PROFESSOR_HOME = 'professor-home',
 }
 
 export enum TypeUserEnum {
@@ -58,6 +59,13 @@ export enum TypeMonitorStatus {
   FINISHED = 4,
   REJECTED = 5,
 }
+export const TypeMonitoringStatusTranslate = {
+  [TypeMonitoringStatus.PENDING]: 'Aguardando aprovação',
+  [TypeMonitoringStatus.APPROVED]: 'Aceito',
+  [TypeMonitoringStatus.AVAILABLE]: 'Disponível',
+  [TypeMonitoringStatus.FINISHED]: 'Finalizada',
+  [TypeMonitoringStatus.REJECTED]: 'Rejeitada',
+};
 
 export const ScheduleStatusTranslate = {
   [SchedulesStatus.PENDING]: 'Pendente',

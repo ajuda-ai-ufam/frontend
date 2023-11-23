@@ -36,11 +36,13 @@ export type TSubjectMonitor = {
   };
   linkedin?: string;
   whatsapp?: string;
+  enrollment: string;
 };
 
 export type TCompleteSubject = TSubject & {
   responsables: TSubjectResponsible[];
   monitors: TSubjectMonitor[];
+  isStudentEnrolled?: boolean;
 };
 
 export type TGetSubjectResponse = {
@@ -48,6 +50,7 @@ export type TGetSubjectResponse = {
   name: string;
   code: string;
   course_id: number;
+  isStudentEnrolled: boolean;
   SubjectResponsability: {
     id: number;
     professor: {
@@ -81,7 +84,7 @@ export type TGetSubjectResponse = {
         id: number;
         name: string;
       };
-
+      enrollment: string;
       linkedin: string;
       whatsapp: string;
     };

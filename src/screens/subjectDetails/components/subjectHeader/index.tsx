@@ -6,9 +6,16 @@ import useAssignProfessorsModal from '../../../../components/editProfessorsModal
 import { Button } from '../../../../components/button';
 import { TCompleteSubject } from '../../../../service/requests/useGetSubject/types';
 import { TypeUserEnum } from '../../../../utils/constants';
-import { Container } from './styles';
+import { Container, HeaderButtonContainer } from './styles';
 import EditProfessorsModal from '../../../../components/editProfessorsModal';
-import { ManageHistoryRounded } from '@mui/icons-material';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import {
+  ManageHistoryRounded,
+  CancelOutlined,
+  PostAddRounded,
+  SwitchAccessShortcutOutlined,
+} from '@mui/icons-material';
+import theme from '../../../../utils/theme';
 
 type Props = {
   subject?: TCompleteSubject;
@@ -16,6 +23,8 @@ type Props = {
   handleGoBackClick(): void;
   refetchSubject(): void;
   handleManageMonitoringClick(): void;
+  handleCancelEnrollClick(id: number): void;
+  handleEnrollmentModal(id: number): void;
 };
 
 const SubjectHeader = ({
@@ -24,6 +33,8 @@ const SubjectHeader = ({
   handleGoBackClick,
   refetchSubject,
   handleManageMonitoringClick,
+  handleCancelEnrollClick,
+  handleEnrollmentModal,
 }: Props) => {
   const {
     isLoadingAssignProfessor,
@@ -60,31 +71,80 @@ const SubjectHeader = ({
 
   const renderButton = () => {
     if (!subject) return <></>;
-    if (userType === TypeUserEnum.STUDENT && subject.responsables.length) {
-      if (
-        !subject.monitors.find(
-          (monitor) => monitor.studentId === Number(userId)
-        )
-      ) {
+    if (userType === TypeUserEnum.STUDENT) {
+      const notMobile = useMediaQuery(theme.breakpoints.up('sm'));
+
+      if (subject.isStudentEnrolled === true) {
         return (
           <Button
-            onClick={() => handleOpenAddMonitorModal(subject)}
-            color="secondary"
+            startIcon={notMobile ? <CancelOutlined /> : null}
+            onClick={() => handleCancelEnrollClick(subject.id)}
+            color="primary"
+            width="auto"
+            variant="outlined"
           >
-            Quero ser monitor(a)
+            {notMobile ? 'Desmatricular' : <CancelOutlined />}
           </Button>
         );
       } else {
-        return (
-          <Button
-            startIcon={<ManageHistoryRounded />}
-            onClick={handleManageMonitoringClick}
-            color="secondary"
-            width="auto"
-          >
-            Gerenciar Disponibilidade
-          </Button>
-        );
+        if (subject.responsables.length) {
+          if (
+            !subject.monitors.find(
+              (monitor) => monitor.studentId === Number(userId)
+            )
+          ) {
+            return (
+              <>
+                <Button
+                  startIcon={notMobile ? <PostAddRounded /> : null}
+                  onClick={() => handleEnrollmentModal(subject.id)}
+                  color="primary"
+                  variant="outlined"
+                  width="auto"
+                >
+                  {notMobile ? 'Matricular' : <PostAddRounded />}
+                </Button>
+                <Button
+                  startIcon={
+                    notMobile ? <SwitchAccessShortcutOutlined /> : null
+                  }
+                  onClick={() => handleOpenAddMonitorModal(subject)}
+                  color="secondary"
+                  width="auto"
+                >
+                  {notMobile ? (
+                    'Quero ser monitor(a)'
+                  ) : (
+                    <SwitchAccessShortcutOutlined />
+                  )}
+                </Button>
+              </>
+            );
+          } else {
+            return (
+              <Button
+                startIcon={notMobile ? <ManageHistoryRounded /> : null}
+                onClick={handleManageMonitoringClick}
+                color="secondary"
+                width="auto"
+              >
+                {notMobile ? 'Editar Monitoria' : <ManageHistoryRounded />}
+              </Button>
+            );
+          }
+        } else {
+          return (
+            <Button
+              startIcon={notMobile ? <PostAddRounded /> : null}
+              onClick={() => handleEnrollmentModal(subject.id)}
+              color="primary"
+              variant="outlined"
+              width="auto"
+            >
+              {notMobile ? 'Matricular' : <PostAddRounded />}
+            </Button>
+          );
+        }
       }
     }
 
@@ -139,7 +199,7 @@ const SubjectHeader = ({
         <ArrowBack />
       </IconButton>
 
-      {renderButton()}
+      <HeaderButtonContainer>{renderButton()}</HeaderButtonContainer>
     </Container>
   );
 };

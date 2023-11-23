@@ -1,9 +1,9 @@
-import { TMonitorRequest } from '../../../../service/requests/useGetAllMonitorRequests/types';
+import { TMonitorRequest } from '../../service/requests/useGetAllMonitorRequests/types';
 
-import { Button } from '../../../../components/button';
-import { ConfirmedActionContent } from '../../../../components/confirmedActionContent';
-import LoadingAnimation from '../../../../components/loadingAnimation';
-import Modal from '../../../../components/modal';
+import { Button } from '../button';
+import { ConfirmedActionContent } from '../confirmedActionContent';
+import LoadingAnimation from '../loadingAnimation';
+import Modal from '../modal';
 import {
   ButtonsContainer,
   ConfirmButton,
@@ -42,7 +42,7 @@ const AcceptMonitorModal = ({
     if (isSuccess) {
       return (
         <ConfirmedActionContent
-          confirmationText="Um(a) novo(a) monitor(a) foi adicionado(a) à disciplina"
+          confirmationText="Monitor(a) adicionado(a)"
           handleClose={handleClose}
         />
       );
@@ -50,23 +50,22 @@ const AcceptMonitorModal = ({
 
     return (
       <>
-        <StyledTypography variant="h4">
-          Solicitação de Monitoria
-        </StyledTypography>
+        <StyledTypography variant="h4">Aprovar monitor(a)</StyledTypography>
 
         <StyledTypography variant="body1">
           Você deseja aceitar
-          <strong>{' ' + monitor.student.user.name + ' '}</strong>
+          <strong>{` ${monitor.student.user.name} `}</strong>
           como monitor(a) da disciplina
-          <strong>{' ' + monitor.subject.name}</strong>?
+          <strong>{` ${monitor.subject.code} - ${monitor.subject.name}`}</strong>
+          ?
         </StyledTypography>
 
         <ButtonsContainer>
           <Button variant="text" color="primary" onClick={handleClose}>
-            Cancelar
+            Não, cancelar
           </Button>
           <ConfirmButton color="primary" onClick={handleAcceptMonitorClick}>
-            Aceito
+            Sim, aceitar
           </ConfirmButton>
         </ButtonsContainer>
       </>
