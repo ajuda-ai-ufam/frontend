@@ -84,7 +84,7 @@ const SubjectsListItem = ({
       );
     }
 
-    return <></>;
+    return <ButtonContainer></ButtonContainer>;
   };
 
   const handleCardClick = (e: React.MouseEvent) => {
