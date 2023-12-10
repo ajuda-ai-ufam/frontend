@@ -1,32 +1,165 @@
 import { Typography } from '@mui/material';
+import ScheduleConfirmationModal from '../../components/ScheduleConfirmationModal';
+import ScheduleHelpModal from '../../components/ScheduleHelpModal';
+import useScheduleHelpModal from '../../components/ScheduleHelpModal/hooks/useScheduleHelpModal';
 import ContainerWithSidebar from '../../components/containerWithSidebar';
-import { SidebarItemEnum } from '../../utils/constants';
-import { Card, Container, EditButton, InfoContainer } from './styles';
-
+import { SidebarItemEnum, TypeUserEnum } from '../../utils/constants';
+import useStudentSubjects from './hooks/useStudentSubjects';
+import {
+  Card,
+  Container,
+  EditButton,
+  HeaderContainer,
+  SubHeaderLeftContainer,
+} from './styles';
+import EnrollmentModal from '../../components/enrollmentModal';
+import useEnrollmentModal from '../../components/enrollmentModal/hooks/useEnrollmentModal';
+import StudentSubjectsList from './components/StudentSubjectsList';
 import { SchoolRounded } from '@mui/icons-material';
-import { useNavigate } from 'react-router-dom';
-import { SCREENS } from '../../utils/screens';
+import theme from '../../utils/theme';
 
 const StudentHome = () => {
-  const navigate = useNavigate();
+  const {
+    page,
+    subjects,
+    totalPages,
+    isLoadingSubjects,
+    userTypeId,
+    monitorSubject,
+    handleChangePage,
+    handleSubjectClick,
+    handleManageMonitoringClick,
+    navigateToSujects,
+  } = useStudentSubjects();
+
+  const {
+    availableHours,
+    availableMonitors,
+    description,
+    isLoadingMonitorAvailableTimes,
+    isScheduleLoading,
+    isScheduleSuccess,
+    isOpen: isScheduleModalOpen,
+    monitorAvailableTimes,
+    selectedDate,
+    selectedMonitorId,
+    selectedProfessorId,
+    options,
+    selectedTopic,
+    isLoadingTopics,
+    handleChangeTopicValue,
+    handleChangeDescription,
+    handleChangeHour,
+    handleChangeProfessor,
+    handleChangeMonitor,
+    selectedHourIndex,
+    selectedSubject: selectedScheduleSubject,
+    showConfirmation,
+    handleChangeDate,
+    handleClose: handleCloseScheduleModal,
+    handleOpen: handleOpenScheduleModal,
+    handleConfirmSchedule,
+    handleEditData,
+    handleShowConfirmation,
+    topicInputValue,
+    handleChangeTopicInput,
+  } = useScheduleHelpModal();
+
+  const {
+    isLoading: isLoadingEnrollModal,
+    isOpen: isOpenEnrollModal,
+    isSuccess: isSuccessEnrollModal,
+    handleConfirmEnrollmentClick,
+    handleCloseModal: handleCloseEnrollModal,
+    handleOpenModal: handleOpenEnrollModal,
+    handleReturnEnrollModal,
+  } = useEnrollmentModal();
+
   return (
     <ContainerWithSidebar selectedSidebarItem={SidebarItemEnum.HOME}>
+      <ScheduleHelpModal
+        isLoadingTopics={isLoadingTopics}
+        selectedTopic={selectedTopic}
+        topicInputValue={topicInputValue}
+        handleChangeTopicInput={handleChangeTopicInput}
+        handleChangeTopicValue={handleChangeTopicValue}
+        options={options}
+        availableHours={availableHours}
+        availableMonitors={availableMonitors}
+        description={description}
+        isLoadingMonitorAvailableTimes={isLoadingMonitorAvailableTimes}
+        isScheduleLoading={isScheduleLoading}
+        isScheduleSuccess={isScheduleSuccess}
+        monitorAvailableTimes={monitorAvailableTimes}
+        selectedDate={selectedDate}
+        selectedHourIndex={selectedHourIndex}
+        selectedMonitorId={selectedMonitorId}
+        selectedProfessorId={selectedProfessorId}
+        showConfirmation={showConfirmation}
+        handleChangeHour={handleChangeHour}
+        handleChangeDate={handleChangeDate}
+        handleChangeDescription={handleChangeDescription}
+        handleChangeMonitor={handleChangeMonitor}
+        handleChangeProfessor={handleChangeProfessor}
+        handleEditData={handleEditData}
+        handleShowConfirmation={handleShowConfirmation}
+        subject={selectedScheduleSubject}
+        isOpen={isScheduleModalOpen}
+        handleClose={handleCloseScheduleModal}
+        handleConfirmSchedule={handleConfirmSchedule}
+      />
+
+      <EnrollmentModal
+        isOpen={isOpenEnrollModal}
+        handleCloseModal={handleCloseEnrollModal}
+        isLoading={isLoadingEnrollModal}
+        isSuccess={isSuccessEnrollModal}
+        handleConfirmEnrollmentClick={handleConfirmEnrollmentClick}
+        handleReturnEnrollModal={handleReturnEnrollModal}
+      />
+
+      {userTypeId === TypeUserEnum.STUDENT ? (
+        <ScheduleConfirmationModal />
+      ) : (
+        <></>
+      )}
+
       <Container>
         <Card>
-          <InfoContainer>
-            <Typography variant="h3">Início</Typography>
-            <EditButton
-              color="primary"
-              startIcon={<SchoolRounded />}
-              onClick={() => navigate(SCREENS.SUBJECTS)}
-            >
-              Todas as disciplinas
-            </EditButton>
-          </InfoContainer>
+          <HeaderContainer>
+            <SubHeaderLeftContainer>
+              <Typography variant="h3">Início</Typography>
 
-          <Typography style={{ marginTop: '8px' }} variant="body1">
-            Abaixo estão listadas as disciplinas que você se matriculou.
-          </Typography>
+              <EditButton
+                startIcon={<SchoolRounded />}
+                onClick={navigateToSujects}
+              >
+                {window.innerWidth > theme.breakpoints.values.sm ? (
+                  'Todas as disciplinas'
+                ) : (
+                  <></>
+                )}
+              </EditButton>
+
+              <Typography style={{ marginTop: '8px' }} variant="body1">
+                Abaixo estão listadas as disciplinas que você se matriculou.
+              </Typography>
+            </SubHeaderLeftContainer>
+          </HeaderContainer>
+
+          <StudentSubjectsList
+            page={page}
+            totalPages={totalPages}
+            subjects={subjects}
+            userTypeId={userTypeId}
+            monitorSubject={monitorSubject}
+            isLoading={isLoadingSubjects}
+            handleChangePage={handleChangePage}
+            handleConfirmSchedule={handleOpenScheduleModal}
+            handleSubjectClick={handleSubjectClick}
+            handleManageMonitoringClick={handleManageMonitoringClick}
+            handleOpenEnrollModal={handleOpenEnrollModal}
+          />
         </Card>
       </Container>
     </ContainerWithSidebar>

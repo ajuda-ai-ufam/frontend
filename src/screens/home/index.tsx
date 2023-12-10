@@ -2,7 +2,6 @@ import useGetLoggedUser from '../../service/storage/getLoggedUser';
 import { TypeUserEnum } from '../../utils/constants';
 import ProfessorHome from '../professorHome';
 import StudentHome from '../studentHome';
-import Subjects from '../subjects';
 
 const Home = () => {
   const user = useGetLoggedUser();

@@ -147,7 +147,13 @@ const useSidebar = () => {
           logoutItem,
         ];
       } else {
-        return [editProfileItem, subjectsItem, schedulesItem, logoutItem];
+        return [
+          editProfileItem,
+          homeStudentItem,
+          subjectsItem,
+          schedulesItem,
+          logoutItem,
+        ];
       }
     } else if (user.type_user_id === TypeUserEnum.PROFESSOR) {
       return [
