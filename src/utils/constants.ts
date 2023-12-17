@@ -22,12 +22,22 @@ export enum TypeUserEnum {
   STUDENT = 1,
   PROFESSOR = 2,
   COORDINATOR = 3,
+  SUPER_COORDINATOR = 4,
 }
 
 export const UserRole = {
   [TypeUserEnum.STUDENT]: 'Aluno(a)',
   [TypeUserEnum.PROFESSOR]: 'Professor(a)',
-  [TypeUserEnum.COORDINATOR]: 'Coordenador(a)',
+  [TypeUserEnum.COORDINATOR]: 'Coordenador ICOMP',
+  [TypeUserEnum.SUPER_COORDINATOR]: 'Coordenador SUPER',
+};
+
+export enum DepartmentEnum {
+  ICOMP = 3,
+}
+
+export const Department = {
+  [DepartmentEnum.ICOMP]: 'ICOMP',
 };
 
 export enum TypeMonitoringStatus {
