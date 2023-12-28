@@ -16,20 +16,17 @@ import EnrollmentModal from '../../components/enrollmentModal';
 import useEnrollmentModal from '../../components/enrollmentModal/hooks/useEnrollmentModal';
 import StudentSubjectsList from './components/StudentSubjectsList';
 import { SchoolRounded } from '@mui/icons-material';
-import theme from '../../utils/theme';
 
 const StudentHome = () => {
   const {
-    page,
     subjects,
-    totalPages,
     isLoadingSubjects,
     userTypeId,
     monitorSubject,
-    handleChangePage,
     handleSubjectClick,
     handleManageMonitoringClick,
     navigateToSujects,
+    isPhone,
   } = useStudentSubjects();
 
   const {
@@ -134,11 +131,7 @@ const StudentHome = () => {
                 startIcon={<SchoolRounded />}
                 onClick={navigateToSujects}
               >
-                {window.innerWidth > theme.breakpoints.values.sm ? (
-                  'Todas as disciplinas'
-                ) : (
-                  <></>
-                )}
+                {isPhone ? <></> : 'Todas as disciplinas'}
               </EditButton>
 
               <Typography style={{ marginTop: '8px' }} variant="body1">
@@ -148,13 +141,10 @@ const StudentHome = () => {
           </HeaderContainer>
 
           <StudentSubjectsList
-            page={page}
-            totalPages={totalPages}
             subjects={subjects}
             userTypeId={userTypeId}
             monitorSubject={monitorSubject}
             isLoading={isLoadingSubjects}
-            handleChangePage={handleChangePage}
             handleConfirmSchedule={handleOpenScheduleModal}
             handleSubjectClick={handleSubjectClick}
             handleManageMonitoringClick={handleManageMonitoringClick}

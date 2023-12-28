@@ -32,7 +32,13 @@ export const EditButton = styled(Button).attrs({
   height: '44px',
 })`
   @media (max-width: ${theme.breakpoints.values.sm}px) {
-    width: 118px !important;
+    display: flex !important;
+    justify-content: center !important;
+    width: 64px !important;
+    height: 40px !important;
+    span:nth-child(1) {
+      margin-right: 0 !important;
+    }
   }
 `;
 

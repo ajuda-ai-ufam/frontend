@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import styled from 'styled-components';
 import theme from '../../../../utils/theme';
@@ -27,6 +27,15 @@ export const FallbackContainer = styled(Box).attrs({
   p {
     color: ${theme.palette.grey[500]} !important;
     text-align: center;
+  }
+`;
+
+export const AccessSubject = styled(Button).attrs({
+  variant: 'text',
+  color: 'primary',
+})`
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    display: none !important;
   }
 `;
 

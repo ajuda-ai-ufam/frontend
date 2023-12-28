@@ -7,6 +7,8 @@ import { SCREENS } from '../../../utils/screens';
 import { ReponsabilityProfessorStatus } from '../../../utils/constants';
 import useQuery from '../../../utils/useQuery';
 import useGetSubject from '../../../service/requests/useGetSubject';
+import { useMediaQuery } from '@mui/material';
+import theme from '../../../utils/theme';
 
 const useStudentSubjects = () => {
   const query = useQuery();
@@ -24,6 +26,8 @@ const useStudentSubjects = () => {
 
   const { data: monitorSubject, getSubject } = useGetSubject();
   const [page, setPage] = useState(1);
+
+  const isPhone = useMediaQuery(theme.breakpoints.down('sm'));
 
   const totalPages = useMemo(
     () => subjectsResponse?.meta.total_pages || 0,
@@ -105,6 +109,7 @@ const useStudentSubjects = () => {
     handleChangePage,
     handleSubjectClick,
     navigateToSujects,
+    isPhone,
   };
 };
 

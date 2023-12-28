@@ -1,4 +1,4 @@
-import { CircularProgress, Pagination, Typography } from '@mui/material';
+import { CircularProgress, Typography } from '@mui/material';
 import {
   TCompleteSubject,
   TCompleteSubject as TSubject,
@@ -9,18 +9,14 @@ import {
   FallbackContainer,
   FallbackTypography,
   ListContainer,
-  PaginationContainer,
   ProgressContainer,
 } from './styles';
 
 type Props = {
   isLoading: boolean;
-  page: number;
-  totalPages: number;
   subjects?: TSubject[];
   monitorSubject?: TCompleteSubject;
   userTypeId?: number;
-  handleChangePage(event: React.ChangeEvent<unknown>, page: number): void;
   handleSubjectClick(id: number): void;
   handleConfirmSchedule(subject: TSubject): void;
   handleManageMonitoringClick(): void;
@@ -29,12 +25,9 @@ type Props = {
 
 const StudentSubjectsList = ({
   isLoading,
-  page,
-  totalPages,
   subjects,
   userTypeId,
   monitorSubject,
-  handleChangePage,
   handleConfirmSchedule,
   handleSubjectClick,
   handleManageMonitoringClick,
@@ -50,13 +43,43 @@ const StudentSubjectsList = ({
     );
   }
 
+  if (subjects.length === 0 && monitorSubject) {
+    return (
+      <Container>
+        <>
+          <Typography variant="body1" color="secondary, light">
+            Disciplina que você monitora
+          </Typography>
+          <StudentSubjectsListItem
+            key={monitorSubject?.id}
+            subject={monitorSubject}
+            userTypeId={userTypeId}
+            handleConfirmSchedule={handleConfirmSchedule}
+            handleSubjectClick={handleSubjectClick}
+            handleManageMonitoringClick={handleManageMonitoringClick}
+            handleOpenEnrollModal={handleOpenEnrollModal}
+          />
+          <Typography variant="body1" color="secondary, light">
+            Disciplinas matriculadas
+          </Typography>
+        </>
+        <FallbackContainer>
+          <FallbackTypography>
+            Ops! Parece que você ainda não se matriculou em nenhuma disciplina.
+            Acessar o menu “Todas as disciplinas” e matricule-se.
+          </FallbackTypography>
+        </FallbackContainer>
+      </Container>
+    );
+  }
+
   if (subjects.length === 0) {
     return (
       <Container>
         <FallbackContainer>
           <FallbackTypography>
-            Ops... Parece que a disciplina que você procura não existe. Revise a
-            grafia e tente novamente.
+            Ops! Parece que você ainda não se matriculou em nenhuma disciplina.
+            Acessar o menu “Todas as disciplinas” e matricule-se.
           </FallbackTypography>
         </FallbackContainer>
       </Container>
@@ -68,7 +91,7 @@ const StudentSubjectsList = ({
       <ListContainer>
         {monitorSubject ? (
           <>
-            <Typography variant="body1">
+            <Typography variant="body1" color="secondary, light">
               Disciplina que você monitora
             </Typography>
             <StudentSubjectsListItem
@@ -80,7 +103,9 @@ const StudentSubjectsList = ({
               handleManageMonitoringClick={handleManageMonitoringClick}
               handleOpenEnrollModal={handleOpenEnrollModal}
             />
-            <Typography variant="body1">Disciplinas matriculadas</Typography>
+            <Typography variant="body1" color="secondary, light">
+              Disciplinas matriculadas
+            </Typography>
           </>
         ) : (
           <></>
@@ -99,15 +124,6 @@ const StudentSubjectsList = ({
           />
         ))}
       </ListContainer>
-
-      <PaginationContainer>
-        <Pagination
-          page={page}
-          onChange={handleChangePage}
-          count={totalPages}
-          color="primary"
-        />
-      </PaginationContainer>
     </Container>
   );
 };
