@@ -2,7 +2,6 @@ import { SelectChangeEvent } from '@mui/material';
 import moment from 'moment';
 import { useEffect, useMemo, useState } from 'react';
 import useAddTopicRequest from '../../../service/requests/useAddTopicRequest';
-import useGetMonitorAvailableTimesRequest from '../../../service/requests/useGetMonitorAvailableTimesRequest';
 import {
   TCompleteSubject,
   TSubjectMonitor,
@@ -11,15 +10,16 @@ import useScheduleRequest from '../../../service/requests/useScheduleRequest';
 import { useSnackBar } from '../../../utils/renderSnackBar';
 import useTopics from './useTopics';
 import { TypeMonitoringStatus } from '../../../utils/constants';
+import useGetMonitorRequest from '../../../service/requests/useGetMonitorRequest';
 
 const useScheduleHelpModal = () => {
   const { showErrorSnackBar } = useSnackBar();
 
   const {
-    data: monitorAvailableTimes,
+    getMonitor,
+    data: monitor,
     isLoading: isLoadingMonitorAvailableTimes,
-    getMonitorAvailableTimes,
-  } = useGetMonitorAvailableTimesRequest();
+  } = useGetMonitorRequest();
 
   const {
     schedule,
@@ -66,8 +66,9 @@ const useScheduleHelpModal = () => {
   }, [selectedProfessorId, selectedSubject]);
 
   const availableHours = useMemo(() => {
-    if (!monitorAvailableTimes || !selectedDate) return [];
+    if (!monitor || !selectedDate) return [];
 
+    const monitorAvailableTimes = monitor.availability;
     const availableDayTime = monitorAvailableTimes.find(
       (time) => time.week_day === selectedDate.day()
     );
@@ -82,7 +83,7 @@ const useScheduleHelpModal = () => {
     }
 
     return availableHours;
-  }, [selectedDate, monitorAvailableTimes]);
+  }, [selectedDate, monitor]);
 
   const handleClose = () => {
     resetScheduleStates();
@@ -192,7 +193,7 @@ const useScheduleHelpModal = () => {
   useEffect(() => {
     if (selectedMonitorId === -1) return;
 
-    void getMonitorAvailableTimes(selectedMonitorId);
+    void getMonitor(selectedMonitorId);
   }, [selectedMonitorId]);
 
   useEffect(() => {
@@ -240,7 +241,7 @@ const useScheduleHelpModal = () => {
     isScheduleLoading,
     isScheduleSuccess,
     isOpen,
-    monitorAvailableTimes,
+    monitorAvailableTimes: monitor?.availability,
     selectedDate,
     selectedHourIndex,
     selectedMonitorId,
