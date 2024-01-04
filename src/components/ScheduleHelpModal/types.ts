@@ -1,9 +1,9 @@
 import { SelectChangeEvent } from '@mui/material';
-import { TMonitorAvailableTime } from '../../service/requests/useGetMonitorAvailableTimesRequest/types';
 import {
   TCompleteSubject,
   TSubjectMonitor,
 } from '../../service/requests/useGetSubject/types';
+import { TAvailability } from '../../service/requests/useGetMonitorRequest/types';
 
 export type TTopicValue = {
   id?: number;
@@ -17,7 +17,7 @@ export type TUseSchedulesHook = {
   availableMonitors: TSubjectMonitor[];
   description: string;
   isLoadingMonitorAvailableTimes: boolean;
-  monitorAvailableTimes?: TMonitorAvailableTime[];
+  monitorAvailableTimes?: TAvailability[];
   selectedDate: moment.Moment | null;
   selectedHourIndex: number;
   selectedProfessorId: number;
