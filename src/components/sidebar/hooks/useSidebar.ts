@@ -7,6 +7,7 @@ import {
   AccountCircle,
   ManageHistoryRounded,
   HomeRounded,
+  Home,
 } from '@mui/icons-material';
 import { useMediaQuery } from '@mui/material';
 import { useEffect, useMemo, useState } from 'react';
@@ -54,6 +55,15 @@ const useSidebar = () => {
     icon: ManageHistoryRounded,
     handleClick: () => {
       navigate(SCREENS.EDIT_MONITORING);
+    },
+  };
+
+  const homeStudentItem: TSidebarItem = {
+    key: SidebarItemEnum.HOME,
+    text: 'Início',
+    icon: Home,
+    handleClick: () => {
+      navigate(SCREENS.HOME);
     },
   };
 
@@ -130,13 +140,20 @@ const useSidebar = () => {
       if (user?.monitor) {
         return [
           editProfileItem,
+          homeStudentItem,
           subjectsItem,
           editMonitoringItem,
           schedulesItem,
           logoutItem,
         ];
       } else {
-        return [editProfileItem, subjectsItem, schedulesItem, logoutItem];
+        return [
+          editProfileItem,
+          homeStudentItem,
+          subjectsItem,
+          schedulesItem,
+          logoutItem,
+        ];
       }
     } else if (user.type_user_id === TypeUserEnum.PROFESSOR) {
       return [

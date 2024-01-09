@@ -86,6 +86,7 @@ export type TListSubjectsParams = {
   search?: string;
   teacherId?: number;
   monitorStatus?: number[];
+  onlyEnrollments?: boolean;
 };
 
 export type TListSubjectsErrorResponse = {

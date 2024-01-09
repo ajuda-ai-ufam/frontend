@@ -76,7 +76,7 @@ const useLogin = (): TLoginHook => {
   }, [error]);
 
   useEffect(() => {
-    if (user) navigate(SCREENS.SUBJECTS);
+    if (user) navigate(SCREENS.HOME);
 
     document.title = 'Entrar';
   }, []);
