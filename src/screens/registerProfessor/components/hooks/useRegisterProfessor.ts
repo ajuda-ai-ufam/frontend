@@ -8,6 +8,7 @@ import {
   validateEmail,
   validateName,
   validatePassword,
+  validateSiape,
 } from '../../../../utils/validateFields';
 
 const useRegisterProfessor = () => {
@@ -25,6 +26,8 @@ const useRegisterProfessor = () => {
   const [confPassword, setConfPassword] = useState('');
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
+  const [siape, setSiape] = useState('');
+  const [siapeError, setSiapeError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -36,6 +39,9 @@ const useRegisterProfessor = () => {
   };
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
+  };
+  const handleSiapeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSiape(e.target.value);
   };
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
@@ -71,6 +77,11 @@ const useRegisterProfessor = () => {
       setNameError(currentErrorName);
     }
 
+    const currentSiapeError = validateSiape(siape);
+    if (currentSiapeError) {
+      setSiapeError(currentSiapeError);
+    }
+
     const currentErrorEmail = validateEmail(email);
     if (currentErrorEmail) {
       setEmailError(currentErrorEmail);
@@ -93,9 +104,10 @@ const useRegisterProfessor = () => {
       !currentErrorName &&
       !currentErrorEmail &&
       !currentErrorPassword &&
-      !currentErrorConfirmPassword
+      !currentErrorConfirmPassword &&
+      !currentSiapeError
     ) {
-      void register(name, email, password, confPassword);
+      void register(name, email, siape, password, confPassword);
     }
   };
 
@@ -123,6 +135,7 @@ const useRegisterProfessor = () => {
   return {
     handleNameChange,
     handleEmailChange,
+    handleSiapeChange,
     handlePasswordChange,
     handleConfPasswordChange,
     handleCancelClick,
@@ -132,18 +145,21 @@ const useRegisterProfessor = () => {
     handleMouseDownPassword,
     name,
     email,
+    siape,
     password,
     confPassword,
     error,
     isLoading,
     isSuccess,
     nameError,
+    siapeError,
     emailError,
     passwordError,
     confPasswordError,
     showPassword,
     showConfirmPassword,
     setNameError,
+    setSiapeError,
     setEmailError,
     setPasswordError,
     setConfPasswordError,

@@ -15,6 +15,7 @@ const useRegisterProfessorRequest = (): TRegisterProfessorRequestHook => {
   const register = async (
     name: string,
     email: string,
+    siape: string,
     password: string,
     confirmPassword: string
   ) => {
@@ -23,6 +24,7 @@ const useRegisterProfessorRequest = (): TRegisterProfessorRequestHook => {
     setError(undefined);
     const body: TRegisterProfessorRequest = {
       name,
+      siape,
       email,
       password,
       confirm_password: confirmPassword,

@@ -9,6 +9,7 @@ import {
   validateEmail,
   validateName,
   validatePassword,
+  validateSiape,
 } from '../../../../utils/validateFields';
 import {
   FormContainer,
@@ -38,6 +39,10 @@ const FormRegister = () => {
     emailError,
     handleEmailChange,
     setEmailError,
+    siape,
+    siapeError,
+    setSiapeError,
+    handleSiapeChange,
     password,
     passwordError,
     showPassword,
@@ -60,6 +65,13 @@ const FormRegister = () => {
 
   const NameError = () => {
     if (!!nameError) return <FormHelperText error>{nameError}</FormHelperText>;
+
+    return <></>;
+  };
+
+  const SiapeError = () => {
+    if (!!siapeError)
+      return <FormHelperText error>{siapeError}</FormHelperText>;
 
     return <></>;
   };
@@ -123,6 +135,18 @@ const FormRegister = () => {
                     onChange={handleEmailChange}
                   />
                   <EmailError />
+                </TextFieldContainer>
+                <TextFieldContainer>
+                  <StyledFormTextField
+                    value={siape}
+                    error={!!siapeError}
+                    id="siape"
+                    name="siape"
+                    placeholder="Matrícula Siape"
+                    onBlur={() => setSiapeError(validateSiape(siape))}
+                    onChange={handleSiapeChange}
+                  />
+                  <SiapeError />
                 </TextFieldContainer>
                 <TextFieldContainer>
                   <StyledFormTextField
