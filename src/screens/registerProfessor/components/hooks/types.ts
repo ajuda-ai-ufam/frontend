@@ -9,6 +9,11 @@ export type TRegisterProfessorHook = {
   handleEmailChange(e: React.ChangeEvent<HTMLInputElement>): void;
   setEmailError(email: string): void;
 
+  siape: string;
+  siapeError: string;
+  setSiapeError(siape: string): void;
+  handleSiapeChange(e: React.ChangeEvent<HTMLInputElement>): void;
+
   password: string;
   passwordError: string;
   showPassword: boolean;
