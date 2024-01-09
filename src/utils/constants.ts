@@ -8,13 +8,14 @@ export enum CodeTypeEnum {
 }
 
 export enum SidebarItemEnum {
+  EDIT_PROFILE = 'edit-profile',
+  HOME = 'home',
   SUBJECTS = 'subjects',
+  EDIT_MONITORING = 'edit-monitoring',
   SCHEDULES = 'schedules',
   MONITOR_REQUESTS = 'monitor-requests',
   LOGOUT = 'logout',
   SCHEDULES_HISTORIC = 'schedules-historic',
-  EDIT_PROFILE = 'edit-profile',
-  EDIT_MONITORING = 'edit-monitoring',
   PROFESSOR_HOME = 'professor-home',
 }
 
