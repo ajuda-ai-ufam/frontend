@@ -11,6 +11,16 @@ export const validateName = (name: string): string => {
   return '';
 };
 
+export const validateSiape = (siape: string): string => {
+  if (!siape || siape.indexOf('') === -1) return 'Siape Inválido';
+
+  if (/\D/.test(siape)) return 'O Siape não pode conter letras!';
+
+  if (siape.length != 7) return 'O Siape tem que ter 7 caractéres!';
+
+  return '';
+};
+
 export const validateEmail = (email: string): string => {
   if (!email || email.indexOf('@') === -1) return 'E-mail inválido!';
 

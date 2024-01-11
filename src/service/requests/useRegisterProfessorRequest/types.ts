@@ -5,6 +5,7 @@ export type TRegisterProfessorRequestHook = {
   register(
     name: string,
     email: string,
+    siape: string,
     password: string,
     confirm_password: string
   ): void;
@@ -12,6 +13,7 @@ export type TRegisterProfessorRequestHook = {
 
 export type TRegisterProfessorRequest = {
   name: string;
+  siape: string;
   email: string;
   password: string;
   confirm_password: string;

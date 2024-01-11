@@ -6,7 +6,6 @@ import { TCompleteSubject } from '../../../../service/requests/useGetSubject/typ
 import useGetLoggedUser from '../../../../service/storage/getLoggedUser';
 import {
   CalendarMonthRounded,
-  EditRounded,
   ManageHistoryRounded,
   PostAddRounded,
 } from '@mui/icons-material';
@@ -21,17 +20,15 @@ import {
 type Props = {
   subject: TCompleteSubject;
   userTypeId?: number;
-  handleAssignProfessors(subject: TSubject): void;
   handleConfirmSchedule(subject: TSubject): void;
   handleSubjectClick(id: number): void;
   handleManageMonitoringClick(): void;
   handleOpenEnrollModal(id: number): void;
 };
 
-const SubjectsListItem = ({
+const StudentSubjectsListItem = ({
   subject,
   userTypeId,
-  handleAssignProfessors,
   handleConfirmSchedule,
   handleSubjectClick,
   handleManageMonitoringClick,
@@ -81,23 +78,7 @@ const SubjectsListItem = ({
       );
     }
 
-    if (userTypeId === TypeUserEnum.COORDINATOR) {
-      return (
-        <ButtonContainer>
-          <ActionButton
-            onClick={() => handleAssignProfessors(subject)}
-            wid="204px"
-            color="primary"
-            variant="outlined"
-            startIcon={<EditRounded />}
-          >
-            Editar professores
-          </ActionButton>
-        </ButtonContainer>
-      );
-    }
-
-    return <ButtonContainer></ButtonContainer>;
+    return <></>;
   };
 
   const handleCardClick = (e: React.MouseEvent) => {
@@ -124,4 +105,4 @@ const SubjectsListItem = ({
   );
 };
 
-export default SubjectsListItem;
+export default StudentSubjectsListItem;
