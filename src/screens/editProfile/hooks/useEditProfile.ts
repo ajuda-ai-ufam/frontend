@@ -228,7 +228,9 @@ const useEditProfile = () => {
       if (confirmNewPasswordRef.current)
         confirmNewPasswordRef.current.value = '';
 
-      setCourse(userInfo.course.name);
+      if (isStudent) {
+        setCourse(userInfo.course.name);
+      }
 
       if (isOnEditMode) {
         handleEditProfileClick();
