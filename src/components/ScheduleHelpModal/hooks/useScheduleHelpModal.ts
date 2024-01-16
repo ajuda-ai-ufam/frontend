@@ -70,7 +70,7 @@ const useScheduleHelpModal = () => {
 
     const monitorAvailableTimes = monitor.availability;
     const availableDayTime = monitorAvailableTimes.find(
-      (time) => time.week_day === selectedDate.day()
+      (time) => time.week_day === selectedDate.isoWeekday() - 1
     );
     if (!availableDayTime) return [];
 

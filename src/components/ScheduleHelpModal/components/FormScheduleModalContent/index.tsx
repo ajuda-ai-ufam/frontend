@@ -136,7 +136,9 @@ const FormScheduleModalContent = ({
           )}
           loading={isLoadingMonitorAvailableTimes}
           shouldDisableDate={(day) =>
-            !monitorAvailableTimes?.find((time) => time.week_day === day.day())
+            !monitorAvailableTimes?.find(
+              (time) => time.week_day === day.isoWeekday() - 1
+            )
           }
         />
 
