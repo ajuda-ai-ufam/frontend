@@ -12,6 +12,7 @@ export enum SidebarItemEnum {
   HOME = 'home',
   SUBJECTS = 'subjects',
   EDIT_MONITORING = 'edit-monitoring',
+  EXTERNAL_MONITORING = 'external-monitoring',
   SCHEDULES = 'schedules',
   MONITOR_REQUESTS = 'monitor-requests',
   LOGOUT = 'logout',

@@ -103,7 +103,7 @@ const ResetPassword = () => {
       </TopContainer>
       <MiddleContainer>{CardContent()}</MiddleContainer>
       <Bottom>
-        <Typography variant="caption">Super Monitoria, 2023</Typography>
+        <Typography variant="caption">Super Monitoria, 2024</Typography>
       </Bottom>
     </Container>
   );

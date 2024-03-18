@@ -24,6 +24,7 @@ import SubjectDetails from './screens/subjectDetails';
 import Subjects from './screens/subjects';
 import { SCREENS } from './utils/screens';
 import theme from './utils/theme';
+import ExternalMonitoring from './screens/externalMonitoring';
 
 const App: React.FC = () => {
   return (
@@ -82,6 +83,10 @@ const App: React.FC = () => {
               <Route
                 path={SCREENS.EDIT_MONITORING}
                 element={<EditMonitoring />}
+              />
+              <Route
+                path={SCREENS.EXTERNAL_MONITORING}
+                element={<ExternalMonitoring />}
               />
               <Route path={SCREENS.HOME} element={<Home />} />
             </Routes>
