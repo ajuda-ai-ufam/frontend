@@ -53,7 +53,7 @@ const TurnIntoMonitor = () => {
             conosco através do e-mail: suportemonitoria@icomp.ufam.edu.br
           </DoubtsTypography>
           <Typography variant="body1" color={'white'}>
-            Super Monitoria, 2023
+            Super Monitoria, 2024
           </Typography>
         </FooterContainer>
       </InnerContainer>

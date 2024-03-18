@@ -8,6 +8,7 @@ import {
   ManageHistoryRounded,
   HomeRounded,
   Home,
+  PostAddOutlined,
 } from '@mui/icons-material';
 import { useMediaQuery } from '@mui/material';
 import { useEffect, useMemo, useState } from 'react';
@@ -55,6 +56,15 @@ const useSidebar = () => {
     icon: ManageHistoryRounded,
     handleClick: () => {
       navigate(SCREENS.EDIT_MONITORING);
+    },
+  };
+
+  const externalMonitoring: TSidebarItem = {
+    key: SidebarItemEnum.EXTERNAL_MONITORING,
+    text: 'Monitoria Externa',
+    icon: PostAddOutlined,
+    handleClick: () => {
+      navigate(SCREENS.EXTERNAL_MONITORING);
     },
   };
 
@@ -144,6 +154,7 @@ const useSidebar = () => {
           subjectsItem,
           editMonitoringItem,
           schedulesItem,
+          externalMonitoring,
           logoutItem,
         ];
       } else {
