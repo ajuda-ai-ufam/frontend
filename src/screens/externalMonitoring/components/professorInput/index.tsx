@@ -1,9 +1,4 @@
-import {
-  Autocomplete,
-  Box,
-  SelectChangeEvent,
-  TextField as TextFieldMUI,
-} from '@mui/material';
+import { Autocomplete, Box, TextField as TextFieldMUI } from '@mui/material';
 import { StyledTextFieldContainer } from '../../styles';
 import { TProfessorInput } from '../../hooks/types';
 

@@ -3,7 +3,7 @@ import { StyledTextFieldContainer } from '../../styles';
 import { TCourseInput } from '../../hooks/types';
 
 type props = {
-  isSelectedStudent: boolean;
+      isSelectedStudent: boolean;
   selectedCourse: TCourseInput | null;
   handleCourseValueChange(event: any, newValue: TCourseInput | null): void;
   allCourses: TCourseInput[];

@@ -1,5 +1,5 @@
 export type TExternalMonitoringParams = {
-  student_id: Number;
+  student_id: number;
   student_name: string;
   monitor_id: number;
   professor_id: number;
