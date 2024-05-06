@@ -26,6 +26,7 @@ const DateInput = ({
   return (
     <DateFieldsContainer>
       <DesktopDatePicker
+        disableFuture
         disabled={disable}
         inputFormat="DD/MM/YYYY"
         value={selectedDate}

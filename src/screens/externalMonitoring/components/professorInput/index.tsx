@@ -1,48 +1,37 @@
-import { Autocomplete, Box, TextField as TextFieldMUI } from '@mui/material';
-import { StyledTextFieldContainer } from '../../styles';
-import { TProfessorInput } from '../../hooks/types';
+import { Typography } from '@mui/material';
+import {
+  DisabledProfessorContainer,
+  ProfessorContainer,
+  StyledTextFieldContainer,
+} from '../../styles';
+import { TSubjectResponsible } from '../../../../service/requests/useGetSubject/types';
 
-type Props = {
-  isSubjectSelected: boolean;
-  professors: TProfessorInput[] | null;
-  selectedProfessor: TProfessorInput | null;
-  handleProfessorValueChange(
-    event: any,
-    newValue: TProfessorInput | null
-  ): void;
+type props = {
+  professorResponsible: TSubjectResponsible | undefined;
+  isStudentSelected: boolean;
 };
 
-const ProfessorInput = ({
-  isSubjectSelected,
-  professors,
-  selectedProfessor,
-  handleProfessorValueChange,
-}: Props) => {
+const ProfessorInput = ({ professorResponsible, isStudentSelected }: props) => {
   return (
     <>
       <StyledTextFieldContainer>
-        <Autocomplete
-          value={selectedProfessor}
-          disabled={isSubjectSelected}
-          onChange={handleProfessorValueChange}
-          options={professors ? professors : []}
-          getOptionLabel={(option) => option.name}
-          renderOption={(props, option) => (
-            <Box component="li" {...props}>
-              {option.name}
-            </Box>
-          )}
-          renderInput={(params) => (
-            <TextFieldMUI
-              {...params}
-              placeholder="Selecione um(a) professor(a)"
-            />
-          )}
-          noOptionsText="Professor(a) não encontrado(a)"
-        />
+        {isStudentSelected ? (
+          <>
+            <ProfessorContainer>
+              <Typography>
+                {professorResponsible?.professor.user.name}
+              </Typography>
+            </ProfessorContainer>
+          </>
+        ) : (
+          <>
+            <DisabledProfessorContainer>
+              <Typography>Nome do Professor</Typography>
+            </DisabledProfessorContainer>
+          </>
+        )}
       </StyledTextFieldContainer>
     </>
   );
 };
-
 export default ProfessorInput;

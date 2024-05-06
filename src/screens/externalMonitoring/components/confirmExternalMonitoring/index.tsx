@@ -3,24 +3,24 @@ import { useMemo } from 'react';
 import { ButtonsContainer, StyledButton } from '../../styles';
 import { DataContainer, FeedbackContainer, Label } from './styles';
 import Modal from '../../../../components/modal';
-import {
-  TProfessorInput,
-  TStudentInput,
-  TSubjectInput,
-} from '../../hooks/types';
+import { TStudentInput } from '../../hooks/types';
 import { HOURS_OPTIONS } from '../../hooks/constants';
 import LoadingAnimation from '../../../../components/loadingAnimation';
 import { LoadingContainer } from '../../../editMonitoring/styles';
 import CheckedAnimation from '../../../../components/checkedAnimation';
 import { TTopicValue } from '../../../../components/ScheduleHelpModal/types';
+import {
+  TCompleteSubject,
+  TSubjectResponsible,
+} from '../../../../service/requests/useGetSubject/types';
 
 type Props = {
   selectedStudent: TStudentInput | null;
   description: string;
   selectedDate: moment.Moment | null;
   selectedHourIndex: number;
-  selectedProfessor: TProfessorInput | null;
-  selectedSubject: TSubjectInput | null;
+  selectedProfessor: TSubjectResponsible | undefined;
+  selectedSubject: TCompleteSubject | undefined;
   topic: TTopicValue | null;
   showConfirmation: boolean;
   handleEditData(): void;
@@ -63,7 +63,7 @@ const ConfirmExternalMonitoring = ({
     if (selectedProfessor) {
       data.push({
         label: 'Professor(a)',
-        value: selectedProfessor.name,
+        value: selectedProfessor.professor.user.name,
       });
     }
 

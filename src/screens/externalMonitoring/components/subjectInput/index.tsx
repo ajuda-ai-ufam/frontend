@@ -1,38 +1,32 @@
-import { Autocomplete, Box, TextField as TextFieldMUI } from '@mui/material';
-import { StyledTextFieldContainer } from '../../styles';
-import { TSubjectInput } from '../../hooks/types';
+import { Typography } from '@mui/material';
+import {
+  DisabledProfessorContainer,
+  ProfessorContainer,
+  StyledTextFieldContainer,
+} from '../../styles';
+import { TCompleteSubject } from '../../../../service/requests/useGetSubject/types';
 
 type props = {
-  isCourseSelected: boolean;
-  selectedSubject: TSubjectInput | null;
-  handleSubjectValueChange(event: any, newValue: TSubjectInput | null): void;
-  listSubject: TSubjectInput[] | null;
+  isStudentSelected: boolean;
+  selectedSubject: TCompleteSubject | undefined;
 };
 
-const SubjectInput = ({
-  handleSubjectValueChange,
-  isCourseSelected,
-  listSubject,
-  selectedSubject,
-}: props) => {
+const SubjectInput = ({ isStudentSelected, selectedSubject }: props) => {
   return (
     <StyledTextFieldContainer>
-      <Autocomplete
-        value={selectedSubject}
-        onChange={handleSubjectValueChange}
-        options={listSubject ? listSubject : []}
-        getOptionLabel={(option) => option.input}
-        disabled={isCourseSelected}
-        renderOption={(props, option) => (
-          <Box component="li" {...props}>
-            {option.input}
-          </Box>
-        )}
-        renderInput={(params) => (
-          <TextFieldMUI {...params} placeholder="Selecione uma disciplina" />
-        )}
-        noOptionsText="Disciplina não encontrada"
-      />
+      {isStudentSelected ? (
+        <>
+          <ProfessorContainer>
+            <Typography>{selectedSubject?.name}</Typography>
+          </ProfessorContainer>
+        </>
+      ) : (
+        <>
+          <DisabledProfessorContainer>
+            <Typography>Nome da disciplina</Typography>
+          </DisabledProfessorContainer>
+        </>
+      )}
     </StyledTextFieldContainer>
   );
 };

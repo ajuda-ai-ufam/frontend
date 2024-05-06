@@ -1,11 +1,15 @@
 import { Autocomplete, Box, TextField as TextFieldMUI } from '@mui/material';
 import { StyledTextFieldContainer } from '../../styles';
 import { TCourseInput } from '../../hooks/types';
+import { SyntheticEvent } from 'react';
 
 type props = {
-      isSelectedStudent: boolean;
+  isSelectedStudent: boolean;
   selectedCourse: TCourseInput | null;
-  handleCourseValueChange(event: any, newValue: TCourseInput | null): void;
+  handleCourseValueChange(
+    event: SyntheticEvent,
+    newValue: TCourseInput | null
+  ): void;
   allCourses: TCourseInput[];
 };
 

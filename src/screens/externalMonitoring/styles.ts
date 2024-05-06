@@ -8,7 +8,6 @@ import { Button } from '../../components/button';
 export const Container = styled(Box).attrs({
   display: 'flex',
   justifyContent: 'center',
-  marginTop: '24px',
 })`
   @media (max-width: ${theme.breakpoints.values.md}px) {
     width: 100% !important;
@@ -20,12 +19,20 @@ export const Container = styled(Box).attrs({
 export const Card = styled(Box).attrs({
   width: '1064px',
   padding: '32px',
+  margin: '24px',
   display: 'flex',
   flexDirection: 'column',
   gap: '24px',
 })`
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 24px;
+  @media (min-width: ${theme.breakpoints.values.md}px) {
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 24px;
+  }
+  @media (max-width: ${theme.breakpoints.values.sm}px) {
+    padding: 0 !important;
+    margin: 16px !important;
+    width: 100% !important;
+  }
 `;
 
 export const TypographyContainer = styled(Box).attrs({
@@ -96,4 +103,25 @@ export const StyledButton = styled(Button).attrs({
   @media (max-width: ${theme.breakpoints.values.sm}px) {
     width: 100% !important;
   }
+`;
+
+export const ProfessorContainer = styled(Box).attrs({
+  display: 'flex',
+  padding: '16px',
+})`
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 12px;
+  border-color: #b1b5ae !important;
+`;
+
+export const DisabledProfessorContainer = styled(Box).attrs({
+  display: 'flex',
+  padding: '16px',
+})`
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 12px;
+  border-color: #b1b5ae !important;
+  opacity: 0.2;
 `;
