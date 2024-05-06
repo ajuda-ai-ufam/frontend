@@ -1,6 +1,4 @@
-import {
-  ReponsabilityProfessorStatus,
-} from '../../../utils/constants';
+import { ReponsabilityProfessorStatus } from '../../../utils/constants';
 
 export type ExternalMonitoringSubject = {
   id: number;

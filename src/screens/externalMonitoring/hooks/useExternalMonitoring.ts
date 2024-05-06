@@ -1,14 +1,7 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, SyntheticEvent } from 'react';
 import { SelectChangeEvent } from '@mui/material';
-import useAllSubjectsRequest from '../../../service/requests/useAllSubjectsRequest';
-import {
-  TSubjectInput,
-  TCourseInput,
-  TProfessorInput,
-  TStudentInput,
-} from './types';
-import useCourseRequest from '../../../service/requests/useCourseRequest';
-import { ReponsabilityProfessorStatus } from '../../../utils/constants';
+import { TStudentInput } from './types';
+import { TypeMonitorStatus } from '../../../utils/constants';
 import useGetStudent from '../../../service/requests/useGetStudent';
 import { HOURS_OPTIONS } from './constants';
 import useTopics from '../../../components/ScheduleHelpModal/hooks/useTopics';
@@ -17,14 +10,33 @@ import useExternalMonitoringRequest from '../../../service/requests/useExternalM
 import useGetLoggedUser from '../../../service/storage/getLoggedUser';
 import { useNavigate } from 'react-router-dom';
 import { useSnackBar } from '../../../utils/renderSnackBar';
+import useGetSubject from '../../../service/requests/useGetSubject';
+import {
+  TCompleteSubject,
+  TSubjectResponsible,
+} from '../../../service/requests/useGetSubject/types';
 
 const useExternalMonitoring = () => {
-  const { getAllSubjects, data: subjects } = useAllSubjectsRequest();
-  const { coursesFetch, data: courses } = useCourseRequest();
-  const { getStudents, data: students } = useGetStudent();
-  const { showErrorSnackBar } = useSnackBar();
   const user = useGetLoggedUser();
   const navigate = useNavigate();
+  const { showErrorSnackBar } = useSnackBar();
+
+  const { getStudents, data: students } = useGetStudent();
+  const { data: subjectData, getSubject } = useGetSubject();
+
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [selectedDate, setSelectedDate] = useState<moment.Moment | null>(null);
+  const [selectedHourIndex, setSelectedHourIndex] = useState(-1);
+  const [description, setDescription] = useState('');
+  const [selectedStudent, setSelectedStudent] = useState<TStudentInput | null>(
+    null
+  );
+  const [selectedSubject, setSelectedSubject] = useState<
+    TCompleteSubject | undefined
+  >(undefined);
+  const [professorResponsible, setProfessorResponsible] = useState<
+    TSubjectResponsible | undefined
+  >();
 
   const {
     handleChangeTopicInput,
@@ -50,29 +62,38 @@ const useExternalMonitoring = () => {
     resetStates: resetExternalMonitoringStates,
   } = useExternalMonitoringRequest();
 
-  const [showConfirmation, setShowConfirmation] = useState(false);
-  const [selectedDate, setSelectedDate] = useState<moment.Moment | null>(null);
-  const [selectedHourIndex, setSelectedHourIndex] = useState(-1);
-  const [description, setDescription] = useState('');
-  const [selectedCourse, setSelectedCourse] = useState<TCourseInput | null>(
-    null
-  );
-  const [selectedSubject, setSelectedSubject] = useState<TSubjectInput | null>(
-    null
-  );
-  const [selectedProfessor, setSelectedProfessor] =
-    useState<TProfessorInput | null>(null);
+  const allStudents = useMemo(() => {
+    const listStudents = students?.students
+      .filter((student) => student.name != user?.username)
+      .map((student) => ({
+        id: student.id,
+        name: student.name,
+        email: student.name,
+        input: `${student.name} - ${student.email}`,
+      }));
 
-  const [selectedStudent, setSelectedStudent] = useState<TStudentInput | null>(
-    null
-  );
+    return listStudents;
+  }, [students]);
+
+  const handleStudentValueChange = (
+    event: SyntheticEvent,
+    newValue: TStudentInput | null
+  ) => {
+    setSelectedStudent(newValue);
+    setSelectedDate(null);
+    setSelectedHourIndex(-1);
+  };
+
+  const handleChangeDate = (value: moment.Moment | null) => {
+    setSelectedHourIndex(-1);
+    setSelectedDate(value);
+  };
 
   const confirmDisable = useMemo(() => {
     if (
-      !selectedCourse ||
       !selectedDate ||
       !selectedHourIndex ||
-      !selectedProfessor ||
+      !professorResponsible ||
       !selectedStudent ||
       !selectedSubject ||
       selectedHourIndex == -1
@@ -82,115 +103,13 @@ const useExternalMonitoring = () => {
 
     return false;
   }, [
-    selectedCourse,
     selectedDate,
     selectedHourIndex,
-    selectedProfessor,
+    professorResponsible,
     selectedStudent,
     selectedSubject,
     selectedHourIndex,
   ]);
-
-  const allStudents = useMemo(() => {
-    const listStudents = students?.students.map((student) => ({
-      id: student.id,
-      name: student.name,
-      email: student.name,
-      input: `${student.name} - ${student.email}`,
-    }));
-
-    return listStudents;
-  }, [students]);
-
-  const allCourses = useMemo(() => {
-    const formatedCourses = courses
-      .filter((course) => course.code != '0000')
-      .map((course) => ({
-        id: course.id,
-        name: course.name,
-        code: course.name,
-        input: `${course.code} - ${course.name}`,
-      }));
-
-    return formatedCourses;
-  }, [courses]);
-
-  const listSubject = useMemo(() => {
-    if (selectedCourse) {
-      const formatedSubjects = subjects
-        ?.filter((subject) => subject.course_id === selectedCourse.id)
-        .map((subject) => ({
-          id: subject.id,
-          name: subject.name,
-          code: subject.code,
-          course_id: subject.course_id,
-          input: `${subject.code} - ${subject.name}`,
-          SubjectResponsability: subject.SubjectResponsability,
-        }));
-      return formatedSubjects;
-    } else {
-      return null;
-    }
-  }, [selectedCourse]);
-
-  const listProfessors = useMemo(() => {
-    if (selectedSubject) {
-      const formatedProfessors = selectedSubject.SubjectResponsability.filter(
-        (professor) =>
-          professor.status.status == ReponsabilityProfessorStatus.APPROVED
-      ).map((professor) => ({
-        id: professor.professor.user.id,
-        name: professor.professor.user.name,
-        email: professor.professor.user.email,
-      }));
-      return formatedProfessors;
-    } else {
-      return undefined;
-    }
-  }, [selectedSubject]);
-
-  const handleChangeDescription = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setDescription(e.target.value);
-  };
-
-  const handleStudentValueChange = (
-    event: undefined,
-    newValue: TStudentInput | null
-  ) => {
-    setSelectedStudent(newValue);
-    setSelectedCourse(null);
-    setSelectedSubject(null);
-    setSelectedProfessor(null);
-  };
-
-  const handleCourseValueChange = (
-    event: undefined,
-    newValue: TCourseInput | null
-  ) => {
-    setSelectedCourse(newValue);
-    setSelectedSubject(null);
-    setSelectedProfessor(null);
-  };
-
-  const handleSubjectValueChange = (
-    event: undefined,
-    newValue: TSubjectInput | null
-  ) => {
-    setSelectedSubject(newValue);
-    setSelectedProfessor(null);
-  };
-
-  const handleProfessorValueChange = (
-    event: undefined,
-    newValue: TProfessorInput | null
-  ) => {
-    setSelectedProfessor(newValue);
-  };
-
-  const handleChangeDate = (value: moment.Moment | null) => {
-    setSelectedHourIndex(-1);
-    setSelectedDate(value);
-  };
 
   const formatStartAndEndDate = () => {
     let start = '';
@@ -218,14 +137,15 @@ const useExternalMonitoring = () => {
 
   const handleShowConfirmation = () => setShowConfirmation(true);
 
-  const handleEditData = () => setShowConfirmation(false);
+  const handleChangeDescription = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setDescription(e.target.value);
+  };
 
   const handleConfirmExternalMonitoring = () => {
     if (
-      !selectedCourse ||
       selectedHourIndex === -1 ||
       !selectedDate ||
-      !selectedProfessor ||
+      !professorResponsible ||
       !selectedStudent ||
       !selectedSubject
     )
@@ -241,7 +161,7 @@ const useExternalMonitoring = () => {
       description: description,
       end: formatedDates.end,
       monitor_id: user?.monitor?.id || -1,
-      professor_id: selectedProfessor.id,
+      professor_id: professorResponsible.professor.user.id,
       schedule_topic_id: selectedTopic?.id,
       start: formatedDates.start,
       student_id: selectedStudent.id,
@@ -249,23 +169,44 @@ const useExternalMonitoring = () => {
     });
   };
 
+  const handleEditData = () => setShowConfirmation(false);
+
   const handleCompleteRegister = () => {
     navigate(0);
   };
 
   useEffect(() => {
-    void coursesFetch();
-    void getAllSubjects();
     void getStudents();
+    if (user?.monitor?.id_status === TypeMonitorStatus.AVAILABLE) {
+      void getSubject(user.monitor.subject_id);
+    }
+    return;
   }, []);
+
+  useEffect(() => {
+    if (subjectData) {
+      setSelectedSubject(subjectData);
+    }
+    return;
+  }, [subjectData]);
+
+  useEffect(() => {
+    if (user?.monitor) {
+      setProfessorResponsible(
+        selectedSubject?.responsables.filter(
+          (prof) =>
+            prof.professor.user.id == user.monitor?.responsible_professor_id
+        )[0]
+      );
+    }
+  }, [selectedSubject]);
 
   useEffect(() => {
     if (
       !addedTopic ||
-      !selectedCourse ||
       selectedHourIndex === -1 ||
       !selectedDate ||
-      !selectedProfessor ||
+      !professorResponsible ||
       !selectedStudent ||
       !selectedSubject
     )
@@ -277,7 +218,7 @@ const useExternalMonitoring = () => {
       description: description,
       end: formatedDates.end,
       monitor_id: user?.monitor?.id || -1,
-      professor_id: selectedProfessor.id,
+      professor_id: professorResponsible.professor.user.id,
       schedule_topic_id: addedTopic.id,
       start: formatedDates.start,
       student_id: selectedStudent.id,
@@ -298,42 +239,37 @@ const useExternalMonitoring = () => {
   useEffect(() => {
     if (!externalMonitoringError) return;
 
-    showErrorSnackBar(`Erro ao agendar monitoria: ${externalMonitoringError}`);
+    showErrorSnackBar(
+      `Erro ao registrar monitoria externa. Erro:${externalMonitoringError.message}`
+    );
     resetExternalMonitoringStates();
   }, [externalMonitoringError]);
 
   return {
-    listSubject,
-    allCourses,
-    selectedCourse,
-    selectedSubject,
-    selectedProfessor,
-    selectedStudent,
-    listProfessors,
     allStudents,
-    selectedDate,
-    options,
-    isLoadingTopics,
-    selectedHourIndex,
-    topicInputValue,
-    selectedTopic,
     description,
-    showConfirmation,
-    confirmDisable,
-    isLoadingExternalMonitoring,
-    isSuccessExternalMonitoring,
-    handleChangeDescription,
-    handleCompleteRegister,
-    handleShowConfirmation,
-    handleEditData,
-    handleChangeTopicInput,
-    handleChangeTopicValue,
-    handleStudentValueChange,
-    handleCourseValueChange,
-    handleSubjectValueChange,
-    handleProfessorValueChange,
     handleChangeDate,
     handleChangeHour,
+    handleShowConfirmation,
+    handleStudentValueChange,
+    professorResponsible,
+    selectedDate,
+    selectedHourIndex,
+    selectedStudent,
+    showConfirmation,
+    selectedSubject,
+    handleChangeTopicInput,
+    handleChangeTopicValue,
+    isLoadingTopics,
+    options,
+    selectedTopic,
+    topicInputValue,
+    handleChangeDescription,
+    confirmDisable,
+    handleCompleteRegister,
+    handleEditData,
+    isLoadingExternalMonitoring,
+    isSuccessExternalMonitoring,
     handleConfirmExternalMonitoring,
   };
 };

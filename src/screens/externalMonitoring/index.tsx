@@ -1,6 +1,5 @@
 import ContainerWithSidebar from '../../components/containerWithSidebar';
 import { SidebarItemEnum } from '../../utils/constants';
-import useExternalMonitoring from './hooks/useExternalMonitoring';
 import ProfessorInput from './components/professorInput';
 import {
   Container,
@@ -20,7 +19,6 @@ import {
   useMediaQuery,
 } from '@mui/material';
 import DateInput from './components/dateInput';
-import CourseInput from './components/courseInput';
 import SubjectInput from './components/subjectInput';
 import StudentInput from './components/studentInput';
 import {
@@ -29,41 +27,35 @@ import {
 } from '../../components/ScheduleHelpModal/components/FormScheduleModalContent/styles';
 import theme from '../../utils/theme';
 import ConfirmExternalMonitoring from './components/confirmExternalMonitoring';
+import useExternalMonitoring from './hooks/useExternalMonitoring';
 
 const ExternalMonitoring = () => {
   const {
-    allCourses,
-    listSubject,
-    listProfessors,
-    selectedCourse,
-    selectedSubject,
-    selectedProfessor,
     allStudents,
-    selectedStudent,
+    description,
+    handleChangeDate,
+    handleChangeHour,
+    handleShowConfirmation,
+    handleStudentValueChange,
+    professorResponsible,
     selectedDate,
     selectedHourIndex,
+    selectedStudent,
+    showConfirmation,
+    selectedSubject,
+    handleChangeTopicInput,
+    handleChangeTopicValue,
     isLoadingTopics,
     options,
     selectedTopic,
     topicInputValue,
-    description,
-    showConfirmation,
-    confirmDisable,
-    handleEditData,
-    handleShowConfirmation,
     handleChangeDescription,
-    handleChangeTopicInput,
-    handleChangeTopicValue,
-    handleStudentValueChange,
-    handleCourseValueChange,
-    handleSubjectValueChange,
-    handleProfessorValueChange,
-    handleChangeDate,
-    handleChangeHour,
-    handleConfirmExternalMonitoring,
+    confirmDisable,
+    handleCompleteRegister,
+    handleEditData,
     isLoadingExternalMonitoring,
     isSuccessExternalMonitoring,
-    handleCompleteRegister,
+    handleConfirmExternalMonitoring,
   } = useExternalMonitoring();
 
   const shouldExpandDescriptionLines = useMediaQuery(
@@ -74,22 +66,22 @@ const ExternalMonitoring = () => {
     <ContainerWithSidebar
       selectedSidebarItem={SidebarItemEnum.EXTERNAL_MONITORING}
     >
-      <ConfirmExternalMonitoring
-        handleClose={handleCompleteRegister}
-        isLoading={isLoadingExternalMonitoring}
-        isSuccess={isSuccessExternalMonitoring}
-        handleConfirmExternalMonitoring={handleConfirmExternalMonitoring}
-        description={description}
-        handleEditData={handleEditData}
-        selectedDate={selectedDate}
-        selectedHourIndex={selectedHourIndex}
-        selectedProfessor={selectedProfessor}
-        selectedStudent={selectedStudent}
-        selectedSubject={selectedSubject}
-        showConfirmation={showConfirmation}
-        topic={selectedTopic}
-      />
       <Container>
+        <ConfirmExternalMonitoring
+          handleClose={handleCompleteRegister}
+          isLoading={isLoadingExternalMonitoring}
+          isSuccess={isSuccessExternalMonitoring}
+          handleConfirmExternalMonitoring={handleConfirmExternalMonitoring}
+          description={description}
+          handleEditData={handleEditData}
+          selectedDate={selectedDate}
+          selectedHourIndex={selectedHourIndex}
+          selectedProfessor={professorResponsible}
+          selectedStudent={selectedStudent}
+          selectedSubject={selectedSubject}
+          showConfirmation={showConfirmation}
+          topic={selectedTopic}
+        />
         <Card>
           <TypographyContainer>
             <HeaderTypography>Registro de Monitoria Externa</HeaderTypography>
@@ -105,33 +97,23 @@ const ExternalMonitoring = () => {
               handleStudentValueChange={handleStudentValueChange}
               selectedStudent={selectedStudent}
             />
-            <CourseInput
-              isSelectedStudent={!selectedStudent}
-              allCourses={allCourses}
-              handleCourseValueChange={handleCourseValueChange}
-              selectedCourse={selectedCourse}
-            />
             <SubjectInput
-              handleSubjectValueChange={handleSubjectValueChange}
-              isCourseSelected={!selectedCourse}
-              listSubject={listSubject ? listSubject : null}
               selectedSubject={selectedSubject}
+              isStudentSelected={!!selectedStudent}
             />
             <ProfessorInput
-              isSubjectSelected={!selectedSubject}
-              professors={listProfessors ? listProfessors : null}
-              selectedProfessor={selectedProfessor}
-              handleProfessorValueChange={handleProfessorValueChange}
+              professorResponsible={professorResponsible}
+              isStudentSelected={!!selectedStudent}
             />
             <DateInput
+              disable={!selectedStudent}
               handleChangeDate={handleChangeDate}
               handleChangeHour={handleChangeHour}
               selectedDate={selectedDate}
               selectedHourIndex={selectedHourIndex}
-              disable={!selectedProfessor}
             />
             <Autocomplete
-              disabled={selectedHourIndex == -1}
+              disabled={!selectedStudent}
               sx={{ width: '100%' }}
               options={options}
               getOptionLabel={(option) => option.label}
@@ -162,7 +144,7 @@ const ExternalMonitoring = () => {
             <DescriptionContainer>
               <DescriptionTextField
                 value={description}
-                disabled={selectedHourIndex === -1}
+                disabled={!selectedStudent}
                 onChange={handleChangeDescription}
                 minRows={shouldExpandDescriptionLines ? 10 : 4}
               />
@@ -171,8 +153,6 @@ const ExternalMonitoring = () => {
               </FormHelperText>
             </DescriptionContainer>
             <ButtonsContainer>
-              <StyledButton variant="text">Cancelar</StyledButton>
-
               <StyledButton
                 onClick={handleShowConfirmation}
                 width="230px"
