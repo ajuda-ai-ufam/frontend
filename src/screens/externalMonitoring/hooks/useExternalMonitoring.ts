@@ -68,7 +68,7 @@ const useExternalMonitoring = () => {
       .map((student) => ({
         id: student.id,
         name: student.name,
-        email: student.name,
+        email: student.email,
         input: `${student.name} - ${student.email}`,
       }));
 

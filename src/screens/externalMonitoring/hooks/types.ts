@@ -1,9 +1,10 @@
 import { ReponsabilityProfessorStatus } from '../../../utils/constants';
 
 export type TStudentInput = {
-  id: number;
+  inputValue?: string;
+  id?: number;
   name: string;
-  email: string;
+  email?: string;
   input: string;
 };
 

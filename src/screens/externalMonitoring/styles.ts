@@ -125,3 +125,9 @@ export const DisabledProfessorContainer = styled(Box).attrs({
   border-color: #b1b5ae !important;
   opacity: 0.2;
 `;
+
+export const StudentOption = styled(Box).attrs({
+  display: 'flex',
+})`
+  :hover: ${theme.palette.primary.main};
+`;
