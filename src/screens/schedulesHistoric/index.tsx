@@ -27,6 +27,8 @@ const SchedulesHistoric = () => {
     handleChangeEndDateFilter,
     responseGetAllProfessors,
     responseGetProfessorSubjects,
+    typeMonitoring,
+    handleTypeMonitoringChange,
   } = useSchedulesHistoric();
 
   return (
@@ -57,8 +59,11 @@ const SchedulesHistoric = () => {
             handleChangeResponsiblesOrSubjectsFilter={
               handleChangeResponsiblesOrSubjectsFilter
             }
+            typeMonitoring={typeMonitoring}
+            handleTypeMonitoringChange={handleTypeMonitoringChange}
           />
           <EventList
+            typeMonitoring={typeMonitoring}
             isLoading={isLoading}
             schedules={schedules}
             handleEventClick={handleEventClick}
