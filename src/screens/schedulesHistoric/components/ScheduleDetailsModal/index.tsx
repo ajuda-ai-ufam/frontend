@@ -17,12 +17,12 @@ const ScheduleDetailsModal = ({ schedule, isOpen, handleClose }: Props) => {
   return (
     <Modal width="550px" isOpen={isOpen} handleClose={handleClose}>
       <ScheduleHistoricModal
-        student={`${schedule.student.enrollment} - ${schedule.student.name}`}
+        student={`${schedule.student.name}`}
         course={schedule.subject.course.name}
         subject={schedule.subject.name}
         topic={schedule.topic?.name}
         description={schedule.description}
-        monitor={`${schedule.monitor.enrollment} - ${schedule.monitor.name}`}
+        monitor={`${schedule.monitor.name}`}
         professor={schedule.responsibleProfessor.name}
         date={date}
         schedule={`${startTime} até ${endTime}`}

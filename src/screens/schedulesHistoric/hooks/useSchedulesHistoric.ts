@@ -8,6 +8,9 @@ import useQuery from '../../../utils/useQuery';
 import useFiltersForm from './useFiltersForm';
 import useFormatSchedules from './useFormatSchedules';
 import useScheduleDetailsModal from './useScheduleDetailsModal';
+import useGetExternalMonitoringRequest from '../../../service/requests/useGetExternalMonitoringRequest';
+import useFormatScheduleExternalMonitoring from './useFormatScheduleExternalMonitoring';
+import { TGetExternalMonitoringParams } from '../../../service/requests/useGetExternalMonitoringRequest/types';
 
 const useSchedulesHistoric = () => {
   const user = useGetLoggedUser();
@@ -21,13 +24,30 @@ const useSchedulesHistoric = () => {
   const { response, error, getSchedules, isLoading } =
     useGetSchedulesHistoricRequest();
 
-  const { schedules } = useFormatSchedules(response);
+  const {
+    data: externalMonitorings,
+    error: errorExternalMonitoring,
+    getExternalMonitoring,
+  } = useGetExternalMonitoringRequest();
+
+  const [typeMonitoring, setTypeMonitoring] = useState('Monitoria Interna');
+
+  const { schedules } =
+    typeMonitoring == 'Monitoria Interna'
+      ? useFormatSchedules(response)
+      : useFormatScheduleExternalMonitoring(externalMonitorings);
 
   const [page, setPage] = useState(1);
 
   const [isNavigationFromHome, setIsNavigationFromHome] = useState(false);
 
-  const totalPages = useMemo(() => response?.meta.totalPages || 0, [response]);
+  const totalPages = useMemo(
+    () =>
+      typeMonitoring == 'Monitoria Interna'
+        ? response?.meta.totalPages || 0
+        : externalMonitorings?.meta.totalPages || 0,
+    [response, externalMonitorings, typeMonitoring]
+  );
 
   const {
     isLoadingGetAllProfessors,
@@ -42,7 +62,12 @@ const useSchedulesHistoric = () => {
     handleFilterClick,
     handleFiltersChange,
     getNameAndEnrollment,
-  } = useFiltersForm({ getSchedules, setPage });
+  } = useFiltersForm({
+    typeMonitoring,
+    getExternalMonitoring,
+    getSchedules,
+    setPage,
+  });
 
   const {
     isOpen: isScheduleDetailsModalOpen,
@@ -66,19 +91,45 @@ const useSchedulesHistoric = () => {
       studentName: getValues.name,
       studentEnrollment: getValues.enrollment.toString(),
       status: SchedulesStatus.REALIZED,
-    } as TGetSchedulesHistoricRequestParams;
+    };
+
+    const formatedFiltersExternalMonitoringFilters: TGetExternalMonitoringParams =
+      {
+        page: newPage,
+        endDate: filters.endDateFilter?.toDate(),
+        startDate: filters.beginDateFilter?.toDate(),
+        studentName: getValues.name,
+        studentEnrollment: getValues.enrollment.toString(),
+      };
 
     const ids = filters.responsiblesOrSubjectsFilter.map((attr) =>
       parseInt(attr.split(',')[0])
     );
+    if (typeMonitoring == 'Monitoria Interna') {
+      user?.type_user_id === TypeUserEnum.COORDINATOR
+        ? (formatedFilters.responsibleIds = ids)
+        : (formatedFilters.subjectIds = ids);
+    } else {
+      user?.type_user_id === TypeUserEnum.COORDINATOR
+        ? (formatedFiltersExternalMonitoringFilters.responsibleIds = ids)
+        : (formatedFiltersExternalMonitoringFilters.subjectIds = ids);
+    }
 
-    user?.type_user_id === TypeUserEnum.COORDINATOR
-      ? (formatedFilters.responsibleIds = ids)
-      : (formatedFilters.subjectIds = ids);
-
-    void getSchedules(formatedFilters);
+    if (typeMonitoring == 'Monitoria Interna') {
+      void getSchedules(formatedFilters);
+    } else {
+      void getExternalMonitoring(formatedFiltersExternalMonitoringFilters);
+    }
 
     setPage(newPage);
+  };
+
+  const handleTypeMonitoringChange = () => {
+    if (typeMonitoring == 'Monitoria Externa') {
+      setTypeMonitoring('Monitoria Interna');
+    } else {
+      setTypeMonitoring('Monitoria Externa');
+    }
   };
 
   useEffect(() => {
@@ -97,6 +148,7 @@ const useSchedulesHistoric = () => {
     }
 
     void getSchedules({ page, status: SchedulesStatus.REALIZED });
+    void getExternalMonitoring({ page });
   }, []);
 
   useEffect(() => {
@@ -112,6 +164,14 @@ const useSchedulesHistoric = () => {
     showErrorSnackBar(`Erro ao carregar agendamentos: ${error}`);
   }, [error]);
 
+  useEffect(() => {
+    if (!errorExternalMonitoring) return;
+
+    showErrorSnackBar(
+      `Erro ao carregar agendamentos: ${errorExternalMonitoring}`
+    );
+  }, [errorExternalMonitoring]);
+
   return {
     responseGetProfessorSubjects,
     responseGetAllProfessors,
@@ -125,6 +185,7 @@ const useSchedulesHistoric = () => {
     isLoadingGetAllProfessors,
     isLoadingGetProfessorSubjects,
     filters,
+    typeMonitoring,
     handleChangeBeginDateFilter,
     handleChangeEndDateFilter,
     handleChangeNameOrEnrollFilter,
@@ -133,6 +194,7 @@ const useSchedulesHistoric = () => {
     handleEventClick,
     handleChangePage,
     handleCloseScheduleDetailsModal,
+    handleTypeMonitoringChange,
   };
 };
 

@@ -14,6 +14,7 @@ type Props = {
   error?: string;
   handleEventClick(schedule: TSchedules): void;
   handleChangePage(event: React.ChangeEvent<unknown>, page: number): void;
+  typeMonitoring: string;
 };
 
 const EventList = ({
@@ -24,6 +25,7 @@ const EventList = ({
   totalPages,
   handleEventClick,
   handleChangePage,
+  typeMonitoring,
 }: Props) => {
   if (isLoading) {
     return (
@@ -61,6 +63,7 @@ const EventList = ({
           key={`${dayEvents.day}-${dayEvents.month}-${dayEvents.weekDay}`}
           dayEvent={dayEvents}
           handleEventClick={handleEventClick}
+          typeMonitoring={typeMonitoring}
         />
       ))}
       <Pagination

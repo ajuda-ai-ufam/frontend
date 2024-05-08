@@ -66,15 +66,16 @@ const useSubjectDetails = () => {
     openRemoveMonitor: (monitor: TSubjectMonitor) => void
   ) => {
     return (monitor: TSubjectMonitor) => {
-      if (subject && subject.isStudentEnrolled) {
-        userType !== TypeUserEnum.STUDENT
-          ? openRemoveMonitor(monitor)
-          : openScheduleModal(subject, monitor);
-      } else {
-        showDefaultSnackBar(
-          'Você precisa estar matriculado(a) nesta disciplina para agendar um horário.'
-        );
-        return;
+      if (subject) {
+        if (userType === TypeUserEnum.STUDENT) {
+          subject.isStudentEnrolled
+            ? openScheduleModal(subject, monitor)
+            : showDefaultSnackBar(
+                'Você precisa estar matriculado(a) nesta disciplina para agendar um horário.'
+              );
+        } else {
+          openRemoveMonitor(monitor);
+        }
       }
     };
   };

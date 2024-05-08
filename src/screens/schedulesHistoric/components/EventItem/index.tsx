@@ -12,9 +12,10 @@ import {
 type Props = {
   schedule: TSchedules;
   handleEventClick(schedule: TSchedules): void;
+  typeMonitoring: string;
 };
 
-const EventItem = ({ schedule, handleEventClick }: Props) => {
+const EventItem = ({ schedule, handleEventClick, typeMonitoring }: Props) => {
   const user = useGetLoggedUser();
 
   const startTime = schedule.startDate.toTimeString().substring(0, 5);
@@ -25,19 +26,12 @@ const EventItem = ({ schedule, handleEventClick }: Props) => {
       <EventDataContainer>
         <DataField>
           <Label>Monitor(a)</Label>
-          <Value>{`${schedule.monitor.enrollment} - ${schedule.monitor.name}`}</Value>
+          <Value>{`${schedule.monitor.name}`}</Value>
         </DataField>
 
         <DataField>
           <Label>Aluno(a)</Label>
-          <Value>{`${schedule.student.enrollment} - ${schedule.student.name}`}</Value>
-        </DataField>
-
-        <DataField>
-          <Label>Horário</Label>
-          <Value>
-            {startTime} até {endTime}
-          </Value>
+          <Value>{`${schedule.student.name}`}</Value>
         </DataField>
 
         <DataField>
@@ -50,6 +44,31 @@ const EventItem = ({ schedule, handleEventClick }: Props) => {
             <Value>{schedule.responsibleProfessor.name}</Value>
           ) : (
             <Value>{schedule.subject.name}</Value>
+          )}
+        </DataField>
+
+        <DataField>
+          <Label>Horário</Label>
+          <Value>
+            {startTime} até {endTime}
+          </Value>
+        </DataField>
+
+        <DataField>
+          <Label>Categoria</Label>
+          <Value>{`${typeMonitoring}`}</Value>
+        </DataField>
+
+        <DataField>
+          {user?.type_user_id === TypeUserEnum.COORDINATOR ? (
+            <Label>Disciplina</Label>
+          ) : (
+            <></>
+          )}
+          {user?.type_user_id === TypeUserEnum.COORDINATOR ? (
+            <Value>{schedule.subject.name}</Value>
+          ) : (
+            <></>
           )}
         </DataField>
       </EventDataContainer>

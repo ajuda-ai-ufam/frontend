@@ -8,13 +8,21 @@ import useGetLoggedUser from '../../../service/storage/getLoggedUser';
 import { SchedulesStatus, TypeUserEnum } from '../../../utils/constants';
 import { useSnackBar } from '../../../utils/renderSnackBar';
 import { TScheduleHistoricFilters } from './types';
+import { TGetExternalMonitoringParams } from '../../../service/requests/useGetExternalMonitoringRequest/types';
 
 type Props = {
+  typeMonitoring: string;
+  getExternalMonitoring(params: TGetExternalMonitoringParams): void;
   getSchedules(params: TGetSchedulesHistoricRequestParams): void;
   setPage(page: React.SetStateAction<number>): void;
 };
 
-const useSchedulesHistoric = ({ getSchedules, setPage }: Props) => {
+const useSchedulesHistoric = ({
+  typeMonitoring,
+  getExternalMonitoring,
+  getSchedules,
+  setPage,
+}: Props) => {
   const { showErrorSnackBar } = useSnackBar();
 
   const user = useGetLoggedUser();
@@ -119,17 +127,35 @@ const useSchedulesHistoric = ({ getSchedules, setPage }: Props) => {
       studentName: getValues.name,
       studentEnrollment: getValues.enrollment.toString(),
       status: SchedulesStatus.REALIZED,
-    } as TGetSchedulesHistoricRequestParams;
+    };
+
+    const formatedFiltersExternalMonitoringFilters: TGetExternalMonitoringParams =
+      {
+        page: 1,
+        endDate: filters.endDateFilter?.toDate(),
+        startDate: filters.beginDateFilter?.toDate(),
+        studentName: getValues.name,
+        studentEnrollment: getValues.enrollment.toString(),
+      };
 
     const ids = filters.responsiblesOrSubjectsFilter.map((attr) =>
       parseInt(attr.split(',')[0])
     );
+    if (typeMonitoring == 'Monitoria Interna') {
+      user?.type_user_id === TypeUserEnum.COORDINATOR
+        ? (formatedFilters.responsibleIds = ids)
+        : (formatedFilters.subjectIds = ids);
+    } else {
+      user?.type_user_id === TypeUserEnum.COORDINATOR
+        ? (formatedFiltersExternalMonitoringFilters.responsibleIds = ids)
+        : (formatedFiltersExternalMonitoringFilters.subjectIds = ids);
+    }
 
-    user?.type_user_id === TypeUserEnum.COORDINATOR
-      ? (formatedFilters.responsibleIds = ids)
-      : (formatedFilters.subjectIds = ids);
-
-    void getSchedules(formatedFilters);
+    if (typeMonitoring == 'Monitoria Interna') {
+      void getSchedules(formatedFilters);
+    } else {
+      void getExternalMonitoring(formatedFiltersExternalMonitoringFilters);
+    }
 
     setPage(1);
   };

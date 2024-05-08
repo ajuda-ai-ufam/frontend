@@ -13,9 +13,14 @@ import {
 type Props = {
   dayEvent: TFormatedSchedules;
   handleEventClick(schedule: TSchedules): void;
+  typeMonitoring: string;
 };
 
-const DayEventItem = ({ dayEvent, handleEventClick }: Props) => {
+const DayEventItem = ({
+  dayEvent,
+  handleEventClick,
+  typeMonitoring,
+}: Props) => {
   const { day, weekDay, month, year, events } = dayEvent;
 
   return (
@@ -36,6 +41,7 @@ const DayEventItem = ({ dayEvent, handleEventClick }: Props) => {
             key={eventItem.id}
             schedule={eventItem}
             handleEventClick={handleEventClick}
+            typeMonitoring={typeMonitoring}
           />
         ))}
       </EventsContainer>
