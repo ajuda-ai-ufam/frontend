@@ -5,7 +5,6 @@ import {
   StyledTextFieldContainer,
 } from '../../styles';
 import { TCompleteSubject } from '../../../../service/requests/useGetSubject/types';
-
 type props = {
   isStudentSelected: boolean;
   selectedSubject: TCompleteSubject | undefined;

@@ -30,8 +30,10 @@ import {
   StyledForm,
   UntilContainer,
 } from './styles';
+import { GridView } from '@mui/icons-material';
 
 type Props = {
+  typeMonitoring: string;
   responseGetProfessorSubjects?: TSubject[];
   responseGetAllProfessors?: TProfessor[];
   filters: TScheduleHistoricFilters;
@@ -40,17 +42,20 @@ type Props = {
   handleChangeBeginDateFilter(date: Dayjs | null): void;
   handleChangeEndDateFilter(date: Dayjs | null): void;
   handleFilterClick(e: React.SyntheticEvent<EventTarget>): void;
+  handleTypeMonitoringChange(): void;
 };
 
 const FiltersForm = ({
   responseGetProfessorSubjects,
   responseGetAllProfessors,
   filters,
+  typeMonitoring,
   handleChangeBeginDateFilter,
   handleChangeEndDateFilter,
   handleChangeResponsiblesOrSubjectsFilter,
   handleChangeNameOrEnrollFilter,
   handleFilterClick,
+  handleTypeMonitoringChange,
 }: Props) => {
   const user = useGetLoggedUser();
 
@@ -134,6 +139,23 @@ const FiltersForm = ({
         </SelectField>
         <LastFormRowContainer>
           <DatePickersContainer>
+            <SelectField
+              value={typeMonitoring}
+              onChange={handleTypeMonitoringChange}
+              startAdornment={
+                <InputAdornment position="start">
+                  <GridView />
+                </InputAdornment>
+              }
+              renderValue={(selected) => selected as string[]}
+            >
+              <MenuItem key={0} value={'Monitoria Interna'}>
+                Monitoria Interna
+              </MenuItem>
+              <MenuItem key={1} value={'Monitoria Externa'}>
+                Monitoria Externa
+              </MenuItem>
+            </SelectField>
             <DesktopDatePicker
               inputFormat="DD/MM/YYYY"
               value={filters.beginDateFilter}
