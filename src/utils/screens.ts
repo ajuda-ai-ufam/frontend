@@ -15,6 +15,7 @@ export const SCREENS = {
   RESET_PASSWORD: '/reset-password',
   EDIT_PROFILE: '/edit-profile',
   EDIT_MONITORING: '/edit-monitoring',
+  EXTERNAL_MONITORING: '/external-monitoring',
 };
 
 export const NOT_LOGGED_SCREENS = [
