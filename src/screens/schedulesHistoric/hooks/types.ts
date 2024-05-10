@@ -28,6 +28,7 @@ export type TSchedulesHistoricFilters = {
 export type TScheduleHistoricFilters = {
   nameOrEnrollFilter: string;
   responsiblesOrSubjectsFilter: string[];
+  subjectsFilter: string[];
   beginDateFilter: Dayjs | null;
   endDateFilter: Dayjs | null;
 };
