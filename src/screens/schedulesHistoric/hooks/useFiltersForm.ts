@@ -9,6 +9,7 @@ import { SchedulesStatus, TypeUserEnum } from '../../../utils/constants';
 import { useSnackBar } from '../../../utils/renderSnackBar';
 import { TScheduleHistoricFilters } from './types';
 import { TGetExternalMonitoringParams } from '../../../service/requests/useGetExternalMonitoringRequest/types';
+import useAllSubjectsRequest from '../../../service/requests/useAllSubjectsRequest';
 
 type Props = {
   typeMonitoring: string;
@@ -41,11 +42,14 @@ const useSchedulesHistoric = ({
     response: responseGetAllProfessors,
   } = useGetAllProfessors();
 
+  const { data: allSubjects, getAllSubjects } = useAllSubjectsRequest();
+
   const [filters, setFilters] = useState<TScheduleHistoricFilters>({
     nameOrEnrollFilter: '',
     beginDateFilter: null,
     endDateFilter: null,
     responsiblesOrSubjectsFilter: [],
+    subjectsFilter: [],
   });
 
   const handleFiltersChange = (filters: TScheduleHistoricFilters) => {
@@ -81,6 +85,22 @@ const useSchedulesHistoric = ({
     const currentFilters: TScheduleHistoricFilters = {
       ...filters,
       responsiblesOrSubjectsFilter: responsiblesOrSubjectsFilter,
+    };
+
+    handleFiltersChange(currentFilters);
+  };
+
+  const handleChangeOnlySubjectsFilter = (
+    e: SelectChangeEvent<typeof responsiblesOrSubjectsFilter>
+  ) => {
+    const value = e.target.value as string;
+
+    const responsiblesOrSubjectsFilter =
+      typeof value === 'string' ? value.split(' ') : value;
+
+    const currentFilters: TScheduleHistoricFilters = {
+      ...filters,
+      subjectsFilter: responsiblesOrSubjectsFilter,
     };
 
     handleFiltersChange(currentFilters);
@@ -141,14 +161,23 @@ const useSchedulesHistoric = ({
     const ids = filters.responsiblesOrSubjectsFilter.map((attr) =>
       parseInt(attr.split(',')[0])
     );
+    const subjectOnlyId = filters.subjectsFilter.map((attr) =>
+      parseInt(attr.split(',')[0])
+    );
     if (typeMonitoring == 'Monitoria Interna') {
-      user?.type_user_id === TypeUserEnum.COORDINATOR
-        ? (formatedFilters.responsibleIds = ids)
-        : (formatedFilters.subjectIds = ids);
+      if (user?.type_user_id === TypeUserEnum.COORDINATOR) {
+        formatedFilters.responsibleIds = ids;
+        formatedFilters.subjectIds = subjectOnlyId;
+      } else {
+        formatedFilters.subjectIds = ids;
+      }
     } else {
-      user?.type_user_id === TypeUserEnum.COORDINATOR
-        ? (formatedFiltersExternalMonitoringFilters.responsibleIds = ids)
-        : (formatedFiltersExternalMonitoringFilters.subjectIds = ids);
+      if (user?.type_user_id === TypeUserEnum.COORDINATOR) {
+        formatedFiltersExternalMonitoringFilters.responsibleIds = ids;
+        formatedFiltersExternalMonitoringFilters.subjectIds = subjectOnlyId;
+      } else {
+        formatedFiltersExternalMonitoringFilters.subjectIds = ids;
+      }
     }
 
     if (typeMonitoring == 'Monitoria Interna') {
@@ -161,9 +190,12 @@ const useSchedulesHistoric = ({
   };
 
   useEffect(() => {
-    user?.type_user_id === TypeUserEnum.PROFESSOR
-      ? void getProfessorSubjects(parseInt(user.sub))
-      : void getProfessors();
+    if (user?.type_user_id === TypeUserEnum.PROFESSOR) {
+      void getProfessorSubjects(parseInt(user.sub));
+    } else {
+      void getProfessors();
+      void getAllSubjects();
+    }
   }, []);
 
   useEffect(() => {
@@ -189,12 +221,14 @@ const useSchedulesHistoric = ({
     isLoadingGetAllProfessors,
     getNameAndEnrollment,
     filters,
+    allSubjects,
     handleChangeBeginDateFilter,
     handleChangeEndDateFilter,
     handleFilterClick,
     handleChangeNameOrEnrollFilter,
     handleChangeResponsiblesOrSubjectsFilter,
     handleFiltersChange,
+    handleChangeOnlySubjectsFilter,
   };
 };
 

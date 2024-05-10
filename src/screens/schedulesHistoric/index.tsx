@@ -23,6 +23,8 @@ const SchedulesHistoric = () => {
     totalPages,
     handleCloseScheduleDetailsModal,
     filters,
+    allSubjects,
+    handleChangeOnlySubjectsFilter,
     handleChangeBeginDateFilter,
     handleChangeEndDateFilter,
     responseGetAllProfessors,
@@ -59,6 +61,8 @@ const SchedulesHistoric = () => {
             handleChangeResponsiblesOrSubjectsFilter={
               handleChangeResponsiblesOrSubjectsFilter
             }
+            allSubjects={allSubjects}
+            handleChangeOnlySubjectsFilter={handleChangeOnlySubjectsFilter}
             typeMonitoring={typeMonitoring}
             handleTypeMonitoringChange={handleTypeMonitoringChange}
           />
