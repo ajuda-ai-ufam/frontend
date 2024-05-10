@@ -31,11 +31,13 @@ import {
   UntilContainer,
 } from './styles';
 import { GridView } from '@mui/icons-material';
+import { ExternalMonitoringSubject } from '../../../../service/requests/useAllSubjectsRequest/types';
 
 type Props = {
   typeMonitoring: string;
   responseGetProfessorSubjects?: TSubject[];
   responseGetAllProfessors?: TProfessor[];
+  allSubjects?: ExternalMonitoringSubject;
   filters: TScheduleHistoricFilters;
   handleChangeNameOrEnrollFilter(e: React.ChangeEvent<HTMLInputElement>): void;
   handleChangeResponsiblesOrSubjectsFilter(e: SelectChangeEvent<unknown>): void;
@@ -43,6 +45,7 @@ type Props = {
   handleChangeEndDateFilter(date: Dayjs | null): void;
   handleFilterClick(e: React.SyntheticEvent<EventTarget>): void;
   handleTypeMonitoringChange(): void;
+  handleChangeOnlySubjectsFilter(e: SelectChangeEvent<unknown>): void;
 };
 
 const FiltersForm = ({
@@ -56,6 +59,8 @@ const FiltersForm = ({
   handleChangeNameOrEnrollFilter,
   handleFilterClick,
   handleTypeMonitoringChange,
+  handleChangeOnlySubjectsFilter,
+  allSubjects,
 }: Props) => {
   const user = useGetLoggedUser();
 
@@ -83,6 +88,19 @@ const FiltersForm = ({
       return <Placeholder>Selecionar professor(a)</Placeholder>;
     }
 
+    return (
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+        {selected.map((value: string) => (
+          <Chip key={value.split(',')[1]} label={value.split(',')[1]} />
+        ))}
+      </Box>
+    );
+  };
+
+  const subjectFilterRenderValues = (selected: string[]) => {
+    if (!filters.subjectsFilter?.length) {
+      return <Placeholder>Selecionar disciplina</Placeholder>;
+    }
     return (
       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
         {selected.map((value: string) => (
@@ -137,6 +155,32 @@ const FiltersForm = ({
                 </MenuItem>
               ))}
         </SelectField>
+        {user?.type_user_id === TypeUserEnum.COORDINATOR ? (
+          <SelectField
+            multiple
+            value={filters.subjectsFilter}
+            native={false}
+            displayEmpty={true}
+            onChange={handleChangeOnlySubjectsFilter}
+            startAdornment={
+              <InputAdornment position="start">
+                <BookIcon />
+              </InputAdornment>
+            }
+            renderValue={(selected) =>
+              subjectFilterRenderValues(selected as string[])
+            }
+          >
+            {allSubjects?.map((sub) => (
+              <MenuItem key={sub.id} value={`${sub.id},${sub.name}`}>
+                {sub.name}
+              </MenuItem>
+            ))}
+          </SelectField>
+        ) : (
+          <></>
+        )}
+
         <LastFormRowContainer>
           <DatePickersContainer>
             <SelectField
