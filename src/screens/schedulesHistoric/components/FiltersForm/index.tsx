@@ -173,7 +173,7 @@ const FiltersForm = ({
           >
             {allSubjects?.map((sub) => (
               <MenuItem key={sub.id} value={`${sub.id},${sub.name}`}>
-                {sub.name}
+                {`${sub.code} - ${sub.name}`}
               </MenuItem>
             ))}
           </SelectField>
